@@ -7,10 +7,11 @@
   <meta name="description" content="Webflow websites για υπηρεσίες: ψυχολόγοι, personal trainers, δικηγόροι, real estate. Conversion-first σχεδιασμός που κλείνει ραντεβού." />
   <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- LCP preload για το hero mockup -->
+  <link rel="preload" as="image" href="assets/hero-psychologist.png" imagesrcset="assets/hero-psychologist.png" />
   <link rel="icon" href="assets/favicon.png" />
 </head>
 <body>
-  <!-- Header / Nav -->
   <header class="site-header">
     <div class="container header__inner">
       <a class="brand" href="/">Evida <span>Studio</span></a>
@@ -23,13 +24,13 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO (Mockup) -->
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__copy">
         <p class="eyebrow">Webflow designer for service pros</p>
         <h1>Websites που <em>κλείνουν ραντεβού</em> για Ψυχολόγους, Trainers, Δικηγόρους & Real Estate</h1>
-        <p class="sub">24h πρόταση • Μ.Ο. παράδοσης 2 εβδομάδες • Webflow + on-page SEO</p>
+        <p class="sub">24h πρόταση • Μ.Ο. 2 εβδομάδες • Webflow + on-page SEO</p>
         <div class="hero__cta">
           <a class="btn" href="#contact">Ζήτησε προσφορά</a>
           <a class="btn btn--ghost" href="#work">Δες δουλειές</a>
@@ -41,49 +42,53 @@
           <li>Real Estate</li>
         </ul>
       </div>
+
       <div class="hero__media">
-        <!-- Αν θες hero εικόνα αργότερα: βάζεις <img src="assets/hero-psychologist.png" alt="..." /> -->
-        <div class="media-placeholder" aria-hidden="true"></div>
+        <div class="mockup-wrap">
+          <!-- Βάλε την εικόνα σου εδώ (προτείνεται 1600×1000 ή 1920×1200 PNG/JPG/WEBP) -->
+          <img
+            src="assets/hero-psychologist.png"
+            alt="Website mockup for a psychologist homepage"
+            width="1600" height="1000"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="glow"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio / Work -->
+  <!-- Portfolio -->
   <section id="work" class="work">
     <div class="container">
       <div class="section-head">
         <h2>Portfolio</h2>
-        <p class="muted">4–5 ενδεικτικά έργα. Τα παρακάτω είναι placeholders με κενό πλαίσιο—αντικατάστησε τα με εικόνες από τον φάκελο <code>/assets</code>.</p>
+        <p class="muted">4–5 έργα. Placeholder κάρτες με κενό πλαίσιο μέχρι να βάλεις εικόνες.</p>
       </div>
 
       <div class="grid">
-        <!-- Κάθε κάρτα είναι ένα κενό πλαίσιο. Όταν έχεις εικόνα, βάλε <img ...> μέσα. -->
         <a class="card is-empty" href="#" aria-label="Placeholder portfolio 1">
-          <!-- Όταν είσαι έτοιμος: <img src="assets/psychologist-site-01.jpg" alt="Psychologist website homepage" loading="lazy"> -->
           <span class="badge">Case 01</span>
           <h3>Psychologist Website</h3>
         </a>
 
         <a class="card is-empty" href="#" aria-label="Placeholder portfolio 2">
-          <!-- <img src="assets/trainer-site-01.jpg" alt="Personal trainer website landing" loading="lazy"> -->
           <span class="badge">Case 02</span>
           <h3>Personal Trainer Landing</h3>
         </a>
 
         <a class="card is-empty" href="#" aria-label="Placeholder portfolio 3">
-          <!-- <img src="assets/law-firm-landing.jpg" alt="Law firm landing page" loading="lazy"> -->
           <span class="badge">Case 03</span>
           <h3>Law Firm Lead Gen</h3>
         </a>
 
         <a class="card is-empty" href="#" aria-label="Placeholder portfolio 4">
-          <!-- <img src="assets/real-estate-listings.jpg" alt="Real estate listings website" loading="lazy"> -->
           <span class="badge">Case 04</span>
           <h3>Real Estate Listings</h3>
         </a>
 
         <a class="card is-empty optional" href="#" aria-label="Placeholder portfolio 5">
-          <!-- <img src="assets/gym-studio-site.jpg" alt="Gym studio website" loading="lazy"> -->
           <span class="badge">Case 05</span>
           <h3>Gym Studio Site</h3>
         </a>
@@ -96,25 +101,13 @@
     <div class="container">
       <div class="section-head">
         <h2>Τι αναλαμβάνω</h2>
-        <p class="muted">Σχεδιασμός & ανάπτυξη σε Webflow, ελαφρύ copy για conversion, SEO βασικών σελίδων, σύνδεση domain, analytics & βασικά automations.</p>
+        <p class="muted">Webflow build, ελαφρύ conversion copy, SEO basics, domain, analytics & automations.</p>
       </div>
       <div class="features">
-        <div class="feature">
-          <h3>Webflow Build</h3>
-          <p>Καθαρή αρχιτεκτονική, responsive, ταχύτητα & προσβασιμότητα.</p>
-        </div>
-        <div class="feature">
-          <h3>On-page SEO</h3>
-          <p>Meta, headings, schema όπου χρειάζεται, clean URLs.</p>
-        </div>
-        <div class="feature">
-          <h3>Bookings</h3>
-          <p>Φόρμες, Calendly/Cal.com, ευδιάκριτα CTA σε κάθε σελίδα.</p>
-        </div>
-        <div class="feature">
-          <h3>Μετά την παράδοση</h3>
-          <p>1 εβδομάδα υποστήριξη + mini video handover.</p>
-        </div>
+        <div class="feature"><h3>Webflow Build</h3><p>Καθαρή αρχιτεκτονική, responsive, ταχύτητα & προσβασιμότητα.</p></div>
+        <div class="feature"><h3>On-page SEO</h3><p>Meta, headings, schema όπου χρειάζεται, clean URLs.</p></div>
+        <div class="feature"><h3>Bookings</h3><p>Φόρμες, Calendly/Cal.com, CTA σε κάθε κρίσιμο σημείο.</p></div>
+        <div class="feature"><h3>Μετά την παράδοση</h3><p>1 εβδομάδα υποστήριξη + mini video handover.</p></div>
       </div>
     </div>
   </section>
@@ -122,9 +115,7 @@
   <!-- Process -->
   <section id="process" class="process">
     <div class="container">
-      <div class="section-head">
-        <h2>Process 4 βημάτων</h2>
-      </div>
+      <div class="section-head"><h2>Process 4 βημάτων</h2></div>
       <ol class="steps">
         <li><strong>Brief & στόχοι</strong> — 30’ call, niche & ICP.</li>
         <li><strong>Wireframe</strong> — flow που οδηγεί στο ραντεβού.</li>
@@ -139,19 +130,16 @@
     <div class="container contact__inner">
       <div>
         <h2>Έλα να το ξεκινήσουμε</h2>
-        <p class="muted">Στείλε μια ιδέα, 2–3 site που σου αρέσουν και τον στόχο σου. Θα λάβεις πρόταση σε 24 ώρες.</p>
+        <p class="muted">Στείλε 2–3 site που σου αρέσουν + τον στόχο σου. Θα λάβεις πρόταση σε 24 ώρες.</p>
       </div>
       <form class="form" action="https://formspree.io/f/your-id" method="POST">
-        <label>
-          Όνομα
+        <label> Όνομα
           <input type="text" name="name" required>
         </label>
-        <label>
-          Email
+        <label> Email
           <input type="email" name="email" required>
         </label>
-        <label>
-          Μήνυμα
+        <label> Μήνυμα
           <textarea name="message" rows="4" required></textarea>
         </label>
         <button class="btn" type="submit">Ζήτησε προσφορά</button>
@@ -167,7 +155,6 @@
   </footer>
 
   <script>
-    // Μικρό quality-of-life: έτος στο footer (χωρίς βιβλιοθήκες)
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
