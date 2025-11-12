@@ -1,5 +1,5 @@
 /* ----- Tokens ----- */
-:root {
+:root{
   --bg:#0b0b10; --panel:#10121a; --text:#e9ecf1; --muted:#a8b0bd;
   --brand:#7c5cff; --brand-2:#22d3ee;
   --br:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
@@ -50,10 +50,15 @@ h1{font-size:clamp(32px,4vw,56px)} h2{font-size:clamp(24px,3vw,36px)} h3{font-si
   position:relative; border-radius:var(--br); overflow:hidden;
   background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
   border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow);
+  padding:14px;              /* κενό γύρω από την εικόνα όταν είναι contain */
 }
 .hero__visual img{
-  width:100%; height:auto; object-fit:cover; object-position:50% 20%;
-  border-radius:calc(var(--br) - 2px); aspect-ratio:4/5;
+  width:100%;
+  aspect-ratio: 4 / 5;        /* σταθερό πορτρέτο */
+  object-fit: contain;         /* ΔΕΝ κόβει τίποτα. Θες crop; άλλαξέ το σε cover */
+  object-position: 50% 10%;    /* λίγο πιο ψηλά το πρόσωπο */
+  border-radius: calc(var(--br) - 6px);
+  background:#103640;          /* «πλάτη» πίσω από την εικόνα */
 }
 .glow{position:absolute; inset:auto -20% -20% -20%; height:200px; background:radial-gradient(60% 60% at 50% 0%, rgba(124,92,255,.35), transparent 70%); filter:blur(30px)}
 
@@ -89,5 +94,13 @@ details p{color:var(--muted); margin:10px 0 0}
 .footer{padding:24px 0 40px; color:var(--muted)} .back{opacity:.8} .back:hover{opacity:1}
 
 /* ----- Responsive ----- */
-@media (max-width:960px){ .hero__grid{grid-template-columns:1fr} .cards{grid-template-columns:1fr 1fr} .pricing{grid-template-columns:1fr} }
-@media (max-width:560px){ .nav a:not(.btn){display:none} .chips{gap:8px} .cards{grid-template-columns:1fr} }
+@media (max-width:960px){
+  .hero__grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .pricing{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .nav a:not(.btn){display:none}
+  .chips{gap:8px}
+  .cards{grid-template-columns:1fr}
+}
