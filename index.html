@@ -4,186 +4,209 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Evida Studio — Webflow sites that book calls</title>
-  <meta name="description" content="Conversion-first Webflow websites for service professionals. 24h proposal, 2-week average build, on-page SEO included." />
+  <meta name="description" content="Conversion-first Webflow websites for service professionals. 24h proposal, 2-week average build, on-page SEO included.">
+  <!-- Προαιρετικά κρατάμε και το εξωτερικό CSS με cache-buster.
+       Αν δεν φορτώσει, το inline CSS από κάτω καλύπτει τα πάντα. -->
+  <link rel="stylesheet" href="./styles.css?v=3">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Evida Studio — Webflow sites that book calls">
-  <meta property="og:description" content="Conversion-first Webflow websites for service pros. 24h proposal • 2-week average build • Webflow + on-page SEO.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://your-domain.com/">
-  <meta property="og:image" content="/assets/fotis-hero.jpg">
-  <link rel="icon" href="/assets/fotis-hero.jpg">
+  <style>
+  /* ----- Tokens ----- */
+  :root { --bg:#0b0b10; --panel:#10121a; --text:#e9ecf1; --muted:#a8b0bd;
+          --brand:#7c5cff; --brand-2:#22d3ee; --ok:#10b981; --warn:#f59e0b; --danger:#ef4444;
+          --br:16px; --shadow:0 10px 30px rgba(0,0,0,.35); --container:1100px; }
 
-  <link rel="preload" href="/assets/fotis-hero.avif" as="image" imagesrcset="/assets/fotis-hero.avif 1x" />
-  <link rel="stylesheet" href="/styles.css">
+  /* ----- Base ----- */
+  *{box-sizing:border-box} html,body{height:100%}
+  body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+       margin:0;color:var(--text);
+       background:radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.2), transparent 60%),
+                  radial-gradient(800px 400px at 90% 10%, rgba(34,211,238,.15), transparent 60%),
+                  var(--bg); line-height:1.6;}
+  img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
+  .container{width:min(100%,var(--container));margin-inline:auto;padding-inline:20px}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  h1,h2,h3{line-height:1.15;margin:0 0 10px} h1{font-size:clamp(32px,4vw,56px)} h2{font-size:clamp(24px,3vw,36px)} h3{font-size:20px}
+
+  /* ----- Topbar ----- */
+  .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(11,11,16,.6);
+          border-bottom:1px solid rgba(124,92,255,.15)}
+  .brand{font-weight:800;letter-spacing:.3px}.brand span{color:var(--brand)}
+  .nav a{opacity:.9;margin-left:18px}.nav .btn{margin-left:8px}
+
+  /* Buttons */
+  .btn{display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.12);
+       background:transparent;transition:transform .08s,background .2s,border-color .2s}
+  .btn--primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#0b0b10;font-weight:700;border:none}
+  .btn--ghost:hover{background:rgba(255,255,255,.06)} .btn--primary:hover{transform:translateY(-1px)}
+  .btn--lg{padding:14px 24px;font-size:18px}
+
+  /* Chips */
+  .chips{list-style:none;padding:0;margin:16px 0 0;display:flex;gap:10px;flex-wrap:wrap}
+  .chips li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+  /* Hero */
+  .hero{padding:80px 0 60px}
+  .hero__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+  .eyebrow{color:var(--brand-2);font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:12px;margin:0 0 10px}
+  .hero .sub{color:var(--muted);margin:10px 0 18px}
+  .accent{color:var(--brand);text-shadow:0 0 20px rgba(124,92,255,.35)}
+  .cta{display:flex;gap:10px;margin:12px 0 4px}
+
+  .hero__visual{position:relative;border-radius:var(--br);overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0));
+                border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+  .hero__visual img{width:100%;height:auto;object-fit:cover}
+  .glow{position:absolute;inset:auto -20% -20% -20%;height:200px;background:radial-gradient(60% 60% at 50% 0%,rgba(124,92,255,.35),transparent 70%);filter:blur(30px)}
+
+  /* Sections */
+  .section{padding:72px 0} .section.alt{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,0))}
+  .section__sub{color:var(--muted);margin:6px 0 26px}
+
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:var(--br);box-shadow:var(--shadow);min-height:140px}
+  .card p{color:var(--muted);margin:6px 0 0}
+
+  /* Process */
+  .steps{margin:18px 0 0;padding-left:20px} .steps li{margin:8px 0}
+
+  /* Pricing */
+  .pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .price{position:relative;background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:var(--br);padding:20px;box-shadow:var(--shadow)}
+  .price__value{font-size:22px;margin:6px 0 14px}
+  .price__list{margin:0 0 14px 18px}
+  .ribbon{position:absolute;top:14px;right:14px;background:linear-gradient(90deg,var(--brand),var(--brand-2));
+          color:#0b0b10;font-weight:800;font-size:12px;padding:6px 10px;border-radius:999px}
+
+  /* CTA */
+  .section.cta{padding:84px 0}
+  .cta__box{text-align:center;background:linear-gradient(180deg,rgba(124,92,255,.15),rgba(124,92,255,0));
+            border:1px solid rgba(124,92,255,.25);border-radius:calc(var(--br) + 6px);padding:36px;box-shadow:var(--shadow)}
+
+  /* FAQ */
+  details{border:1px solid rgba(255,255,255,.1);background:var(--panel);border-radius:12px;padding:14px 16px;margin:10px 0}
+  details p{color:var(--muted);margin:10px 0 0}
+
+  /* Footer */
+  .footer{padding:24px 0 40px;color:var(--muted)} .back{opacity:.8} .back:hover{opacity:1}
+
+  /* Responsive */
+  @media (max-width:960px){ .hero__grid{grid-template-columns:1fr} .cards{grid-template-columns:1fr 1fr} .pricing{grid-template-columns:1fr} }
+  @media (max-width:560px){ .nav a:not(.btn){display:none} .chips{gap:8px} .cards{grid-template-columns:1fr} }
+  </style>
 </head>
 <body>
 
-  <!-- Topbar / Nav -->
-  <header class="topbar">
-    <div class="container row">
-      <a class="brand" href="#top" aria-label="Evida Studio">Evida <span>Studio</span></a>
-      <nav class="nav">
-        <a href="#niches">Niches</a>
-        <a href="#process">Process</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn--primary" href="#cta">Get in touch</a>
-      </nav>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="container row">
+    <a class="brand" href="#top">Evida <span>Studio</span></a>
+    <nav class="nav">
+      <a href="#niches">Niches</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--primary" href="#cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <section id="top" class="hero">
-    <div class="container hero__grid">
-      <div class="hero__copy">
-        <p class="eyebrow">Webflow designer for service pros</p>
-        <h1>Websites that turn visits into <span class="accent">booked calls</span>.</h1>
-        <p class="sub">Psychologists • Trainers • Lawyers • Real Estate. <br> 24h proposal • 2-week average build • Webflow + on-page SEO.</p>
-        <div class="cta">
-          <a class="btn btn--primary" href="#cta">Get my proposal</a>
-          <a class="btn btn--ghost" href="#work">See approach</a>
-        </div>
-        <ul class="chips">
-          <li>Conversion-first</li>
-          <li>Mobile-perfect</li>
-          <li>Fast & SEO-ready</li>
-          <li>Transparent pricing</li>
+<section id="top" class="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">Webflow designer for service pros</p>
+      <h1>Websites that turn visits into <span class="accent">booked calls</span>.</h1>
+      <p class="sub">Psychologists • Trainers • Lawyers • Real Estate.<br> 24h proposal • 2-week average build • Webflow + on-page SEO.</p>
+      <div class="cta">
+        <a class="btn btn--primary" href="#cta">Get my proposal</a>
+        <a class="btn btn--ghost" href="#work">See approach</a>
+      </div>
+      <ul class="chips">
+        <li>Conversion-first</li><li>Mobile-perfect</li><li>Fast & SEO-ready</li><li>Transparent pricing</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual">
+      <img src="./fotis-hero.png" alt="Fotis — Web designer" loading="eager">
+      <div class="glow" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section id="niches" class="section">
+  <div class="container">
+    <h2>Built for service professionals</h2>
+    <p class="section__sub">Different niches, same goal: more qualified calls.</p>
+    <div class="cards">
+      <article class="card"><h3>Psychologists</h3><p>Trust-driven layout & HIPAA-aware forms.</p></article>
+      <article class="card"><h3>Trainers & Gyms</h3><p>Before/after, packages, schedule embeds.</p></article>
+      <article class="card"><h3>Lawyers</h3><p>Clear practice areas & authority signals.</p></article>
+      <article class="card"><h3>Real Estate / Villas</h3><p>Property pages, lead capture, booking flows.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="section alt">
+  <div class="container">
+    <h2>The 2-week build</h2>
+    <ol class="steps">
+      <li><strong>Day 1:</strong> Strategy call & outline. Proposal in 24h.</li>
+      <li><strong>Days 2–5:</strong> Wireframes & copy framework.</li>
+      <li><strong>Days 6–10:</strong> Webflow build + on-page SEO.</li>
+      <li><strong>Days 11–14:</strong> QA, launch, tracking, handover video.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="pricing" class="section">
+  <div class="container">
+    <h2>Transparent pricing</h2>
+    <p class="section__sub">Start lean, scale as you grow.</p>
+    <div class="pricing">
+      <article class="price">
+        <div class="ribbon">Most picked</div>
+        <h3>Launch</h3>
+        <p class="price__value">From <strong>$900</strong></p>
+        <ul class="price__list">
+          <li>1–4 pages</li><li>Webflow build + on-page SEO</li><li>Basic analytics & forms</li><li>Launch support</li>
         </ul>
-      </div>
-
-      <div class="hero__visual">
-        <picture>
-          <source type="image/avif" srcset="/assets/fotis-hero.avif">
-          <source type="image/webp" srcset="/assets/fotis-hero.webp">
-          <img src="/assets/fotis-hero.jpg" alt="Fotis — Web designer building a conversion-focused Webflow site" loading="eager">
-        </picture>
-        <div class="glow" aria-hidden="true"></div>
-      </div>
+        <a class="btn btn--primary" href="#cta">Start with Launch</a>
+      </article>
+      <article class="price">
+        <h3>Growth</h3>
+        <p class="price__value">From <strong>$1,600</strong></p>
+        <ul class="price__list">
+          <li>Up to 7 pages</li><li>Copy help + CMS setup</li><li>Speed & SEO enhancements</li><li>2 weeks post-launch tweaks</li>
+        </ul>
+        <a class="btn btn--ghost" href="#cta">Ask for proposal</a>
+      </article>
     </div>
-  </section>
+    <p class="note">* Webflow hosting billed separately. Exact quote after the 20-min strategy call.</p>
+  </div>
+</section>
 
-  <!-- Niches / Who I help -->
-  <section id="niches" class="section">
-    <div class="container">
-      <h2>Built for service professionals</h2>
-      <p class="section__sub">Different niches, same goal: more qualified calls.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Psychologists</h3>
-          <p>Trust-driven layout, HIPAA-aware forms, appointment flow that reduces friction.</p>
-        </article>
-        <article class="card">
-          <h3>Personal Trainers & Gyms</h3>
-          <p>Before/after galleries, packages, schedule embeds, high-impact CTAs.</p>
-        </article>
-        <article class="card">
-          <h3>Lawyers</h3>
-          <p>Clear practice areas, authority signals, case-study structure for credibility.</p>
-        </article>
-        <article class="card">
-          <h3>Real Estate / Villas (US)</h3>
-          <p>Property pages, lead capture, fast image pipelines, map & booking flows.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<section id="faq" class="section alt">
+  <div class="container">
+    <h2>FAQ</h2>
+    <details><summary>Can you deliver faster than 2 weeks?</summary><p>Yes, with focused scope & instant feedback.</p></details>
+    <details><summary>Do you handle copy?</summary><p>I provide a conversion-ready framework and refine with you.</p></details>
+    <details><summary>Will my site be SEO-ready?</summary><p>Clean HTML, meta tags, schema where relevant, speed passes.</p></details>
+  </div>
+</section>
 
-  <!-- Process -->
-  <section id="process" class="section alt">
-    <div class="container">
-      <h2>The 2-week build</h2>
-      <ol class="steps">
-        <li><strong>Day 1:</strong> Strategy call & site outline. You get your proposal in 24h.</li>
-        <li><strong>Days 2-5:</strong> Wireframes & copy framework. Quick approvals.</li>
-        <li><strong>Days 6-10:</strong> Build in Webflow + on-page SEO & speed passes.</li>
-        <li><strong>Days 11-14:</strong> QA, polish, launch, tracking & handover video.</li>
-      </ol>
-    </div>
-  </section>
+<section id="cta" class="section cta">
+  <div class="container cta__box">
+    <h2>Get your 24-hour proposal</h2>
+    <p>Tell me about your business and goals. I’ll reply with scope, timeline and price.</p>
+    <a class="btn btn--primary btn--lg" href="mailto:hello@evidastudio.com?subject=Project%20Inquiry%20—%20Evida%20Studio">Email me</a>
+  </div>
+</section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="section">
-    <div class="container">
-      <h2>Transparent pricing</h2>
-      <p class="section__sub">Start lean, scale as you grow.</p>
-      <div class="pricing">
-        <article class="price">
-          <div class="ribbon">Most picked</div>
-          <h3>Launch</h3>
-          <p class="price__value">From <strong>$900</strong></p>
-          <ul class="price__list">
-            <li>1–4 pages</li>
-            <li>Webflow build + on-page SEO</li>
-            <li>Basic analytics & forms</li>
-            <li>Launch support</li>
-          </ul>
-          <a class="btn btn--primary" href="#cta">Start with Launch</a>
-        </article>
-        <article class="price">
-          <h3>Growth</h3>
-          <p class="price__value">From <strong>$1,600</strong></p>
-          <ul class="price__list">
-            <li>Up to 7 pages</li>
-            <li>Copy help + CMS setup</li>
-            <li>Speed & SEO enhancements</li>
-            <li>2 weeks post-launch tweaks</li>
-          </ul>
-          <a class="btn btn--ghost" href="#cta">Ask for proposal</a>
-        </article>
-      </div>
-      <p class="note">* Webflow hosting billed separately. Exact quote after the 20-min strategy call.</p>
-    </div>
-  </section>
+<footer class="footer">
+  <div class="container row">
+    <p>© <span id="y"></span> Evida Studio — Webflow sites that book calls</p>
+    <a href="#top" class="back">Back to top ↑</a>
+  </div>
+</footer>
 
-  <!-- FAQ -->
-  <section id="faq" class="section alt">
-    <div class="container">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Can you deliver faster than 2 weeks?</summary>
-        <p>Yes, with focused scope and instant feedback. Ask for a rush slot.</p>
-      </details>
-      <details>
-        <summary>Do you handle copy?</summary>
-        <p>I provide a conversion-ready copy framework and refine with you.</p>
-      </details>
-      <details>
-        <summary>Will my site be SEO-ready?</summary>
-        <p>Yes: clean HTML, meta tags, schema where relevant, and speed passes.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section id="cta" class="section cta">
-    <div class="container cta__box">
-      <h2>Get your 24-hour proposal</h2>
-      <p>Tell me about your business and goals. I’ll reply with scope, timeline and price.</p>
-      <a class="btn btn--primary btn--lg" href="mailto:hello@evidastudio.com?subject=Project%20Inquiry%20—%20Evida%20Studio">Email me</a>
-      <!-- Εναλλακτικά βάζεις Netlify form -->
-      <!--
-      <form name="contact" method="POST" data-netlify="true" class="form">
-        <input type="hidden" name="form-name" value="contact">
-        <input name="name" placeholder="Your name" required>
-        <input name="email" type="email" placeholder="Email" required>
-        <textarea name="about" placeholder="Tell me about your project" rows="4"></textarea>
-        <button class="btn btn--primary" type="submit">Send</button>
-      </form>
-      -->
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container row">
-      <p>© <span id="y"></span> Evida Studio — Webflow sites that book calls</p>
-      <a href="#top" class="back">Back to top ↑</a>
-    </div>
-  </footer>
-
-  <script>
-    // μικρό QoL
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
