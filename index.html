@@ -3,210 +3,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Evida Studio — Webflow sites that book calls</title>
-  <meta name="description" content="Conversion-first Webflow websites for service professionals. 24h proposal, 2-week average build, on-page SEO included.">
-  <!-- Προαιρετικά κρατάμε και το εξωτερικό CSS με cache-buster.
-       Αν δεν φορτώσει, το inline CSS από κάτω καλύπτει τα πάντα. -->
-  <link rel="stylesheet" href="./styles.css?v=3">
+  <title>Dr. Jane Miller — Licensed Psychologist in NYC</title>
+  <meta name="description" content="Licensed psychologist in New York City. Helping you manage anxiety, improve relationships, and navigate life transitions. In-person in Midtown and secure telehealth across NY.">
+  <link rel="stylesheet" href="./styles.css">
 
-  <style>
-  /* ----- Tokens ----- */
-  :root { --bg:#0b0b10; --panel:#10121a; --text:#e9ecf1; --muted:#a8b0bd;
-          --brand:#7c5cff; --brand-2:#22d3ee; --ok:#10b981; --warn:#f59e0b; --danger:#ef4444;
-          --br:16px; --shadow:0 10px 30px rgba(0,0,0,.35); --container:1100px; }
+  <!-- Fonts (προαιρετικό) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 
-  /* ----- Base ----- */
-  *{box-sizing:border-box} html,body{height:100%}
-  body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-       margin:0;color:var(--text);
-       background:radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.2), transparent 60%),
-                  radial-gradient(800px 400px at 90% 10%, rgba(34,211,238,.15), transparent 60%),
-                  var(--bg); line-height:1.6;}
-  img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
-  .container{width:min(100%,var(--container));margin-inline:auto;padding-inline:20px}
-  .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  h1,h2,h3{line-height:1.15;margin:0 0 10px} h1{font-size:clamp(32px,4vw,56px)} h2{font-size:clamp(24px,3vw,36px)} h3{font-size:20px}
-
-  /* ----- Topbar ----- */
-  .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(11,11,16,.6);
-          border-bottom:1px solid rgba(124,92,255,.15)}
-  .brand{font-weight:800;letter-spacing:.3px}.brand span{color:var(--brand)}
-  .nav a{opacity:.9;margin-left:18px}.nav .btn{margin-left:8px}
-
-  /* Buttons */
-  .btn{display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.12);
-       background:transparent;transition:transform .08s,background .2s,border-color .2s}
-  .btn--primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#0b0b10;font-weight:700;border:none}
-  .btn--ghost:hover{background:rgba(255,255,255,.06)} .btn--primary:hover{transform:translateY(-1px)}
-  .btn--lg{padding:14px 24px;font-size:18px}
-
-  /* Chips */
-  .chips{list-style:none;padding:0;margin:16px 0 0;display:flex;gap:10px;flex-wrap:wrap}
-  .chips li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
-
-  /* Hero */
-  .hero{padding:80px 0 60px}
-  .hero__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
-  .eyebrow{color:var(--brand-2);font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:12px;margin:0 0 10px}
-  .hero .sub{color:var(--muted);margin:10px 0 18px}
-  .accent{color:var(--brand);text-shadow:0 0 20px rgba(124,92,255,.35)}
-  .cta{display:flex;gap:10px;margin:12px 0 4px}
-
-  .hero__visual{position:relative;border-radius:var(--br);overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0));
-                border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
-  .hero__visual img{width:100%;height:auto;object-fit:cover}
-  .glow{position:absolute;inset:auto -20% -20% -20%;height:200px;background:radial-gradient(60% 60% at 50% 0%,rgba(124,92,255,.35),transparent 70%);filter:blur(30px)}
-
-  /* Sections */
-  .section{padding:72px 0} .section.alt{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,0))}
-  .section__sub{color:var(--muted);margin:6px 0 26px}
-
-  /* Cards */
-  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:var(--br);box-shadow:var(--shadow);min-height:140px}
-  .card p{color:var(--muted);margin:6px 0 0}
-
-  /* Process */
-  .steps{margin:18px 0 0;padding-left:20px} .steps li{margin:8px 0}
-
-  /* Pricing */
-  .pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .price{position:relative;background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:var(--br);padding:20px;box-shadow:var(--shadow)}
-  .price__value{font-size:22px;margin:6px 0 14px}
-  .price__list{margin:0 0 14px 18px}
-  .ribbon{position:absolute;top:14px;right:14px;background:linear-gradient(90deg,var(--brand),var(--brand-2));
-          color:#0b0b10;font-weight:800;font-size:12px;padding:6px 10px;border-radius:999px}
-
-  /* CTA */
-  .section.cta{padding:84px 0}
-  .cta__box{text-align:center;background:linear-gradient(180deg,rgba(124,92,255,.15),rgba(124,92,255,0));
-            border:1px solid rgba(124,92,255,.25);border-radius:calc(var(--br) + 6px);padding:36px;box-shadow:var(--shadow)}
-
-  /* FAQ */
-  details{border:1px solid rgba(255,255,255,.1);background:var(--panel);border-radius:12px;padding:14px 16px;margin:10px 0}
-  details p{color:var(--muted);margin:10px 0 0}
-
-  /* Footer */
-  .footer{padding:24px 0 40px;color:var(--muted)} .back{opacity:.8} .back:hover{opacity:1}
-
-  /* Responsive */
-  @media (max-width:960px){ .hero__grid{grid-template-columns:1fr} .cards{grid-template-columns:1fr 1fr} .pricing{grid-template-columns:1fr} }
-  @media (max-width:560px){ .nav a:not(.btn){display:none} .chips{gap:8px} .cards{grid-template-columns:1fr} }
-  </style>
+  <!-- Social cards -->
+  <meta property="og:title" content="Dr. Jane Miller — Licensed Psychologist in NYC">
+  <meta property="og:description" content="Helping you manage anxiety, improve relationships, and navigate life transitions.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/hero-psychologist.jpg">
 </head>
 <body>
 
-<header class="topbar">
-  <div class="container row">
-    <a class="brand" href="#top">Evida <span>Studio</span></a>
-    <nav class="nav">
-      <a href="#niches">Niches</a>
-      <a href="#process">Process</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn--primary" href="#cta">Get in touch</a>
-    </nav>
-  </div>
-</header>
+  <!-- Rounded topbar -->
+  <header class="topbar">
+    <div class="container row">
+      <a href="#top" class="brand-badge">Dr. Jane Miller</a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<section id="top" class="hero">
-  <div class="container hero__grid">
-    <div class="hero__copy">
-      <p class="eyebrow">Webflow designer for service pros</p>
-      <h1>Websites that turn visits into <span class="accent">booked calls</span>.</h1>
-      <p class="sub">Psychologists • Trainers • Lawyers • Real Estate.<br> 24h proposal • 2-week average build • Webflow + on-page SEO.</p>
-      <div class="cta">
-        <a class="btn btn--primary" href="#cta">Get my proposal</a>
-        <a class="btn btn--ghost" href="#work">See approach</a>
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1 class="display">
+          Licensed Psychologist in<br>New York City
+        </h1>
+        <p class="subtitle">Dr. Jane Miller, PhD</p>
+        <p class="lead">
+          Helping you manage anxiety, improve relationships, and navigate life transitions.
+        </p>
+        <p class="meta">
+          In-person in Midtown and secure telehealth across New York.<br>
+          10+ years experience • NY License #0184726 • Accepting new clients
+        </p>
+        <div class="cta">
+          <a class="btn btn--teal btn--lg" href="#contact">Book a Free 15-min Call</a>
+        </div>
       </div>
-      <ul class="chips">
-        <li>Conversion-first</li><li>Mobile-perfect</li><li>Fast & SEO-ready</li><li>Transparent pricing</li>
-      </ul>
+
+      <div class="hero__visual card-portrait">
+        <picture>
+          <!-- αν φτιάξεις και avif/webp, πρόσθεσέ τα εδώ ως sources -->
+          <img
+            src="./assets/hero-psychologist.jpg"
+            alt="Portrait of Dr. Jane Miller, Licensed Psychologist in NYC"
+            loading="eager"
+            class="portrait"
+          >
+        </picture>
+      </div>
     </div>
+  </section>
 
-    <div class="hero__visual">
-      <img src="./fotis-hero.png" alt="Fotis — Web designer" loading="eager">
-      <div class="glow" aria-hidden="true"></div>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Individual Therapy</h3>
+          <p>Evidence-based CBT/ACT to reduce anxiety, build resilience, and improve daily functioning.</p>
+        </article>
+        <article class="card">
+          <h3>Couples Therapy</h3>
+          <p>Communication tools and structured sessions to rebuild trust and closeness.</p>
+        </article>
+        <article class="card">
+          <h3>Life Transitions</h3>
+          <p>Support through career changes, grief, and major milestones with practical coping plans.</p>
+        </article>
+        <article class="card">
+          <h3>Telehealth (NY)</h3>
+          <p>Secure video sessions for convenience and continuity of care across New York State.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="niches" class="section">
-  <div class="container">
-    <h2>Built for service professionals</h2>
-    <p class="section__sub">Different niches, same goal: more qualified calls.</p>
-    <div class="cards">
-      <article class="card"><h3>Psychologists</h3><p>Trust-driven layout & HIPAA-aware forms.</p></article>
-      <article class="card"><h3>Trainers & Gyms</h3><p>Before/after, packages, schedule embeds.</p></article>
-      <article class="card"><h3>Lawyers</h3><p>Clear practice areas & authority signals.</p></article>
-      <article class="card"><h3>Real Estate / Villas</h3><p>Property pages, lead capture, booking flows.</p></article>
+  <!-- APPROACH -->
+  <section id="approach" class="section alt">
+    <div class="container">
+      <h2>My Approach</h2>
+      <ol class="steps">
+        <li><strong>First call:</strong> clarify goals, logistics, fit.</li>
+        <li><strong>Assessment:</strong> history, patterns, measurement baseline.</li>
+        <li><strong>Plan:</strong> tailored therapy roadmap with measurable checkpoints.</li>
+        <li><strong>Progress:</strong> practical tools, worksheets, and regular reviews.</li>
+      </ol>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="process" class="section alt">
-  <div class="container">
-    <h2>The 2-week build</h2>
-    <ol class="steps">
-      <li><strong>Day 1:</strong> Strategy call & outline. Proposal in 24h.</li>
-      <li><strong>Days 2–5:</strong> Wireframes & copy framework.</li>
-      <li><strong>Days 6–10:</strong> Webflow build + on-page SEO.</li>
-      <li><strong>Days 11–14:</strong> QA, launch, tracking, handover video.</li>
-    </ol>
-  </div>
-</section>
-
-<section id="pricing" class="section">
-  <div class="container">
-    <h2>Transparent pricing</h2>
-    <p class="section__sub">Start lean, scale as you grow.</p>
-    <div class="pricing">
-      <article class="price">
-        <div class="ribbon">Most picked</div>
-        <h3>Launch</h3>
-        <p class="price__value">From <strong>$900</strong></p>
-        <ul class="price__list">
-          <li>1–4 pages</li><li>Webflow build + on-page SEO</li><li>Basic analytics & forms</li><li>Launch support</li>
-        </ul>
-        <a class="btn btn--primary" href="#cta">Start with Launch</a>
-      </article>
-      <article class="price">
-        <h3>Growth</h3>
-        <p class="price__value">From <strong>$1,600</strong></p>
-        <ul class="price__list">
-          <li>Up to 7 pages</li><li>Copy help + CMS setup</li><li>Speed & SEO enhancements</li><li>2 weeks post-launch tweaks</li>
-        </ul>
-        <a class="btn btn--ghost" href="#cta">Ask for proposal</a>
-      </article>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Dr. Miller</h2>
+      <p class="about-text">
+        I’m a licensed psychologist with 10+ years helping adults manage anxiety and relationship challenges.
+        I blend CBT, ACT, and interpersonal therapy, focusing on practical strategies you can use immediately.
+      </p>
     </div>
-    <p class="note">* Webflow hosting billed separately. Exact quote after the 20-min strategy call.</p>
-  </div>
-</section>
+  </section>
 
-<section id="faq" class="section alt">
-  <div class="container">
-    <h2>FAQ</h2>
-    <details><summary>Can you deliver faster than 2 weeks?</summary><p>Yes, with focused scope & instant feedback.</p></details>
-    <details><summary>Do you handle copy?</summary><p>I provide a conversion-ready framework and refine with you.</p></details>
-    <details><summary>Will my site be SEO-ready?</summary><p>Clean HTML, meta tags, schema where relevant, speed passes.</p></details>
-  </div>
-</section>
+  <!-- CONTACT / CTA -->
+  <section id="contact" class="section cta">
+    <div class="container cta__box">
+      <h2>Book a Free 15-minute Call</h2>
+      <p>Share what you’re looking for. I’ll respond with availability and next steps within 24 hours.</p>
+      <a class="btn btn--teal btn--lg" href="mailto:dr.miller@example.com?subject=Free%2015-min%20Intro%20Call">Email Dr. Miller</a>
+    </div>
+  </section>
 
-<section id="cta" class="section cta">
-  <div class="container cta__box">
-    <h2>Get your 24-hour proposal</h2>
-    <p>Tell me about your business and goals. I’ll reply with scope, timeline and price.</p>
-    <a class="btn btn--primary btn--lg" href="mailto:hello@evidastudio.com?subject=Project%20Inquiry%20—%20Evida%20Studio">Email me</a>
-  </div>
-</section>
+  <footer class="footer">
+    <div class="container row">
+      <p>© <span id="y"></span> Dr. Jane Miller — Psychologist in NYC</p>
+      <a href="#top" class="back">Back to top ↑</a>
+    </div>
+  </footer>
 
-<footer class="footer">
-  <div class="container row">
-    <p>© <span id="y"></span> Evida Studio — Webflow sites that book calls</p>
-    <a href="#top" class="back">Back to top ↑</a>
-  </div>
-</footer>
-
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
