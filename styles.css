@@ -133,71 +133,203 @@ body{
   to{opacity:1; transform:none}
 }
 
-/* HERO mockup stack (5 κάρτες) */
-.hero__media{position:relative}
-.mockup-stack{
+/* HERO LAPTOP + INNER WEBSITE */
+.hero__media{
+  display:flex;
+  justify-content:flex-end;
+}
+.laptop{
   position:relative;
-  width:100%;
-  aspect-ratio:1/1;
-  min-height:420px;
-  background:transparent;
-  border:none;
-  box-shadow:none;
+  width:min(480px, 100%);
+  margin-inline:auto;
+  transform:perspective(900px) rotateX(8deg) rotateY(-12deg);
+  transform-origin:center bottom;
+  transition:transform .5s ease, box-shadow .5s ease;
 }
-.stack__item{
+.laptop:hover{
+  transform:perspective(900px) rotateX(4deg) rotateY(-8deg) translateY(-6px);
+}
+
+/* screen */
+.laptop__screen{
+  background:radial-gradient(circle at top left,#202634,#11131c 60%);
+  border-radius:18px 18px 14px 14px;
+  padding:10px;
+  box-shadow:0 26px 70px rgba(0,0,0,.7);
+}
+/* little camera dot */
+.laptop__screen::before{
+  content:"";
+  width:6px; height:6px;
+  border-radius:50%;
+  background:rgba(255,255,255,.35);
   position:absolute;
-  width:66%;
-  aspect-ratio:16/10;
-  border-radius:16px;
-  overflow:hidden;
-  border:0;
-  box-shadow:0 18px 60px rgba(0,0,0,.45);
-  transform-origin:center;
-  animation:float 8s ease-in-out infinite;
-  transition:transform .25s, box-shadow .25s, filter .25s, z-index .1s;
+  top:6px; left:50%;
+  transform:translateX(-50%);
+  opacity:.7;
 }
 
-/* Κοινό στιλ εικόνων */
-.stack__item img{
-  width:100%; height:100%;
-  object-fit:cover; display:block;
+/* base */
+.laptop__base{
+  height:16px;
+  border-radius:0 0 26px 26px;
+  margin:0 auto;
+  background:linear-gradient(90deg,#606673,#a0a5b6,#606673);
+  box-shadow:0 8px 18px rgba(0,0,0,.7);
 }
 
-/* Θέσεις/γωνίες 5 καρτών */
-.stack__item.i1{ top:-6%; right:6%;  --r:-4deg;  transform:rotate(var(--r)); }
-.stack__item.i2{ top:12%; right:0%;  --r: 3deg;  transform:rotate(var(--r)); animation-delay:.4s; }
-.stack__item.i3{ top:30%; right:10%; --r:-6deg; transform:rotate(var(--r)); animation-delay:.8s; }
-.stack__item.i4{ top:50%; right:18%; --r: 2deg;  transform:rotate(var(--r)); animation-delay:1.2s; }
-.stack__item.i5{ top:64%; right:4%;  --r:-2deg; transform:rotate(var(--r)); animation-delay:1.6s; }
-
-/* Απαλή αιώρηση */
-@keyframes float{
-  0%{transform:translateY(0) rotate(var(--r,0deg))}
-  50%{transform:translateY(-6px) rotate(var(--r,0deg))}
-  100%{transform:translateY(0) rotate(var(--r,0deg))}
+/* Inner preview site */
+.preview-site{
+  background:linear-gradient(135deg,#141824,#141722);
+  border-radius:12px;
+  padding:12px 14px 10px;
+  border:1px solid rgba(255,255,255,.06);
+  color:#f7f8fc;
+  font-size:11px;
 }
 
-/* Hover: +10% μέγεθος & πρώτο πλάνο */
-.stack__item:hover{
-  animation-play-state:paused;
-  transform:rotate(var(--r)) translateY(-6px) scale(1.1);
-  box-shadow:0 30px 90px rgba(0,0,0,.6);
-  filter:saturate(1.05);
-  z-index:20;
+/* Top nav */
+.preview-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.preview-logo{
+  font-weight:700;
+  letter-spacing:.02em;
+  font-size:11px;
+}
+.preview-menu{
+  display:flex;
+  gap:10px;
+  opacity:.72;
+}
+.preview-menu span{
+  white-space:nowrap;
+}
+.preview-btn{
+  border-radius:999px;
+  border:none;
+  padding:6px 10px;
+  font-size:10px;
+  font-weight:600;
+  cursor:pointer;
+  white-space:nowrap;
+  background:rgba(255,255,255,.08);
+  color:#f7f8fc;
+}
+.preview-btn--primary{
+  background:linear-gradient(90deg,var(--brand),var(--brand-2));
+  color:#000;
+}
+.preview-btn--ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.18);
+}
+.preview-btn--small{
+  padding:5px 9px;
+  font-size:9px;
 }
 
+/* Hero area inside screen */
+.preview-hero{
+  display:grid;
+  grid-template-columns:1.25fr .9fr;
+  gap:12px;
+  margin-bottom:10px;
+}
 @media(max-width:900px){
-  .mockup-stack{min-height:360px; aspect-ratio:4/3}
-  .stack__item{width:78%}
-  .stack__item.i1{ top:-8%; right:8% }
-  .stack__item.i2{ top:10%; right:2% }
-  .stack__item.i3{ top:32%; right:12% }
-  .stack__item.i4{ top:52%; right:18% }
-  .stack__item.i5{ top:68%; right:6% }
+  .preview-hero{grid-template-columns:1fr}
 }
-@media(max-width:560px){
-  .mockup-stack{min-height:300px}
-  .stack__item{width:86%}
+
+.preview-hero__copy h2{
+  font-size:12px;
+  margin:0 0 4px;
+}
+.preview-hero__copy p{
+  font-size:10px;
+  margin:0 0 6px;
+  color:#d3d7e7;
+}
+.preview-hero__cta{
+  display:flex;
+  gap:6px;
+  margin-bottom:4px;
+}
+.preview-bullets{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:2px;
+}
+.preview-bullets li{
+  position:relative;
+  padding-left:12px;
+  font-size:9px;
+  color:#c3c8dc;
+}
+.preview-bullets li::before{
+  content:"•";
+  position:absolute;
+  left:0; top:0;
+  color:var(--accent);
+}
+
+/* Card δεξιά */
+.preview-hero__card{
+  background:radial-gradient(circle at top left,#20273a,#131826);
+  border-radius:10px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.12);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:6px;
+}
+.card-avatar{
+  width:26px; height:26px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#f7caa6,#e58c7e);
+}
+.card-text{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.card-name{
+  font-size:10px;
+  font-weight:600;
+}
+.card-role{
+  font-size:9px;
+  color:#c4c8da;
+}
+.card-quote{
+  font-size:9px;
+  color:#dadff3;
+  margin:2px 0 4px;
+}
+
+/* strip */
+.preview-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:4px;
+}
+.preview-pill{
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  font-size:9px;
+  color:#d6daea;
+}
+.preview-social{
+  font-size:9px;
+  color:#c3c8dc;
+  opacity:.9;
 }
 
 /* Sections */
@@ -361,7 +493,7 @@ input:focus,textarea:focus{
   transform:translateY(-2px);
 }
 
-/* Respect reduced motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important; transition:none!important}
 }
