@@ -8,14 +8,15 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body id="top">
 
   <!-- Header -->
   <header class="site-header">
     <div class="container header__inner">
-      <a class="brand" href="/">Evida <span>Studio</span></a>
+      <a class="brand" href="#top">Evida <span>Studio</span></a>
       <nav class="nav">
         <a href="#work">Portfolio</a>
+        <a href="#about">About</a>
         <a href="#services">Υπηρεσίες</a>
         <a href="#process">Process</a>
         <a href="#contact" class="btn btn--small">Get in touch</a>
@@ -158,6 +159,34 @@
     </div>
   </section>
 
+  <!-- ABOUT / FOTIS -->
+  <section id="about" class="about">
+    <div class="container about__inner">
+      <div class="about__image reveal">
+        <img src="fotis-hero.png" alt="Fotis — Webflow designer for service pros" />
+      </div>
+      <div class="about__copy reveal">
+        <p class="eyebrow">Who you'll work with</p>
+        <h2>Γεια, είμαι ο Fotis — Webflow designer για ανθρώπους που πουλάνε υπηρεσίες.</h2>
+        <p>
+          Έχω background στο business &amp; marketing και χτίζω sites για επαγγελματίες
+          που θέλουν λιγότερο “όμορφο brochure” και περισσότερο
+          <strong>μηχανή που κλείνει ραντεβού</strong>.
+        </p>
+        <ul class="about__list">
+          <li>Εστιάζω σε ψυχολόγους, personal trainers, δικηγόρους &amp; real estate.</li>
+          <li>Δουλεύω με Webflow, καθαρό layout και ξεκάθαρα CTA.</li>
+          <li>Στόχος: να κάνουμε τον ιδανικό πελάτη σου να πει “οκ, αυτός/αυτή είναι για μένα”.</li>
+        </ul>
+        <p class="about__note">
+          Δεν χρησιμοποιώ generic templates. Κάθε project ξεκινάει από το
+          positioning σου, τα πακέτα σου και το πώς κλείνεις ήδη πελάτες —
+          και μετά το site δουλεύει υπέρ σου 24/7.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section id="services" class="services">
     <div class="container">
@@ -229,6 +258,11 @@
     </div>
   </section>
 
+  <!-- Floating back-to-top arrow -->
+  <a href="#top" class="scroll-top" aria-label="Back to top">
+    ↑
+  </a>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer__inner">
@@ -255,6 +289,17 @@
     );
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Floating back-to-top arrow visibility
+    const scrollBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      if (!scrollBtn) return;
+      if (window.scrollY > 260) {
+        scrollBtn.classList.add('scroll-top--visible');
+      } else {
+        scrollBtn.classList.remove('scroll-top--visible');
+      }
+    });
   </script>
 
 </body>
