@@ -533,6 +533,31 @@ input:focus,textarea:focus{
   transform:translateY(-2px);
 }
 
+/* Scroll reveal base */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal--visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Stagger για grids */
+.portfolio-card.reveal:nth-child(2){transition-delay:0.08s;}
+.portfolio-card.reveal:nth-child(3){transition-delay:0.16s;}
+.portfolio-card.reveal:nth-child(4){transition-delay:0.24s;}
+.portfolio-card.reveal:nth-child(5){transition-delay:0.32s;}
+
+.feature.reveal:nth-child(2){transition-delay:0.08s;}
+.feature.reveal:nth-child(3){transition-delay:0.16s;}
+.feature.reveal:nth-child(4){transition-delay:0.24s;}
+
+.steps li.reveal:nth-child(2){transition-delay:0.08s;}
+.steps li.reveal:nth-child(3){transition-delay:0.16s;}
+.steps li.reveal:nth-child(4){transition-delay:0.24s;}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important; transition:none!important}
