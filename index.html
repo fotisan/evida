@@ -130,27 +130,27 @@
       </div>
 
       <div class="portfolio-grid">
-        <a class="portfolio-card" href="#">
+        <a class="portfolio-card reveal" href="#">
           <img src="mock-psych-1.png" alt="Psychologist Website Mockup" />
           <div class="portfolio-label">Psychologist</div>
         </a>
 
-        <a class="portfolio-card" href="#">
+        <a class="portfolio-card reveal" href="#">
           <img src="mock-psych-2.png" alt="Psychologist Website 2 Mockup" />
           <div class="portfolio-label">Psychologist</div>
         </a>
 
-        <a class="portfolio-card" href="#">
+        <a class="portfolio-card reveal" href="#">
           <img src="mock-derma-1.png" alt="Dermatologist Website Mockup" />
           <div class="portfolio-label">Dermatologist</div>
         </a>
 
-        <a class="portfolio-card" href="#">
+        <a class="portfolio-card reveal" href="#">
           <img src="mock-law-1.png" alt="Law Firm Website Mockup" />
           <div class="portfolio-label">Law Firm</div>
         </a>
 
-        <a class="portfolio-card" href="#">
+        <a class="portfolio-card reveal" href="#">
           <img src="mock-villa-1.png" alt="Villa / Real Estate Website Mockup" />
           <div class="portfolio-label">Real Estate</div>
         </a>
@@ -167,19 +167,19 @@
       </div>
 
       <div class="features">
-        <div class="feature">
+        <div class="feature reveal">
           <h3>Webflow Build</h3>
           <p>Καθαρή αρχιτεκτονική, responsive, ταχύτητα &amp; προσβασιμότητα.</p>
         </div>
-        <div class="feature">
+        <div class="feature reveal">
           <h3>On-page SEO</h3>
           <p>Meta, headings, schema όπου χρειάζεται, clean URLs.</p>
         </div>
-        <div class="feature">
+        <div class="feature reveal">
           <h3>Bookings</h3>
           <p>Φόρμες, Calendly/Cal.com, CTA που οδηγούν σε ραντεβού.</p>
         </div>
-        <div class="feature">
+        <div class="feature reveal">
           <h3>Μετά την παράδοση</h3>
           <p>1 εβδομάδα υποστήριξη + mini handover video με οδηγίες.</p>
         </div>
@@ -195,17 +195,17 @@
       </div>
 
       <ol class="steps">
-        <li><strong>Brief &amp; στόχοι</strong> — 30’ call για niche &amp; ιδανικό πελάτη.</li>
-        <li><strong>Wireframe</strong> — ροή που οδηγεί στο booking / contact.</li>
-        <li><strong>Design &amp; Build</strong> — πλήρης υλοποίηση σε Webflow.</li>
-        <li><strong>Launch</strong> — domain, SEO basics, analytics, handover.</li>
+        <li class="reveal"><strong>Brief &amp; στόχοι</strong> — 30’ call για niche &amp; ιδανικό πελάτη.</li>
+        <li class="reveal"><strong>Wireframe</strong> — ροή που οδηγεί στο booking / contact.</li>
+        <li class="reveal"><strong>Design &amp; Build</strong> — πλήρης υλοποίηση σε Webflow.</li>
+        <li class="reveal"><strong>Launch</strong> — domain, SEO basics, analytics, handover.</li>
       </ol>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
-    <div class="container contact__inner">
+    <div class="container contact__inner reveal">
       <div>
         <h2>Έλα να το ξεκινήσουμε</h2>
         <p class="muted">
@@ -238,7 +238,23 @@
   </footer>
 
   <script>
+    // year στο footer
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
 </body>
