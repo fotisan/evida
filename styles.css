@@ -495,7 +495,22 @@ body{
 }
 
 /* Services */
-.services{padding:40px 0}
+.services{
+  position:relative;
+  padding:50px 0;
+  overflow:hidden;
+}
+.services__bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(700px 400px at 0% 0%, rgba(110,231,255,.18), transparent 60%),
+    radial-gradient(700px 400px at 100% 20%, rgba(155,140,255,.16), transparent 60%),
+    linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,15,28,.95));
+  opacity:0.9;
+  z-index:-1;
+}
 .features{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -505,19 +520,30 @@ body{
 @media(max-width:600px){.features{grid-template-columns:1fr}}
 
 .feature{
-  background:var(--panel);
+  position:relative;
+  background:radial-gradient(circle at top left,#141827,#0d101b 60%);
   border-radius:var(--br);
   border:1px solid rgba(255,255,255,.06);
   padding:16px;
-  transition:transform .25s, box-shadow .25s, border-color .25s;
+  transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
   display:flex;
   flex-direction:column;
   gap:8px;
 }
+.feature::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  border-top:3px solid var(--feature-color, var(--brand));
+  opacity:.85;
+  pointer-events:none;
+}
 .feature:hover{
   transform:translateY(-4px);
-  box-shadow:0 16px 55px rgba(0,0,0,.35);
+  box-shadow:0 18px 60px rgba(0,0,0,.45);
   border-color:rgba(255,255,255,.16);
+  background:radial-gradient(circle at top left,#182135,#0b0e18 65%);
 }
 .feature-tag{
   font-size:.78rem;
@@ -553,6 +579,12 @@ body{
   left:0; top:0;
   color:var(--accent);
 }
+
+/* διαφορετικό χρώμα ανά κάρτα */
+.features .feature:nth-child(1){--feature-color:#6ee7ff;}
+.features .feature:nth-child(2){--feature-color:#a5b4fc;}
+.features .feature:nth-child(3){--feature-color:#fb923c;}
+.features .feature:nth-child(4){--feature-color:#4ade80;}
 
 /* Process */
 .process{padding:40px 0}
