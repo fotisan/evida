@@ -133,20 +133,59 @@ body{
   to{opacity:1; transform:none}
 }
 
-/* HERO LAPTOP + INNER WEBSITE */
+/* HERO media + glow */
 .hero__media{
   display:flex;
   justify-content:flex-end;
+  position:relative;
 }
+
+/* Glow πίσω από το laptop */
+.hero__media::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  background:radial-gradient(
+    circle at 50% 40%,
+    rgba(110,231,255,0.25),
+    transparent 60%
+  );
+  filter:blur(40px);
+  opacity:0.55;
+  animation:glowMove 9s ease-in-out infinite alternate;
+  z-index:-1;
+}
+
+@keyframes glowMove{
+  0%{transform:translate(-10px,0); opacity:0.45;}
+  100%{transform:translate(10px,-12px); opacity:0.7;}
+}
+
+/* LAPTOP + INNER WEBSITE */
 .laptop{
   position:relative;
   width:min(480px, 100%);
   margin-inline:auto;
-  transform:perspective(900px) rotateX(8deg) rotateY(-12deg);
   transform-origin:center bottom;
-  transition:transform .5s ease, box-shadow .5s ease;
+  animation:float 6s ease-in-out infinite;
+  transition:box-shadow .5s ease;
 }
+
+@keyframes float{
+  0%{
+    transform:perspective(900px) rotateX(8deg) rotateY(-12deg) translateY(0);
+  }
+  50%{
+    transform:perspective(900px) rotateX(8deg) rotateY(-12deg) translateY(-6px);
+  }
+  100%{
+    transform:perspective(900px) rotateX(8deg) rotateY(-12deg) translateY(0);
+  }
+}
+
+/* hover: παγώνει το float και κάνει πιο έντονο tilt */
 .laptop:hover{
+  animation-play-state:paused;
   transform:perspective(900px) rotateX(4deg) rotateY(-8deg) translateY(-6px);
 }
 
@@ -156,6 +195,7 @@ body{
   border-radius:18px 18px 14px 14px;
   padding:10px;
   box-shadow:0 26px 70px rgba(0,0,0,.7);
+  position:relative;
 }
 /* little camera dot */
 .laptop__screen::before{
