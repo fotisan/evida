@@ -161,32 +161,29 @@ body{
   100%{transform:translate(10px,-12px); opacity:0.7;}
 }
 
-/* LAPTOP + INNER WEBSITE */
-.laptop{
+/* LAPTOP + FLOAT + HOVER */
+.laptop-wrapper{
   position:relative;
   width:min(480px, 100%);
   margin-inline:auto;
-  transform-origin:center bottom;
   animation:float 6s ease-in-out infinite;
-  transition:box-shadow .5s ease;
+}
+
+.laptop{
+  position:relative;
+  transform:perspective(900px) rotateX(8deg) rotateY(-12deg);
+  transform-origin:center bottom;
+  transition:transform 0.45s ease;
+}
+
+.laptop:hover{
+  transform:perspective(900px) rotateX(4deg) rotateY(-6deg) scale(1.02);
 }
 
 @keyframes float{
-  0%{
-    transform:perspective(900px) rotateX(8deg) rotateY(-12deg) translateY(0);
-  }
-  50%{
-    transform:perspective(900px) rotateX(8deg) rotateY(-12deg) translateY(-6px);
-  }
-  100%{
-    transform:perspective(900px) rotateX(8deg) rotateY(-12deg) translateY(0);
-  }
-}
-
-/* hover: παγώνει το float και κάνει πιο έντονο tilt */
-.laptop:hover{
-  animation-play-state:paused;
-  transform:perspective(900px) rotateX(4deg) rotateY(-8deg) translateY(-6px);
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
 }
 
 /* screen */
