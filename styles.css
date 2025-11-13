@@ -592,20 +592,16 @@ body{
   display:grid; gap:14px;
   counter-reset:step;
 }
-.steps li{
+.step{
   list-style:none;
   padding:14px 14px 14px 50px;
   background:var(--panel);
   border-radius:var(--br);
   border:1px solid rgba(255,255,255,.08);
   position:relative;
-  transition:transform .25s, box-shadow .25s;
+  transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
 }
-.steps li:hover{
-  transform:translateY(-4px);
-  box-shadow:0 16px 55px rgba(0,0,0,.35);
-}
-.steps li::before{
+.step::before{
   counter-increment:step;
   content:counter(step);
   position:absolute; left:14px; top:14px;
@@ -614,6 +610,68 @@ body{
   background:linear-gradient(90deg,var(--brand),var(--brand-2));
   display:grid; place-items:center;
   color:#000; font-weight:700;
+}
+.step:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 55px rgba(0,0,0,.35);
+  border-color:rgba(255,255,255,.18);
+}
+
+/* header μέσα στο step */
+.step-header{
+  width:100%;
+  background:transparent;
+  border:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  cursor:pointer;
+  color:inherit;
+  text-align:left;
+}
+.step-heading{
+  font-size:.98rem;
+}
+.step-arrow{
+  font-size:1.1rem;
+  transition:transform .25s ease;
+}
+
+/* body του accordion */
+.step-body{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(4px);
+  transition:max-height .35s ease, opacity .25s ease, transform .25s ease;
+  margin-top:8px;
+}
+.step-body p{
+  margin:0 0 6px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+.step-body ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* όταν είναι open */
+.step.step--open{
+  background:#151723;
+}
+.step.step--open .step-body{
+  max-height:260px;
+  opacity:1;
+  transform:translateY(0);
+}
+.step.step--open .step-arrow{
+  transform:rotate(180deg);
 }
 
 /* Contact */
@@ -718,10 +776,6 @@ input:focus,textarea:focus{
 .feature.reveal:nth-child(2){transition-delay:0.08s;}
 .feature.reveal:nth-child(3){transition-delay:0.16s;}
 .feature.reveal:nth-child(4){transition-delay:0.24s;}
-
-.steps li.reveal:nth-child(2){transition-delay:0.08s;}
-.steps li.reveal:nth-child(3){transition-delay:0.16s;}
-.steps li.reveal:nth-child(4){transition-delay:0.24s;}
 
 /* About stagger */
 .about__copy.reveal{transition-delay:0.12s;}
