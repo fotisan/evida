@@ -7,7 +7,6 @@
   <meta name="description" content="Webflow websites για υπηρεσίες: ψυχολόγοι, personal trainers, δικηγόροι, real estate. Conversion-first σχεδιασμός που κλείνει ραντεβού." />
   <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Προφόρτωση 1ου mock για καλύτερο LCP -->
   <link rel="preload" as="image" href="assets/mock-psych-1.png" />
   <link rel="icon" href="assets/favicon.png" />
 </head>
@@ -29,14 +28,14 @@
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__copy">
-        <p class="eyebrow">Webflow designer for service pros</p>
-        <h1>Websites που <em>κλείνουν ραντεβού</em> για Ψυχολόγους, Trainers, Δικηγόρους & Real Estate</h1>
-        <p class="sub">24h πρόταση • Μ.Ο. 2 εβδομάδες • Webflow + on-page SEO</p>
-        <div class="hero__cta">
+        <p class="eyebrow r1">Webflow designer for service pros</p>
+        <h1 class="r2">Websites που <em>κλείνουν ραντεβού</em> για Ψυχολόγους, Trainers, Δικηγόρους & Real Estate</h1>
+        <p class="sub r3">24h πρόταση • Μ.Ο. 2 εβδομάδες • Webflow + on-page SEO</p>
+        <div class="hero__cta r4">
           <a class="btn" href="#contact">Ζήτησε προσφορά</a>
           <a class="btn btn--ghost" href="#work">Δες δουλειές</a>
         </div>
-        <ul class="chips">
+        <ul class="chips r5">
           <li>Psychologists</li>
           <li>Personal Trainers</li>
           <li>Lawyers</li>
@@ -44,7 +43,7 @@
         </ul>
       </div>
 
-      <!-- Μόνο mockup εικόνες δεξιά (fan-out stack) -->
+      <!-- ΜΟΝΟ οι εικόνες, χωρίς πλαίσιο γύρω τους -->
       <div class="hero__media">
         <div class="mockup-stack" aria-hidden="true">
           <figure class="stack__item i1">
@@ -150,6 +149,8 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
