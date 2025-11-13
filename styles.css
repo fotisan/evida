@@ -18,12 +18,10 @@ body{
   margin:0;
   font-family:system-ui, sans-serif;
   color:var(--text);
-
   background:
     radial-gradient(900px 600px at 10% -10%, rgba(110,231,255,.10), transparent 60%),
     radial-gradient(800px 500px at 110% 20%, rgba(155,140,255,.12), transparent 55%),
     var(--bg);
-
   animation:bgMove 24s ease-in-out infinite alternate;
 }
 @keyframes bgMove{
@@ -102,14 +100,12 @@ body{
 .r3{animation-delay:.25s}
 .r4{animation-delay:.35s}
 .r5{animation-delay:.45s}
-
 @keyframes fadeUp{
   to{opacity:1; transform:none}
 }
 
 /* SINGLE HERO MOCKUP */
 .hero__media{display:flex; justify-content:center; align-items:center}
-
 .single-mockup{
   width:80%;
   max-width:540px;
@@ -120,17 +116,14 @@ body{
   box-shadow:0 18px 60px rgba(0,0,0,.45);
   transition:transform .3s ease, box-shadow .3s ease;
 }
-
 .single-mockup:hover{
   transform:translateY(-6px) scale(1.03);
   box-shadow:0 30px 90px rgba(0,0,0,.55);
 }
-
 .single-mockup img{
   width:100%; height:auto; display:block; object-fit:cover;
   border-radius:20px;
 }
-
 @keyframes floatSingle{
   0%{transform:translateY(0)}
   50%{transform:translateY(-8px)}
@@ -162,16 +155,12 @@ body{
   box-shadow:0 18px 60px rgba(0,0,0,.35);
   border-color:rgba(255,255,255,.18);
 }
-
 .card .badge{
   position:absolute; top:10px; left:10px;
   background:rgba(0,0,0,.55);
   border:1px solid rgba(255,255,255,.2);
   padding:4px 10px; border-radius:999px;
-  overflow:hidden;
 }
-
-/* Empty placeholders */
 .card.is-empty::before{
   content:""; display:block;
   width:100%; aspect-ratio:16/10;
@@ -193,7 +182,6 @@ body{
 }
 @media(max-width:900px){.features{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.features{grid-template-columns:1fr}}
-
 .feature{
   background:var(--panel);
   border:1px solid rgba(255,255,255,.06);
@@ -240,7 +228,6 @@ body{
 .contact{padding:50px 0}
 .contact__inner{display:grid; grid-template-columns:.9fr 1.1fr; gap:24px}
 @media(max-width:900px){.contact__inner{grid-template-columns:1fr}}
-
 .form{
   display:grid; gap:14px;
   padding:18px;
