@@ -6,8 +6,6 @@
   <title>Evida Studio — Webflow sites that book calls</title>
   <meta name="description" content="Webflow websites για ψυχολόγους, personal trainers, δικηγόρους και real estate επαγγελματίες που θέλουν να κλείνουν περισσότερα ραντεβού." />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Hero εικόνα (η πάνω κάρτα) -->
-  <link rel="preload" as="image" href="mock-psych-1.png" />
 </head>
 
 <body>
@@ -34,7 +32,7 @@
 
         <h1 class="r2">
           Websites που <em>φέρνουν πελάτες</em>
-          για Ψυχολόγους, Trainers, Δικηγόρους & Real Estate
+          για Ψυχολόγους, Trainers, Δικηγόρους &amp; Real Estate
         </h1>
 
         <p class="sub r3">
@@ -54,24 +52,67 @@
         </ul>
       </div>
 
-      <!-- HERO mockup stack (5 κάρτες δεξιά) -->
+      <!-- HERO: Laptop με Generic Premium Service Website μέσα -->
       <div class="hero__media">
-        <div class="mockup-stack" aria-hidden="true">
-          <figure class="stack__item i1">
-            <img src="mock-psych-1.png" alt="" loading="eager" decoding="async" />
-          </figure>
-          <figure class="stack__item i2">
-            <img src="mock-derma-1.png" alt="" loading="lazy" decoding="async" />
-          </figure>
-          <figure class="stack__item i3">
-            <img src="mock-law-1.png" alt="" loading="lazy" decoding="async" />
-          </figure>
-          <figure class="stack__item i4">
-            <img src="mock-villa-1.png" alt="" loading="lazy" decoding="async" />
-          </figure>
-          <figure class="stack__item i5">
-            <img src="mock-psych-2.png" alt="" loading="lazy" decoding="async" />
-          </figure>
+        <div class="laptop">
+          <div class="laptop__screen">
+            <div class="preview-site">
+              <!-- top nav -->
+              <header class="preview-nav">
+                <div class="preview-logo">BrightPractice</div>
+                <nav class="preview-menu">
+                  <span>Home</span>
+                  <span>Services</span>
+                  <span>About</span>
+                  <span>Contact</span>
+                </nav>
+                <button class="preview-btn">Book a Free Consultation</button>
+              </header>
+
+              <!-- hero area -->
+              <div class="preview-hero">
+                <div class="preview-hero__copy">
+                  <h2>Grow your practice with a website that books clients for you.</h2>
+                  <p>
+                    Done-for-you Webflow websites for therapists, coaches and service professionals
+                    who want more high-quality bookings — not more “likes”.
+                  </p>
+                  <div class="preview-hero__cta">
+                    <button class="preview-btn preview-btn--primary">Book a Free Call</button>
+                    <button class="preview-btn preview-btn--ghost">See how it works</button>
+                  </div>
+                  <ul class="preview-bullets">
+                    <li>Professional, modern design</li>
+                    <li>Optimized to book more calls</li>
+                    <li>Ready in as little as 2 weeks</li>
+                  </ul>
+                </div>
+
+                <aside class="preview-hero__card">
+                  <div class="card-avatar"></div>
+                  <div class="card-text">
+                    <p class="card-name">Dr. Jane Williams</p>
+                    <p class="card-role">Licensed Psychologist — Austin, TX</p>
+                    <p class="card-quote">
+                      “Since launching my new site, my calendar stays fully booked 3 weeks ahead.”
+                    </p>
+                    <button class="preview-btn preview-btn--small">View availability</button>
+                  </div>
+                </aside>
+              </div>
+
+              <!-- stats strip -->
+              <div class="preview-strip">
+                <div class="preview-pill">24h proposal</div>
+                <div class="preview-pill">2-week average build</div>
+                <div class="preview-pill">Built in Webflow + SEO basics</div>
+              </div>
+              <div class="preview-social">
+                ★ 4.9/5 average rating — trusted by 50+ service professionals
+              </div>
+            </div>
+          </div>
+          <div class="laptop__base"></div>
         </div>
       </div>
 
@@ -83,7 +124,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Portfolio</h2>
-        <p class="muted">4–5 έργα. Προς το παρόν placeholders μέχρι να ανεβάσουμε πραγματικά projects.</p>
+        <p class="muted">4–5 έργα. Προς το παρόν placeholders μέχρι να ανέβουν πραγματικά projects.</p>
       </div>
 
       <div class="grid">
@@ -116,13 +157,13 @@
     <div class="container">
       <div class="section-head">
         <h2>Τι αναλαμβάνω</h2>
-        <p class="muted">Webflow build, conversion copy, SEO basics, domain, analytics & automations.</p>
+        <p class="muted">Webflow build, conversion copy, SEO basics, domain, analytics &amp; automations.</p>
       </div>
 
       <div class="features">
         <div class="feature">
           <h3>Webflow Build</h3>
-          <p>Καθαρή αρχιτεκτονική, responsive, ταχύτητα & προσβασιμότητα.</p>
+          <p>Καθαρή αρχιτεκτονική, responsive, ταχύτητα &amp; προσβασιμότητα.</p>
         </div>
         <div class="feature">
           <h3>On-page SEO</h3>
@@ -148,9 +189,9 @@
       </div>
 
       <ol class="steps">
-        <li><strong>Brief & στόχοι</strong> — 30’ call για niche & ιδανικό πελάτη.</li>
+        <li><strong>Brief &amp; στόχοι</strong> — 30’ call για niche &amp; ιδανικό πελάτη.</li>
         <li><strong>Wireframe</strong> — ροή που οδηγεί στο booking / contact.</li>
-        <li><strong>Design & Build</strong> — πλήρης υλοποίηση σε Webflow.</li>
+        <li><strong>Design &amp; Build</strong> — πλήρης υλοποίηση σε Webflow.</li>
         <li><strong>Launch</strong> — domain, SEO basics, analytics, handover.</li>
       </ol>
     </div>
