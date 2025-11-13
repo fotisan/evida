@@ -208,7 +208,7 @@
             πρέπει να σε επιλέξουν εσένα.
           </p>
           <ul class="feature-list">
-            <li>Ideαl client &amp; niche clarity</li>
+            <li>Ideal client &amp; niche clarity</li>
             <li>Κύρια υπηρεσία &amp; πακέτα</li>
             <li>Κεντρικό μήνυμα &amp; υποσχέση</li>
           </ul>
@@ -264,13 +264,93 @@
     <div class="container">
       <div class="section-head">
         <h2>Process 4 βημάτων</h2>
+        <p class="muted">Άνοιξε κάθε βήμα για να δεις ακριβώς τι κάνουμε.</p>
       </div>
 
       <ol class="steps">
-        <li class="reveal"><strong>Brief &amp; στόχοι</strong> — 30’ call για niche &amp; ιδανικό πελάτη.</li>
-        <li class="reveal"><strong>Wireframe</strong> — ροή που οδηγεί στο booking / contact.</li>
-        <li class="reveal"><strong>Design &amp; Build</strong> — πλήρης υλοποίηση σε Webflow.</li>
-        <li class="reveal"><strong>Launch</strong> — domain, SEO basics, analytics, handover.</li>
+        <li class="step reveal">
+          <button type="button" class="step-header">
+            <span class="step-heading">
+              <strong>Brief &amp; στόχοι</strong> — 30’ call για niche &amp; ιδανικό πελάτη.
+            </span>
+            <span class="step-arrow">⌄</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Ξεκινάμε με μια σύντομη αλλά ουσιαστική συζήτηση. Θέλω να καταλάβω
+              πώς δουλεύεις ήδη και τι σημαίνει “επιτυχία” για σένα.
+            </p>
+            <ul>
+              <li>Καταγράφουμε τις υπηρεσίες σου και τα πακέτα.</li>
+              <li>Ορίζουμε τον ιδανικό πελάτη (όχι “όλοι”).</li>
+              <li>Μαζεύουμε υπάρχον υλικό: logo, φωτογραφίες, κείμενα.</li>
+              <li>Συμφωνούμε σε ξεκάθαρο στόχο για το site (π.χ. booked calls / leads).</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="step reveal">
+          <button type="button" class="step-header">
+            <span class="step-heading">
+              <strong>Wireframe &amp; ροή σελίδων</strong> — σχεδιάζουμε τη διαδρομή του επισκέπτη.
+            </span>
+            <span class="step-arrow">⌄</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Πριν χρώματα και εφέ, φτιάχνουμε “σκελετό”. Βλέπεις πώς θα
+              κινείται ο επισκέπτης από την πρώτη εντύπωση μέχρι το κλικ στο CTA.
+            </p>
+            <ul>
+              <li>Στήνουμε wireframe για home + βασικές σελίδες (π.χ. Services, About, Contact).</li>
+              <li>Ορίζουμε sections: hero, social proof, packages, process, FAQ κ.λπ.</li>
+              <li>Σημειώνουμε που μπαίνουν τα βασικά CTA και δευτερεύοντα links.</li>
+              <li>Παίρνεις link με wireframe για feedback πριν περάσουμε σε design.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="step reveal">
+          <button type="button" class="step-header">
+            <span class="step-heading">
+              <strong>Design &amp; Webflow build</strong> — κάνουμε το site να δείχνει και να νιώθει “δικό σου”.
+            </span>
+            <span class="step-arrow">⌄</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Με βάση το wireframe, χτίζω το site σε Webflow με focus
+              σε καθαρό layout, mobile εμπειρία και ανάγλυφα CTA.
+            </p>
+            <ul>
+              <li>Επιλογή χρωμάτων &amp; typography που ταιριάζουν στο brand σου.</li>
+              <li>Υλοποίηση σε Webflow με καθαρό class naming (για να μην πνιγείς μετά).</li>
+              <li>Responsive έλεγχος για mobile, tablet, desktop.</li>
+              <li>Μικρές μικροαλληλεπιδράσεις (hovers, transitions) που δίνουν αίσθηση premium.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="step reveal">
+          <button type="button" class="step-header">
+            <span class="step-heading">
+              <strong>Launch, SEO basics &amp; handover</strong> — το site βγαίνει live και δουλεύει για σένα.
+            </span>
+            <span class="step-arrow">⌄</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Τελευταίο βήμα: συνδέουμε όλα τα πρακτικά και σιγουρευόμαστε
+              ότι μπορείς να κάνεις μικρές αλλαγές μόνος/η σου.
+            </p>
+            <ul>
+              <li>Σύνδεση domain, hosting setup μέσα από Webflow.</li>
+              <li>On-page SEO basics (titles, meta, headings, clean URLs).</li>
+              <li>Setup για φόρμες, bookings (Calendly / Cal.com) &amp; Google Analytics.</li>
+              <li>Mini handover video + 1 εβδομάδα υποστήριξη για tweaks &amp; απορίες.</li>
+            </ul>
+          </div>
+        </li>
       </ol>
     </div>
   </section>
@@ -342,6 +422,24 @@
       } else {
         scrollBtn.classList.remove('scroll-top--visible');
       }
+    });
+
+    // Accordion για το Process
+    const stepHeaders = document.querySelectorAll('.step-header');
+
+    stepHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const step = header.closest('.step');
+        const isOpen = step.classList.contains('step--open');
+
+        // κλείσε όλα πρώτα
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('step--open'));
+
+        // άνοιξε μόνο αν δεν ήταν ήδη ανοιχτό
+        if (!isOpen) {
+          step.classList.add('step--open');
+        }
+      });
     });
   </script>
 
