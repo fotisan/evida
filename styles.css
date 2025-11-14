@@ -28,6 +28,7 @@ body{
     radial-gradient(800px 500px at 110% 20%, rgba(155,140,255,.12), transparent 55%),
     var(--bg);
   animation:bgMove 24s ease-in-out infinite alternate;
+  font-size:16px;
 }
 @keyframes bgMove{
   0%{background-position:0 0, 0 0}
@@ -776,7 +777,7 @@ input:focus,textarea:focus{
 }
 
 /* ------------------------- */
-/* RESPONSIVE: TABLETS (~768px) */
+/* RESPONSIVE: TABLETS (~900px) */
 /* ------------------------- */
 
 @media (max-width: 900px){
@@ -932,6 +933,22 @@ input:focus,textarea:focus{
   }
   input,textarea{
     padding:10px;
+  }
+}
+
+/* ------------------------- */
+/* RESPONSIVE: LARGE DESKTOPS (>=1400px) */
+/* ------------------------- */
+
+@media (min-width: 1400px){
+  .container{
+    width:min(1280px,84vw);
+  }
+  .hero__inner{
+    gap:64px;
+  }
+  .hero__copy h1{
+    font-size:3.4rem;
   }
 }
 
