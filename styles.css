@@ -208,7 +208,7 @@ ul{list-style:none;}
     filter 260ms cubic-bezier(.22,.61,.36,1);
 }
 
-/* ⛔ Δεν υπάρχει πλέον hero-device::before */
+/* ΔΕΝ υπάρχει ::before – καμία έξτρα γραμμή */
 
 /* glow κάτω */
 .hero-device::after{
@@ -226,16 +226,17 @@ ul{list-style:none;}
 
 .hero-device-inner{
   border-radius:22px;
-  overflow:hidden;
+  overflow:hidden;          /* crop της εικόνας */
   background:#050814;
   box-shadow:0 0 0 1px rgba(200,220,255,.3);
 }
 
 .hero-device img{
   display:block;
-  width:100%;
+  width:110%;               /* ελαφρύ zoom */
   height:auto;
   object-fit:cover;
+  transform:translateY(-16px); /* κόβει το πάνω μέρος = εξαφανίζει τη γραμμή */
 }
 
 /* hover / tap effect */
