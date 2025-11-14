@@ -207,9 +207,9 @@ ul{list-style:none;}
     0 26px 80px rgba(0,0,0,.95),
     0 0 0 1px rgba(150,180,255,.4);
   transform-origin:center center;
-  animation: heroFloat 19s ease-in-out infinite;
+  /* εδώ είναι η ταχύτητα 20s */
+  animation: heroFloat 20s ease-in-out infinite;
 }
-/* δεν υπάρχει :hover, άρα δεν επηρεάζεται από το mouse */
 
 .hero-panel::before{
   content:"";
@@ -330,7 +330,7 @@ ul{list-style:none;}
   border:1px solid rgba(130,150,220,.45);
   overflow:hidden;
   box-shadow:0 18px 40px rgba(0,0,0,.65);
-  transition:transform .25s ease, box-shadow .25s ease;
+  transition:transform .25s ease, box-shadow .25s.ease;
 }
 .pf-item:hover{
   transform:translateY(-6px);
@@ -483,7 +483,7 @@ ul{list-style:none;}
   flex-shrink:0;
   margin-left:.75rem;
   transform:rotate(0deg);
-  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s.ease;
+  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
 }
 .step-arrow::before{
   content:"⌄";
@@ -565,7 +565,7 @@ footer{
     width:100%;
     border-radius:99px;
     background:rgba(200,210,240,.9);
-    transition:transform .2s ease, opacity .2s ease, width .2s ease;
+    transition:transform .2s ease, opacity .2s.ease, width .2s.ease;
   }
   .nav-toggle.is-active .nav-toggle-line:first-child{
     transform:translateY(3px) rotate(38deg);
