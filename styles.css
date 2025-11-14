@@ -177,7 +177,7 @@ ul{list-style:none;}
   color:var(--muted);
 }
 
-/* HERO 3D PANEL (νέο) */
+/* HERO 3D PANEL */
 .hero-visual{
   display:flex;
   justify-content:center;
@@ -202,8 +202,6 @@ ul{list-style:none;}
     filter 260ms cubic-bezier(.22,.61,.36,1);
   animation: heroFloat 6s ease-in-out infinite alternate;
 }
-
-/* λεπτή γραμμή γύρω αλλά όχι πάνω από το hero */
 .hero-panel::before{
   content:"";
   position:absolute;
@@ -212,8 +210,6 @@ ul{list-style:none;}
   border:1px solid rgba(180,205,255,.25);
   pointer-events:none;
 }
-
-/* glow από κάτω */
 .hero-panel::after{
   content:"";
   position:absolute;
@@ -226,7 +222,6 @@ ul{list-style:none;}
   opacity:.9;
   pointer-events:none;
 }
-
 .hero-panel-header{
   font-size:.72rem;
   text-transform:uppercase;
@@ -277,18 +272,14 @@ ul{list-style:none;}
   border-color:rgba(140,165,230,.6);
   background:rgba(9,20,55,.9);
 }
-
-/* hover / tap */
 .hero-panel:hover{
   transform:rotateX(9deg) rotateY(-14deg) translateY(0);
   box-shadow:
     0 34px 96px rgba(0,0,0,.98),
     0 0 0 1px rgba(180,205,255,.85);
   filter:brightness(1.03);
-  animation:none; /* σταματάει το float στο hover */
+  animation:none;
 }
-
-/* μικρή κίνηση */
 @keyframes heroFloat{
   0%{
     transform:rotateX(16deg) rotateY(-22deg) translateY(6px);
@@ -320,7 +311,59 @@ ul{list-style:none;}
   max-width:32rem;
 }
 
-/* CARDS / GRID */
+/* ABOUT GRID + PHOTO */
+.about-grid{
+  margin-top:1.2rem;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:1.6rem;
+  align-items:center;
+}
+.about-photo{
+  position:relative;
+  width:130px;
+  height:130px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.about-photo-ring{
+  position:absolute;
+  inset:-3px;
+  border-radius:inherit;
+  background:conic-gradient(from 180deg, #3de2c5, #7b5cff, #3de2c5);
+  opacity:.85;
+  filter:blur(0.4px);
+}
+.about-photo img{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:inherit;
+  object-fit:cover;
+  box-shadow:0 18px 40px rgba(0,0,0,.9);
+}
+.about-card{
+  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+  border-radius:20px;
+  border:1px solid rgba(140,165,230,.55);
+  box-shadow:0 16px 40px rgba(0,0,0,.75);
+  padding:1.3rem 1.2rem;
+  font-size:.93rem;
+}
+.about-card p{
+  color:var(--page-fg);
+  margin-bottom:.7rem;
+}
+.about-card ul{
+  color:var(--muted);
+  font-size:.9rem;
+  display:grid;
+  gap:.25rem;
+}
+
+/* CARDS / GRID (άλλα sections) */
 .cards{
   display:grid;
   gap:1.2rem;
@@ -407,5 +450,10 @@ footer{
   .hero-panel{
     max-width:360px;
     transform:rotateX(14deg) rotateY(-18deg) translateY(4px);
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    justify-items:flex-start;
   }
 }
