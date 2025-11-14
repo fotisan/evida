@@ -274,7 +274,7 @@ footer{
 @media (max-width:768px){
   .shell{padding-inline:1.4rem;}
   .site-header-inner{padding-inline:1.4rem;}
-  .nav-links{display:none;} /* μέχρι να βάλουμε mobile menu */
+  .nav-links{display:none;}
 
   .hero{
     grid-template-columns:1fr;
