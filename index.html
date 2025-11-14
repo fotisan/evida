@@ -9,7 +9,15 @@
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <div class="site-logo">Evida <span>Studio</span></div>
+      <div class="site-logo">
+        <a href="#top">Evida <span>Studio</span></a>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
       <nav class="nav-links">
         <a href="#portfolio">Portfolio</a>
         <a href="#about">About</a>
@@ -241,8 +249,8 @@
         Στείλε 2–3 site που σου αρέσουν + τον στόχο σου.
         Θα λάβεις αναλυτική πρόταση σε 24 ώρες.
       </p>
-      <a href="mailto:your@email"
-         class="btn-primary">Στείλε μου email</a>
+      <a href="#top" class="btn-primary">Back to top</a>
+      <!-- Μπορείς να αλλάξεις σε mailto αν θες όπως πριν -->
     </section>
   </main>
 
@@ -255,7 +263,7 @@
     ↑
   </button>
 
-  <!-- JS for accordion + scroll-to-top -->
+  <!-- JS for accordion + scroll-to-top + mobile nav -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Accordion for process steps
@@ -265,14 +273,31 @@
         if (!toggle) return;
         toggle.addEventListener('click', () => {
           const isOpen = step.classList.contains('step--open');
-          // κλείνουμε όλα
           steps.forEach(s => s.classList.remove('step--open'));
-          // αν αυτό δεν ήταν ανοικτό, το ανοίγουμε
           if (!isOpen) {
             step.classList.add('step--open');
           }
         });
       });
+
+      // Mobile nav toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('is-open');
+          navToggle.classList.toggle('is-active');
+        });
+
+        // κλείνει το menu όταν γίνεται click σε link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('is-open');
+            navToggle.classList.remove('is-active');
+          });
+        });
+      }
 
       // Scroll-to-top visibility logic
       const scrollBtn = document.getElementById('scrollTopBtn');
@@ -282,7 +307,6 @@
         const updateScrollBtn = () => {
           const rect = secondSection.getBoundingClientRect();
           const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
-          // εμφανίζεται όταν έχουμε κατέβει περίπου μέχρι τη μέση του 2ου section
           if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
             scrollBtn.classList.add('is-visible');
           } else {
