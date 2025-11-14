@@ -17,6 +17,10 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth; /* ομαλό scroll για όλα τα anchor links */
+}
+
 body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   background: radial-gradient(circle at top left,#171f39 0,#050814 52%,#02030a 100%);
@@ -79,6 +83,11 @@ ul{list-style:none;}
   font-weight:600;
   font-size:.95rem;
   box-shadow:0 0 0 1px rgba(255,255,255,.04),0 12px 35px rgba(42,151,255,.55);
+}
+
+/* Mobile nav toggle (default hidden) */
+.nav-toggle{
+  display:none;
 }
 
 /* HERO */
@@ -202,6 +211,8 @@ ul{list-style:none;}
     filter 260ms cubic-bezier(.22,.61,.36,1);
   animation: heroFloat 6s ease-in-out infinite alternate;
 }
+/* ΚΑΜΙΑ αλλαγή στο hover: δεν επηρεάζεται από το mouse πλέον */
+
 .hero-panel::before{
   content:"";
   position:absolute;
@@ -271,14 +282,6 @@ ul{list-style:none;}
 .hero-pill-soft{
   border-color:rgba(140,165,230,.6);
   background:rgba(9,20,55,.9);
-}
-.hero-panel:hover{
-  transform:rotateX(9deg) rotateY(-14deg) translateY(0);
-  box-shadow:
-    0 34px 96px rgba(0,0,0,.98),
-    0 0 0 1px rgba(180,205,255,.85);
-  filter:brightness(1.03);
-  animation:none;
 }
 @keyframes heroFloat{
   0%{
@@ -466,12 +469,12 @@ ul{list-style:none;}
   max-height:0;
   opacity:0;
   overflow:hidden;
-  transition:max-height .22s ease, opacity .18s ease, margin-top .18s ease;
+  transition:max-height .22s.ease, opacity .18s ease, margin-top .18s ease;
 }
 
 /* ανοικτή κατάσταση */
 .step.step--open .step-body{
-  max-height:200px; /* αρκετό για το κείμενο μας */
+  max-height:200px;
   opacity:1;
   margin-top:.45rem;
 }
@@ -553,7 +556,58 @@ footer{
 @media (max-width:768px){
   .shell{padding-inline:1.4rem;}
   .site-header-inner{padding-inline:1.4rem;}
-  .nav-links{display:none;}
+
+  /* hamburger on mobile */
+  .nav-toggle{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    width:34px;
+    height:28px;
+    justify-content:center;
+    align-items:flex-end;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+  }
+  .nav-toggle-line{
+    height:2px;
+    width:100%;
+    border-radius:99px;
+    background:rgba(200,210,240,.9);
+    transition:transform .2s ease, opacity .2s ease, width .2s ease;
+  }
+  .nav-toggle.is-active .nav-toggle-line:first-child{
+    transform:translateY(3px) rotate(38deg);
+    width:100%;
+  }
+  .nav-toggle.is-active .nav-toggle-line:last-child{
+    transform:translateY(-3px) rotate(-38deg);
+    width:100%;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:100%;
+    right:1.6rem;
+    margin-top:.5rem;
+    background:rgba(5,8,20,.96);
+    border-radius:16px;
+    border:1px solid rgba(120,145,220,.5);
+    padding:.7rem .9rem;
+    display:none;
+    flex-direction:column;
+    gap:.35rem;
+    min-width:180px;
+    box-shadow:0 16px 40px rgba(0,0,0,.85);
+    font-size:.92rem;
+  }
+  .nav-links.is-open{
+    display:flex;
+  }
+  .nav-links a{
+    padding:.35rem .2rem;
+  }
 
   /* hero vertical stack + λιγότερο κενό από το nav */
   .hero{
