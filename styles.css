@@ -289,7 +289,7 @@ ul{list-style:none;}
   }
 }
 
-/* SECTIONS */
+/* GENERIC SECTIONS */
 .section{
   margin-top:3.5rem;
   padding:1.8rem 1.6rem 2rem;
@@ -309,6 +309,51 @@ ul{list-style:none;}
   font-size:.98rem;
   margin-bottom:1.6rem;
   max-width:32rem;
+}
+
+/* PORTFOLIO GRID */
+.pf-grid{
+  margin-top:1.6rem;
+  display:grid;
+  gap:1.6rem;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+}
+
+.pf-item{
+  background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
+  border-radius:22px;
+  border:1px solid rgba(130,150,220,.45);
+  overflow:hidden;
+  box-shadow:0 18px 40px rgba(0,0,0,.65);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.pf-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 26px 60px rgba(0,0,0,.85);
+}
+
+.pf-item img{
+  width:100%;
+  display:block;
+  border-bottom:1px solid rgba(150,170,240,.25);
+}
+
+.pf-info{
+  padding:1.1rem 1.2rem 1.3rem;
+}
+
+.pf-info h3{
+  font-size:1.05rem;
+  margin-bottom:.35rem;
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.pf-info p{
+  color:var(--muted);
+  font-size:.9rem;
 }
 
 /* ABOUT GRID + PHOTO */
@@ -363,7 +408,7 @@ ul{list-style:none;}
   gap:.25rem;
 }
 
-/* CARDS / GRID */
+/* GENERIC CARDS (services / κλπ) */
 .cards{
   display:grid;
   gap:1.2rem;
@@ -425,19 +470,17 @@ footer{
   .site-header-inner{padding-inline:1.4rem;}
   .nav-links{display:none;}
 
-  /* hero σε vertical stack */
+  /* hero vertical stack */
   .hero{
     display:flex;
     flex-direction:column;
     gap:1.9rem;
   }
 
-  /* όλο το κείμενο πρώτο */
   .hero-copy{
     order:0;
   }
 
-  /* το 3D panel ακριβώς από κάτω */
   .hero-visual{
     order:1;
     margin-top:-0.2rem;
