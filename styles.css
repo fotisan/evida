@@ -31,6 +31,11 @@ a{
 
 ul{list-style:none;}
 
+.muted{
+  color:var(--muted);
+}
+
+/* LAYOUT WRAPPER */
 .shell{
   max-width:var(--container);
   margin:0 auto;
@@ -84,7 +89,10 @@ ul{list-style:none;}
   display:grid;
   grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
   gap:2.6rem;
-  align-items:center;
+  align-items:stretch;
+}
+.hero-copy{
+  align-self:center;
 }
 .hero-eyebrow{
   font-size:.88rem;
@@ -132,6 +140,7 @@ ul{list-style:none;}
   align-items:center;
   margin-bottom:1.4rem;
 }
+
 .btn-primary{
   padding:.85rem 1.3rem;
   border-radius:999px;
@@ -168,15 +177,54 @@ ul{list-style:none;}
   color:var(--muted);
 }
 
-/* Mock card */
+/* HERO 3D CARD */
+.hero-mock-wrap{
+  display:flex;
+  justify-content:center;
+  perspective:1200px;
+}
+
 .hero-mock{
+  position:relative;
   background:radial-gradient(circle at top,#182642,#050814 70%);
   border-radius:26px;
-  padding:1.6rem 1.4rem;
-  box-shadow:0 28px 80px rgba(0,0,0,.75);
-  border:1px solid rgba(156,183,255,.18);
+  padding:1.6rem 1.6rem 1.8rem;
+  box-shadow:
+    0 26px 70px rgba(0,0,0,.85),
+    0 0 0 1px rgba(150,180,255,.4);
   font-size:.9rem;
+  transform: rotateX(10deg) rotateY(-18deg) translateY(4px);
+  transform-origin:center center;
+  transition:
+    transform 260ms cubic-bezier(.22,.61,.36,1),
+    box-shadow 260ms cubic-bezier(.22,.61,.36,1),
+    filter 260ms cubic-bezier(.22,.61,.36,1);
 }
+
+.hero-mock::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  border-top:2px solid rgba(111,195,255,.9);
+  border-image:linear-gradient(90deg,#3de2c5,#7b5cff) 1;
+  opacity:.9;
+  pointer-events:none;
+}
+
+.hero-mock::after{
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  bottom:-24px;
+  height:46px;
+  background:radial-gradient(circle at center, rgba(59,130,246,.7), transparent 65%);
+  filter:blur(10px);
+  opacity:.9;
+  pointer-events:none;
+}
+
 .hero-mock-pill{
   font-size:.7rem;
   text-transform:uppercase;
@@ -201,13 +249,28 @@ ul{list-style:none;}
   color:var(--muted);
 }
 
-/* Sections */
+.hero-mock:hover{
+  transform: rotateX(6deg) rotateY(-10deg) translateY(0);
+  box-shadow:
+    0 34px 80px rgba(0,0,0,.9),
+    0 0 0 1px rgba(170,200,255,.8);
+  filter:brightness(1.02);
+}
+
+/* SECTIONS */
 .section{
-  margin-top:4rem;
+  margin-top:3.5rem;
+  padding:1.8rem 1.6rem 2rem;
+  border-radius:24px;
+  background: radial-gradient(circle at top left, #0c1224 0, #050814 55%, #02030a 100%);
+  border:1px solid rgba(120,145,220,.35);
 }
 .section h2{
-  font-size:1.5rem;
+  font-size:1.55rem;
   margin-bottom:.6rem;
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 .section-lead{
   color:var(--muted);
@@ -216,17 +279,19 @@ ul{list-style:none;}
   max-width:32rem;
 }
 
-/* Simple grid */
+/* CARDS / GRID */
 .cards{
   display:grid;
   gap:1.2rem;
   grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
 }
-.card{
-  background:var(--page-bg-soft);
-  border-radius:var(--radius);
+.card,
+.step{
+  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+  border-radius:20px;
+  border:1px solid rgba(140,165,230,.55);
+  box-shadow:0 16px 40px rgba(0,0,0,.75);
   padding:1.3rem 1.2rem;
-  border:1px solid rgba(140,160,210,.16);
   font-size:.93rem;
 }
 .card h3{
@@ -238,17 +303,11 @@ ul{list-style:none;}
   font-size:.9rem;
 }
 
-/* Process */
+/* PROCESS */
 .process-steps{
   display:grid;
   gap:1rem;
   margin-top:.4rem;
-}
-.step{
-  background:var(--page-bg-soft);
-  border-radius:var(--radius);
-  padding:1.1rem 1.2rem;
-  border:1px solid rgba(140,160,210,.16);
 }
 .step-title{
   font-weight:600;
@@ -272,9 +331,15 @@ footer{
 
 /* MOBILE */
 @media (max-width:768px){
-  .shell{padding-inline:1.4rem;}
-  .site-header-inner{padding-inline:1.4rem;}
-  .nav-links{display:none;}
+  .shell{
+    padding-inline:1.4rem;
+  }
+  .site-header-inner{
+    padding-inline:1.4rem;
+  }
+  .nav-links{
+    display:none; /* μέχρι να βάλουμε mobile menu */
+  }
 
   .hero{
     grid-template-columns:1fr;
@@ -284,7 +349,9 @@ footer{
     font-size:clamp(2rem,7vw,2.4rem);
     max-width:26rem;
   }
-  .hero-sub{font-size:1rem;}
+  .hero-sub{
+    font-size:1rem;
+  }
   .hero-cta-row{
     flex-direction:column;
     align-items:stretch;
@@ -294,5 +361,8 @@ footer{
     width:100%;
     justify-content:center;
   }
-  .hero-mock{order:-1;}
+  .hero-mock-wrap{
+    order:-1;
+    margin-bottom:.5rem;
+  }
 }
