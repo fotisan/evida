@@ -208,16 +208,23 @@ ul{list-style:none;}
     filter 260ms cubic-bezier(.22,.61,.36,1);
 }
 
-/* φωτεινή γραμμή επάνω */
+/* πιο διακριτική top γραμμή */
 .hero-device::before{
   content:"";
   position:absolute;
-  inset:0;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
   border-radius:inherit;
-  border-top:2px solid transparent;
-  border-image:linear-gradient(90deg,#3de2c5,#7b5cff) 1;
-  opacity:.95;
+  background:linear-gradient(
+      90deg,
+      rgba(61,226,197,0.35),
+      rgba(123,92,255,0.35)
+  );
+  opacity:0.45;
   pointer-events:none;
+  transform:translateY(-1px);
 }
 
 /* glow κάτω */
