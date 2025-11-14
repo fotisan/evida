@@ -316,7 +316,7 @@ ul{list-style:none;}
   margin-top:1.6rem;
   display:grid;
   gap:1.6rem;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
 }
 
 .pf-item{
@@ -408,7 +408,7 @@ ul{list-style:none;}
   gap:.25rem;
 }
 
-/* GENERIC CARDS (services / κλπ) */
+/* GENERIC CARDS */
 .cards{
   display:grid;
   gap:1.2rem;
@@ -464,14 +464,22 @@ footer{
   text-align:center;
 }
 
+/* EXTRA: 4 στήλες σε πολύ μεγάλες οθόνες */
+@media (min-width:1200px){
+  .pf-grid{
+    grid-template-columns:repeat(4, minmax(0,1fr));
+  }
+}
+
 /* MOBILE */
 @media (max-width:768px){
   .shell{padding-inline:1.4rem;}
   .site-header-inner{padding-inline:1.4rem;}
   .nav-links{display:none;}
 
-  /* hero vertical stack */
+  /* hero vertical stack + λιγότερο κενό από το nav */
   .hero{
+    padding-top:1.6rem;
     display:flex;
     flex-direction:column;
     gap:1.9rem;
