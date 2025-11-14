@@ -2,446 +2,195 @@
 <html lang="el">
 <head>
   <meta charset="utf-8" />
+  <title>Evida Studio — Webflow sites που φέρνουν πελάτες</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Evida Studio — Webflow sites that book calls</title>
-  <meta name="description" content="Webflow websites για ψυχολόγους, personal trainers, δικηγόρους και real estate επαγγελματίες που θέλουν να κλείνουν περισσότερα ραντεβού." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<body id="top">
-
-  <!-- Header -->
+<body>
   <header class="site-header">
-    <div class="container header__inner">
-      <a class="brand" href="#top">Evida <span>Studio</span></a>
-      <nav class="nav">
-        <a href="#work">Portfolio</a>
+    <div class="site-header-inner">
+      <div class="site-logo">Evida <span>Studio</span></div>
+      <nav class="nav-links">
+        <a href="#portfolio">Portfolio</a>
         <a href="#about">About</a>
         <a href="#services">Υπηρεσίες</a>
         <a href="#process">Process</a>
-        <a href="#contact" class="btn btn--small">Get in touch</a>
+        <a href="#contact" class="btn-nav">Get in touch</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero__inner">
-
-      <div class="hero__copy">
-        <p class="eyebrow r1">Webflow designer for service pros</p>
-
-        <h1 class="r2">
-          Websites που <em>φέρνουν πελάτες</em>
-          για Ψυχολόγους, Trainers, Δικηγόρους &amp; Real Estate
-        </h1>
-
-        <p class="sub r3">
-          Built in Webflow • On-page SEO • 24h πρόταση • 2 εβδομάδες παράδοση
-        </p>
-
-        <div class="hero__cta r4">
-          <a class="btn" href="#contact">Ζήτησε προσφορά</a>
-          <a class="btn btn--ghost" href="#work">Δες δουλειές</a>
-        </div>
-
-        <ul class="chips r5">
-          <li>Psychologists</li>
-          <li>Personal Trainers</li>
-          <li>Lawyers</li>
-          <li>Real Estate</li>
-        </ul>
-      </div>
-
-      <!-- HERO: Laptop με Generic Premium Service Website μέσα -->
-      <div class="hero__media">
-        <div class="laptop-wrapper">
-          <div class="laptop">
-            <div class="laptop__screen">
-              <div class="preview-site">
-                <!-- top nav -->
-                <header class="preview-nav">
-                  <div class="preview-logo">BrightPractice</div>
-                  <nav class="preview-menu">
-                    <span>Home</span>
-                    <span>Services</span>
-                    <span>About</span>
-                    <span>Contact</span>
-                  </nav>
-                  <button class="preview-btn">Book a Free Consultation</button>
-                </header>
-
-                <!-- hero area -->
-                <div class="preview-hero">
-                  <div class="preview-hero__copy">
-                    <h2>Grow your practice with a website that books clients for you.</h2>
-                    <p>
-                      Done-for-you Webflow websites for therapists, coaches and service professionals
-                      who want more high-quality bookings — not more “likes”.
-                    </p>
-                    <div class="preview-hero__cta">
-                      <button class="preview-btn preview-btn--primary">Book a Free Call</button>
-                      <button class="preview-btn preview-btn--ghost">See how it works</button>
-                    </div>
-                    <ul class="preview-bullets">
-                      <li>Professional, modern design</li>
-                      <li>Optimized to book more calls</li>
-                      <li>Ready in as little as 2 weeks</li>
-                    </ul>
-                  </div>
-
-                  <aside class="preview-hero__card">
-                    <div class="card-avatar"></div>
-                    <div class="card-text">
-                      <p class="card-name">Dr. Jane Williams</p>
-                      <p class="card-role">Licensed Psychologist — Austin, TX</p>
-                      <p class="card-quote">
-                        “Since launching my new site, my calendar stays fully booked 3 weeks ahead.”
-                      </p>
-                      <button class="preview-btn preview-btn--small">View availability</button>
-                    </div>
-                  </aside>
-                </div>
-
-                <!-- stats strip -->
-                <div class="preview-strip">
-                  <div class="preview-pill">24h proposal</div>
-                  <div class="preview-pill">2-week average build</div>
-                  <div class="preview-pill">Built in Webflow + SEO basics</div>
-                </div>
-                <div class="preview-social">
-                  ★ 4.9/5 average rating — trusted by 50+ service professionals
-                </div>
-              </div>
-            </div>
-            <div class="laptop__base"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="work" class="work">
-    <div class="container">
-      <div class="section-head">
-        <h2>Portfolio</h2>
-        <p class="muted">Websites για ψυχολόγους, δερματολόγους, δικηγόρους &amp; real estate.</p>
-      </div>
-
-      <div class="portfolio-grid">
-        <a class="portfolio-card reveal" href="#">
-          <img src="mock-psych-1.png" alt="Psychologist Website Mockup" />
-          <div class="portfolio-label">Psychologist</div>
-        </a>
-
-        <a class="portfolio-card reveal" href="#">
-          <img src="mock-psych-2.png" alt="Psychologist Website 2 Mockup" />
-          <div class="portfolio-label">Psychologist</div>
-        </a>
-
-        <a class="portfolio-card reveal" href="#">
-          <img src="mock-derma-1.png" alt="Dermatologist Website Mockup" />
-          <div class="portfolio-label">Dermatologist</div>
-        </a>
-
-        <a class="portfolio-card reveal" href="#">
-          <img src="mock-law-1.png" alt="Law Firm Website Mockup" />
-          <div class="portfolio-label">Law Firm</div>
-        </a>
-
-        <a class="portfolio-card reveal" href="#">
-          <img src="mock-villa-1.png" alt="Villa / Real Estate Website Mockup" />
-          <div class="portfolio-label">Real Estate</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT / FOTIS -->
-  <section id="about" class="about">
-    <div class="container about__inner">
-      <div class="about__image reveal">
-        <img src="fotis-hero.png" alt="Fotis — Webflow designer for service pros" />
-      </div>
-      <div class="about__copy reveal">
-        <p class="eyebrow">Who you'll work with</p>
-        <h2>Γεια, είμαι ο Fotis — Webflow designer για ανθρώπους που πουλάνε υπηρεσίες.</h2>
-        <p>
-          Έχω background στο business &amp; marketing και χτίζω sites για επαγγελματίες
-          που θέλουν λιγότερο “όμορφο brochure” και περισσότερο
-          <strong>μηχανή που κλείνει ραντεβού</strong>.
-        </p>
-        <ul class="about__list">
-          <li>Εστιάζω σε ψυχολόγους, personal trainers, δικηγόρους &amp; real estate.</li>
-          <li>Δουλεύω με Webflow, καθαρό layout και ξεκάθαρα CTA.</li>
-          <li>Στόχος: να κάνουμε τον ιδανικό πελάτη σου να πει “οκ, αυτός/αυτή είναι για μένα”.</li>
-        </ul>
-        <p class="about__note">
-          Δεν χρησιμοποιώ generic templates. Κάθε project ξεκινάει από το
-          positioning σου, τα πακέτα σου και το πώς κλείνεις ήδη πελάτες —
-          και μετά το site δουλεύει υπέρ σου 24/7.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="services">
-    <div class="services__bg"></div>
-    <div class="container">
-      <div class="section-head">
-        <h2>Τι αναλαμβάνω για σένα</h2>
-        <p class="muted">
-          Δεν “σου φτιάχνω ένα site”. Στήνουμε μαζί ένα μικρό σύστημα που φέρνει ιδανικούς πελάτες,
-          από την πρώτη επίσκεψη μέχρι το booked call.
-        </p>
-      </div>
-
-      <div class="features">
-        <div class="feature reveal">
-          <span class="feature-tag">01 • Strategy</span>
-          <h3>Στήνουμε ξεκάθαρο positioning &amp; στόχο</h3>
-          <p>
-            Πριν ανοίξει καν το Webflow, καταλαβαίνω τι πουλάς, σε ποιον και γιατί
-            πρέπει να σε επιλέξουν εσένα.
-          </p>
-          <ul class="feature-list">
-            <li>Ideal client &amp; niche clarity</li>
-            <li>Κύρια υπηρεσία &amp; πακέτα</li>
-            <li>Κεντρικό μήνυμα &amp; υποσχέση</li>
-          </ul>
-        </div>
-
-        <div class="feature reveal">
-          <span class="feature-tag">02 • UX &amp; Copy</span>
-          <h3>Δομή &amp; κείμενα που οδηγούν στο “κλείνω ραντεβού”</h3>
-          <p>
-            Δεν γεμίζουμε απλά ενότητες. Χτίζουμε ροή που απαντά στις αντιρρήσεις
-            και οδηγεί τον επισκέπτη στο επόμενο βήμα.
-          </p>
-          <ul class="feature-list">
-            <li>Wireframe βασισμένο στη λογική funnel</li>
-            <li>Κείμενα απλά, ανθρώπινα, χωρίς corporate φλυαρία</li>
-            <li>Clear CTA σε κάθε κρίσιμο σημείο</li>
-          </ul>
-        </div>
-
-        <div class="feature reveal">
-          <span class="feature-tag">03 • Webflow build</span>
-          <h3>Καθαρή υλοποίηση, έτοιμη να τη διαχειριστείς</h3>
-          <p>
-            Pixel-perfect layout σε Webflow, με ταχύτητα, σωστή mobile εμπειρία
-            και δομή που δεν θα σε παιδέψει σε αλλαγές.
-          </p>
-          <ul class="feature-list">
-            <li>Responsive design για mobile-first χρήση</li>
-            <li>Καθαρή κλάση &amp; naming λογική</li>
-            <li>Εύκολη διαχείριση κειμένων &amp; εικόνων</li>
-          </ul>
-        </div>
-
-        <div class="feature reveal">
-          <span class="feature-tag">04 • Launch &amp; μετά</span>
-          <h3>Σετάρουμε το site να δουλεύει 24/7 για σένα</h3>
-          <p>
-            Συνδέουμε domain, βασικό SEO, analytics και σου αφήνω video με
-            οδηγίες για να νιώθεις ότι το έχεις.
-          </p>
-          <ul class="feature-list">
-            <li>Domain, φόρμες, bookings (Calendly / Cal.com)</li>
-            <li>On-page SEO basics &amp; tracking</li>
-            <li>1 εβδομάδα υποστήριξη μετά το launch</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process (accordion) -->
-  <section id="process" class="process">
-    <div class="container">
-      <div class="section-head">
-        <h2>Process 4 βημάτων</h2>
-        <p class="muted">Άνοιξε κάθε βήμα για να δεις ακριβώς τι κάνουμε.</p>
-      </div>
-
-      <ol class="steps">
-        <li class="step reveal">
-          <button type="button" class="step-header">
-            <span class="step-heading">
-              <strong>Brief &amp; στόχοι</strong> — 30’ call για niche &amp; ιδανικό πελάτη.
-            </span>
-            <span class="step-arrow">⌄</span>
-          </button>
-          <div class="step-body">
-            <p>
-              Ξεκινάμε με μια σύντομη αλλά ουσιαστική συζήτηση. Θέλω να καταλάβω
-              πώς δουλεύεις ήδη και τι σημαίνει “επιτυχία” για σένα.
-            </p>
-            <ul>
-              <li>Καταγράφουμε τις υπηρεσίες σου και τα πακέτα.</li>
-              <li>Ορίζουμε τον ιδανικό πελάτη (όχι “όλοι”).</li>
-              <li>Μαζεύουμε υπάρχον υλικό: logo, φωτογραφίες, κείμενα.</li>
-              <li>Συμφωνούμε σε ξεκάθαρο στόχο για το site (π.χ. booked calls / leads).</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="step reveal">
-          <button type="button" class="step-header">
-            <span class="step-heading">
-              <strong>Wireframe &amp; ροή σελίδων</strong> — σχεδιάζουμε τη διαδρομή του επισκέπτη.
-            </span>
-            <span class="step-arrow">⌄</span>
-          </button>
-          <div class="step-body">
-            <p>
-              Πριν χρώματα και εφέ, φτιάχνουμε “σκελετό”. Βλέπεις πώς θα
-              κινείται ο επισκέπτης από την πρώτη εντύπωση μέχρι το κλικ στο CTA.
-            </p>
-            <ul>
-              <li>Στήνουμε wireframe για home + βασικές σελίδες (π.χ. Services, About, Contact).</li>
-              <li>Ορίζουμε sections: hero, social proof, packages, process, FAQ κ.λπ.</li>
-              <li>Σημειώνουμε που μπαίνουν τα βασικά CTA και δευτερεύοντα links.</li>
-              <li>Παίρνεις link με wireframe για feedback πριν περάσουμε σε design.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="step reveal">
-          <button type="button" class="step-header">
-            <span class="step-heading">
-              <strong>Design &amp; Webflow build</strong> — κάνουμε το site να δείχνει και να νιώθει “δικό σου”.
-            </span>
-            <span class="step-arrow">⌄</span>
-          </button>
-          <div class="step-body">
-            <p>
-              Με βάση το wireframe, χτίζω το site σε Webflow με focus
-              σε καθαρό layout, mobile εμπειρία και ανάγλυφα CTA.
-            </p>
-            <ul>
-              <li>Επιλογή χρωμάτων &amp; typography που ταιριάζουν στο brand σου.</li>
-              <li>Υλοποίηση σε Webflow με καθαρό class naming (για να μην πνιγείς μετά).</li>
-              <li>Responsive έλεγχος για mobile, tablet, desktop.</li>
-              <li>Μικρές μικροαλληλεπιδράσεις (hovers, transitions) που δίνουν αίσθηση premium.</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="step reveal">
-          <button type="button" class="step-header">
-            <span class="step-heading">
-              <strong>Launch, SEO basics &amp; handover</strong> — το site βγαίνει live και δουλεύει για σένα.
-            </span>
-            <span class="step-arrow">⌄</span>
-          </button>
-          <div class="step-body">
-            <p>
-              Τελευταίο βήμα: συνδέουμε όλα τα πρακτικά και σιγουρευόμαστε
-              ότι μπορείς να κάνεις μικρές αλλαγές μόνος/η σου.
-            </p>
-            <ul>
-              <li>Σύνδεση domain, hosting setup μέσα από Webflow.</li>
-              <li>On-page SEO basics (titles, meta, headings, clean URLs).</li>
-              <li>Setup για φόρμες, bookings (Calendly / Cal.com) &amp; Google Analytics.</li>
-              <li>Mini handover video + 1 εβδομάδα υποστήριξη για tweaks &amp; απορίες.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="container contact__inner reveal">
+  <main class="shell">
+    <section class="hero" id="top">
       <div>
-        <h2>Έλα να το ξεκινήσουμε</h2>
-        <p class="muted">
-          Στείλε 2–3 site που σου αρέσουν + τον στόχο σου.
-          Θα λάβεις αναλυτική πρόταση σε 24 ώρες.
+        <div class="hero-eyebrow">WEBFLOW DESIGNER FOR SERVICE PROS</div>
+        <h1 class="hero-title">
+          Websites που <em>φέρνουν πελάτες</em> για Ψυχολόγους, Trainers,
+          Δικηγόρους &amp; Real Estate.
+        </h1>
+        <p class="hero-sub">
+          Done-for-you Webflow sites που είναι φτιαγμένα για να κλείνουν ραντεβού
+          — όχι απλώς για να είναι “όμορφα”.
         </p>
+        <div class="hero-meta">
+          <span>Built in Webflow</span>
+          <span>On-page SEO</span>
+          <span>24h πρόταση</span>
+          <span>2 εβδομάδες παράδοση</span>
+        </div>
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary">Ζήτησε προσφορά</a>
+          <a href="#portfolio" class="btn-outline">Δες δουλειές</a>
+        </div>
+        <div class="hero-tags">
+          <span class="hero-tag">Psychologists</span>
+          <span class="hero-tag">Personal Trainers</span>
+          <span class="hero-tag">Lawyers</span>
+          <span class="hero-tag">Real Estate</span>
+        </div>
       </div>
 
-      <form class="form" action="https://formspree.io/f/your-id" method="POST">
-        <label>Όνομα
-          <input type="text" name="name" required>
-        </label>
-        <label>Email
-          <input type="email" name="email" required>
-        </label>
-        <label>Μήνυμα
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button class="btn" type="submit">Ζήτησε προσφορά</button>
-      </form>
-    </div>
-  </section>
+      <aside class="hero-mock">
+        <div class="hero-mock-pill">BrightPractice — Example layout</div>
+        <h3>Grow your practice with a website that books clients for you.</h3>
+        <p>
+          Done-for-you Webflow websites για θεραπευτές, coaches &amp;
+          service pros που θέλουν περισσότερα high-quality bookings —
+          όχι απλά περισσότερα “likes”.
+        </p>
+        <div class="mock-tags">
+          <span>Professional, modern design</span>
+          <span>Optimized to book more calls</span>
+          <span>Ready in as little as 2 weeks</span>
+        </div>
+        <p>
+          <strong>Dr. Jane Williams</strong><br>
+          <span class="muted">Licensed Psychologist — Austin, TX</span><br>
+          “Since launching my new site, my calendar stays fully booked 3 weeks ahead.”
+        </p>
+      </aside>
+    </section>
 
-  <!-- Floating back-to-top arrow -->
-  <a href="#top" class="scroll-top" aria-label="Back to top">
-    ↑
-  </a>
+    <section class="section" id="portfolio">
+      <h2>Portfolio</h2>
+      <p class="section-lead">
+        Websites για ψυχολόγους, δερματολόγους, δικηγόρους &amp; real estate —
+        φτιαγμένα για να κλείνουν ραντεβού.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Ψυχολόγος</h3>
+          <p>Θερμή, καθαρή δομή που οδηγεί στο “κλείνω συνεδρία”.</p>
+        </div>
+        <div class="card">
+          <h3>Personal Trainer</h3>
+          <p>Mobile-first design με ξεκάθαρα πακέτα &amp; testimonials.</p>
+        </div>
+        <div class="card">
+          <h3>Law Firm</h3>
+          <p>Πιο σοβαρή αισθητική με έμφαση στην αξιοπιστία &amp; practice areas.</p>
+        </div>
+        <div class="card">
+          <h3>Real Estate</h3>
+          <p>Listings + φόρμα επικοινωνίας που φιλτράρει σοβαρά leads.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer__inner">
-      <p>© <span id="y"></span> Evida Studio. All rights reserved.</p>
-      <a href="#top" class="top">Back to top ↑</a>
-    </div>
+    <section class="section" id="about">
+      <h2>Who you'll work with</h2>
+      <p class="section-lead">
+        Γεια, είμαι ο Fotis — Webflow designer για ανθρώπους που πουλάνε υπηρεσίες.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <p>
+            Έχω background στο business &amp; marketing και χτίζω sites για
+            επαγγελματίες που θέλουν λιγότερο “όμορφο brochure” και περισσότερο
+            μηχανή που κλείνει ραντεβού.
+          </p>
+          <ul>
+            <li>Εστιάζω σε ψυχολόγους, trainers, δικηγόρους &amp; real estate.</li>
+            <li>Δουλεύω με Webflow, καθαρό layout και ξεκάθαρα CTA.</li>
+            <li>Στόχος: ο ιδανικός πελάτης σου να πει “οκ, αυτός/αυτή είναι για μένα”.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2>Τι αναλαμβάνω για σένα</h2>
+      <p class="section-lead">
+        Δεν σου “φτιάχνω απλά ένα site”. Στήνουμε ένα μικρό σύστημα που φέρνει
+        ιδανικούς πελάτες, από την πρώτη επίσκεψη μέχρι το booked call.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Strategy</h3>
+          <p>Positioning, ιδανικός πελάτης, πακέτα &amp; κεντρικό μήνυμα.</p>
+        </div>
+        <div class="card">
+          <h3>UX &amp; Copy</h3>
+          <p>Δομή &amp; κείμενα που απαντούν στις αντιρρήσεις και οδηγούν στο CTA.</p>
+        </div>
+        <div class="card">
+          <h3>Webflow Build</h3>
+          <p>Καθαρή υλοποίηση, mobile-first, εύκολη διαχείριση.</p>
+        </div>
+        <div class="card">
+          <h3>Launch &amp; μετά</h3>
+          <p>Domain, SEO basics, analytics &amp; handover video.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <h2>Process 4 βημάτων</h2>
+      <p class="section-lead">
+        Άνοιξε κάθε βήμα για να δεις ακριβώς τι κάνουμε — από το brief μέχρι το launch.
+      </p>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-title">01 • Brief &amp; στόχοι — 30’ call</div>
+          <div class="step-body">
+            Καταλαβαίνω πώς δουλεύεις ήδη, τι πουλάς και τι σημαίνει “επιτυχία” για σένα.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-title">02 • Wireframe &amp; ροή σελίδων</div>
+          <div class="step-body">
+            Φτιάχνουμε “σκελετό” πριν από τα χρώματα, για να είμαστε σίγουροι για τη ροή.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-title">03 • Design &amp; Webflow build</div>
+          <div class="step-body">
+            Χτίζω το site σε Webflow, με καθαρό layout, mobile εμπειρία και premium αίσθηση.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-title">04 • Launch, SEO basics &amp; handover</div>
+          <div class="step-body">
+            Συνδέουμε domain, φόρμες, tracking και σου αφήνω video για να νιώθεις ότι το έχεις.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Έλα να το ξεκινήσουμε</h2>
+      <p class="section-lead">
+        Στείλε 2–3 site που σου αρέσουν + τον στόχο σου.
+        Θα λάβεις αναλυτική πρόταση σε 24 ώρες.
+      </p>
+      <!-- εδώ αργότερα βάζουμε κανονική φόρμα -->
+      <a href="mailto:your@email"
+         class="btn-primary">Στείλε μου email</a>
+    </section>
+  </main>
+
+  <footer>
+    © Evida Studio. All rights reserved.
   </footer>
-
-  <script>
-    // year στο footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Scroll reveal
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal--visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Floating back-to-top arrow visibility
-    const scrollBtn = document.querySelector('.scroll-top');
-    window.addEventListener('scroll', () => {
-      if (!scrollBtn) return;
-      if (window.scrollY > 260) {
-        scrollBtn.classList.add('scroll-top--visible');
-      } else {
-        scrollBtn.classList.remove('scroll-top--visible');
-      }
-    });
-
-    // Accordion για το Process
-    const stepHeaders = document.querySelectorAll('.step-header');
-
-    stepHeaders.forEach(header => {
-      header.addEventListener('click', () => {
-        const step = header.closest('.step');
-        const isOpen = step.classList.contains('step--open');
-
-        // κλείσε όλα πρώτα
-        document.querySelectorAll('.step').forEach(s => s.classList.remove('step--open'));
-
-        // άνοιξε μόνο αν δεν ήταν ήδη ανοιχτό
-        if (!isOpen) {
-          step.classList.add('step--open');
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
