@@ -185,33 +185,48 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
+    <!-- PROCESS (accordion) -->
     <section class="section" id="process">
       <h2>Process 4 βημάτων</h2>
       <p class="section-lead">
         Από το πρώτο call μέχρι το launch, σε 4 καθαρά βήματα.
       </p>
       <div class="process-steps">
-        <div class="step">
-          <div class="step-title">01 • Brief &amp; στόχοι — 30’ call</div>
+        <div class="step step--open">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text">01 • Brief &amp; στόχοι — 30’ call</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
           <div class="step-body">
             Καταλαβαίνω πώς δουλεύεις ήδη, τι πουλάς και τι σημαίνει “επιτυχία” για σένα.
           </div>
         </div>
+
         <div class="step">
-          <div class="step-title">02 • Wireframe &amp; ροή σελίδων</div>
+          <button class="step-toggle" type="button">
+            <span class="step-title-text">02 • Wireframe &amp; ροή σελίδων</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
           <div class="step-body">
             Φτιάχνουμε “σκελετό” πριν από τα χρώματα, για να είμαστε σίγουροι για τη ροή.
           </div>
         </div>
+
         <div class="step">
-          <div class="step-title">03 • Design &amp; Webflow build</div>
+          <button class="step-toggle" type="button">
+            <span class="step-title-text">03 • Design &amp; Webflow build</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
           <div class="step-body">
             Χτίζω το site σε Webflow, με καθαρό layout, mobile εμπειρία και premium αίσθηση.
           </div>
         </div>
+
         <div class="step">
-          <div class="step-title">04 • Launch, SEO basics &amp; handover</div>
+          <button class="step-toggle" type="button">
+            <span class="step-title-text">04 • Launch, SEO basics &amp; handover</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
           <div class="step-body">
             Συνδέουμε domain, φόρμες, tracking και σου αφήνω video για να νιώθεις ότι το έχεις.
           </div>
@@ -234,5 +249,56 @@
   <footer>
     © Evida Studio. All rights reserved.
   </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">
+    ↑
+  </button>
+
+  <!-- JS for accordion + scroll-to-top -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Accordion for process steps
+      const steps = document.querySelectorAll('.step');
+      steps.forEach(step => {
+        const toggle = step.querySelector('.step-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', () => {
+          const isOpen = step.classList.contains('step--open');
+          // κλείνουμε όλα
+          steps.forEach(s => s.classList.remove('step--open'));
+          // αν αυτό δεν ήταν ανοικτό, το ανοίγουμε
+          if (!isOpen) {
+            step.classList.add('step--open');
+          }
+        });
+      });
+
+      // Scroll-to-top visibility logic
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      const secondSection = document.querySelector('#portfolio');
+
+      if (scrollBtn && secondSection) {
+        const updateScrollBtn = () => {
+          const rect = secondSection.getBoundingClientRect();
+          const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
+          // εμφανίζεται όταν έχουμε κατέβει περίπου μέχρι τη μέση του 2ου section
+          if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
+            scrollBtn.classList.add('is-visible');
+          } else {
+            scrollBtn.classList.remove('is-visible');
+          }
+        };
+
+        window.addEventListener('scroll', updateScrollBtn);
+        window.addEventListener('resize', updateScrollBtn);
+        updateScrollBtn();
+
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
