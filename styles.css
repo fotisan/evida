@@ -363,7 +363,7 @@ ul{list-style:none;}
   gap:.25rem;
 }
 
-/* CARDS / GRID (άλλα sections) */
+/* CARDS / GRID */
 .cards{
   display:grid;
   gap:1.2rem;
@@ -425,19 +425,30 @@ footer{
   .site-header-inner{padding-inline:1.4rem;}
   .nav-links{display:none;}
 
+  /* hero σε vertical stack */
   .hero{
-    grid-template-columns:1fr;
-    gap:2.1rem;
+    display:flex;
+    flex-direction:column;
+    gap:1.9rem;
   }
+
+  /* όλο το κείμενο πρώτο */
+  .hero-copy{
+    order:0;
+  }
+
+  /* το 3D panel ακριβώς από κάτω */
   .hero-visual{
-    order:-1;
-    margin-bottom:.3rem;
+    order:1;
+    margin-top:-0.2rem;
   }
+
   .hero-title{
     font-size:clamp(2rem,7vw,2.4rem);
     max-width:26rem;
   }
   .hero-sub{font-size:1rem;}
+
   .hero-cta-row{
     flex-direction:column;
     align-items:stretch;
@@ -447,8 +458,9 @@ footer{
     width:100%;
     justify-content:center;
   }
+
   .hero-panel{
-    max-width:360px;
+    max-width:100%;
     transform:rotateX(14deg) rotateY(-18deg) translateY(4px);
   }
 
