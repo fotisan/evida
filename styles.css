@@ -35,7 +35,7 @@ ul{list-style:none;}
   color:var(--muted);
 }
 
-/* LAYOUT WRAPPER */
+/* WRAPPER */
 .shell{
   max-width:var(--container);
   margin:0 auto;
@@ -87,9 +87,9 @@ ul{list-style:none;}
 .hero{
   padding-top:2.6rem;
   display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
-  gap:2.6rem;
-  align-items:stretch;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
+  gap:2.8rem;
+  align-items:center;
 }
 .hero-copy{
   align-self:center;
@@ -142,6 +142,9 @@ ul{list-style:none;}
 }
 
 .btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:.85rem 1.3rem;
   border-radius:999px;
   border:none;
@@ -153,6 +156,9 @@ ul{list-style:none;}
   cursor:pointer;
 }
 .btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:.85rem 1.2rem;
   border-radius:999px;
   border:1px solid rgba(160,176,210,.5);
@@ -177,23 +183,24 @@ ul{list-style:none;}
   color:var(--muted);
 }
 
-/* HERO 3D CARD */
-.hero-mock-wrap{
+/* HERO 3D IMAGE */
+.hero-media{
   display:flex;
   justify-content:center;
-  perspective:1200px;
+  perspective:1400px;
 }
 
-.hero-mock{
+.hero-device{
   position:relative;
-  background:radial-gradient(circle at top,#182642,#050814 70%);
-  border-radius:26px;
-  padding:1.6rem 1.6rem 1.8rem;
+  width:100%;
+  max-width:420px;
+  border-radius:28px;
+  padding:10px;
+  background:radial-gradient(circle at top left,#33426b 0,#050814 65%);
   box-shadow:
-    0 26px 70px rgba(0,0,0,.85),
+    0 30px 90px rgba(0,0,0,.95),
     0 0 0 1px rgba(150,180,255,.4);
-  font-size:.9rem;
-  transform: rotateX(10deg) rotateY(-18deg) translateY(4px);
+  transform:rotateX(16deg) rotateY(-24deg) translateY(6px);
   transform-origin:center center;
   transition:
     transform 260ms cubic-bezier(.22,.61,.36,1),
@@ -201,60 +208,53 @@ ul{list-style:none;}
     filter 260ms cubic-bezier(.22,.61,.36,1);
 }
 
-.hero-mock::before{
+/* φωτεινή γραμμή επάνω */
+.hero-device::before{
   content:"";
   position:absolute;
   inset:0;
   border-radius:inherit;
-  border-top:2px solid rgba(111,195,255,.9);
+  border-top:2px solid transparent;
   border-image:linear-gradient(90deg,#3de2c5,#7b5cff) 1;
-  opacity:.9;
+  opacity:.95;
   pointer-events:none;
 }
 
-.hero-mock::after{
+/* glow κάτω */
+.hero-device::after{
   content:"";
   position:absolute;
-  left:10%;
-  right:10%;
-  bottom:-24px;
-  height:46px;
-  background:radial-gradient(circle at center, rgba(59,130,246,.7), transparent 65%);
-  filter:blur(10px);
+  left:16%;
+  right:16%;
+  bottom:-26px;
+  height:52px;
+  background:radial-gradient(circle at center, rgba(64,150,255,.9), transparent 70%);
+  filter:blur(12px);
   opacity:.9;
   pointer-events:none;
 }
 
-.hero-mock-pill{
-  font-size:.7rem;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  color:var(--muted);
-  margin-bottom:1rem;
-}
-.hero-mock h3{
-  font-size:1.05rem;
-  margin-bottom:.35rem;
-}
-.hero-mock p{
-  color:var(--muted);
-  margin-bottom:.7rem;
-}
-.mock-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.35rem;
-  margin-bottom:.9rem;
-  font-size:.78rem;
-  color:var(--muted);
+.hero-device-inner{
+  border-radius:22px;
+  overflow:hidden;
+  background:#050814;
+  box-shadow:0 0 0 1px rgba(200,220,255,.3);
 }
 
-.hero-mock:hover{
-  transform: rotateX(6deg) rotateY(-10deg) translateY(0);
+.hero-device img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+
+/* hover / tap effect */
+.hero-device:hover{
+  transform:rotateX(10deg) rotateY(-15deg) translateY(0);
   box-shadow:
-    0 34px 80px rgba(0,0,0,.9),
-    0 0 0 1px rgba(170,200,255,.8);
-  filter:brightness(1.02);
+    0 36px 100px rgba(0,0,0,.98),
+    0 0 0 1px rgba(180,205,255,.85);
+  filter:brightness(1.03);
 }
 
 /* SECTIONS */
@@ -345,6 +345,10 @@ footer{
     grid-template-columns:1fr;
     gap:2.1rem;
   }
+  .hero-media{
+    order:-1;
+    margin-bottom:.3rem;
+  }
   .hero-title{
     font-size:clamp(2rem,7vw,2.4rem);
     max-width:26rem;
@@ -361,8 +365,8 @@ footer{
     width:100%;
     justify-content:center;
   }
-  .hero-mock-wrap{
-    order:-1;
-    margin-bottom:.5rem;
+  .hero-device{
+    max-width:360px;
+    transform:rotateX(12deg) rotateY(-18deg) translateY(4px);
   }
 }
