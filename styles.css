@@ -183,7 +183,7 @@ ul{list-style:none;}
   color:var(--muted);
 }
 
-/* HERO 3D IMAGE */
+/* HERO DEVICE — 3D IMAGE */
 .hero-media{
   display:flex;
   justify-content:center;
@@ -208,24 +208,7 @@ ul{list-style:none;}
     filter 260ms cubic-bezier(.22,.61,.36,1);
 }
 
-/* πιο διακριτική top γραμμή */
-.hero-device::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:4px;
-  border-radius:inherit;
-  background:linear-gradient(
-      90deg,
-      rgba(61,226,197,0.35),
-      rgba(123,92,255,0.35)
-  );
-  opacity:0.45;
-  pointer-events:none;
-  transform:translateY(-1px);
-}
+/* ⛔ Δεν υπάρχει πλέον hero-device::before */
 
 /* glow κάτω */
 .hero-device::after{
@@ -345,7 +328,7 @@ footer{
     padding-inline:1.4rem;
   }
   .nav-links{
-    display:none; /* μέχρι να βάλουμε mobile menu */
+    display:none;
   }
 
   .hero{
