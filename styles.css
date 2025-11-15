@@ -136,12 +136,15 @@ ul{list-style:none;}
 }
 .nav-links a:hover{color:var(--page-fg);}
 
-/* Get in touch nav pill */
+/* ===========================
+   Get in touch nav pill
+   (ΜΟΝΗ ΑΛΛΑΓΗ → padding)
+=========================== */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.55rem 1.7rem;
+  padding:0.55rem 2.3rem; /* A: πιο άνετο */
   min-height:2.4rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
