@@ -540,7 +540,7 @@ ul{list-style:none;}
   flex-shrink:0;
   margin-left:.75rem;
   transform:rotate(0deg);
-  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
+  transition:background .18s.ease, color .18s.ease, transform .18s.ease, border-color .18s.ease;
 }
 .step-arrow::before{
   content:"⌄";
@@ -566,9 +566,9 @@ footer{
 /* Scroll-to-top button */
 .scroll-top{
   position:fixed;
-  /* λίγο πιο πάνω και ελάχιστα πιο αριστερά */
   right:1.2rem;
-  bottom:2.4rem;
+  /* λίγο ακόμα πιο πάνω από πριν */
+  bottom:3rem;
   width:44px;
   height:44px;
   border-radius:999px;
@@ -584,7 +584,7 @@ footer{
   opacity:0;
   transform:translateY(12px);
   pointer-events:none;
-  transition:opacity .2s ease, transform .2s.ease;
+  transition:opacity .2s ease, transform .2s ease;
   z-index:60;
 }
 .scroll-top.is-visible{
