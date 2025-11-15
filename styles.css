@@ -138,14 +138,13 @@ ul{list-style:none;}
 
 /* ===========================
    Get in touch nav pill
-   (πιο άνετο capsule)
 =========================== */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.5rem 2.9rem; /* περισσότερο αέρα δεξιά–αριστερά */
-  min-height:2.6rem;
+  padding:0.55rem 2.3rem;
+  min-height:2.4rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
@@ -656,7 +655,7 @@ footer{
 .scroll-top{
   position:fixed;
   right:1.2rem;
-  bottom:3rem; /* λίγο πιο πάνω */
+  bottom:3rem;
   width:44px;
   height:44px;
   border-radius:999px;
@@ -717,6 +716,10 @@ footer{
   .nav-links a{
     padding:0;
   }
+  .nav-links .btn-nav{
+    padding:0.55rem 2.3rem;
+    min-height:2.4rem;
+  }
 
   .hero{
     padding-top:2.6rem;
@@ -772,7 +775,3 @@ footer{
     justify-items:stretch;
   }
 }
-
-
-
-
