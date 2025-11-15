@@ -138,19 +138,19 @@ ul{list-style:none;}
 
 /* ===========================
    Get in touch nav pill
-   (ΜΟΝΗ ΑΛΛΑΓΗ → padding)
+   (πιο άνετο capsule)
 =========================== */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.55rem 2.3rem; /* A: πιο άνετο */
-  min-height:2.4rem;
+  padding:0.5rem 2.9rem; /* περισσότερο αέρα δεξιά–αριστερά */
+  min-height:2.6rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
   font-weight:600;
-  font-size:.95rem;
+  font-size:.93rem;
   box-shadow:0 0 0 1px rgba(255,255,255,.04),0 12px 35px rgba(42,151,255,.55);
 }
 
@@ -270,6 +270,7 @@ ul{list-style:none;}
 }
 
 /* HERO 3D PANEL */
+
 .hero-panel{
   position:relative;
   width:100%;
