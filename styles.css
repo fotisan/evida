@@ -127,19 +127,30 @@ ul{list-style:none;}
 }
 .nav-links a:hover{color:var(--page-fg);}
 
-/* Get in touch στο nav – περισσότερο “αέρας” */
+/* Get in touch στο nav – σωστό πλαίσιο */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.6rem 1.6rem;
-  min-height:2.6rem;
+  padding:0.55rem 1.7rem; /* περισσότερο οριζόντιο padding */
+  min-height:2.4rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
   font-weight:600;
   font-size:.95rem;
   box-shadow:0 0 0 1px rgba(255,255,255,.04),0 12px 35px rgba(42,151,255,.55);
+}
+
+/* Scroll reveal base */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .45s ease-out, transform .45s ease-out;
+}
+.reveal-visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* HERO – mobile-first (stacked) */
@@ -693,7 +704,7 @@ footer{
     border:none;
     box-shadow:none;
     margin-top:0;
-    padding:0;
+    padding:0 .4rem 0 0; /* λίγο έξτρα δεξί padding για να μην "ακουμπάει" το pill */
     min-width:auto;
     font-size:.95rem;
   }
