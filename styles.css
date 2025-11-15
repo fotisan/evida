@@ -146,7 +146,7 @@ ul{list-style:none;}
 .reveal{
   opacity:0;
   transform:translateY(18px);
-  transition:opacity .30s ease-out, transform .45s ease-out;
+  transition:opacity .25s ease-out, transform .25s ease-out;
 }
 .reveal-visible{
   opacity:1;
@@ -769,4 +769,5 @@ footer{
     justify-items:stretch;
   }
 }
+
 
