@@ -144,7 +144,7 @@ ul{list-style:none;}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.5rem 2.9rem; /* περισσότερο αέρα δεξιά–αριστερά */
+  padding:1.5rem 3.9rem; /* περισσότερο αέρα δεξιά–αριστερά */
   min-height:2.6rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
@@ -772,3 +772,4 @@ footer{
     justify-items:stretch;
   }
 }
+
