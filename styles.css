@@ -719,7 +719,7 @@ footer{
   .nav-links .btn-nav{
     padding:0.55rem 2.3rem;
     min-height:2.4rem;
-    margin-left:4rem;
+    margin-left:1rem;
   }
 
   .hero{
@@ -776,4 +776,5 @@ footer{
     justify-items:stretch;
   }
 }
+
 
