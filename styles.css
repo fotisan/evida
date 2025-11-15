@@ -1,782 +1,391 @@
-:root{
-  --page-bg:#050814;
-  --page-bg-soft:#0c1220;
-  --page-fg:#f7f7ff;
-  --muted:#a8b0c8;
-  --brand:#5f8cff;
-  --brand-2:#3de2c5;
-  --accent:#7b5cff;
-  --danger:#ff4f7b;
-  --radius:20px;
-  --container:1120px;
-}
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <title>Evida Studio — Webflow sites που φέρνουν πελάτες</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-logo">
+        <a href="#top">Evida <span>Studio</span></a>
+      </div>
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
 
-html{
-  scroll-behavior:smooth;
-}
+      <nav class="nav-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#services">Υπηρεσίες</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="btn-nav">Get in touch</a>
+      </nav>
+    </div>
+  </header>
 
-body{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-  background: radial-gradient(circle at top left,#171f39 0,#050814 52%,#02030a 100%);
-  color:var(--page-fg);
-  -webkit-font-smoothing:antialiased;
-}
+  <main class="shell">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-copy reveal-frame">
+        <div class="hero-eyebrow reveal-content">WEBFLOW DESIGNER FOR SERVICE PROS</div>
+        <h1 class="hero-title reveal-content">
+          Websites που <em>φέρνουν πελάτες</em> για Ψυχολόγους, Trainers,
+          Δικηγόρους &amp; Real Estate.
+        </h1>
+        <p class="hero-sub reveal-content">
+          Done-for-you Webflow sites που είναι φτιαγμένα για να κλείνουν ραντεβού
+          — όχι απλώς για να είναι “όμορφα”.
+        </p>
+        <div class="hero-meta reveal-content">
+          <span>Built in Webflow</span>
+          <span>On-page SEO</span>
+          <span>24h πρόταση</span>
+          <span>2 εβδομάδες παράδοση</span>
+        </div>
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary reveal-content">Ζήτησε προσφορά</a>
+          <a href="#portfolio" class="btn-outline reveal-content">Δες δουλειές</a>
+        </div>
+      </div>
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
-ul{list-style:none;}
+      <!-- 3D HERO PANEL -->
+      <aside class="hero-visual reveal-frame">
+        <div class="hero-panel">
+          <div class="hero-panel-header reveal-content">
+            BrightPractice · Example layout
+          </div>
+          <div class="hero-panel-main">
+            <p class="hero-panel-title reveal-content">
+              Grow your practice with a website that
+              <span>books clients for you.</span>
+            </p>
+            <p class="hero-panel-text reveal-content">
+              Done-for-you Webflow websites για θεραπευτές, coaches
+              &amp; service pros που θέλουν περισσότερα high-quality bookings — 
+              όχι απλά περισσότερα “likes”.
+            </p>
+            <ul class="hero-panel-list reveal-content">
+              <li>Σαφή πακέτα &amp; CTA που οδηγούν στο booking.</li>
+              <li>Mobile-first εμπειρία για πελάτες που κλείνουν από το κινητό.</li>
+              <li>Έτοιμο για launch σε 2 εβδομάδες κατά μέσο όρο.</li>
+            </ul>
+          </div>
+          <div class="hero-panel-footer reveal-content">
+            <div class="hero-pill">+3x περισσότερα ραντεβού</div>
+            <div class="hero-pill hero-pill-soft">2-week average build</div>
+          </div>
+        </div>
+      </aside>
 
-.shell{
-  max-width:var(--container);
-  margin:0 auto;
-  padding:1.2rem 1.4rem 4rem;
-}
+      <!-- TAGS -->
+      <div class="hero-tags-row reveal-frame">
+        <div class="hero-tags reveal-content">
+          <span class="hero-tag">Psychologists</span>
+          <span class="hero-tag">Personal Trainers</span>
+          <span class="hero-tag">Lawyers</span>
+          <span class="hero-tag">Real Estate</span>
+        </div>
+      </div>
+    </section>
 
-/* =============== REVEAL (ένα κλικ πιο γρήγορο) =============== */
+    <!-- PORTFOLIO -->
+    <section class="section reveal-frame" id="portfolio">
+      <h2 class="reveal-content">Portfolio</h2>
+      <p class="section-lead reveal-content">
+        Websites για ψυχολόγους, γιατρούς, δικηγόρους, personal trainers &amp; real estate — 
+        φτιαγμένα για να φέρνουν πελάτες.
+      </p>
 
-.reveal-frame,
-.reveal-content{
-  opacity:0;
-  transform:translateY(12px);
-  transition:
-    opacity .32s ease-out,
-    transform .32s ease-out;
-}
+      <div class="pf-grid">
+        <div class="pf-item reveal-frame">
+          <img src="mock-psych-1.png" alt="Psychologist website mockup" class="reveal-content">
+          <div class="pf-info reveal-content">
+            <h3>Psychologist</h3>
+            <p>Warm &amp; calm layout για υψηλότερα booked sessions.</p>
+          </div>
+        </div>
 
-.reveal-frame.is-visible,
-.reveal-content.is-visible{
-  opacity:1;
-  transform:translateY(0);
-}
+        <div class="pf-item reveal-frame">
+          <img src="mock-derma-1.png" alt="Dermatology website mockup" class="reveal-content">
+          <div class="pf-info reveal-content">
+            <h3>Dermatology Clinic</h3>
+            <p>Premium medical look με clean hierarchy.</p>
+          </div>
+        </div>
 
-/* ===================== HEADER ===================== */
+        <div class="pf-item reveal-frame">
+          <img src="mock-law-1.png" alt="Law firm website mockup" class="reveal-content">
+          <div class="pf-info reveal-content">
+            <h3>Law Firm</h3>
+            <p>Serious, trustworthy design με emphasis σε practice areas.</p>
+          </div>
+        </div>
 
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter: blur(18px);
-  background:linear-gradient(to bottom, rgba(5,8,20,.92), rgba(5,8,20,.82), transparent);
-}
-.site-header-inner{
-  max-width:var(--container);
-  margin:0 auto;
-  padding:0.7rem 1.4rem 0.85rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1.5rem;
-}
-.site-logo{
-  font-weight:650;
-  letter-spacing:.03em;
-  font-size:1.1rem;
-}
-.site-logo span{color:var(--brand-2);}
+        <div class="pf-item reveal-frame">
+          <img src="mock-villa-1.png" alt="Real estate / villa website mockup" class="reveal-content">
+          <div class="pf-info reveal-content">
+            <h3>Real Estate / Villa</h3>
+            <p>High-end listings και σαφές lead form.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* NAV */
-.nav-toggle{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-  width:34px;
-  height:28px;
-  justify-content:center;
-  align-items:flex-end;
-  background:transparent;
-  border:none;
-  cursor:pointer;
-}
-.nav-toggle-line{
-  height:2px;
-  width:100%;
-  border-radius:99px;
-  background:rgba(200,210,240,.9);
-  transition:transform .2s ease, opacity .2s ease, width .2s ease;
-}
-.nav-toggle.is-active .nav-toggle-line:first-child{
-  transform:translateY(3px) rotate(38deg);
-}
-.nav-toggle.is-active .nav-toggle-line:last-child{
-  transform:translateY(-3px) rotate(-38deg);
-}
+    <!-- DESIGN BEFORE / AFTER -->
+    <section class="section section-compare reveal-frame" id="design-compare">
+      <h2 class="reveal-content">Wrong vs Right design</h2>
+      <p class="section-lead reveal-content">
+        Το ίδιο περιεχόμενο μπορεί να δουλεύει ή να σε σαμποτάρει, ανάλογα με το layout.
+        Δες ένα απλό παράδειγμα πριν/μετά.
+      </p>
 
-/* nav links: dropdown (mobile) */
-.nav-links{
-  position:absolute;
-  top:100%;
-  right:1.6rem;
-  margin-top:.5rem;
-  background:rgba(5,8,20,.96);
-  border-radius:16px;
-  border:1px solid rgba(120,145,220,.5);
-  padding:.7rem .9rem;
-  display:none;
-  flex-direction:column;
-  gap:.35rem;
-  min-width:180px;
-  box-shadow:0 16px 40px rgba(0,0,0,.85);
-  font-size:.92rem;
-  color:var(--muted);
-  align-items:flex-start;
-}
-.nav-links.is-open{
-  display:flex;
-}
-.nav-links a{
-  padding:.35rem .2rem;
-}
-.nav-links a:hover{color:var(--page-fg);}
+      <div class="compare-grid">
+        <article class="compare-card compare-card--wrong reveal-frame">
+          <div class="compare-header reveal-content">
+            <span class="compare-label compare-label--wrong">Λάθος layout</span>
+            <span class="compare-note">Χαμένο focus, αδύναμα CTA, visual θόρυβος.</span>
+          </div>
+          <div class="compare-image-wrap reveal-content">
+            <img src="wrong-mock.jpg" alt="Παράδειγμα λάθους layout website">
+          </div>
+        </article>
 
-/* ===========================
-   Get in touch nav pill
-=========================== */
-.btn-nav{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:0.55rem 2.3rem;
-  min-height:2.4rem;
-  border-radius:999px;
-  background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
-  color:#020309;
-  font-weight:600;
-  font-size:.93rem;
-  box-shadow:0 0 0 1px rgba(255,255,255,.04),0 12px 35px rgba(42,151,255,.55);
-}
+        <article class="compare-card compare-card--right reveal-frame">
+          <div class="compare-header reveal-content">
+            <span class="compare-label compare-label--right">Σωστό layout</span>
+            <span class="compare-note">Καθαρή ιεραρχία, ξεκάθαρο μήνυμα, ένα κύριο CTA.</span>
+          </div>
+          <div class="compare-image-wrap reveal-content">
+            <img src="wright-mock.jpg" alt="Παράδειγμα σωστού layout website">
+          </div>
+        </article>
+      </div>
+    </section>
 
-/* ===================== HERO ===================== */
+    <!-- ABOUT -->
+    <section class="section reveal-frame" id="about">
+      <h2 class="reveal-content">Who you'll work with</h2>
+      <p class="section-lead reveal-content">
+        Γεια, είμαι ο Fotis — Webflow designer για ανθρώπους που πουλάνε υπηρεσίες.
+      </p>
 
-.hero{
-  padding-top:1.6rem;
-  display:flex;
-  flex-direction:column;
-  gap:1.5rem;
-}
-.hero-copy{ order:0; }
-.hero-visual{
-  order:1;
-  margin-top:.4rem;
-  display:flex;
-  justify-content:center;
-  perspective:1400px;
-}
-.hero-tags-row{
-  order:2;
-}
-.hero-eyebrow{
-  font-size:.88rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--brand-2);
-  margin-bottom:.5rem;
-}
-.hero-title{
-  font-size:clamp(2rem,7vw,2.4rem);
-  line-height:1.12;
-  margin-bottom:.8rem;
-  max-width:26rem;
-}
-.hero-title em{
-  font-style:normal;
-  background:linear-gradient(135deg,#3de2c5,#7b5cff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-.hero-sub{
-  font-size:1rem;
-  color:var(--muted);
-  max-width:34rem;
-  margin-bottom:1.4rem;
-}
-.hero-meta{
-  font-size:.9rem;
-  color:var(--muted);
-  display:flex;
-  flex-wrap:wrap;
-  gap:.4rem .7rem;
-  margin-bottom:1.6rem;
-}
-.hero-meta span::after{
-  content:"•";
-  margin-left:.6rem;
-  opacity:.35;
-}
-.hero-meta span:last-child::after{
-  content:none;
-}
-.hero-cta-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.75rem;
-  align-items:stretch;
-  flex-direction:column;
-  margin-bottom:.8rem;
-}
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:.85rem 1.3rem;
-  border-radius:999px;
-  border:none;
-  background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
-  color:#020309;
-  font-weight:600;
-  font-size:.98rem;
-  box-shadow:0 0 0 1px rgba(255,255,255,.04),0 16px 40px rgba(33,143,255,.65);
-  cursor:pointer;
-}
-.btn-outline{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:.85rem 1.2rem;
-  border-radius:999px;
-  border:1px solid rgba(160,176,210,.5);
-  background:rgba(10,16,33,.85);
-  color:var(--page-fg);
-  font-weight:500;
-  font-size:.95rem;
-  cursor:pointer;
-}
-.hero-cta-row .btn-primary,
-.hero-cta-row .btn-outline{
-  width:100%;
-  justify-content:center;
-}
-.hero-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.5rem;
-  margin-top:.4rem;
-}
-.hero-tag{
-  font-size:.86rem;
-  padding:.35rem .8rem;
-  border-radius:999px;
-  background:rgba(9,17,42,.9);
-  border:1px solid rgba(86,110,172,.7);
-  color:var(--muted);
-}
+      <div class="about-grid">
+        <figure class="about-photo reveal-frame">
+          <div class="about-photo-ring"></div>
+          <img src="fotis-hero.png" alt="Fotis, Webflow designer" class="reveal-content">
+        </figure>
 
-/* HERO 3D PANEL */
+        <div class="about-card reveal-frame">
+          <p class="reveal-content">
+            Έχω background στο business &amp; marketing και χτίζω sites για
+            επαγγελματίες που θέλουν λιγότερο “όμορφο brochure” και περισσότερο
+            μηχανή που κλείνει ραντεβού.
+          </p>
+          <ul class="reveal-content">
+            <li>Εστιάζω σε ψυχολόγους, trainers, δικηγόρους &amp; real estate.</li>
+            <li>Δουλεύω με Webflow, καθαρό layout και ξεκάθαρα CTA.</li>
+            <li>Στόχος: ο ιδανικός πελάτης σου να πει “οκ, αυτός/αυτή είναι για μένα”.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-.hero-panel{
-  position:relative;
-  width:100%;
-  max-width:100%;
-  border-radius:26px;
-  padding:1.4rem 1.5rem 1.6rem;
-  background:radial-gradient(circle at top left,#27355a 0,#050814 70%);
-  box-shadow:
-    0 26px 80px rgba(0,0,0,.95),
-    0 0 0 1px rgba(150,180,255,.4);
-  transform-origin:center center;
-  animation: heroFloat 20s ease-in-out infinite;
-}
-.hero-panel::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  border:1px solid rgba(180,205,255,.25);
-  pointer-events:none;
-}
-.hero-panel::after{
-  content:"";
-  position:absolute;
-  left:15%;
-  right:15%;
-  bottom:-26px;
-  height:52px;
-  background:radial-gradient(circle at center, rgba(64,150,255,.9), transparent 70%);
-  filter:blur(12px);
-  opacity:.9;
-  pointer-events:none;
-}
-.hero-panel-header{
-  font-size:.72rem;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  color:rgba(195,208,245,.85);
-  margin-bottom:.7rem;
-}
-.hero-panel-title{
-  font-size:.95rem;
-  font-weight:600;
-  margin-bottom:.35rem;
-}
-.hero-panel-title span{
-  display:block;
-  background:linear-gradient(135deg,#3de2c5,#7b5cff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-.hero-panel-text{
-  font-size:.86rem;
-  color:var(--muted);
-  margin-bottom:.7rem;
-}
-.hero-panel-list{
-  font-size:.82rem;
-  color:var(--muted);
-  display:grid;
-  gap:.25rem;
-  margin-bottom:.9rem;
-}
-.hero-panel-list li::before{
-  content:"• ";
-  color:var(--brand-2);
-}
-.hero-panel-footer{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.4rem;
-}
-.hero-pill{
-  font-size:.78rem;
-  padding:.35rem .7rem;
-  border-radius:999px;
-  background:rgba(7,18,40,.95);
-  border:1px solid rgba(111,195,255,.6);
-}
-.hero-pill-soft{
-  border-color:rgba(140,165,230,.6);
-  background:rgba(9,20,55,.9);
-}
+    <!-- SERVICES -->
+    <section class="section reveal-frame" id="services">
+      <h2 class="reveal-content">Τι αναλαμβάνω για σένα</h2>
+      <p class="section-lead reveal-content">
+        Δεν σου “φτιάχνω απλά ένα site”. Στήνουμε ένα μικρό σύστημα που φέρνει
+        ιδανικούς πελάτες, από την πρώτη επίσκεψη μέχρι το booked call.
+      </p>
+      <div class="cards">
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Strategy</h3>
+          <p class="reveal-content">Positioning, ιδανικός πελάτης, πακέτα &amp; κεντρικό μήνυμα.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">UX &amp; Copy</h3>
+          <p class="reveal-content">Δομή &amp; κείμενα που απαντούν στις αντιρρήσεις και οδηγούν στο CTA.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Webflow Build</h3>
+          <p class="reveal-content">Καθαρή υλοποίηση, mobile-first, εύκολη διαχείριση.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Launch &amp; μετά</h3>
+          <p class="reveal-content">Domain, SEO basics, analytics &amp; handover video.</p>
+        </div>
+      </div>
+    </section>
 
-@keyframes heroFloat {
-  0% {
-    transform: rotateX(16deg) rotateY(-40deg) translateY(6px);
-  }
-  50% {
-    transform: rotateX(10deg) rotateY(40deg) translateY(3px);
-  }
-  100% {
-    transform: rotateX(16deg) rotateY(-40deg) translateY(6px);
-  }
-}
+    <!-- PROCESS -->
+    <section class="section reveal-frame" id="process">
+      <h2 class="reveal-content">Process 4 βημάτων</h2>
+      <p class="section-lead reveal-content">
+        Από το πρώτο call μέχρι το launch, σε 4 καθαρά βήματα.
+      </p>
+      <div class="process-steps">
+        <div class="step step--open reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">01 • Brief &amp; στόχοι — 30’ call</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Καταλαβαίνω πώς δουλεύεις ήδη, τι πουλάς και τι σημαίνει “επιτυχία” για σένα.
+          </div>
+        </div>
 
-/* ===================== SECTIONS ===================== */
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">02 • Wireframe &amp; ροή σελίδων</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Φτιάχνουμε “σκελετό” πριν από τα χρώματα, για να είμαστε σίγουροι για τη ροή.
+          </div>
+        </div>
 
-.section{
-  margin-top:3.5rem;
-  padding:1.8rem 1.6rem 2rem;
-  border-radius:24px;
-  background: radial-gradient(circle at top left, #0c1224 0, #050814 55%, #02030a 100%);
-  border:1px solid rgba(120,145,220,.35);
-}
-.section h2{
-  font-size:1.55rem;
-  margin-bottom:.6rem;
-  background:linear-gradient(135deg,#3de2c5,#7b5cff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-.section-lead{
-  color:var(--muted);
-  font-size:.98rem;
-  margin-bottom:1.6rem;
-  max-width:32rem;
-}
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">03 • Design &amp; Webflow build</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Χτίζω το site σε Webflow, με καθαρό layout, mobile εμπειρία και premium αίσθηση.
+          </div>
+        </div>
 
-/* ===================== PORTFOLIO ===================== */
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">04 • Launch, SEO basics &amp; handover</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Συνδέουμε domain, φόρμες, tracking και σου αφήνω video για να νιώθεις ότι το έχεις.
+          </div>
+        </div>
+      </div>
+    </section>
 
-.pf-grid{
-  margin-top:1.6rem;
-  display:grid;
-  gap:1.6rem;
-  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-}
-.pf-item{
-  background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
-  border-radius:22px;
-  border:1px solid rgba(130,150,220,.45);
-  overflow:hidden;
-  box-shadow:0 18px 40px rgba(0,0,0,.65);
-  transition:transform .22s ease, box-shadow .22s ease;
-}
-.pf-item:hover{
-  transform:translateY(-4px);
-  box-shadow:0 22px 55px rgba(0,0,0,.85);
-}
-.pf-item img{
-  width:100%;
-  display:block;
-  border-bottom:1px solid rgba(150,170,240,.25);
-}
-.pf-info{
-  padding:1.1rem 1.2rem 1.3rem;
-}
-.pf-info h3{
-  font-size:1.05rem;
-  margin-bottom:.35rem;
-  background:linear-gradient(135deg,#3de2c5,#7b5cff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-.pf-info p{
-  color:var(--muted);
-  font-size:.9rem;
-}
+    <!-- CONTACT -->
+    <section class="section reveal-frame" id="contact">
+      <h2 class="reveal-content">Έλα να το ξεκινήσουμε</h2>
+      <p class="section-lead reveal-content">
+        Στείλε 2–3 site που σου αρέσουν + τον στόχο σου.
+        Θα λάβεις αναλυτική πρόταση σε 24 ώρες.
+      </p>
+      <a href="mailto:your@email"
+         class="btn-primary reveal-frame">
+         <span class="reveal-content">Στείλε μου email</span>
+      </a>
+    </section>
+  </main>
 
-/* ===================== COMPARE ===================== */
+  <footer>
+    © Evida Studio. All rights reserved.
+  </footer>
 
-.section-compare{
-  margin-top:3.2rem;
-}
-.compare-grid{
-  display:grid;
-  gap:1.4rem;
-  grid-template-columns:1fr;
-}
-.compare-card{
-  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
-  border-radius:20px;
-  border:1px solid rgba(140,165,230,.65);
-  box-shadow:0 20px 45px rgba(0,0,0,.8);
-  padding:1.1rem 1.1rem 1.25rem;
-  display:flex;
-  flex-direction:column;
-  gap:.9rem;
-}
-.compare-card--wrong{
-  border-color:rgba(255,79,123,.65);
-}
-.compare-card--right{
-  border-color:rgba(61,226,197,.65);
-}
-.compare-header{
-  display:flex;
-  flex-direction:column;
-  gap:.35rem;
-}
-.compare-label{
-  display:inline-flex;
-  align-items:center;
-  padding:.25rem .7rem;
-  border-radius:999px;
-  font-size:.78rem;
-  font-weight:600;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-}
-.compare-label--wrong{
-  background:rgba(255,79,123,.15);
-  color:#ff9ab8;
-  border:1px solid rgba(255,79,123,.7);
-}
-.compare-label--right{
-  background:rgba(61,226,197,.15);
-  color:#87f2d8;
-  border:1px solid rgba(61,226,197,.7);
-}
-.compare-note{
-  font-size:.86rem;
-  color:var(--muted);
-}
-.compare-image-wrap{
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(140,165,230,.4);
-  background:#020309;
-}
-.compare-image-wrap img{
-  display:block;
-  width:100%;
-  height:auto;
-}
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">
+    ↑
+  </button>
 
-/* ===================== ABOUT ===================== */
+  <!-- JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Accordion
+      const steps = document.querySelectorAll('.step');
+      steps.forEach(step => {
+        const toggle = step.querySelector('.step-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', () => {
+          const isOpen = step.classList.contains('step--open');
+          steps.forEach(s => s.classList.remove('step--open'));
+          if (!isOpen) step.classList.add('step--open');
+        });
+      });
 
-.about-grid{
-  margin-top:1.2rem;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:1.6rem;
-  align-items:center;
-  justify-items:flex-start;
-}
-.about-photo{
-  position:relative;
-  width:130px;
-  height:130px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.about-photo-ring{
-  position:absolute;
-  inset:-3px;
-  border-radius:inherit;
-  background:conic-gradient(from 180deg, #3de2c5, #7b5cff, #3de2c5);
-  opacity:.85;
-  filter:blur(.4px);
-}
-.about-photo img{
-  position:relative;
-  width:100%;
-  height:100%;
-  border-radius:inherit;
-  object-fit:cover;
-  box-shadow:0 18px 40px rgba(0,0,0,.9);
-}
-.about-card{
-  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
-  border-radius:20px;
-  border:1px solid rgba(140,165,230,.55);
-  box-shadow:0 16px 40px rgba(0,0,0,.75);
-  padding:1.3rem 1.2rem;
-  font-size:.93rem;
-}
-.about-card p{
-  color:var(--page-fg);
-  margin-bottom:.7rem;
-}
-.about-card ul{
-  color:var(--muted);
-  font-size:.9rem;
-  display:grid;
-  gap:.25rem;
-}
+      // Mobile nav
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('is-open');
+          navToggle.classList.toggle('is-active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('is-open');
+            navToggle.classList.remove('is-active');
+          });
+        });
+      }
 
-/* ===================== CARDS / PROCESS ===================== */
+      // Scroll-to-top
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      const secondSection = document.querySelector('#portfolio');
 
-.cards{
-  display:grid;
-  gap:1.2rem;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-}
-.card,
-.step{
-  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
-  border-radius:20px;
-  border:1px solid rgba(140,165,230,.55);
-  box-shadow:0 16px 40px rgba(0,0,0,.75);
-  padding:1.3rem 1.2rem;
-  font-size:.93rem;
-  transition:transform .18s ease-out, box-shadow .18s ease-out;
-}
-.card:hover,
-.step:hover{
-  transform:translateY(-3px);
-  box-shadow:0 22px 50px rgba(0,0,0,.85);
-}
-.card h3{
-  margin-bottom:.4rem;
-  font-size:1rem;
-}
-.card p{
-  color:var(--muted);
-  font-size:.9rem;
-}
+      if (scrollBtn) {
+        const updateScrollBtn = () => {
+          const isMobile = window.matchMedia('(max-width: 767px)').matches;
+          if (isMobile) {
+            if (window.scrollY > 80) {
+              scrollBtn.classList.add('is-visible');
+            } else {
+              scrollBtn.classList.remove('is-visible');
+            }
+          } else if (secondSection) {
+            const rect = secondSection.getBoundingClientRect();
+            const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
+            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
+              scrollBtn.classList.add('is-visible');
+            } else {
+              scrollBtn.classList.remove('is-visible');
+            }
+          }
+        };
 
-/* PROCESS (accordion) */
-.process-steps{
-  display:grid;
-  gap:1rem;
-  margin-top:.4rem;
-}
-.step-toggle{
-  all:unset;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  width:100%;
-  cursor:pointer;
-}
-.step-title-text{
-  font-weight:600;
-  font-size:.96rem;
-}
-.step-body{
-  color:var(--muted);
-  font-size:.9rem;
-  margin-top:.35rem;
-  max-height:0;
-  opacity:0;
-  overflow:hidden;
-  transition:max-height .22s ease, opacity .18s ease, margin-top .18s ease;
-}
-.step.step--open .step-body{
-  max-height:200px;
-  opacity:1;
-  margin-top:.45rem;
-}
-.step-arrow{
-  width:22px;
-  height:22px;
-  border-radius:999px;
-  border:1px solid rgba(140,165,230,.6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:.8rem;
-  color:var(--muted);
-  flex-shrink:0;
-  margin-left:.75rem;
-  transform:rotate(0deg);
-  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
-}
-.step-arrow::before{
-  content:"⌄";
-}
-.step.step--open .step-arrow{
-  background:rgba(99,153,255,.24);
-  color:var(--page-fg);
-  border-color:rgba(130,170,255,.9);
-  transform:rotate(180deg);
-}
+        window.addEventListener('scroll', updateScrollBtn);
+        window.addEventListener('resize', updateScrollBtn);
+        updateScrollBtn();
 
-/* ===================== FOOTER ===================== */
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
 
-footer{
-  border-top:1px solid rgba(120,135,180,.4);
-  margin-top:3.5rem;
-  padding-top:1.5rem;
-  padding-bottom:2.5rem;
-  font-size:.86rem;
-  color:var(--muted);
-  text-align:center;
-}
+      // Scroll reveal (frames + content)
+      const revealEls = document.querySelectorAll('.reveal-frame, .reveal-content');
 
-/* ===================== SCROLL TOP ===================== */
+      if (revealEls.length) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
 
-.scroll-top{
-  position:fixed;
-  right:1.2rem;
-  bottom:3rem;
-  width:44px;
-  height:44px;
-  border-radius:999px;
-  border:none;
-  background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
-  color:#020309;
-  font-size:1.3rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 16px 40px rgba(33,143,255,.7);
-  cursor:pointer;
-  opacity:0;
-  transform:translateY(12px);
-  pointer-events:none;
-  transition:opacity .2s ease, transform .2s ease;
-  z-index:60;
-}
-.scroll-top.is-visible{
-  opacity:1;
-  transform:translateY(0);
-  pointer-events:auto;
-}
+        revealEls.forEach((el, index) => {
+          // πιο γρήγορο stagger από το “default”
+          const baseDelay = index * 12; // 12ms ανά στοιχείο
+          const extraContentDelay = 110; // +0.11s για τα περιεχόμενα
 
-/* ===================== RESPONSIVE ===================== */
+          if (el.classList.contains('reveal-content')) {
+            el.style.transitionDelay = (baseDelay + extraContentDelay) + 'ms';
+          } else {
+            el.style.transitionDelay = baseDelay + 'ms';
+          }
 
-@media (min-width:1200px){
-  .pf-grid{
-    grid-template-columns:repeat(4, minmax(0,1fr));
-  }
-}
-
-@media (min-width:768px){
-  .shell{
-    padding-inline:1.6rem;
-  }
-  .site-header-inner{
-    padding-inline:1.6rem;
-  }
-
-  .nav-toggle{
-    display:none;
-  }
-  .nav-links{
-    position:static;
-    display:flex;
-    flex-direction:row;
-    gap:1.4rem;
-    align-items:center;
-    background:transparent;
-    border:none;
-    box-shadow:none;
-    margin-top:0;
-    padding:0 .4rem 0 0;
-    min-width:auto;
-    font-size:.95rem;
-  }
-  .nav-links a{
-    padding:0;
-  }
-  .nav-links .btn-nav{
-    padding:0.55rem 2.3rem;
-    min-height:2.4rem;
-    margin-left:0.1rem;
-  }
-
-  .hero{
-    padding-top:2.6rem;
-    display:grid;
-    grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
-    grid-template-rows:auto auto;
-    gap:2.2rem 2.8rem;
-    align-items:center;
-  }
-  .hero-copy{
-    grid-column:1;
-    grid-row:1;
-  }
-  .hero-visual{
-    grid-column:2;
-    grid-row:1 / span 2;
-    margin-top:0;
-    justify-content:flex-end;
-  }
-  .hero-tags-row{
-    grid-column:1;
-    grid-row:2;
-    align-self:flex-start;
-  }
-  .hero-tags{
-    margin-top:.2rem;
-  }
-  .hero-title{
-    font-size:clamp(2.1rem,3vw,2.7rem);
-    max-width:none;
-  }
-  .hero-sub{
-    font-size:1.02rem;
-  }
-  .hero-cta-row{
-    flex-direction:row;
-    align-items:center;
-  }
-  .hero-cta-row .btn-primary,
-  .hero-cta-row .btn-outline{
-    width:auto;
-  }
-  .hero-panel{
-    max-width:420px;
-  }
-
-  .compare-grid{
-    grid-template-columns:repeat(2, minmax(0,1fr));
-  }
-
-  .about-grid{
-    grid-template-columns:auto minmax(0,1fr);
-    justify-items:stretch;
-  }
-}
-
-
-
-
+          observer.observe(el);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
