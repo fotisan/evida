@@ -141,19 +141,21 @@ ul{list-style:none;}
   padding-top:1.6rem;
   display:flex;
   flex-direction:column;
-  gap:1.9rem;
+  gap:1.5rem;
 }
 .hero-copy{
   order:0;
 }
 .hero-visual{
   order:1;
-  margin-top:-0.2rem;
+  margin-top:0.4rem;
   display:flex;
   justify-content:center;
   perspective:1400px;
 }
-
+.hero-tags-row{
+  order:2;
+}
 .hero-eyebrow{
   font-size:.88rem;
   letter-spacing:.22em;
@@ -192,14 +194,16 @@ ul{list-style:none;}
   margin-left:.6rem;
   opacity:.35;
 }
-hero-meta span:last-child::after{content:none;}
+.hero-meta span:last-child::after{
+  content:none;
+}
 .hero-cta-row{
   display:flex;
   flex-wrap:wrap;
   gap:.75rem;
   align-items:stretch;
   flex-direction:column;
-  margin-bottom:1.4rem;
+  margin-bottom:0.8rem;
 }
 .btn-primary{
   display:inline-flex;
@@ -536,7 +540,7 @@ hero-meta span:last-child::after{content:none;}
   flex-shrink:0;
   margin-left:.75rem;
   transform:rotate(0deg);
-  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s.ease;
+  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
 }
 .step-arrow::before{
   content:"⌄";
@@ -562,8 +566,9 @@ footer{
 /* Scroll-to-top button */
 .scroll-top{
   position:fixed;
-  right:1.5rem;
-  bottom:1.6rem;
+  /* λίγο πιο πάνω και ελάχιστα πιο αριστερά */
+  right:1.2rem;
+  bottom:2.4rem;
   width:44px;
   height:44px;
   border-radius:999px;
@@ -579,7 +584,7 @@ footer{
   opacity:0;
   transform:translateY(12px);
   pointer-events:none;
-  transition:opacity .2s ease, transform .2s ease;
+  transition:opacity .2s ease, transform .2s.ease;
   z-index:60;
 }
 .scroll-top.is-visible{
@@ -626,21 +631,32 @@ footer{
     padding:0;
   }
 
-  /* hero side-by-side */
+  /* hero side-by-side + tags στην αριστερή στήλη */
   .hero{
     padding-top:2.6rem;
     display:grid;
     grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
-    gap:2.8rem;
+    grid-template-rows:auto auto;
+    gap:2.2rem 2.8rem;
     align-items:center;
   }
   .hero-copy{
-    order:0;
-    align-self:center;
+    grid-column:1;
+    grid-row:1;
   }
   .hero-visual{
-    order:1;
+    grid-column:2;
+    grid-row:1 / span 2;
     margin-top:0;
+    justify-content:flex-end;
+  }
+  .hero-tags-row{
+    grid-column:1;
+    grid-row:2;
+    align-self:flex-start;
+  }
+  .hero-tags{
+    margin-top:0.2rem;
   }
   .hero-title{
     font-size:clamp(2.1rem,3vw,2.7rem);
