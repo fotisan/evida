@@ -51,12 +51,6 @@
           <a href="#contact" class="btn-primary">Ζήτησε προσφορά</a>
           <a href="#portfolio" class="btn-outline">Δες δουλειές</a>
         </div>
-        <div class="hero-tags">
-          <span class="hero-tag">Psychologists</span>
-          <span class="hero-tag">Personal Trainers</span>
-          <span class="hero-tag">Lawyers</span>
-          <span class="hero-tag">Real Estate</span>
-        </div>
       </div>
 
       <!-- 3D HERO PANEL -->
@@ -87,6 +81,16 @@
           </div>
         </div>
       </aside>
+
+      <!-- TAGS: σε mobile έρχονται ΜΕΤΑ το 3D -->
+      <div class="hero-tags-row">
+        <div class="hero-tags">
+          <span class="hero-tag">Psychologists</span>
+          <span class="hero-tag">Personal Trainers</span>
+          <span class="hero-tag">Lawyers</span>
+          <span class="hero-tag">Real Estate</span>
+        </div>
+      </div>
     </section>
 
     <!-- PORTFOLIO -->
@@ -297,14 +301,27 @@
       const scrollBtn = document.getElementById('scrollTopBtn');
       const secondSection = document.querySelector('#portfolio');
 
-      if (scrollBtn && secondSection) {
+      if (scrollBtn) {
         const updateScrollBtn = () => {
-          const rect = secondSection.getBoundingClientRect();
-          const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
-          if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
-            scrollBtn.classList.add('is-visible');
-          } else {
-            scrollBtn.classList.remove('is-visible');
+          const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+          if (isMobile) {
+            // Σε κινητά: μόλις ο χρήστης κυλίσει λίγο (π.χ. 80px)
+            if (window.scrollY > 80) {
+              scrollBtn.classList.add('is-visible');
+            } else {
+              scrollBtn.classList.remove('is-visible');
+            }
+          } else if (secondSection) {
+            // Σε μεγαλύτερες οθόνες: πιο "αργή" εμφάνιση, βάσει του portfolio
+            const rect = secondSection.getBoundingClientRect();
+            const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
+
+            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
+              scrollBtn.classList.add('is-visible');
+            } else {
+              scrollBtn.classList.remove('is-visible');
+            }
           }
         };
 
