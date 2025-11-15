@@ -126,8 +126,14 @@ ul{list-style:none;}
   padding:.35rem .2rem;
 }
 .nav-links a:hover{color:var(--page-fg);}
+
+/* Get in touch στο nav – πιο άνετο πλαίσιο */
 .btn-nav{
-  padding:.55rem .9rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.65rem 1.2rem;
+  min-height:2.4rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
@@ -540,7 +546,7 @@ ul{list-style:none;}
   flex-shrink:0;
   margin-left:.75rem;
   transform:rotate(0deg);
-  transition:background .18s.ease, color .18s.ease, transform .18s.ease, border-color .18s.ease;
+  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
 }
 .step-arrow::before{
   content:"⌄";
@@ -567,7 +573,6 @@ footer{
 .scroll-top{
   position:fixed;
   right:1.2rem;
-  /* λίγο ακόμα πιο πάνω από πριν */
   bottom:3rem;
   width:44px;
   height:44px;
