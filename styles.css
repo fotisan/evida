@@ -127,13 +127,13 @@ ul{list-style:none;}
 }
 .nav-links a:hover{color:var(--page-fg);}
 
-/* Get in touch στο nav – πιο άνετο πλαίσιο */
+/* Get in touch στο nav – περισσότερο “αέρας” */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:.65rem 1.2rem;
-  min-height:2.4rem;
+  padding:0.6rem 1.6rem;
+  min-height:2.6rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
@@ -270,7 +270,6 @@ ul{list-style:none;}
     0 26px 80px rgba(0,0,0,.95),
     0 0 0 1px rgba(150,180,255,.4);
   transform-origin:center center;
-  /* ταχύτητα 20s */
   animation: heroFloat 20s ease-in-out infinite;
 }
 .hero-panel::before{
@@ -416,6 +415,72 @@ ul{list-style:none;}
 .pf-info p{
   color:var(--muted);
   font-size:.9rem;
+}
+
+/* COMPARE SECTION (Wrong vs Right) */
+.section-compare{
+  margin-top:3.2rem;
+}
+.compare-grid{
+  display:grid;
+  gap:1.4rem;
+  grid-template-columns:1fr;
+}
+.compare-card{
+  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+  border-radius:20px;
+  border:1px solid rgba(140,165,230,.65);
+  box-shadow:0 20px 45px rgba(0,0,0,.8);
+  padding:1.1rem 1.1rem 1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.compare-card--wrong{
+  border-color:rgba(255,79,123,.65);
+}
+.compare-card--right{
+  border-color:rgba(61,226,197,.65);
+}
+.compare-header{
+  display:flex;
+  flex-direction:column;
+  gap:.35rem;
+}
+.compare-label{
+  display:inline-flex;
+  align-items:center;
+  padding:.25rem .7rem;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.compare-label--wrong{
+  background:rgba(255,79,123,.15);
+  color:#ff9ab8;
+  border:1px solid rgba(255,79,123,.7);
+}
+.compare-label--right{
+  background:rgba(61,226,197,.15);
+  color:#87f2d8;
+  border:1px solid rgba(61,226,197,.7);
+}
+.compare-note{
+  font-size:.86rem;
+  color:var(--muted);
+}
+.compare-image-wrap{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(140,165,230,.4);
+  background:#020309;
+}
+.compare-image-wrap img{
+  display:block;
+  width:100%;
+  height:auto;
 }
 
 /* ABOUT GRID + PHOTO – mobile first: 1 column */
@@ -680,6 +745,11 @@ footer{
   }
   .hero-panel{
     max-width:420px;
+  }
+
+  /* compare grid σε 2 κολώνες */
+  .compare-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
   }
 
   /* about 2 columns */
