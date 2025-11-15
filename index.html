@@ -372,12 +372,16 @@
         }, { threshold: 0.12 });
 
         revealEls.forEach((el, index) => {
-          const baseDelay = index * 26; // 35% λιγότερο από 40ms
+          // πιο γρήγορο stagger από το “default”
+          const baseDelay = index * 18; // 18ms ανά στοιχείο
+          const extraContentDelay = 140; // +0.14s για τα περιεχόμενα
+
           if (el.classList.contains('reveal-content')) {
-            el.style.transitionDelay = (baseDelay + 300) + 'ms'; // +0.3s σε σχέση με frame
+            el.style.transitionDelay = (baseDelay + extraContentDelay) + 'ms';
           } else {
             el.style.transitionDelay = baseDelay + 'ms';
           }
+
           observer.observe(el);
         });
       }
