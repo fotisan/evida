@@ -810,7 +810,7 @@ footer{
     max-width:330px;
   }
     .hero-phone-screen{
-    padding-bottom:5rem;
+    padding-bottom:50rem;
   }
 
   .compare-grid{
@@ -822,5 +822,6 @@ footer{
     justify-items:stretch;
   }
 }
+
 
 
