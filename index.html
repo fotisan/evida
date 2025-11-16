@@ -38,8 +38,8 @@
           Δικηγόρους &amp; Real Estate.
         </h1>
         <p class="hero-sub reveal-content">
-          Done-for-you Webflow sites που είναι φτιαγμένα για να κλείνουν ραντεβού
-          — όχι απλώς για να είναι “όμορφα”.
+          Done-for-you Webflow sites που είναι φτιαγμένα για να κλείνουν ραντεβού —
+          όχι απλώς για να είναι “όμορφα”.
         </p>
         <div class="hero-meta reveal-content">
           <span>Built in Webflow</span>
@@ -85,7 +85,7 @@
             </div>
           </div>
 
-          <!-- Floating orbs -->
+          <!-- floating orbs -->
           <div class="hero-phone-orb hero-phone-orb--search reveal-content">
             <span>🔍</span>
           </div>
@@ -110,7 +110,7 @@
     <section class="section reveal-frame" id="portfolio">
       <h2 class="reveal-content">Portfolio</h2>
       <p class="section-lead reveal-content">
-        Websites για ψυχολόγους, γιατρούς, δικηγόρους, personal trainers &amp; real estate — 
+        Websites για ψυχολόγους, γιατρούς, δικηγόρους, personal trainers &amp; real estate —
         φτιαγμένα για να φέρνουν πελάτες.
       </p>
 
@@ -371,7 +371,7 @@
         });
       }
 
-      // Scroll reveal (καμία καθυστέρηση)
+      // Scroll reveal (χωρίς καθυστέρηση)
       const revealEls = document.querySelectorAll('.reveal-frame, .reveal-content');
 
       if (revealEls.length) {
@@ -384,16 +384,8 @@
           });
         }, { threshold: 0.12 });
 
-        revealEls.forEach((el, index) => {
-          const baseDelay = 0;
-          const extraContentDelay = 0;
-
-          if (el.classList.contains('reveal-content')) {
-            el.style.transitionDelay = (baseDelay + extraContentDelay) + 'ms';
-          } else {
-            el.style.transitionDelay = baseDelay + 'ms';
-          }
-
+        revealEls.forEach((el) => {
+          el.style.transition = 'none';
           observer.observe(el);
         });
       }
