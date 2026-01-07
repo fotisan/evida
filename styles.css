@@ -103,28 +103,33 @@ ul{list-style:none}
 /* NAV CTA — FIX: αέρας δεξιά/αριστερά + να μην κολλάει */
 /* NAV CTA — ΠΕΡΙΣΣΟΤΕΡΟΣ ΑΕΡΑΣ ΣΤΑ ΠΛΑΓΙΑ */
 /* NAV CTA — περισσότερο κενό ΜΕΣΑ στο πλαίσιο */
+/* NAV CTA — EXTRA WIDE / PREMIUM */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  padding-top:0.6rem;
-  padding-bottom:0.6rem;
-  padding-left:3.4rem;   /* ✅ ΠΟΛΥ περισσότερος αέρας αριστερά */
-  padding-right:3.4rem;  /* ✅ ΠΟΛΥ περισσότερος αέρας δεξιά */
+  padding-top:0.7rem;
+  padding-bottom:0.7rem;
+  padding-left:5.2rem;   /* ✅ ΠΟΛΥ περισσότερος αέρας αριστερά */
+  padding-right:5.2rem;  /* ✅ ΠΟΛΥ περισσότερος αέρας δεξιά */
 
+  min-height:2.9rem;
   border-radius:999px;
+
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
   font-weight:600;
   font-size:.93rem;
+  letter-spacing:0.03em; /* απλώνει οπτικά το κείμενο */
 
   box-shadow:
     0 0 0 1px rgba(255,255,255,.04),
-    0 12px 35px rgba(42,151,255,.55);
+    0 16px 42px rgba(42,151,255,.65);
 
   white-space:nowrap;
 }
+
 
 
 
@@ -676,5 +681,6 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
+
 
 
