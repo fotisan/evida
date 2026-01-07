@@ -1,5 +1,3 @@
-body { outline: 6px solid red !important; }
-
 /* styles.css */
 :root{
   --page-bg:#050814;
@@ -599,4 +597,32 @@ footer{
   .hero-phone.hero-panel{max-width:330px}
   .hero-phone-screen{padding-bottom:2.4rem}
 }
+/* ===================== PORTFOLIO FINAL OVERRIDE ===================== */
+/* Μπαίνει ΤΕΛΟΣ αρχείου για να κερδίζει ΟΛΑ τα προηγούμενα */
+
+.pf-preview{
+  height:300px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.pf-preview img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:16px;
+  background:rgba(255,255,255,.05);
+}
+
+/* Desktop λίγο πιο “άνετο” */
+@media (min-width:900px){
+  .pf-preview{
+    height:320px;
+    padding:20px;
+  }
+}
+
+
 
