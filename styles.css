@@ -41,7 +41,6 @@ ul{list-style:none;}
 }
 
 /* =============== REVEAL (χωρίς animation delay) =============== */
-
 .reveal-frame,
 .reveal-content{
   opacity:1;
@@ -56,7 +55,6 @@ ul{list-style:none;}
 }
 
 /* ===================== HEADER ===================== */
-
 .site-header{
   position:sticky;
   top:0;
@@ -150,7 +148,6 @@ ul{list-style:none;}
 }
 
 /* ===================== HERO ===================== */
-
 .hero{
   padding-top:1.6rem;
   display:flex;
@@ -265,7 +262,6 @@ ul{list-style:none;}
 }
 
 /* ===== HERO 3D PHONE ===== */
-
 .hero-phone.hero-panel{
   position:relative;
   width:100%;
@@ -397,19 +393,12 @@ ul{list-style:none;}
 
 /* floating animation */
 @keyframes heroFloat {
-  0% {
-    transform:rotateX(18deg) rotateY(-30deg) rotateZ(-6deg) translateY(4px);
-  }
-  50% {
-    transform:rotateX(12deg) rotateY(30deg) rotateZ(-3deg) translateY(0);
-  }
-  100% {
-    transform:rotateX(18deg) rotateY(-30deg) rotateZ(-6deg) translateY(4px);
-  }
+  0% { transform:rotateX(18deg) rotateY(-30deg) rotateZ(-6deg) translateY(4px); }
+  50% { transform:rotateX(12deg) rotateY(30deg) rotateZ(-3deg) translateY(0); }
+  100% { transform:rotateX(18deg) rotateY(-30deg) rotateZ(-6deg) translateY(4px); }
 }
 
 /* ===================== SECTIONS ===================== */
-
 .section{
   margin-top:2.4rem;
   padding:1.8rem 1.6rem 2rem;
@@ -428,49 +417,103 @@ ul{list-style:none;}
   color:var(--muted);
   font-size:.98rem;
   margin-bottom:1.6rem;
-  max-width:32rem;
+  max-width:42rem;
 }
 
 /* ===================== PORTFOLIO ===================== */
-
 .pf-grid{
   margin-top:1.6rem;
   display:grid;
   gap:1.6rem;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-}
-@media (max-width: 900px){
-  .pf-grid{
-    grid-template-columns:repeat(2, minmax(0,1fr));
-  }
+  grid-template-columns:1fr; /* mobile first */
 }
 
-@media (max-width: 520px){
-  .pf-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-
+/* Card */
 .pf-item{
   background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
   border-radius:22px;
   border:1px solid rgba(130,150,220,.45);
   overflow:hidden;
   box-shadow:0 18px 40px rgba(0,0,0,.65);
-  transition:transform .22s ease, box-shadow .22s ease;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 .pf-item:hover{
   transform:translateY(-4px);
   box-shadow:0 22px 55px rgba(0,0,0,.85);
+  border-color:rgba(160,190,255,.65);
 }
-.pf-item img{
+
+/* Live preview wrapper */
+.pf-preview{
+  position:relative;
   width:100%;
-  display:block;
+  height:260px;                  /* pro height for hero previews */
+  overflow:hidden;
+  background:#020309;
   border-bottom:1px solid rgba(150,170,240,.25);
 }
+
+/*
+  Sharp preview trick:
+  - Render a big iframe (desktop width)
+  - Scale down so it stays crisp even on retina
+*/
+.pf-preview iframe{
+  width:1440px;
+  height:900px;
+  transform:scale(.34);
+  transform-origin:top left;
+  border:0;
+  display:block;
+  pointer-events:none;           /* clicks go to overlay */
+  filter:saturate(1.03) contrast(1.02);
+}
+
+/* soft top vignette to “blend” page bg */
+.pf-preview::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(95,140,255,.12), transparent 45%),
+    linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,0) 55%);
+  pointer-events:none;
+}
+
+/* Full overlay clickable area (feels premium) */
+.pf-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+  padding:14px;
+  background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 60%);
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .18s ease, transform .18s ease;
+}
+.pf-item:hover .pf-overlay{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.pf-overlay-pill{
+  padding:.62rem .9rem;
+  border-radius:999px;
+  background:rgba(5,8,20,.72);
+  border:1px solid rgba(120,145,220,.6);
+  color:var(--page-fg);
+  font-size:.9rem;
+  font-weight:650;
+  letter-spacing:.01em;
+  backdrop-filter: blur(10px);
+  box-shadow indicating 0 12px 30px rgba(0,0,0,.55);
+}
+
+/* Info */
 .pf-info{
-  padding:1.1rem 1.2rem 1.3rem;
+  padding:1.1rem 1.2rem 1.25rem;
 }
 .pf-info h3{
   font-size:1.05rem;
@@ -482,10 +525,10 @@ ul{list-style:none;}
 .pf-info p{
   color:var(--muted);
   font-size:.9rem;
+  line-height:1.45;
 }
 
 /* ===================== COMPARE ===================== */
-
 .section-compare{
   margin-top:3.2rem;
 }
@@ -552,7 +595,6 @@ ul{list-style:none;}
 }
 
 /* ===================== ABOUT ===================== */
-
 .about-grid{
   margin-top:1.2rem;
   display:grid;
@@ -606,7 +648,6 @@ ul{list-style:none;}
 }
 
 /* ===================== CARDS / PROCESS ===================== */
-
 .cards{
   display:grid;
   gap:1.2rem;
@@ -694,7 +735,6 @@ ul{list-style:none;}
 }
 
 /* ===================== FOOTER ===================== */
-
 footer{
   border-top:1px solid rgba(120,135,180,.4);
   margin-top:3.5rem;
@@ -706,7 +746,6 @@ footer{
 }
 
 /* ===================== SCROLL TOP ===================== */
-
 .scroll-top{
   position:fixed;
   right:1.2rem;
@@ -736,14 +775,25 @@ footer{
 }
 
 /* ===================== RESPONSIVE ===================== */
-
-@media (min-width:1200px){
+@media (min-width:520px){
   .pf-grid{
-    grid-template-columns:repeat(3, minmax(0, 320px));
-    justify-content:center;
+    grid-template-columns:repeat(2, minmax(0,1fr));
   }
 }
 
+@media (min-width:900px){
+  .pf-grid{
+    grid-template-columns:repeat(3, minmax(0,1fr));
+  }
+}
+
+/* keep your intended “desktop+” spacing clean */
+@media (min-width:1200px){
+  .pf-grid{
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    align-items:stretch;
+  }
+}
 
 @media (min-width:768px){
   .shell{
@@ -837,6 +887,3 @@ footer{
     justify-items:stretch;
   }
 }
-
-
-
