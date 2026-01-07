@@ -678,6 +678,18 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
+/* FORCE NAV CTA PADDING (τελικό override) */
+.site-header .nav-links a.btn-nav{
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  min-width: unset !important;
+  margin: 0 !important;
+  letter-spacing: normal !important;
+}
+
+
 
 
 
