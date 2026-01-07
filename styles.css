@@ -105,19 +105,13 @@ ul{list-style:none}
 /* NAV CTA — περισσότερο κενό ΜΕΣΑ στο πλαίσιο */
 /* NAV CTA — EXTRA WIDE / PREMIUM */
 /* NAV CTA — μεγαλώνει ΜΟΝΟ το πλαίσιο (όχι αποστάσεις) */
+/* NAV CTA — λίγο πιο άνετο πλαίσιο (ΟΧΙ υπερβολή) */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  /* ΜΟΝΟ εσωτερικός χώρος */
-  padding-top:0.7rem;
-  padding-bottom:0.7rem;
-  padding-left:3.2rem;
-  padding-right:3.2rem;
-
-  /* σταθερό “φάρδος pill” χωρίς να μετακινείται */
-  min-width:220px;
+  padding:0.55rem 1.85rem;  /* ✅ μικρό, κομψό περιθώριο δεξιά–αριστερά */
 
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
@@ -127,13 +121,10 @@ ul{list-style:none}
 
   box-shadow:
     0 0 0 1px rgba(255,255,255,.04),
-    0 14px 38px rgba(42,151,255,.6);
+    0 10px 30px rgba(42,151,255,.5);
 
   white-space:nowrap;
 }
-
-
-
 
 
 /* ===================== HERO ===================== */
@@ -684,6 +675,7 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
+
 
 
 
