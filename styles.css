@@ -113,7 +113,7 @@ ul{list-style:none}
   justify-content:center;
 
   /* ⬇️ ΑΥΤΟ ΕΙΝΑΙ ΤΟ ΚΛΕΙΔΙ */
-  padding: 0.55rem 1.25rem;  /* + ~6px δεξιά & αριστερά σε σχέση με πριν */
+  padding: 0.55rem 1.45rem;  /* + ~6px δεξιά & αριστερά σε σχέση με πριν */
 
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
@@ -678,6 +678,7 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
+
 
 
 
