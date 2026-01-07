@@ -102,24 +102,30 @@ ul{list-style:none}
 
 /* NAV CTA — FIX: αέρας δεξιά/αριστερά + να μην κολλάει */
 /* NAV CTA — ΠΕΡΙΣΣΟΤΕΡΟΣ ΑΕΡΑΣ ΣΤΑ ΠΛΑΓΙΑ */
+/* NAV CTA — περισσότερο κενό ΜΕΣΑ στο πλαίσιο */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  padding:0.6rem 2.85rem;   /* ✅ πολύς αέρας αριστερά/δεξιά */
-  min-height:2.5rem;
+  padding-top:0.6rem;
+  padding-bottom:0.6rem;
+  padding-left:3.4rem;   /* ✅ ΠΟΛΥ περισσότερος αέρας αριστερά */
+  padding-right:3.4rem;  /* ✅ ΠΟΛΥ περισσότερος αέρας δεξιά */
 
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
   font-weight:600;
   font-size:.93rem;
-  box-shadow:0 0 0 1px rgba(255,255,255,.04),0 12px 35px rgba(42,151,255,.55);
 
-  margin-inline:0.55rem;    /* ✅ αέρας γύρω από το κουμπί στο nav */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04),
+    0 12px 35px rgba(42,151,255,.55);
+
   white-space:nowrap;
 }
+
 
 
 /* ===================== HERO ===================== */
@@ -670,4 +676,5 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
+
 
