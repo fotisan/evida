@@ -1,3 +1,5 @@
+body { outline: 6px solid red !important; }
+
 /* styles.css */
 :root{
   --page-bg:#050814;
@@ -597,3 +599,4 @@ footer{
   .hero-phone.hero-panel{max-width:330px}
   .hero-phone-screen{padding-bottom:2.4rem}
 }
+
