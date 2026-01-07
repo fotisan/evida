@@ -106,12 +106,14 @@ ul{list-style:none}
 /* NAV CTA — EXTRA WIDE / PREMIUM */
 /* NAV CTA — μεγαλώνει ΜΟΝΟ το πλαίσιο (όχι αποστάσεις) */
 /* NAV CTA — λίγο πιο άνετο πλαίσιο (ΟΧΙ υπερβολή) */
+/* NAV CTA — αρχικό μέγεθος + λίγα px padding δεξιά/αριστερά */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  padding:0.55rem 1.85rem;  /* ✅ μικρό, κομψό περιθώριο δεξιά–αριστερά */
+  /* ⬇️ ΑΥΤΟ ΕΙΝΑΙ ΤΟ ΚΛΕΙΔΙ */
+  padding: 0.55rem 1.25rem;  /* + ~6px δεξιά & αριστερά σε σχέση με πριν */
 
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
@@ -121,10 +123,11 @@ ul{list-style:none}
 
   box-shadow:
     0 0 0 1px rgba(255,255,255,.04),
-    0 10px 30px rgba(42,151,255,.5);
+    0 12px 35px rgba(42,151,255,.55);
 
   white-space:nowrap;
 }
+
 
 
 /* ===================== HERO ===================== */
@@ -675,6 +678,7 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
+
 
 
 
