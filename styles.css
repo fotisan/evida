@@ -739,7 +739,8 @@ footer{
 
 @media (min-width:1200px){
   .pf-grid{
-    grid-template-columns:repeat(3, minmax(0,1fr));
+    grid-template-columns:repeat(3, minmax(0, 320px));
+    justify-content:center;
   }
 }
 
@@ -836,5 +837,6 @@ footer{
     justify-items:stretch;
   }
 }
+
 
 
