@@ -104,31 +104,34 @@ ul{list-style:none}
 /* NAV CTA — ΠΕΡΙΣΣΟΤΕΡΟΣ ΑΕΡΑΣ ΣΤΑ ΠΛΑΓΙΑ */
 /* NAV CTA — περισσότερο κενό ΜΕΣΑ στο πλαίσιο */
 /* NAV CTA — EXTRA WIDE / PREMIUM */
+/* NAV CTA — μεγαλώνει ΜΟΝΟ το πλαίσιο (όχι αποστάσεις) */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
+  /* ΜΟΝΟ εσωτερικός χώρος */
   padding-top:0.7rem;
   padding-bottom:0.7rem;
-  padding-left:5.2rem;   /* ✅ ΠΟΛΥ περισσότερος αέρας αριστερά */
-  padding-right:5.2rem;  /* ✅ ΠΟΛΥ περισσότερος αέρας δεξιά */
+  padding-left:3.2rem;
+  padding-right:3.2rem;
 
-  min-height:2.9rem;
+  /* σταθερό “φάρδος pill” χωρίς να μετακινείται */
+  min-width:220px;
+
   border-radius:999px;
-
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
   font-weight:600;
   font-size:.93rem;
-  letter-spacing:0.03em; /* απλώνει οπτικά το κείμενο */
 
   box-shadow:
     0 0 0 1px rgba(255,255,255,.04),
-    0 16px 42px rgba(42,151,255,.65);
+    0 14px 38px rgba(42,151,255,.6);
 
   white-space:nowrap;
 }
+
 
 
 
@@ -681,6 +684,7 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
+
 
 
 
