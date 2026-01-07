@@ -27,7 +27,7 @@ ul{list-style:none}
   padding:1.2rem 1.4rem 4rem;
 }
 
-/* ===== Reveal: no-delay (keeps your current behavior) ===== */
+/* ===== Reveal (keeps current behavior) ===== */
 .reveal-frame,.reveal-content{opacity:1;transform:none;transition:none}
 
 /* ===================== HEADER ===================== */
@@ -105,7 +105,7 @@ ul{list-style:none}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.62rem 1.15rem;   /* ✅ καθαρό padding L/R */
+  padding:0.62rem 1.15rem;   /* ✅ περιθώριο L/R στο κείμενο */
   min-height:2.45rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
@@ -330,11 +330,18 @@ ul{list-style:none}
   max-width:42rem;
 }
 
-/* ===================== PORTFOLIO (SCREENSHOTS) ===================== */
+/* ===================== PORTFOLIO (ELEGANT FRAMES) ===================== */
+/*
+  Στόχος:
+  - Το card να είναι “λίγο μεγαλύτερο” από την εικόνα.
+  - Η εικόνα να φαίνεται ΟΛΟΚΛΗΡΗ (contain).
+  - Να υπάρχει κομψό breathing room, χωρίς να φαίνεται άδειο.
+*/
+
 .pf-grid{
   margin-top:1.6rem;
   display:grid;
-  gap:1.6rem;
+  gap:1.25rem;                 /* λίγο πιο “σφιχτό” */
   grid-template-columns:1fr;
 }
 
@@ -354,43 +361,55 @@ ul{list-style:none}
 
 .pf-link{display:block}
 
+/* Το “κάδρο” του preview — εδώ μεγαλώνει το πλαίσιο */
 .pf-preview{
   position:relative;
   width:100%;
-  height:320px;
+  height:300px;                /* ελαφρώς μικρότερο από πριν, πιο κομψό */
   overflow:hidden;
-  border-bottom:1px solid rgba(150,170,240,.25);
+  border-bottom:1px solid rgba(150,170,240,.22);
+
+  /* premium background ώστε να “κάθεται” ωραία η contain εικόνα */
   background:
-    radial-gradient(circle at 20% 0%, rgba(95,140,255,.14), transparent 48%),
-    radial-gradient(circle at 70% 10%, rgba(61,226,197,.10), transparent 55%),
+    radial-gradient(circle at 20% 0%, rgba(95,140,255,.16), transparent 48%),
+    radial-gradient(circle at 75% 10%, rgba(61,226,197,.12), transparent 55%),
+    linear-gradient(to bottom, rgba(255,255,255,.06), rgba(255,255,255,0) 55%),
     #020309;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:14px; /* ✅ “breathing room” γύρω από contain */
+
+  padding:18px;                /* ✅ αυτό είναι το “λίγο μεγαλύτερο” πλαίσιο */
 }
 
-/* ✅ ΕΔΩ γίνεται “ολόκληρο” χωρίς να χαλάει */
+/* Η εικόνα να είναι ΟΛΟΚΛΗΡΗ + να μην ακουμπάει */
 .pf-preview img{
   width:100%;
   height:100%;
-  object-fit:contain;      /* ← δείχνει ΟΛΟΚΛΗΡΗ την εικόνα */
+  object-fit:contain;          /* ✅ ολόκληρη εικόνα */
   object-position:center;
   display:block;
+
+  /* μια “inner card” αίσθηση */
   border-radius:16px;
-  box-shadow:0 20px 50px rgba(0,0,0,.55);
-  background:rgba(255,255,255,.04); /* για να μην “χάνεται” το άσπρο */
+  background:rgba(255,255,255,.05);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.55),
+    0 0 0 1px rgba(180,205,255,.18);
 }
 
-/* overlay/vignette */
+/* vignette για να δείχνει πιο premium */
 .pf-preview::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0) 62%);
+  background:
+    linear-gradient(to top, rgba(0,0,0,.46), rgba(0,0,0,0) 62%);
   pointer-events:none;
 }
 
+/* hover overlay */
 .pf-overlay{
   position:absolute;
   inset:0;
@@ -417,7 +436,7 @@ ul{list-style:none}
   box-shadow:0 12px 30px rgba(0,0,0,.55);
 }
 
-.pf-info{padding:1.1rem 1.2rem 1.25rem}
+.pf-info{padding:1rem 1.05rem 1.05rem}
 .pf-info h3{
   font-size:1.05rem;
   margin-bottom:.35rem;
@@ -427,98 +446,7 @@ ul{list-style:none}
 }
 .pf-info p{color:var(--muted);font-size:.9rem;line-height:1.45}
 
-/* ===================== COMPARE ===================== */
-.section-compare{margin-top:3.2rem}
-.compare-grid{display:grid;gap:1.4rem;grid-template-columns:1fr}
-.compare-card{
-  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
-  border-radius:20px;
-  border:1px solid rgba(140,165,230,.65);
-  box-shadow:0 20px 45px rgba(0,0,0,.8);
-  padding:1.1rem 1.1rem 1.25rem;
-  display:flex;
-  flex-direction:column;
-  gap:.9rem;
-}
-.compare-card--wrong{border-color:rgba(255,79,123,.65)}
-.compare-card--right{border-color:rgba(61,226,197,.65)}
-.compare-header{display:flex;flex-direction:column;gap:.35rem}
-.compare-label{
-  display:inline-flex;
-  align-items:center;
-  padding:.25rem .7rem;
-  border-radius:999px;
-  font-size:.78rem;
-  font-weight:600;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-}
-.compare-label--wrong{
-  background:rgba(255,79,123,.15);
-  color:#ff9ab8;
-  border:1px solid rgba(255,79,123,.7);
-}
-.compare-label--right{
-  background:rgba(61,226,197,.15);
-  color:#87f2d8;
-  border:1px solid rgba(61,226,197,.7);
-}
-.compare-note{font-size:.86rem;color:var(--muted)}
-.compare-image-wrap{
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(140,165,230,.4);
-  background:#020309;
-}
-.compare-image-wrap img{display:block;width:100%;height:auto}
-
-/* ===================== ABOUT ===================== */
-.about-grid{
-  margin-top:1.2rem;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:1.6rem;
-  align-items:center;
-  justify-items:flex-start;
-}
-.about-photo{
-  position:relative;
-  width:130px;height:130px;
-  border-radius:999px;
-  display:flex;align-items:center;justify-content:center;
-}
-.about-photo-ring{
-  position:absolute;
-  inset:-3px;
-  border-radius:inherit;
-  background:conic-gradient(from 180deg, #3de2c5, #7b5cff, #3de2c5);
-  opacity:.85;
-  filter:blur(.4px);
-}
-.about-photo img{
-  position:relative;
-  width:100%;height:100%;
-  border-radius:inherit;
-  object-fit:cover;
-  box-shadow:0 18px 40px rgba(0,0,0,.9);
-}
-.about-card{
-  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
-  border-radius:20px;
-  border:1px solid rgba(140,165,230,.55);
-  box-shadow:0 16px 40px rgba(0,0,0,.75);
-  padding:1.3rem 1.2rem;
-  font-size:.93rem;
-}
-.about-card p{margin-bottom:.7rem}
-.about-card ul{
-  color:var(--muted);
-  font-size:.9rem;
-  display:grid;
-  gap:.25rem;
-}
-
-/* ===================== SERVICES / PROCESS ===================== */
+/* ===================== (λοιπά sections που έχεις) ===================== */
 .cards{
   display:grid;
   gap:1.2rem;
@@ -624,6 +552,7 @@ footer{
 @media (min-width:900px){
   .pf-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
 }
+
 @media (min-width:768px){
   .shell{padding-inline:1.6rem}
   .site-header-inner{padding-inline:1.6rem}
@@ -646,9 +575,7 @@ footer{
 
   /* ✅ ΜΗΝ “σκοτώνεις” το padding του btn-nav */
   .nav-links a:not(.btn-nav){padding:0}
-  .nav-links a.btn-nav{
-    padding:0.62rem 1.15rem; /* ✅ κρατάει περιθώριο L/R */
-  }
+  .nav-links a.btn-nav{padding:0.62rem 1.15rem}
 
   .hero{
     padding-top:2.6rem;
@@ -669,7 +596,4 @@ footer{
 
   .hero-phone.hero-panel{max-width:330px}
   .hero-phone-screen{padding-bottom:2.4rem}
-
-  .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
-  .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 }
