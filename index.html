@@ -210,7 +210,7 @@
       </div>
     </section>
 
-    <!-- PROCESS (UPDATED) -->
+    <!-- PROCESS (UPDATED COPY + UPDATED ACCORDION BEHAVIOR) -->
     <section class="section reveal-frame" id="process">
       <h2 class="reveal-content">The process</h2>
       <p class="section-lead reveal-content">
@@ -220,8 +220,8 @@
       <div class="process-steps">
         <div class="step step--open reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">01 • Strategic brief & goals</span>
-            <span class="step-arrow"></span>
+            <span class="step-title-text reveal-content">01 • Strategic brief &amp; goals</span>
+            <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
             We start with a structured email brief to define your offer, audience and objectives.
@@ -230,8 +230,8 @@
 
         <div class="step reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">02 • Structure & visitor journey</span>
-            <span class="step-arrow"></span>
+            <span class="step-title-text reveal-content">02 • Structure &amp; visitor journey</span>
+            <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
             I design the page flow so visitors instantly understand and move forward.
@@ -240,8 +240,8 @@
 
         <div class="step reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">03 • Design & execution</span>
-            <span class="step-arrow"></span>
+            <span class="step-title-text reveal-content">03 • Design &amp; execution</span>
+            <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
             Clean, focused design built around clarity, trust and conversion.
@@ -250,8 +250,8 @@
 
         <div class="step reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">04 • Delivery & optimization</span>
-            <span class="step-arrow"></span>
+            <span class="step-title-text reveal-content">04 • Delivery &amp; optimization</span>
+            <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
             Final delivery with SEO foundations, analytics and clear guidance on next steps.
@@ -264,8 +264,11 @@
     <section class="section reveal-frame" id="contact">
       <h2 class="reveal-content">Let’s see if we’re a good fit</h2>
       <p class="section-lead reveal-content">
-        Send 2–3 websites you like and a few words about your goal.<br>
-        I’ll review everything and reply with a clear proposal within 24 hours.
+        I work with service professionals who want clarity, strong structure,<br>
+        and a website that guides visitors to take action — not just something that looks nice.
+        <br><br>
+        If that sounds like you, send me 2–3 websites you like and a few words about your goal.<br>
+        I’ll review everything and get back to you with a clear proposal within 24 hours.
       </p>
 
       <a href="mailto:your@email" class="btn-primary reveal-frame">
@@ -283,15 +286,67 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+
+      // Accordion (UPDATED): allow multiple steps to stay open
       const steps = document.querySelectorAll('.step');
       steps.forEach(step => {
         const toggle = step.querySelector('.step-toggle');
+        if (!toggle) return;
+
         toggle.addEventListener('click', () => {
-          const isOpen = step.classList.contains('step--open');
-          steps.forEach(s => s.classList.remove('step--open'));
-          if (!isOpen) step.classList.add('step--open');
+          // Toggle only the clicked step, do NOT close others
+          step.classList.toggle('step--open');
         });
       });
+
+      // Mobile nav
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('is-open');
+          navToggle.classList.toggle('is-active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('is-open');
+            navToggle.classList.remove('is-active');
+          });
+        });
+      }
+
+      // Scroll-to-top
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      const secondSection = document.querySelector('#portfolio');
+
+      if (scrollBtn) {
+        const updateScrollBtn = () => {
+          const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+          if (isMobile) {
+            if (window.scrollY > 80) scrollBtn.classList.add('is-visible');
+            else scrollBtn.classList.remove('is-visible');
+          } else if (secondSection) {
+            const rect = secondSection.getBoundingClientRect();
+            const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
+
+            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
+              scrollBtn.classList.add('is-visible');
+            } else {
+              scrollBtn.classList.remove('is-visible');
+            }
+          }
+        };
+
+        window.addEventListener('scroll', updateScrollBtn);
+        window.addEventListener('resize', updateScrollBtn);
+        updateScrollBtn();
+
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
     });
   </script>
 </body>
