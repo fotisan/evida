@@ -1,114 +1,391 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="el">
 <head>
   <meta charset="utf-8" />
   <title>Evida Studio — Websites for Service Professionals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- bump version to avoid GitHub Pages cache -->
   <link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-logo">
+        <a href="#top">Evida <span>Studio</span></a>
+      </div>
 
-<header class="site-header">
-  <div class="site-header-inner">
-    <div class="site-logo">
-      <a href="#top">Evida <span>Studio</span></a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
+      <nav class="nav-links">
+        <!-- NAV: updated labels only -->
+        <a href="#portfolio">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="btn-nav">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation">
-      <span class="nav-toggle-line"></span>
-      <span class="nav-toggle-line"></span>
-    </button>
+  <main class="shell">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-copy reveal-frame">
+        <!-- HERO: updated copy only -->
+        <div class="hero-eyebrow reveal-content">Websites for Service Professionals</div>
 
-    <nav class="nav-links">
-      <a href="#portfolio">Work</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#contact" class="btn-nav">Contact</a>
-    </nav>
-  </div>
-</header>
+        <h1 class="hero-title reveal-content">
+          Websites that <em>bring clients</em> to Psychologists, Trainers, Lawyers &amp; Real Estate professionals.
+        </h1>
 
-<main class="shell">
+        <p class="hero-sub reveal-content">
+          Strategy, design and execution so visitors instantly understand what you offer and take action.
+        </p>
 
-<!-- HERO (ΑΜΕΤΑΒΛΗΤΟ) -->
-<section class="hero" id="top">
-  <!-- … ΟΛΟ ΤΟ HERO ΜΕΝΕΙ ΟΠΩΣ ΕΙΝΑΙ … -->
-</section>
-
-<!-- ===================== -->
-<!-- PORTFOLIO (SECTION 2) -->
-<!-- ===================== -->
-<section class="section reveal-frame" id="portfolio">
-
-  <!-- TITLE -->
-  <h2 class="reveal-content">Selected work</h2>
-
-  <!-- LEAD -->
-  <p class="section-lead reveal-content">
-    A few recent builds for service professionals — conversion-focused structure with a premium, clean aesthetic.
-  </p>
-
-  <div class="pf-grid">
-
-    <!-- Psychologist -->
-    <article class="pf-item reveal-frame">
-      <a class="pf-link" href="https://fotisan.github.io/psychologist/" target="_blank" rel="noopener">
-        <div class="pf-preview reveal-content">
-          <img src="mock-psych-1.png" alt="Psychologist website mockup">
-          <span class="pf-overlay">
-            <span class="pf-overlay-pill">View live →</span>
-          </span>
+        <div class="hero-meta reveal-content">
+          <span>Conversion-first structure</span>
+          <span>SEO-ready</span>
+          <span>Proposal in 24 hours</span>
+          <span>14-day delivery</span>
         </div>
 
-        <div class="pf-info reveal-content">
-          <h3>Psychologist Website</h3>
-          <p>Calm, trust-led layout designed to drive session bookings.</p>
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary reveal-content">Get in touch</a>
+          <a href="#portfolio" class="btn-outline reveal-content">View portfolio</a>
         </div>
+      </div>
+
+      <!-- 3D HERO PHONE -->
+      <aside class="hero-visual reveal-frame">
+        <div class="hero-phone hero-panel">
+          <div class="hero-phone-screen">
+            <header class="hero-phone-header reveal-content">
+              <!-- Right tablet header -->
+              <p class="hero-phone-eyebrow">How your best clients</p>
+              <h2 class="hero-phone-title">find and choose you</h2>
+            </header>
+
+            <div class="hero-phone-list">
+              <article class="hero-phone-card reveal-content">
+                <h3>They find you</h3>
+                <p>They see you on Google or social media.</p>
+              </article>
+
+              <article class="hero-phone-card reveal-content">
+                <h3>They get it</h3>
+                <p>They understand what you do in 5 seconds.</p>
+              </article>
+
+              <article class="hero-phone-card reveal-content">
+                <h3>They trust you</h3>
+                <p>They see reviews, work and clear services.</p>
+              </article>
+
+              <article class="hero-phone-card reveal-content">
+                <h3>They reach out</h3>
+                <p>They submit a request and move forward.</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- floating orbs -->
+          <div class="hero-phone-orb hero-phone-orb--search reveal-content"><span>🔍</span></div>
+          <div class="hero-phone-orb hero-phone-orb--check reveal-content"><span>✓</span></div>
+        </div>
+      </aside>
+
+      <!-- TAGS -->
+      <div class="hero-tags-row reveal-frame">
+        <div class="hero-tags reveal-content">
+          <span class="hero-tag">Psychologists</span>
+          <span class="hero-tag">Trainers</span>
+          <span class="hero-tag">Lawyers</span>
+          <span class="hero-tag">Real Estate</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section reveal-frame" id="portfolio">
+      <h2 class="reveal-content">Selected work</h2>
+      <p class="section-lead reveal-content">
+        A few recent builds for service professionals — conversion-focused structure with a premium, clean aesthetic.
+      </p>
+
+      <div class="pf-grid">
+
+        <!-- Psychologist -->
+        <article class="pf-item reveal-frame">
+          <a class="pf-link" href="https://fotisan.github.io/psychologist/" target="_blank" rel="noopener">
+            <div class="pf-preview reveal-content" aria-label="Psychologist mock preview">
+              <img src="mock-psych-1.png" alt="Psychologist website mockup">
+              <span class="pf-overlay">
+                <span class="pf-overlay-pill">View live →</span>
+              </span>
+            </div>
+
+            <div class="pf-info reveal-content">
+              <h3>Psychologist Website</h3>
+              <p>Calm, trust-led layout designed to drive session bookings.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Dermatologist -->
+        <article class="pf-item reveal-frame">
+          <a class="pf-link" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
+            <div class="pf-preview reveal-content" aria-label="Dermatologist mock preview">
+              <img src="mock-derma-1.png" alt="Dermatologist website mockup">
+              <span class="pf-overlay">
+                <span class="pf-overlay-pill">View live →</span>
+              </span>
+            </div>
+
+            <div class="pf-info reveal-content">
+              <h3>Dermatologist Website</h3>
+              <p>Medical-meets-luxury aesthetic with clear hierarchy and strong trust signals to drive inquiries.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Dentist -->
+        <article class="pf-item reveal-frame">
+          <a class="pf-link" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
+            <div class="pf-preview reveal-content" aria-label="Dentist mock preview">
+              <img src="mock-dentist-1.png" alt="Dentist website mockup">
+              <span class="pf-overlay">
+                <span class="pf-overlay-pill">View live →</span>
+              </span>
+            </div>
+
+            <div class="pf-info reveal-content">
+              <h3>Dentist Website</h3>
+              <p>Conversion-first hero with a clear CTA and clinic-grade presence to increase inquiries.</p>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DESIGN BEFORE / AFTER -->
+    <section class="section section-compare reveal-frame" id="design-compare">
+      <h2 class="reveal-content">Wrong vs Right design</h2>
+      <p class="section-lead reveal-content">
+        Το ίδιο περιεχόμενο μπορεί να δουλεύει ή να σε σαμποτάρει, ανάλογα με το layout.
+        Δες ένα απλό παράδειγμα πριν/μετά.
+      </p>
+
+      <div class="compare-grid">
+        <article class="compare-card compare-card--wrong reveal-frame">
+          <div class="compare-header reveal-content">
+            <span class="compare-label compare-label--wrong">Λάθος layout</span>
+            <span class="compare-note">Χαμένο focus, αδύναμα CTA, visual θόρυβος.</span>
+          </div>
+          <div class="compare-image-wrap reveal-content">
+            <img src="wrong-mock.jpg" alt="Παράδειγμα λάθους layout website">
+          </div>
+        </article>
+
+        <article class="compare-card compare-card--right reveal-frame">
+          <div class="compare-header reveal-content">
+            <span class="compare-label compare-label--right">Σωστό layout</span>
+            <span class="compare-note">Καθαρή ιεραρχία, ξεκάθαρο μήνυμα, ένα κύριο CTA.</span>
+          </div>
+          <div class="compare-image-wrap reveal-content">
+            <img src="wright-mock.jpg" alt="Παράδειγμα σωστού layout website">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section reveal-frame" id="about">
+      <h2 class="reveal-content">Who you'll work with</h2>
+      <p class="section-lead reveal-content">
+        Γεια, είμαι ο Fotis — Webflow designer για ανθρώπους που πουλάνε υπηρεσίες.
+      </p>
+
+      <div class="about-grid">
+        <figure class="about-photo reveal-frame">
+          <div class="about-photo-ring"></div>
+          <img src="fotis-hero.png" alt="Fotis, Webflow designer" class="reveal-content">
+        </figure>
+
+        <div class="about-card reveal-frame">
+          <p class="reveal-content">
+            Έχω background στο business &amp; marketing και χτίζω sites για
+            επαγγελματίες που θέλουν λιγότερο “όμορφο brochure” και περισσότερο
+            μηχανή που κλείνει ραντεβού.
+          </p>
+          <ul class="reveal-content">
+            <li>Εστιάζω σε ψυχολόγους, trainers, δικηγόρους &amp; real estate.</li>
+            <li>Δουλεύω με Webflow, καθαρό layout και ξεκάθαρα CTA.</li>
+            <li>Στόχος: ο ιδανικός πελάτης σου να πει “οκ, αυτός/αυτή είναι για μένα”.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section reveal-frame" id="services">
+      <h2 class="reveal-content">Τι αναλαμβάνω για σένα</h2>
+      <p class="section-lead reveal-content">
+        Δεν σου “φτιάχνω απλά ένα site”. Στήνουμε ένα μικρό σύστημα που φέρνει
+        ιδανικούς πελάτες, από την πρώτη επίσκεψη μέχρι το booked call.
+      </p>
+      <div class="cards">
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Strategy</h3>
+          <p class="reveal-content">Positioning, ιδανικός πελάτης, πακέτα &amp; κεντρικό μήνυμα.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">UX &amp; Copy</h3>
+          <p class="reveal-content">Δομή &amp; κείμενα που απαντούν στις αντιρρήσεις και οδηγούν στο CTA.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Webflow Build</h3>
+          <p class="reveal-content">Καθαρή υλοποίηση, mobile-first, εύκολη διαχείριση.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Launch &amp; μετά</h3>
+          <p class="reveal-content">Domain, SEO basics, analytics &amp; handover video.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section reveal-frame" id="process">
+      <h2 class="reveal-content">Process 4 βημάτων</h2>
+      <p class="section-lead reveal-content">
+        Από το πρώτο call μέχρι το launch, σε 4 καθαρά βήματα.
+      </p>
+      <div class="process-steps">
+        <div class="step step--open reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">01 • Brief &amp; στόχοι — 30’ call</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Καταλαβαίνω πώς δουλεύεις ήδη, τι πουλάς και τι σημαίνει “επιτυχία” για σένα.
+          </div>
+        </div>
+
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">02 • Wireframe &amp; ροή σελίδων</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Φτιάχνουμε “σκελετό” πριν από τα χρώματα, για να είμαστε σίγουροι για τη ροή.
+          </div>
+        </div>
+
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">03 • Design &amp; Webflow build</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Χτίζω το site σε Webflow, με καθαρό layout, mobile εμπειρία και premium αίσθηση.
+          </div>
+        </div>
+
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">04 • Launch, SEO basics &amp; handover</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Συνδέουμε domain, φόρμες, tracking και σου αφήνω video για να νιώθεις ότι το έχεις.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section reveal-frame" id="contact">
+      <h2 class="reveal-content">Έλα να το ξεκινήσουμε</h2>
+      <p class="section-lead reveal-content">
+        Στείλε 2–3 site που σου αρέσουν + τον στόχο σου.
+        Θα λάβεις αναλυτική πρόταση σε 24 ώρες.
+      </p>
+      <a href="mailto:your@email" class="btn-primary reveal-frame">
+        <span class="reveal-content">Στείλε μου email</span>
       </a>
-    </article>
+    </section>
+  </main>
 
-    <!-- Dermatologist -->
-    <article class="pf-item reveal-frame">
-      <a class="pf-link" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
-        <div class="pf-preview reveal-content">
-          <img src="mock-derma-1.png" alt="Dermatologist website mockup">
-          <span class="pf-overlay">
-            <span class="pf-overlay-pill">View live →</span>
-          </span>
-        </div>
+  <footer>
+    © Evida Studio. All rights reserved.
+  </footer>
 
-        <div class="pf-info reveal-content">
-          <h3>Dermatologist Website</h3>
-          <p>Medical-meets-luxury aesthetic with clear hierarchy and strong trust signals to drive inquiries.</p>
-        </div>
-      </a>
-    </article>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
-    <!-- Dentist -->
-    <article class="pf-item reveal-frame">
-      <a class="pf-link" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
-        <div class="pf-preview reveal-content">
-          <img src="mock-dentist-1.png" alt="Dentist website mockup">
-          <span class="pf-overlay">
-            <span class="pf-overlay-pill">View live →</span>
-          </span>
-        </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Accordion
+      const steps = document.querySelectorAll('.step');
+      steps.forEach(step => {
+        const toggle = step.querySelector('.step-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', () => {
+          const isOpen = step.classList.contains('step--open');
+          steps.forEach(s => s.classList.remove('step--open'));
+          if (!isOpen) step.classList.add('step--open');
+        });
+      });
 
-        <div class="pf-info reveal-content">
-          <h3>Dentist Website</h3>
-          <p>Conversion-first hero with a clear CTA and clinic-grade presence to increase inquiries.</p>
-        </div>
-      </a>
-    </article>
+      // Mobile nav
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('is-open');
+          navToggle.classList.toggle('is-active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('is-open');
+            navToggle.classList.remove('is-active');
+          });
+        });
+      }
 
-  </div>
-</section>
+      // Scroll-to-top
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      const secondSection = document.querySelector('#portfolio');
 
-<!-- ΤΑ ΥΠΟΛΟΙΠΑ SECTIONS ΜΕΝΟΥΝ ΑΚΡΙΒΩΣ ΙΔΙΑ -->
-<!-- DESIGN COMPARE, ABOUT, SERVICES, PROCESS, CONTACT, FOOTER, JS -->
+      if (scrollBtn) {
+        const updateScrollBtn = () => {
+          const isMobile = window.matchMedia('(max-width: 767px)').matches;
+          if (isMobile) {
+            if (window.scrollY > 80) scrollBtn.classList.add('is-visible');
+            else scrollBtn.classList.remove('is-visible');
+          } else if (secondSection) {
+            const rect = secondSection.getBoundingClientRect();
+            const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
+            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
+              scrollBtn.classList.add('is-visible');
+            } else {
+              scrollBtn.classList.remove('is-visible');
+            }
+          }
+        };
 
-</main>
+        window.addEventListener('scroll', updateScrollBtn);
+        window.addEventListener('resize', updateScrollBtn);
+        updateScrollBtn();
 
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
