@@ -260,67 +260,69 @@
       </div>
     </section>
 
-    <!-- PROCESS (UPDATED CONTENT AS REQUESTED) -->
+    <!-- PROCESS -->
     <section class="section reveal-frame" id="process">
-      <h2 class="reveal-content">The process, step by step</h2>
+      <h2 class="reveal-content">Process 4 βημάτων</h2>
       <p class="section-lead reveal-content">
-        No calls. No unnecessary meetings.<br>
-        Everything is handled asynchronously via email, in four clear steps.
+        Από το πρώτο call μέχρι το launch, σε 4 καθαρά βήματα.
       </p>
 
       <div class="process-steps">
         <div class="step step--open reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">01 • Goals &amp; direction (via email)</span>
+            <span class="step-title-text reveal-content">01 • Brief &amp; στόχοι — 30’ call</span>
             <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
-            We start with a short brief to understand what you offer, who you want to attract, and what the website needs to achieve.
+            Καταλαβαίνω πώς δουλεύεις ήδη, τι πουλάς και τι σημαίνει “επιτυχία” για σένα.
           </div>
         </div>
 
         <div class="step reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">02 • Structure &amp; page flow</span>
+            <span class="step-title-text reveal-content">02 • Wireframe &amp; ροή σελίδων</span>
             <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
-            I design the site structure and user flow so visitors quickly understand your offer and know exactly what to do next.
+            Φτιάχνουμε “σκελετό” πριν από τα χρώματα, για να είμαστε σίγουροι για τη ροή.
           </div>
         </div>
 
         <div class="step reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">03 • Design &amp; build</span>
+            <span class="step-title-text reveal-content">03 • Design &amp; Webflow build</span>
             <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
-            The structure turns into a clean, modern design and a fast, well-built website focused on clarity and conversion.
+            Χτίζω το site σε Webflow, με καθαρό layout, mobile εμπειρία και premium αίσθηση.
           </div>
         </div>
 
         <div class="step reveal-frame">
           <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">04 • Launch &amp; guidance</span>
+            <span class="step-title-text reveal-content">04 • Launch, SEO basics &amp; handover</span>
             <span class="step-arrow" aria-hidden="true"></span>
           </button>
           <div class="step-body reveal-content">
-            The site goes live with SEO basics and analytics in place, so you can understand how people find and use your website.
+            Συνδέουμε domain, φόρμες, tracking και σου αφήνω video για να νιώθεις ότι το έχεις.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (UPDATED AS REQUESTED) -->
     <section class="section reveal-frame" id="contact">
-      <h2 class="reveal-content">Έλα να το ξεκινήσουμε</h2>
+      <h2 class="reveal-content">Let’s see if we’re a good fit</h2>
       <p class="section-lead reveal-content">
-        Στείλε 2–3 site που σου αρέσουν + τον στόχο σου.
-        Θα λάβεις αναλυτική πρόταση σε 24 ώρες.
+        I work with service professionals who want clarity, strong structure,<br>
+        and a website that guides visitors to take action — not just something that looks nice.
+        <br><br>
+        If that sounds like you, send me 2–3 websites you like and a few words about your goal.<br>
+        I’ll review everything and get back to you with a clear proposal within 24 hours.
       </p>
 
       <a href="mailto:your@email" class="btn-primary reveal-frame">
-        <span class="reveal-content">Στείλε μου email</span>
+        <span class="reveal-content">Get in touch →</span>
       </a>
     </section>
   </main>
@@ -333,15 +335,15 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Accordion (UPDATED): allow multiple open steps (do NOT close previous)
+      // Accordion
       const steps = document.querySelectorAll('.step');
       steps.forEach(step => {
         const toggle = step.querySelector('.step-toggle');
         if (!toggle) return;
-
         toggle.addEventListener('click', () => {
-          // toggle only this step, keep others as-is
-          step.classList.toggle('step--open');
+          const isOpen = step.classList.contains('step--open');
+          steps.forEach(s => s.classList.remove('step--open'));
+          if (!isOpen) step.classList.add('step--open');
         });
       });
 
