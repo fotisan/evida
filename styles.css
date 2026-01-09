@@ -394,8 +394,8 @@ ul{list-style:none}
   transition:transform .22s ease;
   filter:saturate(1.02) contrast(1.02);
 
-  /* ✅ ΜΟΝΗ ΑΛΛΑΓΗ: πιο στρογγυλεμένες γωνίες στο portfolio */
-  border-radius:22px;
+  /* ✅ ΜΟΝΗ ΑΛΛΑΓΗ: πιο στρογγυλεμένες γωνίες */
+  border-radius:18px;
 }
 .pf-item:hover .pf-preview img{transform:scale(1.02)}
 
