@@ -393,6 +393,9 @@ ul{list-style:none}
   transform:scale(1);
   transition:transform .22s ease;
   filter:saturate(1.02) contrast(1.02);
+
+  /* ✅ ΜΟΝΗ ΑΛΛΑΓΗ: πιο στρογγυλεμένες γωνίες στο portfolio */
+  border-radius:22px;
 }
 .pf-item:hover .pf-preview img{transform:scale(1.02)}
 
@@ -688,14 +691,3 @@ footer{
   margin: 0 !important;
   letter-spacing: normal !important;
 }
-
-
-
-
-
-
-
-
-
-
-
