@@ -160,7 +160,7 @@ ul{list-style:none}
 }
 .hero-eyebrow{
   font-size:.88rem;
-  letter-spacing:.25em;
+  letter-spacing:.30em;
   text-transform:uppercase;
   color:var(--brand-2);
   margin-bottom:.5rem;
@@ -731,4 +731,5 @@ footer{
   margin: 0 !important;
   letter-spacing: normal !important;
 }
+
 
