@@ -391,6 +391,7 @@ ul{list-style:none}
   display:block;
   object-fit:contain;       /* ✅ whole image visible */
   padding:14px;             /* ✅ frame */
+  border-radius:16px;       /* ✅ ΝΕΟ: πιο κυκλικές γωνίες στην ίδια την εικόνα */
   transform:scale(1);
   transition:transform .22s ease;
   filter:saturate(1.02) contrast(1.02);
