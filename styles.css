@@ -163,11 +163,6 @@ ul{list-style:none}
   color:var(--brand-2);
   margin-bottom:.5rem;
 }
-.hero-eyebrow .eyebrow-break{
-  display:block;
-  margin-top:.35rem; /* ↑ εδώ είναι το “μεγαλύτερο διάστιχο” */
-}
-
 .hero-title{
   font-size:clamp(2rem,7vw,2.4rem);
   line-height:1.12;
@@ -180,15 +175,6 @@ ul{list-style:none}
   -webkit-background-clip:text;
   color:transparent;
 }
-.hero-title .break { display:block; }
-
-.hero-title .accent{
-  font-style:normal;
-  background:linear-gradient(135deg,#3de2c5,#7b5cff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
 .hero-sub{
   font-size:1rem;
   color:var(--muted);
@@ -745,35 +731,7 @@ footer{
   .hero-tags-row--desktop{display:block;order:unset}
   .hero-visual{order:unset}
   .hero-copy{order:unset}
-
-  /* ===================== REQUESTED CHANGES (DESKTOP ONLY) ===================== */
-
-  /* 1) Eyebrow: no line break on desktop */
-  .hero-eyebrow{
-    white-space:nowrap;
-  }
-  .hero-eyebrow .eyebrow-break{
-    display:none;
-    margin-top:0;
-  }
-
-  /* 2) Hero buttons smaller on desktop */
-  .hero-cta-row .btn-primary{
-    padding:.68rem 1.05rem;
-    font-size:.92rem;
-  }
-  .hero-cta-row .btn-outline{
-    padding:.66rem 1.0rem;
-    font-size:.90rem;
-  }
-
-  /* 3) 3D phone to the right edge of the screen (full-bleed on desktop) */
-  .hero-visual{
-    margin-right:calc(50% - 50vw);
-    padding-right:1.6rem; /* keeps it aligned with shell padding feel */
-  }
 }
-
 /* FORCE NAV CTA PADDING (τελικό override) */
 .site-header .nav-links a.btn-nav{
   padding-left: 14px !important;
