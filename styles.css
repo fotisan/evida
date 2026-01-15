@@ -163,6 +163,11 @@ ul{list-style:none}
   color:var(--brand-2);
   margin-bottom:.5rem;
 }
+.hero-eyebrow .eyebrow-break{
+  display:block;
+  margin-top:.35rem; /* ↑ εδώ είναι το “μεγαλύτερο διάστιχο” */
+}
+
 .hero-title{
   font-size:clamp(2rem,7vw,2.4rem);
   line-height:1.12;
@@ -751,4 +756,5 @@ footer{
   margin: 0 !important;
   letter-spacing: normal !important;
 }
+
 
