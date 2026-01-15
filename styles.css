@@ -718,7 +718,11 @@ footer{
     min-width:auto;
     font-size:.95rem;
     color:var(--muted);
+     .hero-eyebrow .eyebrow-break{
+    display:inline;
+    margin-top:0;
   }
+
   .nav-links a{padding:0}
   .nav-links a:hover{color:var(--page-fg)}
 
@@ -761,6 +765,7 @@ footer{
   margin: 0 !important;
   letter-spacing: normal !important;
 }
+
 
 
 
