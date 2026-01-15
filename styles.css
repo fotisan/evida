@@ -175,6 +175,15 @@ ul{list-style:none}
   -webkit-background-clip:text;
   color:transparent;
 }
+.hero-title .break { display:block; }
+
+.hero-title .accent{
+  font-style:normal;
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
 .hero-sub{
   font-size:1rem;
   color:var(--muted);
@@ -742,3 +751,4 @@ footer{
   margin: 0 !important;
   letter-spacing: normal !important;
 }
+
