@@ -149,8 +149,6 @@ ul{list-style:none}
   background:rgba(10,16,33,.8);
 }
 
-
-
 /* ===================== HERO ===================== */
 .hero{
   padding-top:1.6rem;
@@ -242,6 +240,12 @@ ul{list-style:none}
   border:1px solid rgba(86,110,172,.7);
   color:var(--muted);
 }
+
+/* ===== MOBILE-ONLY CHANGE: tags ABOVE 3D + different labels ===== */
+.hero-copy{order:1}
+.hero-tags-row--mobile{order:2}
+.hero-visual{order:3}
+.hero-tags-row--desktop{display:none}
 
 /* ===== HERO 3D PHONE ===== */
 .hero-visual{display:flex;justify-content:center;perspective:1400px}
@@ -721,6 +725,12 @@ footer{
 
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
+
+  /* Desktop: show original tags, hide mobile tags */
+  .hero-tags-row--mobile{display:none;order:unset}
+  .hero-tags-row--desktop{display:block;order:unset}
+  .hero-visual{order:unset}
+  .hero-copy{order:unset}
 }
 /* FORCE NAV CTA PADDING (τελικό override) */
 .site-header .nav-links a.btn-nav{
