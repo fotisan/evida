@@ -163,6 +163,14 @@ ul{list-style:none}
   color:var(--brand-2);
   margin-bottom:.5rem;
 }
+
+.eyebrow-break{display:inline}
+
+@media (max-width:767px){
+  .hero-eyebrow{line-height:1.65}
+  .eyebrow-break{display:block;margin-top:.2rem}
+}
+
 .hero-title{
   font-size:clamp(2rem,7vw,2.4rem);
   line-height:1.12;
@@ -175,6 +183,15 @@ ul{list-style:none}
   -webkit-background-clip:text;
   color:transparent;
 }
+
+.hero-accent{
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.booked-calls{white-space:nowrap}
+
 .hero-sub{
   font-size:1rem;
   color:var(--muted);
