@@ -327,6 +327,9 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
+        <!-- NEW: Redirect back to this page with a success flag -->
+        <input type="hidden" id="nextUrl" name="_next" value="">
+
         <!-- Honeypot -->
         <input class="contact-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -377,8 +380,117 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
+  <!-- SUCCESS MODAL (NEW) -->
+  <div class="modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal-backdrop" data-close="true" aria-hidden="true"></div>
+
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
+
+      <div class="modal-icon" aria-hidden="true">
+        <svg class="modal-svg" viewBox="0 0 52 52" focusable="false" aria-hidden="true">
+          <circle class="modal-ring" cx="26" cy="26" r="24"></circle>
+          <path class="modal-check" d="M14 27 L22 35 L38 19"></path>
+        </svg>
+      </div>
+
+      <h3 class="modal-title" id="successTitle">Message sent</h3>
+      <p class="modal-text">Thank you for reaching out. We’ll get back to you as soon as possible.</p>
+    </div>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+
+      // NEW: subtle page enter
+      setTimeout(() => {
+        document.body.classList.add('is-loaded');
+      }, 90);
+
+      // NEW: set FormSubmit _next dynamically (works on any domain/path)
+      const nextUrl = document.getElementById('nextUrl');
+      if (nextUrl) {
+        nextUrl.value = window.location.origin + window.location.pathname + '?sent=1#contact';
+      }
+
+      // NEW: Success modal logic (triggered after redirect back with ?sent=1)
+      const successModal = document.getElementById('successModal');
+
+      const openModal = () => {
+        if (!successModal) return;
+        successModal.hidden = false;
+        document.body.classList.add('modal-open');
+        requestAnimationFrame(() => {
+          successModal.classList.add('is-open');
+        });
+      };
+
+      const closeModal = () => {
+        if (!successModal) return;
+        successModal.classList.remove('is-open');
+        document.body.classList.remove('modal-open');
+
+        const fallbackHide = () => {
+          if (!successModal.classList.contains('is-open')) successModal.hidden = true;
+        };
+
+        const onEnd = (e) => {
+          if (e.target !== successModal) return;
+          successModal.removeEventListener('transitionend', onEnd);
+          fallbackHide();
+        };
+
+        successModal.addEventListener('transitionend', onEnd);
+        setTimeout(fallbackHide, 320);
+      };
+
+      if (successModal) {
+        successModal.addEventListener('click', (e) => {
+          const t = e.target;
+          if (t && t.dataset && t.dataset.close === 'true') closeModal();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && successModal && !successModal.hidden) closeModal();
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('sent') === '1') {
+        openModal();
+        const newUrl = window.location.pathname + window.location.hash;
+        history.replaceState({}, document.title, newUrl);
+      }
+
+      // NEW: subtle reveal on scroll
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const frames = document.querySelectorAll('.reveal-frame');
+
+      frames.forEach(frame => {
+        const kids = frame.querySelectorAll('.reveal-content');
+        kids.forEach((kid, idx) => {
+          kid.style.transitionDelay = (idx * 70) + 'ms';
+        });
+      });
+
+      if (reduceMotion) {
+        frames.forEach(frame => {
+          frame.classList.add('is-in');
+          frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
+        });
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const frame = entry.target;
+            frame.classList.add('is-in');
+            frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
+            io.unobserve(frame);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+        frames.forEach(frame => io.observe(frame));
+      }
 
       // Accordion (UPDATED): allow multiple steps to stay open
       const steps = document.querySelectorAll('.step');
