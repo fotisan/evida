@@ -320,9 +320,37 @@
         I’ll tell you what I’d improve, and send a clear proposal within 24 hours.
       </p>
 
-      <a href="mailto:hello@evidastudio.com" class="btn-primary reveal-frame">
-        <span class="reveal-content">Get in touch</span>
-      </a>
+      <form class="contact-form reveal-frame" action="https://formsubmit.co/hello@evidastudio.com" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from Evida Studio" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div class="form-grid">
+          <label class="form-field">
+            <span class="form-label reveal-content">Name</span>
+            <input class="form-input reveal-content" type="text" name="name" autocomplete="name" required />
+          </label>
+
+          <label class="form-field">
+            <span class="form-label reveal-content">Email</span>
+            <input class="form-input reveal-content" type="email" name="email" autocomplete="email" required />
+          </label>
+
+          <label class="form-field form-field--full">
+            <span class="form-label reveal-content">Your website or links (optional)</span>
+            <input class="form-input reveal-content" type="text" name="links" placeholder="Paste up to 3 links" />
+          </label>
+
+          <label class="form-field form-field--full">
+            <span class="form-label reveal-content">Message</span>
+            <textarea class="form-input form-textarea reveal-content" name="message" rows="6" required placeholder="Your #1 goal (bookings, calls, leads) + any context"></textarea>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary reveal-frame">
+          <span class="reveal-content">Send</span>
+        </button>
+      </form>
     </section>
 
   </main>
