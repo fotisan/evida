@@ -162,9 +162,12 @@ ul{list-style:none}
   justify-content:center;
   width:34px;
   height:34px;
+
+  /* CHANGE (ONLY): remove visible circle */
   border-radius:999px;
-  border:1px solid rgba(140,165,230,.55);
-  background:rgba(10,16,33,.55);
+  border:1px solid transparent;
+  background:transparent;
+
   color:var(--muted);
   font-weight:650;
   font-size:.86rem;
@@ -172,8 +175,10 @@ ul{list-style:none}
 }
 .nav-social:hover{
   color:var(--page-fg);
-  border-color:rgba(160,190,255,.75);
-  background:rgba(10,16,33,.8);
+
+  /* CHANGE (ONLY): keep circle invisible on hover */
+  border-color:transparent;
+  background:transparent;
 }
 
 /* ===================== HERO ===================== */
