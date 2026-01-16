@@ -320,15 +320,12 @@
         I’ll tell you what I’d improve, and send a clear proposal within 24 hours.
       </p>
 
-      <!-- Contact form (replaces mailto button) -->
-      <form class="contact-form reveal-frame" action="https://formsubmit.co/hello@evidastudio.com" method="POST">
+      <!-- Contact form (AJAX - stays on your site) -->
+      <form id="contactForm" class="contact-form reveal-frame" action="https://formsubmit.co/ajax/hello@evidastudio.com" method="POST">
         <!-- Optional settings for FormSubmit -->
         <input type="hidden" name="_subject" value="New inquiry from Evida Studio">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-
-        <!-- NEW: Redirect back to this page with a success flag -->
-        <input type="hidden" id="nextUrl" name="_next" value="">
 
         <!-- Honeypot -->
         <input class="contact-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -381,116 +378,142 @@
   <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
   <!-- SUCCESS MODAL (NEW) -->
-  <div class="modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="successTitle">
-    <div class="modal-backdrop" data-close="true" aria-hidden="true"></div>
+  <div class="evida-modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
 
-    <div class="modal-dialog" role="document">
-      <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
+    <div class="evida-modal-dialog" role="document">
+      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
 
-      <div class="modal-icon" aria-hidden="true">
-        <svg class="modal-svg" viewBox="0 0 52 52" focusable="false" aria-hidden="true">
-          <circle class="modal-ring" cx="26" cy="26" r="24"></circle>
-          <path class="modal-check" d="M14 27 L22 35 L38 19"></path>
+      <div class="evida-modal-icon" aria-hidden="true">
+        <svg class="evida-modal-svg" viewBox="0 0 52 52" focusable="false" aria-hidden="true">
+          <circle class="evida-modal-ring" cx="26" cy="26" r="24"></circle>
+          <path class="evida-modal-check" d="M14 27 L22 35 L38 19"></path>
         </svg>
       </div>
 
-      <h3 class="modal-title" id="successTitle">Message sent</h3>
-      <p class="modal-text">Thank you for reaching out. We’ll get back to you as soon as possible.</p>
+      <h3 class="evida-modal-title" id="successTitle">Message sent</h3>
+      <p class="evida-modal-text">Thank you for reaching out. We’ll get back to you as soon as possible.</p>
     </div>
   </div>
 
+  <!-- Inline CSS only for modal (keeps styles.css untouched) -->
+  <style>
+    body.evida-modal-open{overflow:hidden}
+
+    .evida-modal{
+      position:fixed;
+      inset:0;
+      z-index:200;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:1.1rem;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .22s ease;
+    }
+    .evida-modal.is-open{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .evida-modal-backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      backdrop-filter:blur(10px);
+    }
+    .evida-modal-dialog{
+      position:relative;
+      width:min(420px, 92vw);
+      border-radius:22px;
+      border:1px solid rgba(140,165,230,.45);
+      background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+      box-shadow:0 30px 90px rgba(0,0,0,.9);
+      padding:1.35rem 1.2rem 1.2rem;
+      transform:translateY(10px) scale(.985);
+      transition:transform .26s ease;
+      text-align:center;
+    }
+    .evida-modal.is-open .evida-modal-dialog{transform:none}
+
+    .evida-modal-close{
+      position:absolute;
+      top:10px;
+      right:12px;
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      border:1px solid rgba(140,165,230,.55);
+      background:rgba(10,16,33,.55);
+      color:#f7f7ff;
+      font-size:1.25rem;
+      line-height:1;
+      cursor:pointer;
+    }
+    .evida-modal-close:hover{
+      border-color:rgba(160,190,255,.75);
+      background:rgba(10,16,33,.8);
+    }
+
+    .evida-modal-icon{
+      width:66px;
+      height:66px;
+      border-radius:999px;
+      margin:0 auto .8rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(61,226,197,.12);
+      border:1px solid rgba(61,226,197,.4);
+      color:#3de2c5;
+      box-shadow:0 18px 45px rgba(0,0,0,.7);
+    }
+    .evida-modal-svg{width:40px;height:40px}
+    .evida-modal-ring,
+    .evida-modal-check{
+      fill:none;
+      stroke:currentColor;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .evida-modal-ring{
+      stroke-width:3;
+      stroke-dasharray:160;
+      stroke-dashoffset:160;
+    }
+    .evida-modal-check{
+      stroke-width:3.5;
+      stroke-dasharray:60;
+      stroke-dashoffset:60;
+      opacity:0;
+    }
+
+    .evida-modal.is-open .evida-modal-ring{animation:evidaRingDraw .9s ease forwards}
+    .evida-modal.is-open .evida-modal-check{animation:evidaCheckDraw .45s ease forwards .82s}
+
+    @keyframes evidaRingDraw{to{stroke-dashoffset:0}}
+    @keyframes evidaCheckDraw{
+      0%{stroke-dashoffset:60;opacity:0}
+      40%{opacity:1}
+      100%{stroke-dashoffset:0;opacity:1}
+    }
+
+    .evida-modal-title{
+      font-size:1.05rem;
+      margin-bottom:.35rem;
+      background:linear-gradient(135deg,#3de2c5,#7b5cff);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .evida-modal-text{
+      color:#a8b0c8;
+      font-size:.92rem;
+      line-height:1.45;
+    }
+  </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // NEW: subtle page enter
-      setTimeout(() => {
-        document.body.classList.add('is-loaded');
-      }, 90);
-
-      // NEW: set FormSubmit _next dynamically (works on any domain/path)
-      const nextUrl = document.getElementById('nextUrl');
-      if (nextUrl) {
-        nextUrl.value = window.location.origin + window.location.pathname + '?sent=1#contact';
-      }
-
-      // NEW: Success modal logic (triggered after redirect back with ?sent=1)
-      const successModal = document.getElementById('successModal');
-
-      const openModal = () => {
-        if (!successModal) return;
-        successModal.hidden = false;
-        document.body.classList.add('modal-open');
-        requestAnimationFrame(() => {
-          successModal.classList.add('is-open');
-        });
-      };
-
-      const closeModal = () => {
-        if (!successModal) return;
-        successModal.classList.remove('is-open');
-        document.body.classList.remove('modal-open');
-
-        const fallbackHide = () => {
-          if (!successModal.classList.contains('is-open')) successModal.hidden = true;
-        };
-
-        const onEnd = (e) => {
-          if (e.target !== successModal) return;
-          successModal.removeEventListener('transitionend', onEnd);
-          fallbackHide();
-        };
-
-        successModal.addEventListener('transitionend', onEnd);
-        setTimeout(fallbackHide, 320);
-      };
-
-      if (successModal) {
-        successModal.addEventListener('click', (e) => {
-          const t = e.target;
-          if (t && t.dataset && t.dataset.close === 'true') closeModal();
-        });
-      }
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && successModal && !successModal.hidden) closeModal();
-      });
-
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('sent') === '1') {
-        openModal();
-        const newUrl = window.location.pathname + window.location.hash;
-        history.replaceState({}, document.title, newUrl);
-      }
-
-      // NEW: subtle reveal on scroll
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const frames = document.querySelectorAll('.reveal-frame');
-
-      frames.forEach(frame => {
-        const kids = frame.querySelectorAll('.reveal-content');
-        kids.forEach((kid, idx) => {
-          kid.style.transitionDelay = (idx * 70) + 'ms';
-        });
-      });
-
-      if (reduceMotion) {
-        frames.forEach(frame => {
-          frame.classList.add('is-in');
-          frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
-        });
-      } else {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const frame = entry.target;
-            frame.classList.add('is-in');
-            frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
-            io.unobserve(frame);
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-
-        frames.forEach(frame => io.observe(frame));
-      }
 
       // Accordion (UPDATED): allow multiple steps to stay open
       const steps = document.querySelectorAll('.step');
@@ -550,6 +573,68 @@
 
         scrollBtn.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // ===== ONLY CHANGE: AJAX submit + success modal (no redirect) =====
+      const successModal = document.getElementById('successModal');
+
+      const openModal = () => {
+        if (!successModal) return;
+        successModal.hidden = false;
+        document.body.classList.add('evida-modal-open');
+        requestAnimationFrame(() => successModal.classList.add('is-open'));
+      };
+
+      const closeModal = () => {
+        if (!successModal) return;
+        successModal.classList.remove('is-open');
+        document.body.classList.remove('evida-modal-open');
+        setTimeout(() => { successModal.hidden = true; }, 260);
+      };
+
+      if (successModal) {
+        successModal.addEventListener('click', (e) => {
+          const t = e.target;
+          if (t && t.dataset && t.dataset.close === 'true') closeModal();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && successModal && !successModal.hidden) closeModal();
+      });
+
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalText = submitBtn ? submitBtn.textContent : '';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: new FormData(form)
+            });
+
+            if (!res.ok) throw new Error('Request failed');
+
+            form.reset();
+            openModal();
+          } catch (err) {
+            alert('Something went wrong. Please try again.');
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            }
+          }
         });
       }
     });
