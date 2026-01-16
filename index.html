@@ -1,435 +1,803 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Evida Studio · Websites for Service Professionals</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+/* styles.css */
+:root{
+  --page-bg:#050814;
+  --page-fg:#f7f7ff;
+  --muted:#a8b0c8;
 
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="logo.png">
+  --brand:#5f8cff;
+  --brand-2:#3de2c5;
 
-  <!-- bump version to avoid GitHub Pages cache -->
-  <link rel="stylesheet" href="styles.css?v=20">
-</head>
+  --container:1120px;
+}
 
-<body>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <div class="site-logo">
-        <a href="#top">Evida <span>Studio</span></a>
-      </div>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  background: radial-gradient(circle at top left,#171f39 0,#050814 52%,#02030a 100%);
+  color:var(--page-fg);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation">
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-      </button>
+.shell{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:1.2rem 1.4rem 4rem;
+}
 
-      <nav class="nav-links">
-        <a href="#portfolio">Work that brings clients</a>
-        <a href="#about">About Evida</a>
-        <a href="#services">What you get</a>
-        <a href="#process">How it works</a>
+/* ===== Reveal: no-delay ===== */
+.reveal-frame,.reveal-content{opacity:1;transform:none;transition:none}
 
-        <!-- Social links -->
-        <a
-          class="nav-social"
-          href="https://www.instagram.com/evidastudio/"
-          target="_blank"
-          rel="noopener"
-          aria-label="Evida Studio on Instagram"
-          title="Instagram"
-        >IG</a>
-        <a
-          class="nav-social"
-          href="https://www.linkedin.com/in/fotis-antonas-643511181/?originalSubdomain=gr"
-          target="_blank"
-          rel="noopener"
-          aria-label="Fotis Antonas on LinkedIn"
-          title="LinkedIn"
-        >in</a>
+/* ===================== HEADER ===================== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(18px);
+  background:linear-gradient(to bottom, rgba(5,8,20,.92), rgba(5,8,20,.82), transparent);
+}
+.site-header-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0.7rem 1.4rem 0.85rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+}
+.site-logo{
+  font-weight:650;
+  letter-spacing:.03em;
+  font-size:1.1rem;
+}
+.site-logo span{color:var(--brand-2)}
 
-        <a href="#contact" class="btn-nav">Contact</a>
-      </nav>
-    </div>
-  </header>
+/* Mobile toggle */
+.nav-toggle{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  width:34px;
+  height:28px;
+  justify-content:center;
+  align-items:flex-end;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+}
+.nav-toggle-line{
+  height:2px;
+  width:100%;
+  border-radius:99px;
+  background:rgba(200,210,240,.9);
+  transition:transform .2s ease, opacity .2s ease, width .2s ease;
+}
+.nav-toggle.is-active .nav-toggle-line:first-child{transform:translateY(3px) rotate(38deg)}
+.nav-toggle.is-active .nav-toggle-line:last-child{transform:translateY(-3px) rotate(-38deg)}
 
-  <main class="shell">
+/* Mobile dropdown */
+.nav-links{
+  position:absolute;
+  top:100%;
+  right:1.6rem;
+  margin-top:.5rem;
+  background:rgba(5,8,20,.96);
+  border-radius:16px;
+  border:1px solid rgba(120,145,220,.5);
+  padding:.7rem .9rem;
+  display:none;
+  flex-direction:column;
+  gap:.35rem;
+  min-width:180px;
+  box-shadow:0 16px 40px rgba(0,0,0,.85);
+  font-size:.92rem;
+  color:var(--muted);
+  align-items:flex-start;
+}
+.nav-links.is-open{display:flex}
+.nav-links a{padding:.35rem .2rem}
+.nav-links a:hover{color:var(--page-fg)}
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-copy reveal-frame">
-        <div class="hero-eyebrow reveal-content">Websites built for people <span class="eyebrow-break">who sell expertise</span></div>
+/* NAV CTA — FIX: αέρας δεξιά/αριστερά + να μην κολλάει */
+/* NAV CTA — ΠΕΡΙΣΣΟΤΕΡΟΣ ΑΕΡΑΣ ΣΤΑ ΠΛΑΓΙΑ */
+/* NAV CTA — περισσότερο κενό ΜΕΣΑ στο πλαίσιο */
+/* NAV CTA — EXTRA WIDE / PREMIUM */
+/* NAV CTA — μεγαλώνει ΜΟΝΟ το πλαίσιο (όχι αποστάσεις) */
+/* NAV CTA — λίγο πιο άνετο πλαίσιο (ΟΧΙ υπερβολή) */
+/* NAV CTA — αρχικό μέγεθος + λίγα px padding δεξιά/αριστερά */
+.btn-nav{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 
-        <h1 class="hero-title reveal-content">
-          Turn visits <span class="hero-accent">into</span><br><span class="booked-calls"><span class="hero-accent">booked</span> calls</span>
-        </h1>
+  /* ⬇️ ΑΥΤΟ ΕΙΝΑΙ ΤΟ ΚΛΕΙΔΙ */
+  padding: 0.75rem 1.55rem;  /* + ~6px δεξιά & αριστερά σε σχέση με πριν */
 
-        <p class="hero-sub reveal-content">
-          Clear positioning, clean design, and the right flow, so the right people trust you fast and contact you.
-        </p>
+  border-radius:999px;
+  background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
+  color:#020309;
+  font-weight:600;
+  font-size:.93rem;
 
-        <div class="hero-meta reveal-content">
-          <span>Built to guide decisions, not just look good.</span>
-          <span>Easy to find, easy to understand.</span>
-          <span>Clear proposal in 24h, no back and forth.</span>
-          <span>Launch ready in 14 days.</span>
-        </div>
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04),
+    0 12px 35px rgba(42,151,255,.55);
 
-        <div class="hero-cta-row">
-          <a href="#contact" class="btn-primary reveal-content">Get in touch</a>
-          <a href="#portfolio" class="btn-outline reveal-content">See real examples</a>
-        </div>
-      </div>
+  white-space:nowrap;
+}
 
-      <!-- HERO TAGS (MOBILE ONLY) -->
-      <div class="hero-tags-row hero-tags-row--mobile reveal-frame">
-        <div class="hero-tags reveal-content">
-          <span class="hero-tag">Psychologists</span>
-          <span class="hero-tag">Dermatologists</span>
-          <span class="hero-tag">Dentists</span>
-          <span class="hero-tag">Physiotherapists</span>
-        </div>
-      </div>
+/* ===================== NAV SOCIAL (NEW) ===================== */
+.nav-social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  border:1px solid rgba(140,165,230,.55);
+  background:rgba(10,16,33,.55);
+  color:var(--muted);
+  font-weight:650;
+  font-size:.86rem;
+  letter-spacing:.01em;
+}
+.nav-social:hover{
+  color:var(--page-fg);
+  border-color:rgba(160,190,255,.75);
+  background:rgba(10,16,33,.8);
+}
 
-      <!-- HERO VISUAL -->
-      <aside class="hero-visual reveal-frame">
-        <div class="hero-phone hero-panel">
-          <div class="hero-phone-screen">
-            <header class="hero-phone-header reveal-content">
-              <p class="hero-phone-eyebrow">How great clients</p>
-              <h2 class="hero-phone-title">discover and trust you</h2>
-            </header>
+/* ===================== HERO ===================== */
+.hero{
+  padding-top:1.6rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+.hero-eyebrow{
+  font-size:.88rem;
+  letter-spacing:.30em;
+  text-transform:uppercase;
+  color:var(--brand-2);
+  margin-bottom:.5rem;
+}
 
-            <div class="hero-phone-list">
-              <article class="hero-phone-card reveal-content">
-                <h3>They discover you</h3>
-                <p>Search or a post brings them to your site.</p>
-              </article>
+.eyebrow-break{display:inline}
 
-              <article class="hero-phone-card reveal-content">
-                <h3>They understand fast</h3>
-                <p>They instantly know if you’re the right fit.</p>
-              </article>
+@media (max-width:767px){
+  .hero-eyebrow{line-height:1.65}
+  .eyebrow-break{display:block;margin-top:.2rem}
+}
 
-              <article class="hero-phone-card reveal-content">
-                <h3>They feel safe</h3>
-                <p>Clear info + trust signals remove doubt.</p>
-              </article>
+.hero-title{
+  font-size:clamp(2rem,7vw,2.4rem);
+  line-height:1.12;
+  margin-bottom:.8rem;
+  max-width:26rem;
+}
+.hero-title em{
+  font-style:normal;
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-              <article class="hero-phone-card reveal-content">
-                <h3>They take the next step</h3>
-                <p>One clear action, call, message, booking.</p>
-              </article>
-            </div>
-          </div>
+.hero-accent{
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-          <div class="hero-phone-orb hero-phone-orb--search reveal-content"><span>🔍</span></div>
-          <div class="hero-phone-orb hero-phone-orb--check reveal-content"><span>✓</span></div>
-        </div>
-      </aside>
+.booked-calls{white-space:nowrap}
 
-      <!-- HERO TAGS (DESKTOP ONLY) -->
-      <div class="hero-tags-row hero-tags-row--desktop reveal-frame">
-        <div class="hero-tags reveal-content">
-          <span class="hero-tag">Psychologists</span>
-          <span class="hero-tag">Dermatologists</span>
-          <span class="hero-tag">Dentists</span>
-          <span class="hero-tag">Physiotherapists</span>
-        </div>
-      </div>
-    </section>
+.hero-sub{
+  font-size:1rem;
+  color:var(--muted);
+  max-width:34rem;
+  margin-bottom:1.4rem;
+}
+.hero-meta{
+  font-size:.9rem;
+  color:var(--muted);
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem .7rem;
+  margin-bottom:1.6rem;
+}
+.hero-meta span::after{content:"•";margin-left:.6rem;opacity:.35}
+.hero-meta span:last-child::after{content:none}
 
-    <!-- PORTFOLIO -->
-    <section class="section reveal-frame" id="portfolio">
-      <h2 class="reveal-content">Selected work, built to convert</h2>
-      <p class="section-lead reveal-content">
-        Real demos that show the flow: clarity first, trust second, action last.
-      </p>
+.hero-cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  align-items:stretch;
+  flex-direction:column;
+  margin-bottom:.8rem;
+}
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.85rem 1.3rem;
+  border-radius:999px;
+  border:none;
+  background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
+  color:#020309;
+  font-weight:600;
+  font-size:.98rem;
+  box-shadow:0 0 0 1px rgba(255,255,255,.04),0 16px 40px rgba(33,143,255,.65);
+  cursor:pointer;
+}
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.85rem 1.2rem;
+  border-radius:999px;
+  border:1px solid rgba(160,176,210,.5);
+  background:rgba(10,16,33,.85);
+  color:var(--page-fg);
+  font-weight:500;
+  font-size:.95rem;
+  cursor:pointer;
+}
+.hero-cta-row .btn-primary,
+.hero-cta-row .btn-outline{width:100%}
 
-      <div class="pf-grid">
-        <!-- NEW: added FIRST -->
-        <article class="pf-item reveal-frame">
-          <a class="pf-link" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
-            <div class="pf-preview reveal-content">
-              <img src="mockup-_psychologist.png" alt="Psychologist website mockup">
-              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
-            </div>
-            <div class="pf-info reveal-content">
-              <h3>Psychologist Website</h3>
-              <p>Designed to make people feel safe enough to book.</p>
-            </div>
-          </a>
-        </article>
+/* tags */
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+.hero-tag{
+  font-size:.86rem;
+  padding:.35rem .8rem;
+  border-radius:999px;
+  background:rgba(9,17,42,.9);
+  border:1px solid rgba(86,110,172,.7);
+  color:var(--muted);
+}
 
-        <!-- REPLACED: 2nd psychologist -> architect -->
-        <article class="pf-item reveal-frame">
-          <a class="pf-link" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
-            <div class="pf-preview reveal-content">
-              <img src="Architecture.png" alt="Architecture website mockup">
-              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
-            </div>
-            <div class="pf-info reveal-content">
-              <h3>Architecture Website</h3>
-              <p>High-end presentation that feels like a brand, not a template.</p>
-            </div>
-          </a>
-        </article>
+/* ===== MOBILE-ONLY CHANGE: tags ABOVE 3D + different labels ===== */
+.hero-copy{order:1}
+.hero-tags-row--mobile{order:2}
+.hero-visual{order:3}
+.hero-tags-row--desktop{display:none}
 
-        <article class="pf-item reveal-frame">
-          <a class="pf-link" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
-            <div class="pf-preview reveal-content">
-              <img src="mock-derma-1.png" alt="Dermatologist website mockup">
-              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
-            </div>
-            <div class="pf-info reveal-content">
-              <h3>Dermatologist Website</h3>
-              <p>People understand services fast, and choose you with confidence.</p>
-            </div>
-          </a>
-        </article>
+/* ===== HERO 3D PHONE ===== */
+.hero-visual{display:flex;justify-content:center;perspective:1400px}
+.hero-phone.hero-panel{
+  position:relative;
+  width:100%;
+  max-width:280px;
+  padding:6px;
+  border-radius:32px;
+  background:radial-gradient(circle at top left,#27355a 0,#050814 70%);
+  box-shadow:0 26px 80px rgba(0,0,0,.95),0 0 0 1px rgba(150,180,255,.4);
+  transform-origin:center center;
+  transform:rotateX(18deg) rotateY(-30deg) rotateZ(-6deg) translateY(4px);
+  animation:heroFloat 18s ease-in-out infinite;
+}
+.hero-phone.hero-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  border:1px solid rgba(180,205,255,.25);
+  pointer-events:none;
+}
+.hero-phone.hero-panel::after{
+  content:"";
+  position:absolute;
+  left:15%;
+  right:15%;
+  bottom:-24px;
+  height:48px;
+  background:radial-gradient(circle at center, rgba(64,150,255,.9), transparent 70%);
+  filter:blur(12px);
+  opacity:.9;
+  pointer-events:none;
+}
+.hero-phone-screen{
+  position:relative;
+  width:100%;
+  border-radius:26px;
+  padding:1.3rem 1.4rem 1.4rem;
+  background:radial-gradient(circle at top,#111827 0,#020617 65%,#01030a 100%);
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  overflow:hidden;
+}
+.hero-phone-screen::before{
+  content:"";
+  position:absolute;
+  top:.85rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:36%;
+  height:6px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(148,163,255,.6),rgba(56,189,248,.4));
+  opacity:.8;
+}
+.hero-phone-header{margin-top:.55rem}
+.hero-phone-eyebrow{
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(209,213,255,.78);
+  margin-bottom:.35rem;
+}
+.hero-phone-title{font-size:1.15rem;line-height:1.2}
+.hero-phone-list{display:flex;flex-direction:column;gap:.55rem;margin-top:.25rem}
+.hero-phone-card{
+  border-radius:18px;
+  padding:.7rem .9rem;
+  background:linear-gradient(145deg,rgba(15,23,42,.96),rgba(15,23,52,.9));
+  box-shadow:0 10px 30px rgba(0,0,0,.7);
+  border:1px solid rgba(99,102,241,.45);
+}
+.hero-phone-card h3{font-size:.9rem;margin-bottom:.12rem}
+.hero-phone-card p{font-size:.8rem;color:var(--muted)}
 
-        <article class="pf-item reveal-frame">
-          <a class="pf-link" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
-            <div class="pf-preview reveal-content">
-              <img src="mock-dentist-1.png" alt="Dentist website mockup">
-              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
-            </div>
-            <div class="pf-info reveal-content">
-              <h3>Dentist Website</h3>
-              <p>One message, one action, so bookings feel effortless.</p>
-            </div>
-          </a>
-        </article>
-      </div>
-    </section>
+.hero-phone-orb{
+  position:absolute;
+  width:60px;height:60px;
+  border-radius:999px;
+  background:radial-gradient(circle at 30% 20%,rgba(56,189,248,.9),rgba(37,99,235,.1));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;color:#e5f0ff;
+  box-shadow:0 18px 45px rgba(0,0,0,.9);
+  backdrop-filter:blur(8px);
+}
+.hero-phone-orb span{transform:translateY(1px)}
+.hero-phone-orb--search{left:-40px;bottom:34px}
+.hero-phone-orb--check{
+  right:-34px;top:60px;
+  background:radial-gradient(circle at 30% 20%,rgba(94,234,212,.95),rgba(59,130,246,.15));
+}
 
-    <!-- ABOUT -->
-    <section class="section reveal-frame" id="about">
-      <h2 class="reveal-content">Meet your partner</h2>
-      <p class="section-lead reveal-content">
-        Hi, I’m Fotis. I build websites that earn trust, and convert it into inquiries.
-      </p>
+@keyframes heroFloat{
+  0%{transform:rotateX(18deg) rotateY(-30deg) rotateZ(-6deg) translateY(4px)}
+  50%{transform:rotateX(12deg) rotateY(30deg) rotateZ(-3deg) translateY(0)}
+  100%{transform:rotateX(18deg) rotateY(-30deg) rotateZ(-6deg) translateY(4px)}
+}
 
-      <div class="about-grid">
-        <figure class="about-photo reveal-frame">
-          <div class="about-photo-ring"></div>
-          <img src="fotis-hero.png" alt="Fotis, web designer" class="reveal-content">
-        </figure>
+/* ===================== SECTIONS ===================== */
+.section{
+  margin-top:2.4rem;
+  padding:1.8rem 1.6rem 2rem;
+  border-radius:24px;
+  background: radial-gradient(circle at top left, #0c1224 0, #050814 55%, #02030a 100%);
+  border:1px solid rgba(120,145,220,.35);
+}
+.section h2{
+  font-size:1.55rem;
+  margin-bottom:.6rem;
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.section-lead{
+  color:var(--muted);
+  font-size:.98rem;
+  margin-bottom:1.6rem;
+  max-width:42rem;
+}
 
-        <div class="about-card reveal-frame">
-          <p class="reveal-content">
-            I come from business &amp; marketing. Your website isn’t “design”, it’s your best salesperson.
-          </p>
-          <p class="reveal-content">
-            The goal is simple: the right person understands you fast, feels confident, and takes the next step.
-          </p>
-          <ul class="reveal-content">
-            <li>Built for service businesses (where trust matters most)</li>
-            <li>Every section earns the next click</li>
-            <li>Simple, fast, easy to maintain</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+/* ===================== PORTFOLIO (STATIC MOCKS) ===================== */
+.pf-grid{
+  margin-top:1.6rem;
+  display:grid;
+  gap:1.6rem;
+  grid-template-columns:1fr;
+}
 
-    <!-- SERVICES -->
-    <section class="section reveal-frame" id="services">
-      <h2 class="reveal-content">Everything your website needs</h2>
-      <p class="section-lead reveal-content">
-        You get a website that does its job: explains, builds trust, and brings messages.
-      </p>
+/* whole card clickable */
+.pf-link{display:block}
 
-      <div class="cards">
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">Strategy</h3>
-          <p class="reveal-content">Say the right thing to the right people, fast.</p>
-        </div>
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">UX &amp; Copy</h3>
-          <p class="reveal-content">A flow that removes doubt and makes action feel natural.</p>
-        </div>
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">Build</h3>
-          <p class="reveal-content">Fast, clean, and reliable, so people stay and read.</p>
-        </div>
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">Launch &amp; Next steps</h3>
-          <p class="reveal-content">Set up to be found, and improved over time.</p>
-        </div>
-      </div>
-    </section>
+/* card */
+.pf-item{
+  background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
+  border-radius:22px;
+  border:1px solid rgba(130,150,220,.45);
+  overflow:hidden;
+  box-shadow:0 18px 40px rgba(0,0,0,.65);
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.pf-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 22px 55px rgba(0,0,0,.85);
+  border-color:rgba(160,190,255,.65);
+}
 
-    <!-- PROCESS -->
-    <section class="section reveal-frame" id="process">
-      <h2 class="reveal-content">A simple process. Great results.</h2>
-      <p class="section-lead reveal-content">
-        Designed for busy professionals: minimal meetings, maximum clarity.
-      </p>
+/* preview area */
+.pf-preview{
+  position:relative;
+  width:100%;
+  height:320px;
+  overflow:hidden;
+  border-radius:18px; /* ✅ ΜΟΝΗ ΑΛΛΑΓΗ: πιο στρογγυλεμένες γωνίες */
+  border-bottom:1px solid rgba(150,170,240,.25);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(95,140,255,.14), transparent 48%),
+    linear-gradient(to bottom, rgba(0,0,0,.16), rgba(0,0,0,0) 55%),
+    #020309;
+}
 
-      <div class="process-steps">
-        <div class="step step--open reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">01 • Your goal, in plain words</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            A short email brief, so we get the message right before we design anything.
-          </div>
-        </div>
+/* image: show whole, premium fit */
+.pf-preview img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;       /* ✅ whole image visible */
+  padding:14px;             /* ✅ frame */
+  border-radius:16px;       /* ✅ ΝΕΟ: πιο κυκλικές γωνίες στην ίδια την εικόνα */
+  transform:scale(1);
+  transition:transform .22s ease;
+  filter:saturate(1.02) contrast(1.02);
+}
+.pf-item:hover .pf-preview img{transform:scale(1.02)}
 
-        <div class="step reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">02 • The flow that makes sense</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            We remove confusion: what you do, who it’s for, why you, then one clear next step.
-          </div>
-        </div>
+/* overlay pill */
+.pf-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+  padding:14px;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+}
+.pf-item:hover .pf-overlay{opacity:1;transform:translateY(0)}
 
-        <div class="step reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">03 • Design that earns trust</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            Calm, premium design with the details that make people feel confident choosing you.
-          </div>
-        </div>
+.pf-overlay-pill{
+  padding:.62rem .9rem;
+  border-radius:999px;
+  background:rgba(5,8,20,.72);
+  border:1px solid rgba(120,145,220,.6);
+  color:var(--page-fg);
+  font-size:.9rem;
+  font-weight:650;
+  letter-spacing:.01em;
+  backdrop-filter: blur(10px);
+  box-shadow:0 12px 30px rgba(0,0,0,.55);
+}
 
-        <div class="step reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">04 • Launch + measure</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            You don’t just “get a site.” You get a setup you can improve with real data.
-          </div>
-        </div>
-      </div>
-    </section>
+/* info */
+.pf-info{padding:1.1rem 1.2rem 1.25rem}
+.pf-info h3{
+  font-size:1.05rem;
+  margin-bottom:.35rem;
+  background:linear-gradient(135deg,#3de2c5,#7b5cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.pf-info p{color:var(--muted);font-size:.9rem;line-height:1.45}
 
-    <!-- CONTACT -->
-    <section class="section reveal-frame" id="contact">
-      <h2 class="reveal-content">Let’s see if I can help</h2>
-      <p class="section-lead reveal-content">
-        If your website looks good but doesn’t bring inquiries, that’s fixable.
-        <br><br>
-        Send me 2 to 3 websites you like and your #1 goal (bookings, calls, or leads).
-        <br>
-        I’ll tell you what I’d improve, and send a clear proposal within 24 hours.
-      </p>
+/* ===================== COMPARE ===================== */
+.section-compare{margin-top:3.2rem}
+.compare-grid{display:grid;gap:1.4rem;grid-template-columns:1fr}
+.compare-card{
+  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+  border-radius:20px;
+  border:1px solid rgba(140,165,230,.65);
+  box-shadow:0 20px 45px rgba(0,0,0,.8);
+  padding:1.1rem 1.1rem 1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.compare-card--wrong{border-color:rgba(255,79,123,.65)}
+.compare-card--right{border-color:rgba(61,226,197,.65)}
+.compare-header{display:flex;flex-direction:column;gap:.35rem}
+.compare-label{
+  display:inline-flex;
+  align-items:center;
+  padding:.25rem .7rem;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.compare-label--wrong{
+  background:rgba(255,79,123,.15);
+  color:#ff9ab8;
+  border:1px solid rgba(255,79,123,.7);
+}
+.compare-label--right{
+  background:rgba(61,226,197,.15);
+  color:#87f2d8;
+  border:1px solid rgba(61,226,197,.7);
+}
+.compare-note{font-size:.86rem;color:var(--muted)}
+.compare-image-wrap{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(140,165,230,.4);
+  background:#020309;
+}
+.compare-image-wrap img{display:block;width:100%;height:auto}
 
-      <form class="contact-form reveal-frame" action="https://formsubmit.co/hello@evidastudio.com" method="POST">
-        <input type="hidden" name="_subject" value="New inquiry from Evida Studio" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
+/* ===================== ABOUT ===================== */
+.about-grid{
+  margin-top:1.2rem;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.6rem;
+  align-items:center;
+  justify-items:flex-start;
+}
+.about-photo{
+  position:relative;
+  width:130px;height:130px;
+  border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+}
+.about-photo-ring{
+  position:absolute;
+  inset:-3px;
+  border-radius:inherit;
+  background:conic-gradient(from 180deg, #3de2c5, #7b5cff, #3de2c5);
+  opacity:.85;
+  filter:blur(.4px);
+}
+.about-photo img{
+  position:relative;
+  width:100%;height:100%;
+  border-radius:inherit;
+  object-fit:cover;
+  box-shadow:0 18px 40px rgba(0,0,0,.9);
+}
+.about-card{
+  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+  border-radius:20px;
+  border:1px solid rgba(140,165,230,.55);
+  box-shadow:0 16px 40px rgba(0,0,0,.75);
+  padding:1.3rem 1.2rem;
+  font-size:.93rem;
+}
+.about-card p{margin-bottom:.7rem}
+.about-card ul{
+  color:var(--muted);
+  font-size:.9rem;
+  display:grid;
+  gap:.25rem;
+}
 
-        <div class="form-grid">
-          <label class="form-field">
-            <span class="form-label reveal-content">Name</span>
-            <input class="form-input reveal-content" type="text" name="name" autocomplete="name" required />
-          </label>
+/* ===================== SERVICES / PROCESS ===================== */
+.cards{
+  display:grid;
+  gap:1.2rem;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+}
+.card,.step{
+  background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+  border-radius:20px;
+  border:1px solid rgba(140,165,230,.55);
+  box-shadow:0 16px 40px rgba(0,0,0,.75);
+  padding:1.3rem 1.2rem;
+  font-size:.93rem;
+  transition:transform .18s ease-out, box-shadow .18s ease-out;
+}
+.card:hover,.step:hover{
+  transform:translateY(-3px);
+  box-shadow:0 22px 50px rgba(0,0,0,.85);
+}
+.card h3{margin-bottom:.4rem;font-size:1rem}
+.card p{color:var(--muted);font-size:.9rem}
 
-          <label class="form-field">
-            <span class="form-label reveal-content">Email</span>
-            <input class="form-input reveal-content" type="email" name="email" autocomplete="email" required />
-          </label>
+.process-steps{display:grid;gap:1rem;margin-top:.4rem}
+.step-toggle{
+  all:unset;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  cursor:pointer;
+}
+.step-title-text{font-weight:600;font-size:.96rem}
+.step-body{
+  color:var(--muted);
+  font-size:.9rem;
+  margin-top:.35rem;
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:max-height .22s ease, opacity .18s ease, margin-top .18s ease;
+}
+.step.step--open .step-body{max-height:200px;opacity:1;margin-top:.45rem}
+.step-arrow{
+  width:22px;height:22px;
+  border-radius:999px;
+  border:1px solid rgba(140,165,230,.6);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;color:var(--muted);
+  flex-shrink:0;
+  margin-left:.75rem;
+  transform:rotate(0deg);
+  transition:background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
+}
+.step-arrow::before{content:"⌄"}
+.step.step--open .step-arrow{
+  background:rgba(99,153,255,.24);
+  color:var(--page-fg);
+  border-color:rgba(130,170,255,.9);
+  transform:rotate(180deg);
+}
 
-          <label class="form-field form-field--full">
-            <span class="form-label reveal-content">Your website or links (optional)</span>
-            <input class="form-input reveal-content" type="text" name="links" placeholder="Paste up to 3 links" />
-          </label>
+/* ===================== CONTACT FORM (NEW) ===================== */
+.contact-form{
+  margin-top:1rem;
+  display:grid;
+  gap:1rem;
+  max-width:680px;
+}
+.form-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-columns:1fr;
+}
+.form-field{display:grid;gap:.45rem}
+.form-field--full{grid-column:1 / -1}
+.form-label{
+  font-size:.86rem;
+  color:var(--muted);
+}
+.form-input{
+  width:100%;
+  border-radius:16px;
+  border:1px solid rgba(140,165,230,.55);
+  background:rgba(10,16,33,.75);
+  color:var(--page-fg);
+  padding:.85rem 1rem;
+  font-size:.95rem;
+  outline:none;
+  box-shadow:0 16px 40px rgba(0,0,0,.55);
+}
+.form-input::placeholder{color:rgba(168,176,200,.7)}
+.form-input:focus{
+  border-color:rgba(61,226,197,.9);
+  box-shadow:0 0 0 3px rgba(61,226,197,.12), 0 18px 45px rgba(0,0,0,.65);
+}
+.form-textarea{resize:vertical;min-height:140px}
+.contact-form .btn-primary{width:100%}
 
-          <label class="form-field form-field--full">
-            <span class="form-label reveal-content">Message</span>
-            <textarea class="form-input form-textarea reveal-content" name="message" rows="6" required placeholder="Your #1 goal (bookings, calls, leads) + any context"></textarea>
-          </label>
-        </div>
+@media (min-width:768px){
+  .form-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+  .contact-form .btn-primary{width:auto;justify-self:start}
+}
 
-        <button type="submit" class="btn-primary reveal-frame">
-          <span class="reveal-content">Send</span>
-        </button>
-      </form>
-    </section>
+/* ===================== FOOTER ===================== */
+footer{
+  border-top:1px solid rgba(120,135,180,.4);
+  margin-top:3.5rem;
+  padding:1.5rem 0 2.5rem;
+  font-size:.86rem;
+  color:var(--muted);
+  text-align:center;
+}
 
-  </main>
+/* Footer social links (NEW) */
+.footer-links{
+  margin-top:.55rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:.55rem;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  color:var(--muted);
+  border-bottom:1px solid rgba(168,176,200,.28);
+  padding-bottom:1px;
+}
+.footer-links a:hover{
+  color:var(--page-fg);
+  border-bottom-color:rgba(247,247,255,.6);
+}
+.footer-dot{opacity:.45}
 
-  <footer>
-    © Evida Studio. Built for clarity.
-    <div class="footer-links" aria-label="Social links">
-      <a href="https://www.instagram.com/evidastudio/" target="_blank" rel="noopener">Instagram</a>
-      <span class="footer-dot">•</span>
-      <a href="https://www.linkedin.com/in/fotis-antonas-643511181/?originalSubdomain=gr" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </footer>
+/* ===================== SCROLL TOP ===================== */
+.scroll-top{
+  position:fixed;
+  right:1.2rem;
+  bottom:3rem;
+  width:44px;height:44px;
+  border-radius:999px;
+  border:none;
+  background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
+  color:#020309;
+  font-size:1.3rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 16px 40px rgba(33,143,255,.7);
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(12px);
+  pointer-events:none;
+  transition:opacity .2s ease, transform .2s ease;
+  z-index:60;
+}
+.scroll-top.is-visible{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
 
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+/* ===================== RESPONSIVE ===================== */
+@media (min-width:520px){
+  .pf-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+}
+/* keep 2 per row even on large screens */
+@media (min-width:900px){
+  .pf-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+}
+@media (min-width:768px){
+  .shell{padding-inline:1.6rem}
+  .site-header-inner{padding-inline:1.6rem}
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
+  .nav-toggle{display:none}
+  .nav-links{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    gap:1.4rem;
+    align-items:center;
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    margin-top:0;
+    padding:0 .4rem 0 0;
+    min-width:auto;
+    font-size:.95rem;
+    color:var(--muted);
+  }
+  .nav-links a{padding:0}
+  .nav-links a:hover{color:var(--page-fg)}
 
-      // Accordion (UPDATED): allow multiple steps to stay open
-      const steps = document.querySelectorAll('.step');
-      steps.forEach(step => {
-        const toggle = step.querySelector('.step-toggle');
-        if (!toggle) return;
+  .hero{
+    padding-top:2.6rem;
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
+    grid-template-rows:auto auto;
+    gap:2.2rem 2.8rem;
+    align-items:center;
+  }
+  .hero-copy{grid-column:1;grid-row:1}
+  .hero-visual{grid-column:2;grid-row:1 / span 2;margin-top:0;justify-content:flex-end}
+  .hero-tags-row{grid-column:1;grid-row:2;align-self:flex-start}
+  .hero-title{font-size:clamp(2.1rem,3vw,2.7rem);max-width:none}
+  .hero-sub{font-size:1.02rem}
+  .hero-cta-row{flex-direction:row;align-items:center}
+  .hero-cta-row .btn-primary,
+  .hero-cta-row .btn-outline{width:auto}
 
-        toggle.addEventListener('click', () => {
-          // Toggle only the clicked step, do NOT close others
-          step.classList.toggle('step--open');
-        });
-      });
+  .hero-phone.hero-panel{max-width:330px}
+  .hero-phone-screen{padding-bottom:2.4rem}
 
-      // Mobile nav
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('is-open');
-          navToggle.classList.toggle('is-active');
-        });
+  .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+  .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('is-open');
-            navToggle.classList.remove('is-active');
-          });
-        });
-      }
-
-      // Scroll to top
-      const scrollBtn = document.getElementById('scrollTopBtn');
-      const secondSection = document.querySelector('#portfolio');
-
-      if (scrollBtn) {
-        const updateScrollBtn = () => {
-          const isMobile = window.matchMedia('(max-width: 767px)').matches;
-
-          if (isMobile) {
-            if (window.scrollY > 80) scrollBtn.classList.add('is-visible');
-            else scrollBtn.classList.remove('is-visible');
-          } else if (secondSection) {
-            const rect = secondSection.getBoundingClientRect();
-            const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
-
-            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
-              scrollBtn.classList.add('is-visible');
-            } else {
-              scrollBtn.classList.remove('is-visible');
-            }
-          }
-        };
-
-        window.addEventListener('scroll', updateScrollBtn);
-        window.addEventListener('resize', updateScrollBtn);
-        updateScrollBtn();
-
-        scrollBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+  /* Desktop: show original tags, hide mobile tags */
+  .hero-tags-row--mobile{display:none;order:unset}
+  .hero-tags-row--desktop{display:block;order:unset}
+  .hero-visual{order:unset}
+  .hero-copy{order:unset}
+}
+/* FORCE NAV CTA PADDING (τελικό override) */
+.site-header .nav-links a.btn-nav{
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  min-width: unset !important;
+  margin: 0 !important;
+  letter-spacing: normal !important;
+}
