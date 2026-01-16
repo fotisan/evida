@@ -108,7 +108,7 @@
 
               <article class="hero-phone-card reveal-content">
                 <h3>They understand fast</h3>
-                <p>They instantly know if you’re the right fit.</p>
+                <p>They instantly know you’re the right fit.</p>
               </article>
 
               <article class="hero-phone-card reveal-content">
@@ -517,7 +517,35 @@
       document.body.classList.add('is-loaded');
       setTimeout(() => document.body.classList.add('is-loaded'), 120);
 
+      // ✅ FIX: Reveal on scroll (makes .reveal-content visible)
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const frames = document.querySelectorAll('.reveal-frame');
 
+      frames.forEach(frame => {
+        const kids = frame.querySelectorAll('.reveal-content');
+        kids.forEach((kid, idx) => {
+          kid.style.transitionDelay = (idx * 70) + 'ms';
+        });
+      });
+
+      if (reduceMotion) {
+        frames.forEach(frame => {
+          frame.classList.add('is-in');
+          frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
+        });
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const frame = entry.target;
+            frame.classList.add('is-in');
+            frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
+            io.unobserve(frame);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+        frames.forEach(frame => io.observe(frame));
+      }
 
       // Accordion (UPDATED): allow multiple steps to stay open
       const steps = document.querySelectorAll('.step');
@@ -526,7 +554,6 @@
         if (!toggle) return;
 
         toggle.addEventListener('click', () => {
-          // Toggle only the clicked step, do NOT close others
           step.classList.toggle('step--open');
         });
       });
@@ -580,7 +607,7 @@
         });
       }
 
-      // ===== ONLY CHANGE: AJAX submit + success modal (no redirect) =====
+      // ===== AJAX submit + success modal (no redirect) =====
       const successModal = document.getElementById('successModal');
 
       const openModal = () => {
@@ -645,5 +672,3 @@
   </script>
 </body>
 </html>
-
-
