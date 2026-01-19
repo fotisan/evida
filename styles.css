@@ -200,6 +200,7 @@ ul{list-style:none}
   letter-spacing:.30em;
   text-transform:uppercase;
   color:var(--brand-2);
+  line-height:1.55; 
   margin-bottom:.5rem;
 }
 
@@ -995,3 +996,4 @@ footer{
   margin: 0 !important;
   letter-spacing: normal !important;
 }
+
