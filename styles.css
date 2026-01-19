@@ -181,6 +181,13 @@ ul{list-style:none}
   background:transparent;
 }
 
+/* NEW: group social icons so we can control spacing without affecting nav links */
+.nav-socials{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+}
+
 /* ===================== HERO ===================== */
 .hero{
   padding-top:1.6rem;
