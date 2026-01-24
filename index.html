@@ -1,994 +1,775 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Website Design for Doctors & Service Professionals | Evida Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Therapy & Neurofeedback in Clifton, NJ | Miriam Adler Therapy</title>
+  <meta name="description" content="Comprehensive, holistic therapy and neurofeedback for anxiety, trauma, OCD, ADHD, and mood. In person in Clifton, New Jersey, and telehealth across NJ." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#fbfaf7" />
 
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Psychologist",
+  "name": "Miriam Adler Therapy",
+  "url": "https://www.miriamadlertherapy.com/",
+  "telephone": "+1-973-815-0777",
+  "email": "info@miriamadlertherapy.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "777 Passaic Avenue, 5th Floor",
+    "addressLocality": "Clifton",
+    "addressRegion": "NJ",
+    "postalCode": "07012",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "New Jersey"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "09:00",
+      "closes": "21:30"
+    }
+  ],
+  "priceRange": "$$",
+  "serviceType": [
+    "Therapy",
+    "Counseling",
+    "Neurofeedback",
+    "QEEG brain mapping",
+    "EMDR"
+  ]
+}
+  </script>
 
-  <!-- bump version to avoid GitHub Pages cache -->
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <div class="site-logo">
-        <a href="#top">Evida <span>Studio</span></a>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container">
+      <div class="nav-wrap">
+        <a class="brand" href="#top" aria-label="Miriam Adler Therapy">
+          <span class="brand-mark" aria-hidden="true">
+            <!-- inline mark -->
+            <svg viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+              <path d="M24 7c7 0 12.8 5.6 12.8 12.6 0 10-9.1 14.1-12.8 21.4C20.3 33.7 11.2 29.6 11.2 19.6 11.2 12.6 17 7 24 7Z"
+                    fill="currentColor" opacity="0.12"/>
+              <path d="M17.8 19.1c2.4-3.2 10-3.2 12.4 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M16.6 26c4.4 3.2 10.4 3.2 14.8 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="18.2" cy="18.8" r="1.9" fill="currentColor"/>
+              <circle cx="29.8" cy="18.8" r="1.9" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Miriam Adler Therapy</span>
+            <span class="brand-sub">Therapy & Neurofeedback · Clifton, NJ</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <!-- mobile -->
+          <details class="nav-details">
+            <summary class="nav-summary">
+              <span class="nav-burger" aria-hidden="true"></span>
+              <span class="nav-label">Menu</span>
+            </summary>
+            <div class="nav-panel">
+              <a href="#services">Services</a>
+              <a href="#neurofeedback">Neurofeedback</a>
+              <a href="#team">Our team</a>
+              <a href="#testimonials">Client feedback</a>
+              <a href="#faq">FAQ</a>
+              <a class="nav-cta" href="#contact">Book a consultation</a>
+            </div>
+          </details>
+
+          <!-- desktop -->
+          <div class="nav-inline" aria-label="Primary links">
+            <a href="#services">Services</a>
+            <a href="#neurofeedback">Neurofeedback</a>
+            <a href="#team">Our team</a>
+            <a href="#testimonials">Client feedback</a>
+            <a href="#faq">FAQ</a>
+            <a class="nav-cta" href="#contact">Book a consultation</a>
+          </div>
+        </nav>
       </div>
-
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation">
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-      </button>
-
-      <nav class="nav-links">
-        <a href="#portfolio">Work that books calls</a>
-        <a href="#about">About Evida</a>
-        <a href="#services">What you get</a>
-        <a href="#process">How it works</a>
-
-        <!-- Social links -->
-        <a
-          class="nav-social"
-          href="https://www.instagram.com/evidastudio/"
-          target="_blank"
-          rel="noopener"
-          aria-label="Evida Studio on Instagram"
-          title="Instagram"
-        >
-          <!-- UPDATED Instagram icon (more geometric, matches LinkedIn weight) -->
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M7 3h10c2.21 0 4 1.79 4 4v10c0 2.21-1.79 4-4 4H7c-2.21 0-4-1.79-4-4V7c0-2.21 1.79-4 4-4Zm10 2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6a2.8 2.8 0 0 0 0-5.6ZM17.2 6.6a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z"/>
-          </svg>
-        </a>
-
-        <a
-          class="nav-social"
-          href="https://www.linkedin.com/in/fotis-antonas-643511181/?originalSubdomain=gr"
-          target="_blank"
-          rel="noopener"
-          aria-label="Fotis Antonas on LinkedIn"
-          title="LinkedIn"
-        >
-          <!-- UPDATED LinkedIn icon (slightly different, still minimal/premium) -->
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.94v5.666H9.985V9h3.112v1.561h.044c.434-.82 1.494-1.686 3.074-1.686c3.288 0 3.892 2.164 3.892 4.977v6.6ZM5.337 7.433a1.81 1.81 0 1 1 0-3.62a1.81 1.81 0 0 1 0 3.62ZM3.722 20.452h3.23V9h-3.23v11.452Z"/>
-          </svg>
-        </a>
-
-        <a href="#contact" class="btn-nav">Contact</a>
-      </nav>
     </div>
   </header>
 
-  <main class="shell">
+  <main id="main">
 
     <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-copy reveal-frame">
-        <!-- SEO eyebrow (quiet keyword placement) -->
-        <div class="hero-eyebrow reveal-content">
-          Website Design &amp; Strategy for service professionals
-          <span class="eyebrow-break">who want more booked calls</span>
-        </div>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="micro">Therapy and neurofeedback in Clifton, New Jersey · Telehealth across NJ</p>
 
-        <h1 class="hero-title reveal-content">
-          From <span class="hero-accent">attention</span> to <br><span class="booked-calls"><span class="hero-accent">booked</span> calls</span>
-        </h1>
+            <h1>Feel steady again, from the inside out.</h1>
 
-        <p class="hero-sub reveal-content">
-          Strategy, design, and copy that help the right people understand you in seconds, feel confident, and reach out.
-        </p>
+            <p class="subhead">
+              Comprehensive, holistic care for anxiety, trauma, OCD, ADHD, and mood.
+              Evidence-based therapy, with brain-based options when the nervous system needs extra support.
+            </p>
 
-        <div class="hero-meta reveal-content">
-          <span>A clear message that guides the eye.</span>
-          <span>Trust signals where decisions happen.</span>
-          <span>A clear proposal within 24 hours.</span>
-          <span>Ready to launch in 14 days.</span>
-        </div>
-
-        <div class="hero-cta-row">
-          <a href="#contact" class="btn-primary reveal-content">Let’s talk</a>
-          <a href="#portfolio" class="btn-outline reveal-content">See examples</a>
-        </div>
-      </div>
-
-      <!-- HERO TAGS (MOBILE ONLY) -->
-      <div class="hero-tags-row hero-tags-row--mobile reveal-frame">
-        <div class="hero-tags reveal-content">
-          <span class="hero-tag">Therapists</span>
-          <span class="hero-tag">Dermatologists</span>
-          <span class="hero-tag">Dentists</span>
-          <span class="hero-tag">Physiotherapists</span>
-          <span class="hero-tag">Architects</span>
-        </div>
-      </div>
-
-      <!-- HERO VISUAL -->
-      <aside class="hero-visual reveal-frame">
-        <div class="hero-phone hero-panel">
-          <div class="hero-phone-screen">
-            <header class="hero-phone-header reveal-content">
-              <p class="hero-phone-eyebrow">How ideal clients</p>
-              <h2 class="hero-phone-title">find you, trust you, and book a call</h2>
-            </header>
-
-            <div class="hero-phone-list">
-              <article class="hero-phone-card reveal-content">
-                <h3>SEO & search: they discover you</h3>
-                <p>Search or a post brings them to your site.</p>
-              </article>
-
-              <article class="hero-phone-card reveal-content">
-                <h3>Clarity: they get it fast</h3>
-                <p>They instantly know if you’re the right fit.</p>
-              </article>
-
-              <article class="hero-phone-card reveal-content">
-                <h3>Trust: they feel safe choosing you</h3>
-                <p>Clear info and strong trust signals reduce doubt.</p>
-              </article>
-
-              <article class="hero-phone-card reveal-content">
-                <h3>Booking & contact: they take the next step</h3>
-                <p>One clear action: call, message, or booking.</p>
-              </article>
+            <div class="hero-ctas">
+              <a class="btn primary" href="#contact">Book a consultation</a>
+              <a class="btn ghost" href="tel:+19738150777">Call (973) 815 0777</a>
             </div>
+
+            <div class="trust">
+              <div class="trust-item">
+                <span class="trust-k">Phone</span>
+                <a class="trust-v" href="tel:+19738150777">(973) 815 0777</a>
+                <span class="trust-note">Ext 101</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-k">Location</span>
+                <span class="trust-v">777 Passaic Avenue, 5th Floor, Clifton, NJ 07012</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-k">Hours</span>
+                <span class="trust-v">Mon–Thu · 9:00 AM–9:30 PM</span>
+                <span class="trust-note">Selected Sundays available</span>
+              </div>
+            </div>
+
+            <p class="fine">
+              Please don’t include private medical details in the message form. We’ll guide next steps.
+            </p>
           </div>
 
-          <div class="hero-phone-orb hero-phone-orb--search reveal-content"><span>🔍</span></div>
-          <div class="hero-phone-orb hero-phone-orb--check reveal-content"><span>✓</span></div>
-        </div>
-      </aside>
+          <!-- HERO IMAGE (inline SVG, no assets) -->
+          <div class="hero-media" aria-label="Calming illustration">
+            <figure class="media-card">
+              <figcaption class="media-caption">
+                <span class="pill">Non-drug support</span>
+                <span class="media-title">Therapy + neurofeedback, tailored to you</span>
+                <span class="media-sub">A calm space for progress that lasts</span>
+              </figcaption>
 
-      <!-- HERO TAGS (DESKTOP ONLY) -->
-      <div class="hero-tags-row hero-tags-row--desktop reveal-frame">
-        <div class="hero-tags reveal-content">
-          <span class="hero-tag">Therapists</span>
-          <span class="hero-tag">Dermatologists</span>
-          <span class="hero-tag">Dentists</span>
-          <span class="hero-tag">Physiotherapists</span>
-          <span class="hero-tag">Architects</span>
-        </div>
-      </div>
-    </section>
+              <div class="media-svg" aria-hidden="true">
+                <svg viewBox="0 0 760 520" role="img" aria-hidden="true" focusable="false">
+                  <defs>
+                    <radialGradient id="rg1" cx="30%" cy="28%" r="65%">
+                      <stop offset="0" stop-color="rgba(199,125,43,0.42)"/>
+                      <stop offset="1" stop-color="rgba(199,125,43,0)"/>
+                    </radialGradient>
+                    <radialGradient id="rg2" cx="78%" cy="18%" r="70%">
+                      <stop offset="0" stop-color="rgba(43,111,106,0.40)"/>
+                      <stop offset="1" stop-color="rgba(43,111,106,0)"/>
+                    </radialGradient>
+                    <linearGradient id="lg" x1="0" x2="1">
+                      <stop offset="0" stop-color="rgba(255,255,255,0.85)"/>
+                      <stop offset="1" stop-color="rgba(255,255,255,0.55)"/>
+                    </linearGradient>
+                    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="10"/>
+                    </filter>
+                  </defs>
 
-    <!-- PORTFOLIO -->
-    <section class="section reveal-frame" id="portfolio">
-      <h2 class="reveal-content">Web Design Portfolio: selected work that drives inquiries</h2>
-      <p class="section-lead reveal-content">
-        Real demos that show the flow: clarity first, trust next, action at the end.
-      </p>
+                  <rect x="0" y="0" width="760" height="520" rx="34" fill="url(#lg)"/>
+                  <circle cx="230" cy="170" r="190" fill="url(#rg1)"/>
+                  <circle cx="610" cy="120" r="220" fill="url(#rg2)"/>
 
-      <div class="pf-grid">
-        <!-- 1st (stays visible on page) -->
-        <article class="pf-item reveal-frame">
-          <a class="pf-link" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
-            <div class="pf-preview reveal-content">
-              <img src="mockup-_psychologist.png" alt="Therapist website design: premium demo mockup">
-              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
-            </div>
-            <div class="pf-info reveal-content">
-              <h3>Therapist website</h3>
-              <p>Built so visitors feel confident enough to book.</p>
-            </div>
-          </a>
-        </article>
+                  <!-- flowing lines -->
+                  <path d="M40 360 C 190 260, 290 460, 430 350 C 560 248, 650 360, 720 310"
+                        fill="none" stroke="rgba(43,111,106,0.35)" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M40 400 C 210 290, 300 500, 450 385 C 585 282, 660 395, 720 340"
+                        fill="none" stroke="rgba(199,125,43,0.32)" stroke-width="6" stroke-linecap="round"/>
 
-        <!-- 2nd (stays visible on page) -->
-        <article class="pf-item reveal-frame">
-          <a class="pf-link" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
-            <div class="pf-preview reveal-content">
-              <img src="Architecture.png" alt="Architect website design: high-end demo mockup">
-              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
-            </div>
-            <div class="pf-info reveal-content">
-              <h3>Architecture website</h3>
-              <p>A high-end presence that feels like a brand, not a template.</p>
-            </div>
-          </a>
-        </article>
-      </div>
+                  <!-- gentle “cards” -->
+                  <g filter="url(#soft)" opacity="0.30">
+                    <rect x="120" y="220" width="210" height="120" rx="22" fill="rgba(255,255,255,1)"/>
+                    <rect x="360" y="190" width="260" height="150" rx="22" fill="rgba(255,255,255,1)"/>
+                  </g>
+                  <g opacity="0.95">
+                    <rect x="120" y="220" width="210" height="120" rx="22" fill="rgba(255,255,255,0.72)" stroke="rgba(230,223,211,0.95)"/>
+                    <rect x="360" y="190" width="260" height="150" rx="22" fill="rgba(255,255,255,0.72)" stroke="rgba(230,223,211,0.95)"/>
+                    <circle cx="155" cy="255" r="10" fill="rgba(43,111,106,0.28)"/>
+                    <rect x="175" y="246" width="120" height="10" rx="999" fill="rgba(22,22,24,0.18)"/>
+                    <rect x="175" y="266" width="150" height="10" rx="999" fill="rgba(22,22,24,0.12)"/>
 
-      <!-- NEW: button to open modal with more work -->
-      <div class="pf-actions reveal-content" style="margin-top:18px">
-        <button type="button" class="btn-outline" id="openWorkModal">See more work</button>
-      </div>
-    </section>
+                    <circle cx="395" cy="228" r="10" fill="rgba(199,125,43,0.30)"/>
+                    <rect x="415" y="219" width="150" height="10" rx="999" fill="rgba(22,22,24,0.18)"/>
+                    <rect x="415" y="239" width="190" height="10" rx="999" fill="rgba(22,22,24,0.12)"/>
+                    <rect x="395" y="272" width="205" height="10" rx="999" fill="rgba(22,22,24,0.10)"/>
+                  </g>
 
-    <!-- NEW: HERO COMPARE (WRONG vs RIGHT) MOVED AFTER PORTFOLIO -->
-    <section class="section section-compare reveal-frame" id="hero-compare">
-      <h2 class="reveal-content">Website hero section: wrong hero vs right hero</h2>
-      <p class="section-lead reveal-content">
-        The fastest way to see why some sites feel premium and get inquiries, while others confuse people.
-        One message, one next step, and a layout that guides the eye.
-      </p>
+                  <!-- bottom glow -->
+                  <circle cx="560" cy="480" r="160" fill="rgba(199,125,43,0.16)"/>
+                </svg>
+              </div>
 
-      <div class="compare-grid">
-        <article class="compare-card compare-card--wrong reveal-frame">
-          <div class="compare-header reveal-content">
-            <span class="compare-label compare-label--wrong">Wrong</span>
-            <p class="compare-note">Too many messages, weak hierarchy, unclear next step.</p>
+              <div class="media-badges" aria-label="Highlights">
+                <div class="badge">
+                  <span class="badge-k">Therapy</span>
+                  <span class="badge-v">Evidence-based tools, real-life change</span>
+                </div>
+                <div class="badge">
+                  <span class="badge-k">Neurofeedback</span>
+                  <span class="badge-v">Personalized protocols</span>
+                </div>
+                <div class="badge">
+                  <span class="badge-k">Trauma care</span>
+                  <span class="badge-v">EMDR available</span>
+                </div>
+              </div>
+            </figure>
           </div>
-
-          <div class="compare-image-wrap reveal-content">
-            <img src="wrong-mock.jpg" alt="Wrong website hero section: cluttered layout and mixed messages">
-          </div>
-
-          <p class="compare-note reveal-content">
-            The visitor doesn’t know what to read first, doesn’t feel confident, and the CTA doesn’t feel like the obvious move.
-          </p>
-        </article>
-
-        <article class="compare-card compare-card--right reveal-frame">
-          <div class="compare-header reveal-content">
-            <span class="compare-label compare-label--right">Right</span>
-            <p class="compare-note">One promise, clear flow, one primary action, calm confidence.</p>
-          </div>
-
-          <div class="compare-image-wrap reveal-content">
-            <img src="wright-mock.jpg" alt="Right website hero section: clear message and strong primary CTA">
-          </div>
-
-          <p class="compare-note reveal-content">
-            They understand quickly, trust builds naturally, and the next step feels easy.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section reveal-frame" id="about">
-      <h2 class="reveal-content">Web designer specialized in marketing</h2>
-      <p class="section-lead reveal-content">
-        Hey, I’m Fotis. I build websites that earn trust and turn it into inquiries.
-      </p>
-
-      <div class="about-grid">
-        <figure class="about-photo reveal-frame">
-          <div class="about-photo-ring"></div>
-          <img src="fotis-hero.png" alt="Fotis Antonas, web designer and website developer" class="reveal-content">
-        </figure>
-
-        <div class="about-card reveal-frame">
-          <p class="reveal-content">
-            I come from business and marketing. Your website isn’t just design, it’s your best salesperson.
-          </p>
-          <p class="reveal-content">
-            The goal is simple: the right person understands you fast, feels confident, and takes the next step.
-          </p>
-          <ul class="reveal-content">
-            <li>Built for service businesses, where trust matters most</li>
-            <li>Every section guides the next click</li>
-            <li>Simple, fast, easy to maintain</li>
-          </ul>
         </div>
       </div>
     </section>
 
     <!-- SERVICES -->
-    <section class="section reveal-frame" id="services">
-      <h2 class="reveal-content">Professional Website Design &amp; SEO Clarity</h2>
-      <p class="section-lead reveal-content">
-        You get a website that does its job: explains, builds trust, and brings messages.
-      </p>
+    <section id="services" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Services with clarity, care, and direction</h2>
+          <p class="lead">
+            No one-size-fits-all plan. We listen deeply, then build a path that makes your days feel lighter.
+          </p>
+        </header>
 
-      <div class="cards">
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">Marketing strategy for service websites</h3>
-          <p class="reveal-content">Say the right thing, to the right people, fast.</p>
+        <!-- SERVICES IMAGE (inline SVG) -->
+        <div class="image-strip" aria-label="Support areas illustration">
+          <div class="strip-card">
+            <div class="strip-copy">
+              <p class="strip-kicker">Areas of focus</p>
+              <p class="strip-title">Anxiety · Trauma · OCD · ADHD · Mood</p>
+              <p class="strip-sub">A structured approach that stays warm, human, and practical.</p>
+            </div>
+            <div class="strip-visual" aria-hidden="true">
+              <svg viewBox="0 0 640 220" role="img" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="s1" x1="0" x2="1">
+                    <stop offset="0" stop-color="rgba(43,111,106,0.22)"/>
+                    <stop offset="1" stop-color="rgba(199,125,43,0.20)"/>
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="640" height="220" rx="26" fill="rgba(255,255,255,0.50)"/>
+                <rect x="18" y="18" width="604" height="184" rx="22" fill="url(#s1)" opacity="0.72"/>
+                <g opacity="0.95">
+                  <rect x="54" y="62" width="180" height="100" rx="20" fill="rgba(255,255,255,0.68)" stroke="rgba(230,223,211,0.95)"/>
+                  <rect x="250" y="44" width="160" height="118" rx="20" fill="rgba(255,255,255,0.68)" stroke="rgba(230,223,211,0.95)"/>
+                  <rect x="426" y="76" width="160" height="86" rx="20" fill="rgba(255,255,255,0.68)" stroke="rgba(230,223,211,0.95)"/>
+                  <circle cx="88" cy="92" r="10" fill="rgba(43,111,106,0.28)"/>
+                  <circle cx="284" cy="74" r="10" fill="rgba(199,125,43,0.30)"/>
+                  <circle cx="462" cy="104" r="10" fill="rgba(43,111,106,0.22)"/>
+                  <path d="M100 120 C 132 96, 160 146, 200 118" fill="none" stroke="rgba(22,22,24,0.18)" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M298 108 C 330 84, 350 132, 392 106" fill="none" stroke="rgba(22,22,24,0.18)" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M476 132 C 504 114, 528 150, 566 126" fill="none" stroke="rgba(22,22,24,0.16)" stroke-width="6" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+          </div>
         </div>
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">UX, copywriting & SEO clarity</h3>
-          <p class="reveal-content">A flow that reduces doubt and makes action feel natural.</p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Counseling and therapy</h3>
+            <p>Support that moves you forward, with practical tools for coping, boundaries, relationships, and self-trust.</p>
+            <a class="text-link" href="#contact">Start with a consultation</a>
+          </article>
+
+          <article class="card">
+            <h3>Anxiety and panic</h3>
+            <p>Racing thoughts and physical panic can feel overwhelming. You can learn how to calm the body and quiet the spiral.</p>
+            <a class="text-link" href="#focus-anxiety">See how we approach it</a>
+          </article>
+
+          <article class="card">
+            <h3>OCD support</h3>
+            <p>Learn healthier responses to intrusive thoughts with evidence-based methods and a nonjudgmental approach.</p>
+            <a class="text-link" href="#focus-ocd">How we work with OCD</a>
+          </article>
+
+          <article class="card">
+            <h3>Adult ADHD</h3>
+            <p>Focus, follow-through, time management, and emotional overwhelm supported with structure and skill-building.</p>
+            <a class="text-link" href="#focus-adhd">Common patterns</a>
+          </article>
+
+          <article class="card">
+            <h3>EMDR</h3>
+            <p>When the past keeps showing up in the present, EMDR can help the nervous system process what’s stuck.</p>
+            <a class="text-link" href="#faq">Read the FAQ</a>
+          </article>
+
+          <article class="card">
+            <h3>Hypnosis</h3>
+            <p>A focused, calming method that can support therapy goals, confidence, and self-regulation.</p>
+            <a class="text-link" href="#contact">Ask if it’s a fit</a>
+          </article>
         </div>
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">Website build (front-end)</h3>
-          <p class="reveal-content">Fast, clean, reliable, so people stay and read.</p>
-        </div>
-        <div class="card reveal-frame">
-          <h3 class="reveal-content">Launch, SEO setup & optimization</h3>
-          <p class="reveal-content">Set up to be found, then improved with real data over time.</p>
+
+        <div class="divider"></div>
+
+        <div class="focus-grid">
+          <div class="focus" id="focus-anxiety">
+            <h3>Anxiety and panic, the relief you can actually feel</h3>
+            <p>
+              Anxiety can create constant “what if” scenarios, body symptoms, and fear of your own mind.
+              We focus on comfortable, down-to-earth approaches for relief, while building long-term resilience.
+            </p>
+          </div>
+
+          <div class="focus" id="focus-ocd">
+            <h3>OCD, without shame</h3>
+            <p>
+              Intrusive thoughts are common. The difference is how much meaning they get.
+              We help you respond in ways that weaken the loop instead of feeding rituals and compulsions.
+            </p>
+          </div>
+
+          <div class="focus" id="focus-adhd">
+            <h3>Adult ADHD, support that respects your reality</h3>
+            <p>
+              If your brain jumps tracks, forgets details, or struggles with planning, you are not broken.
+              We help you build systems that reduce friction and protect your energy.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="section reveal-frame" id="process">
-      <h2 class="reveal-content">Web design & marketing process: simple. strong results.</h2>
-      <p class="section-lead reveal-content">
-        For busy professionals: fewer meetings, maximum clarity.
-      </p>
+    <!-- NEUROFEEDBACK -->
+    <section id="neurofeedback" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Neurofeedback that is personalized, not generic</h2>
+          <p class="lead">
+            A noninvasive, computer-based training approach designed to support regulation, focus, and stress recovery.
+          </p>
+        </header>
 
-      <div class="process-steps">
-        <div class="step step--open reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">01 • Your goal</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            A short email brief so we lock the message before we design anything.
+        <div class="two-col">
+          <div class="panel">
+            <h3>Who it can support</h3>
+            <p>
+              Many people explore neurofeedback as a non-drug option for concerns tied to stress, attention, mood, and neurological patterns.
+              It is often discussed for anxiety, trauma, ADHD, depression, migraines, and more.
+            </p>
+
+            <h3>How it starts</h3>
+            <p>
+              When appropriate, treatment planning may begin with a QEEG brain map, a pain-free procedure using sensors,
+              so we can tailor protocols to your profile.
+            </p>
+
+            <img class="nf-side-img" src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20820%20520%27%3E%0A%3Cdefs%3E%0A%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20x2%3D%271%27%3E%0A%3Cstop%20offset%3D%270%27%20stop-color%3D%27rgba%2843%2C111%2C106%2C0.18%29%27/%3E%0A%3Cstop%20offset%3D%271%27%20stop-color%3D%27rgba%28199%2C125%2C43%2C0.18%29%27/%3E%0A%3C/linearGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%27820%27%20height%3D%27520%27%20rx%3D%2734%27%20fill%3D%27rgba%28255%2C255%2C255%2C0.72%29%27/%3E%0A%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27784%27%20height%3D%27484%27%20rx%3D%2728%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Cpath%20d%3D%27M280%20350%0AC230%20350%2C%20205%20318%2C%20205%20280%0AC205%20238%2C%20236%20210%2C%20278%20210%0AC292%20178%2C%20324%20160%2C%20362%20160%0AC402%20140%2C%20456%20148%2C%20484%20186%0AC530%20188%2C%20574%20222%2C%20574%20270%0AC602%20294%2C%20602%20338%2C%20578%20360%0AC564%20386%2C%20532%20406%2C%20498%20398%0AC468%20436%2C%20404%20446%2C%20368%20418%0AC346%20432%2C%20312%20424%2C%20300%20398%0AC296%20382%2C%20290%20370%2C%20280%20350Z%27%0Afill%3D%27rgba%28255%2C255%2C255%2C0.80%29%27%20stroke%3D%27rgba%28230%2C223%2C211%2C0.95%29%27%20stroke-width%3D%274%27/%3E%0A%3Cpath%20d%3D%27M120%20420%20C%20200%20360%2C%20250%20470%2C%20330%20410%20C%20400%20360%2C%20450%20460%2C%20520%20410%20C%20590%20360%2C%20640%20440%2C%20710%20390%27%0Afill%3D%27none%27%20stroke%3D%27rgba%2843%2C111%2C106%2C0.42%29%27%20stroke-width%3D%278%27%20stroke-linecap%3D%27round%27/%3E%0A%3Cpath%20d%3D%27M120%20460%20C%20200%20400%2C%20250%20510%2C%20330%20450%20C%20400%20400%2C%20450%20500%2C%20520%20450%20C%20590%20400%2C%20640%20480%2C%20710%20430%27%0Afill%3D%27none%27%20stroke%3D%27rgba%28199%2C125%2C43%2C0.36%29%27%20stroke-width%3D%278%27%20stroke-linecap%3D%27round%27/%3E%0A%3Ccircle%20cx%3D%27350%27%20cy%3D%27260%27%20r%3D%2710%27%20fill%3D%27rgba%2843%2C111%2C106%2C0.26%29%27/%3E%0A%3Ccircle%20cx%3D%27430%27%20cy%3D%27240%27%20r%3D%2710%27%20fill%3D%27rgba%28199%2C125%2C43%2C0.30%29%27/%3E%0A%3Ccircle%20cx%3D%27480%27%20cy%3D%27290%27%20r%3D%2710%27%20fill%3D%27rgba%2843%2C111%2C106%2C0.22%29%27/%3E%0A%3C/svg%3E" alt="Neurofeedback illustration showing a calm brain map and training waves" loading="lazy" decoding="async" />
+            <p class="nf-side-cap">A quick visual for how brain-based training can be paired with therapy to support regulation.</p>
+
+            <div class="list">
+              <div class="li"><span class="dot" aria-hidden="true"></span> Individualized protocols and custom plans</div>
+              <div class="li"><span class="dot" aria-hidden="true"></span> Can be paired with therapy and other supports</div>
+              <div class="li"><span class="dot" aria-hidden="true"></span> Built around your goals, pace, and progress</div>
+            </div>
+          </div>
+
+          <!-- NEUROFEEDBACK IMAGE (inline SVG) -->
+          <div class="panel accent">
+            <div class="nf-hero">
+              <div class="nf-copy">
+                <h3>What to expect</h3>
+                <p>
+                  Think of it as training the brain toward steadier patterns. Over time, clients often report calmer reactions,
+                  improved sleep, and better focus. Results vary by person and plan.
+                </p>
+              </div>
+
+              <div class="nf-visual" aria-hidden="true">
+                <svg viewBox="0 0 520 320" role="img" aria-hidden="true" focusable="false">
+                  <defs>
+                    <radialGradient id="n1" cx="30%" cy="30%" r="70%">
+                      <stop offset="0" stop-color="rgba(43,111,106,0.28)"/>
+                      <stop offset="1" stop-color="rgba(43,111,106,0)"/>
+                    </radialGradient>
+                    <radialGradient id="n2" cx="80%" cy="25%" r="70%">
+                      <stop offset="0" stop-color="rgba(199,125,43,0.28)"/>
+                      <stop offset="1" stop-color="rgba(199,125,43,0)"/>
+                    </radialGradient>
+                  </defs>
+
+                  <rect x="0" y="0" width="520" height="320" rx="28" fill="rgba(255,255,255,0.55)" />
+                  <circle cx="170" cy="110" r="140" fill="url(#n1)"/>
+                  <circle cx="390" cy="90" r="150" fill="url(#n2)"/>
+
+                  <!-- brain outline (stylized) -->
+                  <path d="M210 210
+                           C170 210, 150 186, 150 160
+                           C150 130, 170 110, 196 110
+                           C204 92, 224 80, 248 80
+                           C270 66, 300 70, 316 92
+                           C344 94, 370 118, 370 150
+                           C386 164, 386 192, 372 206
+                           C364 220, 346 232, 328 228
+                           C312 246, 276 252, 256 236
+                           C244 244, 224 238, 218 224
+                           C216 216, 214 212, 210 210Z"
+                        fill="rgba(255,255,255,0.70)"
+                        stroke="rgba(230,223,211,0.95)"
+                        stroke-width="3"
+                        stroke-linejoin="round"/>
+
+                  <!-- waves -->
+                  <path d="M90 250 C 140 220, 170 290, 220 260 C 260 238, 290 280, 340 250 C 380 226, 410 270, 460 240"
+                        fill="none" stroke="rgba(43,111,106,0.40)" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M90 280 C 140 250, 170 320, 220 290 C 260 268, 290 310, 340 280 C 380 256, 410 300, 460 270"
+                        fill="none" stroke="rgba(199,125,43,0.34)" stroke-width="6" stroke-linecap="round"/>
+
+                  <!-- nodes -->
+                  <circle cx="220" cy="150" r="8" fill="rgba(43,111,106,0.26)"/>
+                  <circle cx="280" cy="130" r="8" fill="rgba(199,125,43,0.30)"/>
+                  <circle cx="320" cy="170" r="8" fill="rgba(43,111,106,0.22)"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-n">QEEG</div>
+                <div class="stat-l">Optional brain map used to tailor protocols</div>
+              </div>
+              <div class="stat">
+                <div class="stat-n">All ages</div>
+                <div class="stat-l">Often considered across a wide age range</div>
+              </div>
+              <div class="stat">
+                <div class="stat-n">Personalized</div>
+                <div class="stat-l">Plan adjusts as your brain responds</div>
+              </div>
+            </div>
+
+            <div class="systems">
+              <h4>Systems referenced in the practice</h4>
+              <div class="chips">
+                <span class="chip">Zengar Neuroptimal</span>
+                <span class="chip">Neurofield</span>
+                <span class="chip">Cygnet</span>
+                <span class="chip">Nexalin</span>
+              </div>
+            </div>
+
+            <p class="note">
+              Neurofeedback is not a guarantee and is not a substitute for medical care. A consultation helps confirm fit.
+            </p>
+
+            <a class="btn primary full" href="#contact">Ask about neurofeedback</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="step reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">02 • A flow that makes sense</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            We remove confusion: what you do, who it’s for, why you, then one clear next step.
+    <!-- TEAM -->
+    <section id="team" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Meet the team</h2>
+          <p class="lead">A thoughtful match matters. We help connect you with the clinician and approach that fits your goals.</p>
+        </header>
+
+        <div class="team">
+          <article class="person">
+            <div class="avatar" aria-hidden="true">MA</div>
+            <div class="person-body">
+              <h3>Dr. Miriam Adler, PhD</h3>
+              <p class="role">Executive Director</p>
+              <p>
+                A holistic approach that blends warmth with structure, integrating therapy with brain-based options when helpful.
+              </p>
+            </div>
+          </article>
+
+          <article class="person">
+            <div class="avatar" aria-hidden="true">JM</div>
+            <div class="person-body">
+              <h3>Joseph McArdle, LCSW</h3>
+              <p class="role">Therapist</p>
+              <p>
+                Support that’s grounded and collaborative, focused on practical progress and steadier coping.
+              </p>
+            </div>
+          </article>
+
+          <article class="person">
+            <div class="avatar" aria-hidden="true">WS</div>
+            <div class="person-body">
+              <h3>Weronika Skoczylas, MA</h3>
+              <p class="role">Therapist</p>
+              <p>
+                A warm, skillful approach that helps clients build insight, healthier patterns, and calmer confidence.
+              </p>
+            </div>
+          </article>
+
+          <article class="person subtle">
+            <div class="avatar" aria-hidden="true">+</div>
+            <div class="person-body">
+              <h3>Affordable intern option</h3>
+              <p class="role">Supported care when cost matters</p>
+              <p>
+                Ask about availability for supervised intern sessions designed to be accessible while staying professional.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Client feedback</h2>
+          <p class="lead">A few short examples of what clients tend to notice first.</p>
+        </header>
+
+        <div class="quotes">
+          <figure class="quote">
+            <div class="quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+                <path d="M7.6 18.4H4.6c-.7 0-1.2-.6-1.1-1.3.4-3.6 1.8-6.1 4.2-7.6.5-.3 1.1 0 1.1.6v2c0 .3-.2.6-.4.7-1 .7-1.6 1.7-1.8 3h.9c.7 0 1.3.6 1.3 1.3v.9c0 .7-.6 1.3-1.3 1.3Zm11.8 0h-3c-.7 0-1.2-.6-1.1-1.3.4-3.6 1.8-6.1 4.2-7.6.5-.3 1.1 0 1.1.6v2c0 .3-.2.6-.4.7-1 .7-1.6 1.7-1.8 3h.9c.7 0 1.3.6 1.3 1.3v.9c0 .7-.6 1.3-1.3 1.3Z"
+                      fill="currentColor" opacity="0.28"/>
+              </svg>
+            </div>
+            <blockquote>“The neurofeedback and the team were so helpful. I feel like I got my life back.”</blockquote>
+            <figcaption>Client</figcaption>
+          </figure>
+
+          <figure class="quote">
+            <div class="quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+                <path d="M7.6 18.4H4.6c-.7 0-1.2-.6-1.1-1.3.4-3.6 1.8-6.1 4.2-7.6.5-.3 1.1 0 1.1.6v2c0 .3-.2.6-.4.7-1 .7-1.6 1.7-1.8 3h.9c.7 0 1.3.6 1.3 1.3v.9c0 .7-.6 1.3-1.3 1.3Zm11.8 0h-3c-.7 0-1.2-.6-1.1-1.3.4-3.6 1.8-6.1 4.2-7.6.5-.3 1.1 0 1.1.6v2c0 .3-.2.6-.4.7-1 .7-1.6 1.7-1.8 3h.9c.7 0 1.3.6 1.3 1.3v.9c0 .7-.6 1.3-1.3 1.3Z"
+                      fill="currentColor" opacity="0.28"/>
+              </svg>
+            </div>
+            <blockquote>“I felt listened to. The plan was realistic, and I started handling my week differently.”</blockquote>
+            <figcaption>Client</figcaption>
+          </figure>
+
+          <figure class="quote">
+            <div class="quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+                <path d="M7.6 18.4H4.6c-.7 0-1.2-.6-1.1-1.3.4-3.6 1.8-6.1 4.2-7.6.5-.3 1.1 0 1.1.6v2c0 .3-.2.6-.4.7-1 .7-1.6 1.7-1.8 3h.9c.7 0 1.3.6 1.3 1.3v.9c0 .7-.6 1.3-1.3 1.3Zm11.8 0h-3c-.7 0-1.2-.6-1.1-1.3.4-3.6 1.8-6.1 4.2-7.6.5-.3 1.1 0 1.1.6v2c0 .3-.2.6-.4.7-1 .7-1.6 1.7-1.8 3h.9c.7 0 1.3.6 1.3 1.3v.9c0 .7-.6 1.3-1.3 1.3Z"
+                      fill="currentColor" opacity="0.28"/>
+              </svg>
+            </div>
+            <blockquote>“The work felt gentle, but it was effective. I’m calmer in situations that used to overwhelm me.”</blockquote>
+            <figcaption>Client</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- AFFORDABLE INTERN -->
+    <section id="intern" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Affordable therapy with an intern</h2>
+          <p class="lead">A supported option when cost matters, with care that stays thoughtful and professional.</p>
+        </header>
+
+        <div class="intern">
+          <div class="panel">
+            <h3>How it works</h3>
+            <p>
+              Intern sessions are designed to be accessible while still supported through supervision and training.
+              Telehealth is available across New Jersey.
+            </p>
+            <div class="list">
+              <div class="li"><span class="dot" aria-hidden="true"></span> 50-minute sessions</div>
+              <div class="li"><span class="dot" aria-hidden="true"></span> Telehealth across NJ</div>
+              <div class="li"><span class="dot" aria-hidden="true"></span> Great for anxiety, stress, and life transitions</div>
+            </div>
+          </div>
+
+          <div class="panel accent">
+            <h3>Fee</h3>
+            <p class="price">$75</p>
+            <p class="price-sub">per 50-minute session</p>
+            <a class="btn primary full" href="#contact">Ask about intern availability</a>
+            <p class="note">Availability varies. A quick message helps confirm fit and scheduling.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="step reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">03 • Design that earns trust</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            Calm, premium design with details that make people feel confident choosing you.
-          </div>
-        </div>
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>FAQ</h2>
+          <p class="lead">Fast answers first, then we can talk about your specifics.</p>
+        </header>
 
-        <div class="step reveal-frame">
-          <button class="step-toggle" type="button">
-            <span class="step-title-text reveal-content">04 • Launch & measure</span>
-            <span class="step-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="step-body reveal-content">
-            You don’t just get a website. You get a foundation that improves with real data.
-          </div>
+        <div class="faq">
+          <details class="qa">
+            <summary>Do you offer telehealth in New Jersey?</summary>
+            <p>Yes. Telehealth appointments are offered across New Jersey, alongside in-person sessions in Clifton.</p>
+          </details>
+
+          <details class="qa">
+            <summary>How do I book a consultation?</summary>
+            <p>Use the form below, or call (973) 815 0777 ext 101. Share your goals and availability.</p>
+          </details>
+
+          <details class="qa">
+            <summary>Do you work with anxiety, panic, and OCD?</summary>
+            <p>Yes. Anxiety-related concerns are a major focus, including panic reactions and OCD support with evidence-based approaches.</p>
+          </details>
+
+          <details class="qa">
+            <summary>What is neurofeedback, in simple terms?</summary>
+            <p>It is noninvasive brain training that aims to support steadier regulation, focus, and stress recovery over time.</p>
+          </details>
+
+          <details class="qa">
+            <summary>What should I include in the message form?</summary>
+            <p>Keep it general. Share what you want help with and scheduling preferences. Avoid private medical details.</p>
+          </details>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section reveal-frame" id="contact">
-      <h2 class="reveal-content">Contact for web design that books calls</h2>
-      <p class="section-lead reveal-content">
-        If your website looks good but doesn’t bring inquiries, that’s fixable.
-        <br><br>
-        Send me 2 to 3 websites you like and your #1 goal: booked calls, leads, or inquiries.
-        <br>
-        I’ll tell you what I’d improve and send a clear proposal within 24 hours.
-      </p>
+    <section id="contact" class="section contact">
+      <div class="container">
+        <header class="section-head">
+          <h2>Book a consultation</h2>
+          <p class="lead">Tell us what you’re looking for help with, and when you’re available. We’ll guide next steps.</p>
+        </header>
 
-      <!-- Contact form (AJAX - stays on your site) -->
-      <form id="contactForm" class="contact-form reveal-frame" action="https://formsubmit.co/ajax/hello@evidastudio.com" method="POST">
-        <!-- Optional settings for FormSubmit -->
-        <input type="hidden" name="_subject" value="New inquiry from Evida Studio">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
+        <div class="contact-grid">
+          <div class="panel">
+            <h3>Contact</h3>
 
-        <!-- Honeypot -->
-        <input class="contact-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="contact-lines">
+              <div class="cl">
+                <span class="k">Email</span>
+                <a class="v" href="mailto:info@miriamadlertherapy.com">info@miriamadlertherapy.com</a>
+              </div>
+              <div class="cl">
+                <span class="k">Phone</span>
+                <a class="v" href="tel:+19738150777">(973) 815 0777</a>
+                <span class="n">Ext 101</span>
+              </div>
+              <div class="cl">
+                <span class="k">Fax</span>
+                <span class="v">973 815 0737</span>
+              </div>
+              <div class="cl">
+                <span class="k">Address</span>
+                <span class="v">777 Passaic Avenue, 5th Floor, Clifton, NJ 07012</span>
+              </div>
+              <div class="cl">
+                <span class="k">Hours</span>
+                <span class="v">Mon–Thu · 9:00 AM–9:30 PM</span>
+                <span class="n">Selected Sundays available</span>
+              </div>
+            </div>
 
-        <div class="form-grid">
-          <div class="form-field reveal-content">
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
+            <!-- CONTACT IMAGE (inline SVG) -->
+            <div class="contact-visual" aria-hidden="true">
+              <svg viewBox="0 0 860 260" role="img" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="c1" x1="0" x2="1">
+                    <stop offset="0" stop-color="rgba(43,111,106,0.18)"/>
+                    <stop offset="1" stop-color="rgba(199,125,43,0.18)"/>
+                  </linearGradient>
+                </defs>
+
+                <rect x="0" y="0" width="860" height="260" rx="26" fill="rgba(255,255,255,0.55)" />
+                <rect x="16" y="16" width="828" height="228" rx="22" fill="url(#c1)" opacity="0.70"/>
+
+                <!-- pin -->
+                <path d="M150 186c-30-36-44-58-44-84 0-32 26-58 58-58s58 26 58 58c0 26-14 48-44 84-6 8-10 12-14 12s-8-4-14-12Z"
+                      fill="rgba(255,255,255,0.72)" stroke="rgba(230,223,211,0.95)" stroke-width="3"/>
+                <circle cx="164" cy="102" r="18" fill="rgba(199,125,43,0.26)" stroke="rgba(199,125,43,0.26)" />
+
+                <!-- simple “route” line -->
+                <path d="M240 168 C 330 120, 380 210, 470 160 C 560 110, 630 200, 730 140"
+                      fill="none" stroke="rgba(22,22,24,0.16)" stroke-width="8" stroke-linecap="round"/>
+
+                <!-- cards -->
+                <rect x="260" y="54" width="220" height="86" rx="18" fill="rgba(255,255,255,0.66)" stroke="rgba(230,223,211,0.95)"/>
+                <rect x="520" y="76" width="260" height="86" rx="18" fill="rgba(255,255,255,0.66)" stroke="rgba(230,223,211,0.95)"/>
+                <rect x="284" y="78" width="140" height="12" rx="999" fill="rgba(22,22,24,0.14)"/>
+                <rect x="284" y="102" width="180" height="12" rx="999" fill="rgba(22,22,24,0.10)"/>
+                <rect x="544" y="100" width="210" height="12" rx="999" fill="rgba(22,22,24,0.12)"/>
+                <rect x="544" y="124" width="170" height="12" rx="999" fill="rgba(22,22,24,0.10)"/>
+              </svg>
+            </div>
+
+            <p class="note">
+              Please do not send Protected Health Information through email or this form.
+            </p>
           </div>
 
-          <div class="form-field reveal-content">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" required>
-          </div>
+          <form class="panel form" action="#" method="post">
+            <h3>Send a message</h3>
 
-          <div class="form-field form-field--full reveal-content">
-            <label for="links">2 to 3 websites you like (optional)</label>
-            <input id="links" name="websites" type="text" placeholder="If you have links, drop them here">
-          </div>
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
+            </label>
 
-          <div class="form-field form-field--full reveal-content">
-            <label for="goal">Your #1 goal</label>
-            <input id="goal" name="goal" type="text" placeholder="Booked calls, leads, inquiries">
-          </div>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" placeholder="you@email.com" required />
+            </label>
 
-          <div class="form-field form-field--full reveal-content">
-            <label for="message">Anything else I should know</label>
-            <textarea id="message" name="message" rows="5" placeholder="A few lines is enough" required></textarea>
-          </div>
+            <label class="field">
+              <span>Phone</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="(###) ### ####" />
+            </label>
+
+            <label class="field">
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="What are you looking for help with, and when are you available?" required></textarea>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="telehealth" />
+              <span>Interested in telehealth appointments</span>
+            </label>
+
+            <p class="fine">Please keep your message general. Avoid private medical details.</p>
+
+            <button class="btn primary full" type="submit">Send message</button>
+          </form>
         </div>
-
-        <div class="form-actions reveal-frame">
-          <button type="submit" class="btn-primary reveal-content">Send message</button>
-          <p class="form-note reveal-content">You’ll hear back within 24 hours.</p>
-        </div>
-      </form>
+      </div>
     </section>
 
   </main>
 
-  <footer>
-    © Evida Studio. Built for clarity.
-    <div class="footer-links" aria-label="Social links">
-      <a href="https://www.instagram.com/evidastudio/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-        <!-- UPDATED Instagram icon (same as nav) -->
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M7 3h10c2.21 0 4 1.79 4 4v10c0 2.21-1.79 4-4 4H7c-2.21 0-4-1.79-4-4V7c0-2.21 1.79-4 4-4Zm10 2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6a2.8 2.8 0 0 0 0-5.6ZM17.2 6.6a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z"/>
-        </svg>
-      </a>
-      <span class="footer-dot">•</span>
-      <a href="https://www.linkedin.com/in/fotis-antonas-643511181/?originalSubdomain=gr" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-        <!-- UPDATED LinkedIn icon (same as nav) -->
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.94v5.666H9.985V9h3.112v1.561h.044c.434-.82 1.494-1.686 3.074-1.686c3.288 0 3.892 2.164 3.892 4.977v6.6ZM5.337 7.433a1.81 1.81 0 1 1 0-3.62a1.81 1.81 0 0 1 0 3.62ZM3.722 20.452h3.23V9h-3.23v11.452Z"/>
-        </svg>
-      </a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot">
+        <div>
+          <strong>Miriam Adler Therapy</strong>
+          <div class="muted">777 Passaic Avenue, 5th Floor, Clifton, NJ 07012</div>
+        </div>
+        <div class="muted">Therapy & Neurofeedback · Telehealth across New Jersey</div>
+      </div>
     </div>
   </footer>
-
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
-
-  <!-- SUCCESS MODAL (NEW) -->
-  <div class="evida-modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="successTitle">
-    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
-
-    <div class="evida-modal-dialog" role="document">
-      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
-
-      <div class="evida-modal-icon" aria-hidden="true">
-        <svg class="evida-modal-svg" viewBox="0 0 52 52" focusable="false" aria-hidden="true">
-          <circle class="evida-modal-ring" cx="26" cy="26" r="24"></circle>
-          <path class="evida-modal-check" d="M14 27 L22 35 L38 19"></path>
-        </svg>
-      </div>
-
-      <h3 class="evida-modal-title" id="successTitle">Message sent</h3>
-      <p class="evida-modal-text">Thanks for reaching out. I’ll get back to you as soon as possible.</p>
-    </div>
-  </div>
-
-  <!-- WORK MODAL (NEW) -->
-  <div class="evida-modal" id="workModal" hidden role="dialog" aria-modal="true" aria-labelledby="workTitle">
-    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
-
-    <div class="evida-modal-dialog evida-modal-dialog--work" role="document">
-      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
-
-      <div class="work-modal-head">
-        <h3 class="evida-modal-title" id="workTitle">More work</h3>
-      </div>
-
-      <div class="work-modal-body">
-        <div class="work-list" aria-label="More website demos">
-          <a class="work-row" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mockup-_psychologist.png" alt="Therapist website design: premium demo mockup">
-              <span class="work-row-pill">Open demo →</span>
-            </div>
-            <div class="work-row-content">
-              <h3>Therapist website</h3>
-              <p>A private practice layout built to reduce doubt, build trust fast, and make first contact feel easy.</p>
-              <div class="work-row-notes">
-                <span>Focus: clarity, trust signals, one primary CTA</span>
-                <span>Outcome: more inquiries from the right people</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="work-row" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="Architecture.png" alt="Architect website design: high-end demo mockup">
-              <span class="work-row-pill">Open demo →</span>
-            </div>
-            <div class="work-row-content">
-              <h3>Architecture website</h3>
-              <p>A high-end presence that feels like a studio brand, with strong hierarchy and a portfolio-first flow.</p>
-              <div class="work-row-notes">
-                <span>Focus: visual confidence, premium details, clean story</span>
-                <span>Outcome: perceived value goes up before the call</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="work-row" href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mock-psych-2.png" alt="Therapist website design: second demo mockup (v2)">
-              <span class="work-row-pill">Open demo →</span>
-            </div>
-            <div class="work-row-content">
-              <h3>Therapist website (v2)</h3>
-              <p>A calmer, softer rhythm with more breathing room, designed for longer reads and higher comfort.</p>
-              <div class="work-row-notes">
-                <span>Focus: calm tone, clear services, simple next step</span>
-                <span>Outcome: visitors feel safe enough to reach out</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="work-row" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mock-derma-1.png" alt="Dermatologist website design: demo mockup">
-              <span class="work-row-pill">Open demo →</span>
-            </div>
-            <div class="work-row-content">
-              <h3>Dermatologist website</h3>
-              <p>Medical clarity without feeling clinical, so people understand the offer quickly and feel confident contacting you.</p>
-              <div class="work-row-notes">
-                <span>Focus: services made simple, trust cues, clean CTA</span>
-                <span>Outcome: less confusion, more qualified leads</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="work-row" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mock-dentist-1.png" alt="Dentist website design: demo mockup">
-              <span class="work-row-pill">Open demo →</span>
-            </div>
-            <div class="work-row-content">
-              <h3>Dentist website</h3>
-              <p>One promise, one next step. Built so booking a consultation feels like the obvious move.</p>
-              <div class="work-row-notes">
-                <span>Focus: conversion-first hero, simple structure</span>
-                <span>Outcome: more appointment requests</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Inline CSS only for modal (keeps styles.css untouched) -->
-  <style>
-    body.evida-modal-open{overflow:hidden}
-
-    .evida-modal{
-      position:fixed;
-      inset:0;
-      z-index:200;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:1.1rem;
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .22s ease;
-    }
-    .evida-modal.is-open{
-      opacity:1;
-      pointer-events:auto;
-    }
-    .evida-modal-backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.55);
-      backdrop-filter:blur(10px);
-    }
-    .evida-modal-dialog{
-      position:relative;
-      width:min(420px, 92vw);
-      border-radius:22px;
-      border:1px solid rgba(140,165,230,.45);
-      background: radial-gradient(circle at top, #111a33 0, #050814 70%);
-      box-shadow:0 30px 90px rgba(0,0,0,.9);
-      padding:1.35rem 1.2rem 1.2rem;
-      transform:translateY(10px) scale(.985);
-      transition:transform .26s ease;
-      text-align:center;
-    }
-    .evida-modal.is-open .evida-modal-dialog{transform:none}
-
-    .evida-modal-close{
-      position:absolute;
-      top:10px;
-      right:12px;
-      width:34px;
-      height:34px;
-      border-radius:999px;
-      border:1px solid rgba(140,165,230,.55);
-      background:rgba(10,16,33,.55);
-      color:#f7f7ff;
-      font-size:1.25rem;
-      line-height:1;
-      cursor:pointer;
-    }
-    .evida-modal-close:hover{
-      border-color:rgba(160,190,255,.75);
-      background:rgba(10,16,33,.8);
-    }
-
-    .evida-modal-icon{
-      width:66px;
-      height:66px;
-      border-radius:999px;
-      margin:0 auto .8rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(61,226,197,.12);
-      border:1px solid rgba(61,226,197,.4);
-      color:#3de2c5;
-      box-shadow:0 18px 45px rgba(0,0,0,.7);
-    }
-    .evida-modal-svg{width:40px;height:40px}
-    .evida-modal-ring,
-    .evida-modal-check{
-      fill:none;
-      stroke:currentColor;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-    .evida-modal-ring{
-      stroke-width:3;
-      stroke-dasharray:160;
-      stroke-dashoffset:160;
-    }
-    .evida-modal-check{
-      stroke-width:3.5;
-      stroke-dasharray:60;
-      stroke-dashoffset:60;
-      opacity:0;
-    }
-
-    .evida-modal.is-open .evida-modal-ring{animation:evidaRingDraw .9s ease forwards}
-    .evida-modal.is-open .evida-modal-check{animation:evidaCheckDraw .45s ease forwards .82s}
-
-    @keyframes evidaRingDraw{to{stroke-dashoffset:0}}
-    @keyframes evidaCheckDraw{
-      0%{stroke-dashoffset:60;opacity:0}
-      40%{opacity:1}
-      100%{stroke-dashoffset:0;opacity:1}
-    }
-
-    .evida-modal-title{
-      font-size:1.05rem;
-      margin-bottom:.35rem;
-      background:linear-gradient(135deg,#3de2c5,#7b5cff);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .evida-modal-text{
-      color:#a8b0c8;
-      font-size:.92rem;
-      line-height:1.45;
-    }
-
-    /* ===== WORK MODAL ONLY ===== */
-    .evida-modal-dialog--work{
-      width:min(980px, 94vw);
-      text-align:left;
-      padding:1.1rem 1.1rem 1rem;
-    }
-    .work-modal-head{margin:0 0 .9rem 0}
-    .work-modal-body{
-      max-height:min(70vh, 640px);
-      overflow:auto;
-      padding-right:.25rem;
-    }
-
-    /* WORK LIST (1 per row + alternating layout) */
-    .work-list{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
-    .work-row{
-      display:grid;
-      grid-template-columns:1fr;
-      grid-template-areas:
-        "media"
-        "content";
-      gap:14px;
-      padding:14px;
-      border-radius:22px;
-      border:1px solid rgba(130,150,220,.45);
-      background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
-      box-shadow:0 18px 40px rgba(0,0,0,.65);
-      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-    }
-    .work-row:hover{
-      transform:translateY(-4px);
-      box-shadow:0 22px 55px rgba(0,0,0,.85);
-      border-color:rgba(160,190,255,.65);
-    }
-
-    .work-row-media{
-      grid-area:media;
-      position:relative;
-      width:100%;
-      height:260px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(150,170,240,.25);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(95,140,255,.14), transparent 48%),
-        linear-gradient(to bottom, rgba(0,0,0,.16), rgba(0,0,0,0) 55%),
-        #020309;
-    }
-    .work-row-media img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:contain;
-      padding:14px;
-      filter:saturate(1.02) contrast(1.02);
-      transform:scale(1);
-      transition:transform .22s ease;
-    }
-    .work-row:hover .work-row-media img{transform:scale(1.02)}
-
-    .work-row-pill{
-      position:absolute;
-      left:14px;
-      bottom:14px;
-      padding:.62rem .9rem;
-      border-radius:999px;
-      background:rgba(5,8,20,.72);
-      border:1px solid rgba(120,145,220,.6);
-      color:#f7f7ff;
-      font-size:.9rem;
-      font-weight:650;
-      letter-spacing:.01em;
-      backdrop-filter: blur(10px);
-      box-shadow:0 12px 30px rgba(0,0,0,.55);
-      opacity:0;
-      transform:translateY(6px);
-      transition:opacity .18s ease, transform .18s ease;
-      pointer-events:none;
-    }
-    .work-row:hover .work-row-pill{opacity:1;transform:translateY(0)}
-
-    .work-row-content{grid-area:content}
-    .work-row-content h3{
-      font-size:1.1rem;
-      margin:0 0 .35rem;
-      background:linear-gradient(135deg,#3de2c5,#7b5cff);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .work-row-content p{
-      color:#a8b0c8;
-      font-size:.95rem;
-      line-height:1.55;
-    }
-
-    .work-row-notes{
-      margin-top:.7rem;
-      display:grid;
-      gap:.45rem;
-    }
-    .work-row-notes span{
-      display:block;
-      color:#a8b0c8;
-      font-size:.86rem;
-      line-height:1.35;
-      padding:.5rem .65rem;
-      border-radius:14px;
-      background:rgba(10,16,33,.55);
-      border:1px solid rgba(140,165,230,.28);
-    }
-
-    @media (min-width: 900px){
-      .work-row{
-        grid-template-columns:1.05fr .95fr;
-        grid-template-areas:"media content";
-        gap:18px;
-        align-items:center;
-      }
-      .work-row:nth-child(even){
-        grid-template-columns:.95fr 1.05fr;
-        grid-template-areas:"content media";
-      }
-      .work-row-media{height:300px}
-    }
-  </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.body.classList.add('is-loaded');
-      setTimeout(() => document.body.classList.add('is-loaded'), 120);
-
-      // ✅ FIX: Reveal on scroll (makes .reveal-content visible)
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const frames = document.querySelectorAll('.reveal-frame');
-
-      frames.forEach(frame => {
-        const kids = frame.querySelectorAll('.reveal-content');
-        kids.forEach((kid, idx) => {
-          kid.style.transitionDelay = (idx * 70) + 'ms';
-        });
-      });
-
-      if (reduceMotion) {
-        frames.forEach(frame => {
-          frame.classList.add('is-in');
-          frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
-        });
-      } else {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const frame = entry.target;
-            frame.classList.add('is-in');
-            frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
-            io.unobserve(frame);
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-
-        frames.forEach(frame => io.observe(frame));
-      }
-
-      // Accordion (UPDATED): allow multiple steps to stay open
-      const steps = document.querySelectorAll('.step');
-      steps.forEach(step => {
-        const toggle = step.querySelector('.step-toggle');
-        if (!toggle) return;
-
-        toggle.addEventListener('click', () => {
-          step.classList.toggle('step--open');
-        });
-      });
-
-           // Mobile nav
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-
-      if (navToggle && navLinks) {
-        const closeNav = () => {
-          navLinks.classList.remove('is-open');
-          navToggle.classList.remove('is-active');
-        };
-
-        navToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('is-open');
-          navToggle.classList.toggle('is-active');
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            closeNav();
-          });
-        });
-
-        // ✅ NEW: close on touch/click anywhere outside
-        document.addEventListener('pointerdown', (e) => {
-          if (!navLinks.classList.contains('is-open')) return;
-
-          const t = e.target;
-          const clickedInsideMenu = navLinks.contains(t);
-          const clickedToggle = navToggle.contains(t);
-
-          if (!clickedInsideMenu && !clickedToggle) {
-            closeNav();
-          }
-        }, { capture: true });
-      }
-
-      // Scroll to top
-      const scrollBtn = document.getElementById('scrollTopBtn');
-      const secondSection = document.querySelector('#portfolio');
-
-      if (scrollBtn) {
-        const updateScrollBtn = () => {
-          const isMobile = window.matchMedia('(max-width: 767px)').matches;
-
-          if (isMobile) {
-            if (window.scrollY > 80) scrollBtn.classList.add('is-visible');
-            else scrollBtn.classList.remove('is-visible');
-          } else if (secondSection) {
-            const rect = secondSection.getBoundingClientRect();
-            const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
-
-            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
-              scrollBtn.classList.add('is-visible');
-            } else {
-              scrollBtn.classList.remove('is-visible');
-            }
-          }
-        };
-
-        window.addEventListener('scroll', updateScrollBtn);
-        window.addEventListener('resize', updateScrollBtn);
-        updateScrollBtn();
-
-        scrollBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      // ===== AJAX submit + success modal (no redirect) =====
-      const successModal = document.getElementById('successModal');
-
-      const openModal = () => {
-        if (!successModal) return;
-        successModal.hidden = false;
-        document.body.classList.add('evida-modal-open');
-        requestAnimationFrame(() => successModal.classList.add('is-open'));
-      };
-
-      const closeModal = () => {
-        if (!successModal) return;
-        successModal.classList.remove('is-open');
-        document.body.classList.remove('evida-modal-open');
-        setTimeout(() => { successModal.hidden = true; }, 260);
-      };
-
-      if (successModal) {
-        successModal.addEventListener('click', (e) => {
-          const t = e.target;
-          if (t && t.dataset && t.dataset.close === 'true') closeModal();
-        });
-      }
-
-      // ===== Work modal (NEW) =====
-      const workModal = document.getElementById('workModal');
-      const openWorkBtn = document.getElementById('openWorkModal');
-
-      const openWorkModal = () => {
-        if (!workModal) return;
-        workModal.hidden = false;
-        document.body.classList.add('evida-modal-open');
-        requestAnimationFrame(() => workModal.classList.add('is-open'));
-      };
-
-      const closeWorkModal = () => {
-        if (!workModal) return;
-        workModal.classList.remove('is-open');
-        document.body.classList.remove('evida-modal-open');
-        setTimeout(() => { workModal.hidden = true; }, 260);
-      };
-
-      if (openWorkBtn) {
-        openWorkBtn.addEventListener('click', openWorkModal);
-      }
-
-      if (workModal) {
-        workModal.addEventListener('click', (e) => {
-          const t = e.target;
-          if (t && t.dataset && t.dataset.close === 'true') closeWorkModal();
-        });
-      }
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          if (successModal && !successModal.hidden) closeModal();
-          if (workModal && !workModal.hidden) closeWorkModal();
-        }
-      });
-
-      const form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const originalText = submitBtn ? submitBtn.textContent : '';
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-          }
-
-          try {
-            const res = await fetch(form.action, {
-              method: 'POST',
-              headers: { 'Accept': 'application/json' },
-              body: new FormData(form)
-            });
-
-            if (!res.ok) throw new Error('Request failed');
-
-            form.reset();
-            openModal();
-          } catch (err) {
-            alert('Something went wrong. Please try again.');
-          } finally {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = originalText;
-            }
-          }
-        });
-      }
-    });
-  </script>
 </body>
 </html>
-
