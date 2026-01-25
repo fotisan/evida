@@ -127,31 +127,19 @@ ul{list-style:none}
 .nav-links a{padding:.35rem .2rem}
 .nav-links a:hover{color:var(--page-fg)}
 
-/* NAV CTA — FIX: αέρας δεξιά/αριστερά + να μην κολλάει */
-/* NAV CTA — ΠΕΡΙΣΣΟΤΕΡΟΣ ΑΕΡΑΣ ΣΤΑ ΠΛΑΓΙΑ */
-/* NAV CTA — περισσότερο κενό ΜΕΣΑ στο πλαίσιο */
-/* NAV CTA — EXTRA WIDE / PREMIUM */
-/* NAV CTA — μεγαλώνει ΜΟΝΟ το πλαίσιο (όχι αποστάσεις) */
-/* NAV CTA — λίγο πιο άνετο πλαίσιο (ΟΧΙ υπερβολή) */
-/* NAV CTA — αρχικό μέγεθος + λίγα px padding δεξιά/αριστερά */
 .btn-nav{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
-  /* ⬇️ ΑΥΤΟ ΕΙΝΑΙ ΤΟ ΚΛΕΙΔΙ */
-  padding: 0.75rem 1.55rem;  /* + ~6px δεξιά & αριστερά σε σχέση με πριν */
-
+  padding: 0.75rem 1.55rem;
   border-radius:999px;
   background:linear-gradient(135deg,#6aa8ff,#7ae7cf);
   color:#020309;
   font-weight:600;
   font-size:.93rem;
-
   box-shadow:
     0 0 0 1px rgba(255,255,255,.04),
     0 12px 35px rgba(42,151,255,.55);
-
   white-space:nowrap;
 }
 
@@ -162,12 +150,9 @@ ul{list-style:none}
   justify-content:center;
   width:34px;
   height:34px;
-
-  /* CHANGE (ONLY): remove visible circle */
   border-radius:999px;
   border:1px solid transparent;
   background:transparent;
-
   color:var(--muted);
   font-weight:650;
   font-size:.86rem;
@@ -175,13 +160,10 @@ ul{list-style:none}
 }
 .nav-social:hover{
   color:var(--page-fg);
-
-  /* CHANGE (ONLY): keep circle invisible on hover */
   border-color:transparent;
   background:transparent;
 }
 
-/* NEW: group social icons so we can control spacing without affecting nav links */
 .nav-socials{
   display:inline-flex;
   align-items:center;
@@ -215,7 +197,8 @@ ul{list-style:none}
   font-size:clamp(2rem,7vw,2.4rem);
   line-height:1.12;
   margin-bottom:.8rem;
-  max-width:26rem;
+  /* MODIFIED: increased width to fit "committed clients" */
+  max-width:30rem;
 }
 .hero-title em{
   font-style:normal;
@@ -458,7 +441,7 @@ ul{list-style:none}
   width:100%;
   height:320px;
   overflow:hidden;
-  border-radius:18px; /* ✅ ΜΟΝΗ ΑΛΛΑΓΗ: πιο στρογγυλεμένες γωνίες */
+  border-radius:18px; 
   border-bottom:1px solid rgba(150,170,240,.25);
   background:
     radial-gradient(circle at 20% 0%, rgba(95,140,255,.14), transparent 48%),
@@ -471,9 +454,9 @@ ul{list-style:none}
   width:100%;
   height:100%;
   display:block;
-  object-fit:contain;       /* ✅ whole image visible */
-  padding:14px;             /* ✅ frame */
-  border-radius:16px;       /* ✅ ΝΕΟ: πιο κυκλικές γωνίες στην ίδια την εικόνα */
+  object-fit:contain;
+  padding:14px;
+  border-radius:16px;
   transform:scale(1);
   transition:transform .22s ease;
   filter:saturate(1.02) contrast(1.02);
@@ -995,3 +978,4 @@ footer{
   min-width: unset !important;
   margin: 0 !important;
   letter-spacing: 
+}
