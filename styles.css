@@ -18,7 +18,6 @@ body{
   color:var(--page-fg);
   -webkit-font-smoothing:antialiased;
 
-  /* NEW: subtle entry */
   opacity:0;
   transform:translateY(6px);
   transition:opacity .45s ease, transform .45s ease;
@@ -38,7 +37,7 @@ ul{list-style:none}
   padding:1.2rem 1.4rem 4rem;
 }
 
-/* ===== Reveal (NEW) ===== */
+/* ===== Reveal ===== */
 .reveal-frame{will-change:transform}
 .reveal-content{
   opacity:0;
@@ -143,7 +142,7 @@ ul{list-style:none}
   white-space:nowrap;
 }
 
-/* ===================== NAV SOCIAL (NEW) ===================== */
+/* ===================== NAV SOCIAL ===================== */
 .nav-social{
   display:inline-flex;
   align-items:center;
@@ -197,7 +196,6 @@ ul{list-style:none}
   font-size:clamp(2rem,7vw,2.4rem);
   line-height:1.12;
   margin-bottom:.8rem;
-  /* MODIFIED: increased width to fit "committed clients" */
   max-width:30rem;
 }
 .hero-title em{
@@ -281,7 +279,7 @@ ul{list-style:none}
   color:var(--muted);
 }
 
-/* ===== MOBILE-ONLY CHANGE: tags ABOVE 3D + different labels ===== */
+/* ===== MOBILE-ONLY CHANGE ===== */
 .hero-copy{order:1}
 .hero-tags-row--mobile{order:2}
 .hero-visual{order:3}
@@ -409,7 +407,7 @@ ul{list-style:none}
   max-width:42rem;
 }
 
-/* ===================== PORTFOLIO (STATIC MOCKS) ===================== */
+/* ===================== PORTFOLIO ===================== */
 .pf-grid{
   margin-top:1.6rem;
   display:grid;
@@ -417,10 +415,8 @@ ul{list-style:none}
   grid-template-columns:1fr;
 }
 
-/* whole card clickable */
 .pf-link{display:block}
 
-/* card */
 .pf-item{
   background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
   border-radius:22px;
@@ -435,7 +431,6 @@ ul{list-style:none}
   border-color:rgba(160,190,255,.65);
 }
 
-/* preview area */
 .pf-preview{
   position:relative;
   width:100%;
@@ -449,7 +444,6 @@ ul{list-style:none}
     #020309;
 }
 
-/* image: show whole, premium fit */
 .pf-preview img{
   width:100%;
   height:100%;
@@ -463,7 +457,6 @@ ul{list-style:none}
 }
 .pf-item:hover .pf-preview img{transform:scale(1.02)}
 
-/* overlay pill */
 .pf-overlay{
   position:absolute;
   inset:0;
@@ -491,7 +484,6 @@ ul{list-style:none}
   box-shadow:0 12px 30px rgba(0,0,0,.55);
 }
 
-/* info */
 .pf-info{padding:1.1rem 1.2rem 1.25rem}
 .pf-info h3{
   font-size:1.05rem;
@@ -654,7 +646,7 @@ ul{list-style:none}
   transform:rotate(180deg);
 }
 
-/* ===================== CONTACT FORM (NEW) ===================== */
+/* ===================== CONTACT FORM ===================== */
 .contact-form{
   margin-top:.2rem;
 }
@@ -714,7 +706,7 @@ ul{list-style:none}
   opacity:0 !important;
 }
 
-/* ===================== SUCCESS MODAL (NEW) ===================== */
+/* ===================== SUCCESS MODAL ===================== */
 .modal{
   position:fixed;
   inset:0;
@@ -845,7 +837,6 @@ footer{
   text-align:center;
 }
 
-/* Footer social links (NEW) */
 .footer-links{
   margin-top:.55rem;
   display:flex;
@@ -920,7 +911,11 @@ footer{
     font-size:.95rem;
     color:var(--muted);
   }
+  
+  /* FIX: Reset padding only for normal links, preserve button */
   .nav-links a{padding:0}
+  .nav-links a.btn-nav{padding:0.75rem 1.55rem}
+
   .nav-links a:hover{color:var(--page-fg)}
 
   .hero{
@@ -946,13 +941,11 @@ footer{
   .compare-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
   .about-grid{grid-template-columns:auto minmax(0,1fr);justify-items:stretch}
 
-  /* Desktop: show original tags, hide mobile tags */
   .hero-tags-row--mobile{display:none;order:unset}
   .hero-tags-row--desktop{display:block;order:unset}
   .hero-visual{order:unset}
   .hero-copy{order:unset}
 
-  /* Contact form layout on desktop */
   .form-grid{
     grid-template-columns:repeat(2, minmax(0,1fr));
     gap:1rem 1.1rem;
@@ -970,4 +963,3 @@ footer{
     min-width:220px;
   }
 }
-
