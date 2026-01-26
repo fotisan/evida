@@ -970,12 +970,4 @@ footer{
     min-width:220px;
   }
 }
-.site-header .nav-links a.btn-nav{
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
-  min-width: unset !important;
-  margin: 0 !important;
-  letter-spacing: 
-}
+
