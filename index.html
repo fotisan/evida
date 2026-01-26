@@ -5,7 +5,8 @@
   <title>Website Design for Doctors & Service Professionals | Evida Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/webp" href="logo.webp">
+
   <link rel="stylesheet" href="styles.css?v=26">
 </head>
 
@@ -16,12 +17,12 @@
         <a href="#top">Evida <span>Studio</span></a>
       </div>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation">
         <span class="nav-toggle-line"></span>
         <span class="nav-toggle-line"></span>
       </button>
 
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links">
         <a href="#portfolio">Work that books calls</a>
         <a href="#about">About Evida</a>
         <a href="#services">What you get</a>
@@ -68,8 +69,7 @@
         </div>
 
         <h1 class="hero-title reveal-content">
-          Turn <span class="hero-accent">visitors</span> into <br>
-          <span class="booked-calls"><span class="hero-accent">committed</span> clients</span>
+          Turn <span class="hero-accent">visitors</span> into <br><span class="booked-calls"><span class="hero-accent">committed</span> clients</span>
         </h1>
 
         <p class="hero-sub reveal-content">
@@ -156,10 +156,7 @@
         <article class="pf-item reveal-frame">
           <a class="pf-link" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
             <div class="pf-preview reveal-content">
-              <picture>
-                <source srcset="mockup-_psychologist.webp" type="image/webp">
-                <img src="mockup-_psychologist.png" alt="Therapist website design: premium demo mockup" loading="lazy" decoding="async">
-              </picture>
+              <img src="mockup-_psychologist.webp" alt="Therapist website design: premium demo mockup">
               <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
             </div>
             <div class="pf-info reveal-content">
@@ -172,10 +169,7 @@
         <article class="pf-item reveal-frame">
           <a class="pf-link" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
             <div class="pf-preview reveal-content">
-              <picture>
-                <source srcset="Architecture.webp" type="image/webp">
-                <img src="Architecture.png" alt="Architect website design: high-end demo mockup" loading="lazy" decoding="async">
-              </picture>
+              <img src="Architecture.webp" alt="Architect website design: high-end demo mockup">
               <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
             </div>
             <div class="pf-info reveal-content">
@@ -206,10 +200,7 @@
           </div>
 
           <div class="compare-image-wrap reveal-content">
-            <picture>
-              <source srcset="wrong-mock.webp" type="image/webp">
-              <img src="wrong-mock.jpg" alt="Wrong website hero section: cluttered layout and mixed messages" loading="lazy" decoding="async">
-            </picture>
+            <img src="wrong-mock.webp" alt="Wrong website hero section: cluttered layout and mixed messages">
           </div>
 
           <p class="compare-note reveal-content">
@@ -224,10 +215,7 @@
           </div>
 
           <div class="compare-image-wrap reveal-content">
-            <picture>
-              <source srcset="wright-mock.webp" type="image/webp">
-              <img src="wright-mock.jpg" alt="Right website hero section: clear message and strong primary CTA" loading="lazy" decoding="async">
-            </picture>
+            <img src="wright-mock.webp" alt="Right website hero section: clear message and strong primary CTA">
           </div>
 
           <p class="compare-note reveal-content">
@@ -246,7 +234,7 @@
       <div class="about-grid">
         <figure class="about-photo reveal-frame">
           <div class="about-photo-ring"></div>
-          <img src="fotis-hero.png" alt="Fotis Antonas, web designer and website developer" class="reveal-content" loading="lazy" decoding="async">
+          <img src="fotis-hero.webp" alt="Fotis Antonas, web designer and website developer" class="reveal-content">
         </figure>
 
         <div class="about-card reveal-frame">
@@ -354,6 +342,7 @@
         <input type="hidden" name="_subject" value="New inquiry from Evida Studio">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+
         <input class="contact-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="form-grid">
@@ -411,45 +400,40 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
-  <!-- Success modal -->
-  <div class="modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="successTitle">
-    <div class="modal-backdrop" data-close="true" aria-hidden="true"></div>
+  <div class="evida-modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
 
-    <div class="modal-dialog" role="document">
-      <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
+    <div class="evida-modal-dialog" role="document">
+      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
 
-      <div class="modal-icon" aria-hidden="true">
-        <svg class="modal-svg" viewBox="0 0 52 52" focusable="false" aria-hidden="true">
-          <circle class="modal-ring" cx="26" cy="26" r="24"></circle>
-          <path class="modal-check" d="M14 27 L22 35 L38 19"></path>
+      <div class="evida-modal-icon" aria-hidden="true">
+        <svg class="evida-modal-svg" viewBox="0 0 52 52" focusable="false" aria-hidden="true">
+          <circle class="evida-modal-ring" cx="26" cy="26" r="24"></circle>
+          <path class="evida-modal-check" d="M14 27 L22 35 L38 19"></path>
         </svg>
       </div>
 
-      <h3 class="modal-title" id="successTitle">Message sent</h3>
-      <p class="modal-text">Thanks for reaching out. I’ll get back to you as soon as possible.</p>
+      <h3 class="evida-modal-title" id="successTitle">Message sent</h3>
+      <p class="evida-modal-text">Thanks for reaching out. I’ll get back to you as soon as possible.</p>
     </div>
   </div>
 
-  <!-- Work modal -->
-  <div class="modal" id="workModal" hidden role="dialog" aria-modal="true" aria-labelledby="workTitle">
-    <div class="modal-backdrop" data-close="true" aria-hidden="true"></div>
+  <div class="evida-modal" id="workModal" hidden role="dialog" aria-modal="true" aria-labelledby="workTitle">
+    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
 
-    <div class="modal-dialog modal-dialog--work" role="document">
-      <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
+    <div class="evida-modal-dialog evida-modal-dialog--work" role="document">
+      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
 
       <div class="work-modal-head">
-        <h3 class="modal-title" id="workTitle">More work</h3>
+        <h3 class="evida-modal-title" id="workTitle">More work</h3>
       </div>
 
       <div class="work-modal-body">
         <div class="work-list" aria-label="More website demos">
-          <!-- 1 -->
+          
           <a class="work-row" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <picture>
-                <source srcset="mockup-_psychologist.webp" type="image/webp">
-                <img src="mockup-_psychologist.png" alt="Therapist website design: premium demo mockup" loading="lazy" decoding="async">
-              </picture>
+              <img src="mockup-_psychologist.webp" alt="Therapist website design: premium demo mockup">
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -462,13 +446,9 @@
             </div>
           </a>
 
-          <!-- 2 -->
           <a class="work-row" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <picture>
-                <source srcset="Architecture.webp" type="image/webp">
-                <img src="Architecture.png" alt="Architect website design: high-end demo mockup" loading="lazy" decoding="async">
-              </picture>
+              <img src="Architecture.webp" alt="Architect website design: high-end demo mockup">
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -481,13 +461,9 @@
             </div>
           </a>
 
-          <!-- 3 -->
           <a class="work-row" href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <picture>
-                <source srcset="mock-psych-2.webp" type="image/webp">
-                <img src="mock-psych-2.png" alt="Therapist website design: second demo mockup (v2)" loading="lazy" decoding="async">
-              </picture>
+              <img src="mock-psych-2.webp" alt="Therapist website design: second demo mockup (v2)">
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -500,32 +476,24 @@
             </div>
           </a>
 
-          <!-- 4 (NEW) -->
           <a class="work-row" href="https://fotisan.github.io/preview-psychologist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <picture>
-                <source srcset="mock-psych-3.webp" type="image/webp">
-                <img src="mock-psych-3.webp" alt="Therapist website design: preview demo (v3)" loading="lazy" decoding="async">
-              </picture>
+              <img src="mock-psych-3.webp" alt="Therapist website design: preview demo">
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
-              <h3>Therapist website (v3)</h3>
-              <p>A premium, conversion-first preview built around calm trust, strong hierarchy, and a clear next step.</p>
+              <h3>Therapist website (Preview)</h3>
+              <p>A fresh take on mental health web design, prioritizing immediate connection and ease of navigation for new patients.</p>
               <div class="work-row-notes">
-                <span>Focus: hero clarity, premium rhythm, CTA placement</span>
-                <span>Outcome: stronger perceived value before contact</span>
+                <span>Focus: visual impact, simplified journey</span>
+                <span>Outcome: stronger emotional connection</span>
               </div>
             </div>
           </a>
 
-          <!-- 5 -->
           <a class="work-row" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <picture>
-                <source srcset="mock-derma-1.webp" type="image/webp">
-                <img src="mock-derma-1.png" alt="Dermatologist website design: demo mockup" loading="lazy" decoding="async">
-              </picture>
+              <img src="mock-derma-1.webp" alt="Dermatologist website design: demo mockup">
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -538,13 +506,9 @@
             </div>
           </a>
 
-          <!-- 6 -->
           <a class="work-row" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <picture>
-                <source srcset="mock-dentist-1.webp" type="image/webp">
-                <img src="mock-dentist-1.png" alt="Dentist website design: demo mockup" loading="lazy" decoding="async">
-              </picture>
+              <img src="mock-dentist-1.webp" alt="Dentist website design: demo mockup">
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -561,9 +525,257 @@
     </div>
   </div>
 
+  <style>
+    body.evida-modal-open{overflow:hidden}
+
+    .evida-modal{
+      position:fixed;
+      inset:0;
+      z-index:200;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:1.1rem;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .22s ease;
+    }
+    .evida-modal.is-open{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .evida-modal-backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      backdrop-filter:blur(10px);
+    }
+    .evida-modal-dialog{
+      position:relative;
+      width:min(420px, 92vw);
+      border-radius:22px;
+      border:1px solid rgba(140,165,230,.45);
+      background: radial-gradient(circle at top, #111a33 0, #050814 70%);
+      box-shadow:0 30px 90px rgba(0,0,0,.9);
+      padding:1.35rem 1.2rem 1.2rem;
+      transform:translateY(10px) scale(.985);
+      transition:transform .26s ease;
+      text-align:center;
+    }
+    .evida-modal.is-open .evida-modal-dialog{transform:none}
+
+    .evida-modal-close{
+      position:absolute;
+      top:10px;
+      right:12px;
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      border:1px solid rgba(140,165,230,.55);
+      background:rgba(10,16,33,.55);
+      color:#f7f7ff;
+      font-size:1.25rem;
+      line-height:1;
+      cursor:pointer;
+    }
+    .evida-modal-close:hover{
+      border-color:rgba(160,190,255,.75);
+      background:rgba(10,16,33,.8);
+    }
+
+    .evida-modal-icon{
+      width:66px;
+      height:66px;
+      border-radius:999px;
+      margin:0 auto .8rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(61,226,197,.12);
+      border:1px solid rgba(61,226,197,.4);
+      color:#3de2c5;
+      box-shadow:0 18px 45px rgba(0,0,0,.7);
+    }
+    .evida-modal-svg{width:40px;height:40px}
+    .evida-modal-ring,
+    .evida-modal-check{
+      fill:none;
+      stroke:currentColor;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .evida-modal-ring{
+      stroke-width:3;
+      stroke-dasharray:160;
+      stroke-dashoffset:160;
+    }
+    .evida-modal-check{
+      stroke-width:3.5;
+      stroke-dasharray:60;
+      stroke-dashoffset:60;
+      opacity:0;
+    }
+
+    .evida-modal.is-open .evida-modal-ring{animation:evidaRingDraw .9s ease forwards}
+    .evida-modal.is-open .evida-modal-check{animation:evidaCheckDraw .45s ease forwards .82s}
+
+    @keyframes evidaRingDraw{to{stroke-dashoffset:0}}
+    @keyframes evidaCheckDraw{
+      0%{stroke-dashoffset:60;opacity:0}
+      40%{opacity:1}
+      100%{stroke-dashoffset:0;opacity:1}
+    }
+
+    .evida-modal-title{
+      font-size:1.05rem;
+      margin-bottom:.35rem;
+      background:linear-gradient(135deg,#3de2c5,#7b5cff);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .evida-modal-text{
+      color:#a8b0c8;
+      font-size:.92rem;
+      line-height:1.45;
+    }
+
+    /* ===== WORK MODAL ONLY ===== */
+    .evida-modal-dialog--work{
+      width:min(980px, 94vw);
+      text-align:left;
+      padding:1.1rem 1.1rem 1rem;
+    }
+    .work-modal-head{margin:0 0 .9rem 0}
+    .work-modal-body{
+      max-height:min(70vh, 640px);
+      overflow:auto;
+      padding-right:.25rem;
+    }
+
+    /* WORK LIST (1 per row + alternating layout) */
+    .work-list{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .work-row{
+      display:grid;
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "media"
+        "content";
+      gap:14px;
+      padding:14px;
+      border-radius:22px;
+      border:1px solid rgba(130,150,220,.45);
+      background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
+      box-shadow:0 18px 40px rgba(0,0,0,.65);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .work-row:hover{
+      transform:translateY(-4px);
+      box-shadow:0 22px 55px rgba(0,0,0,.85);
+      border-color:rgba(160,190,255,.65);
+    }
+
+    .work-row-media{
+      grid-area:media;
+      position:relative;
+      width:100%;
+      height:260px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(150,170,240,.25);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(95,140,255,.14), transparent 48%),
+        linear-gradient(to bottom, rgba(0,0,0,.16), rgba(0,0,0,0) 55%),
+        #020309;
+    }
+    .work-row-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      padding:14px;
+      filter:saturate(1.02) contrast(1.02);
+      transform:scale(1);
+      transition:transform .22s ease;
+    }
+    .work-row:hover .work-row-media img{transform:scale(1.02)}
+
+    .work-row-pill{
+      position:absolute;
+      left:14px;
+      bottom:14px;
+      padding:.62rem .9rem;
+      border-radius:999px;
+      background:rgba(5,8,20,.72);
+      border:1px solid rgba(120,145,220,.6);
+      color:#f7f7ff;
+      font-size:.9rem;
+      font-weight:650;
+      letter-spacing:.01em;
+      backdrop-filter: blur(10px);
+      box-shadow:0 12px 30px rgba(0,0,0,.55);
+      opacity:0;
+      transform:translateY(6px);
+      transition:opacity .18s ease, transform .18s ease;
+      pointer-events:none;
+    }
+    .work-row:hover .work-row-pill{opacity:1;transform:translateY(0)}
+
+    .work-row-content{grid-area:content}
+    .work-row-content h3{
+      font-size:1.1rem;
+      margin:0 0 .35rem;
+      background:linear-gradient(135deg,#3de2c5,#7b5cff);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .work-row-content p{
+      color:#a8b0c8;
+      font-size:.95rem;
+      line-height:1.55;
+    }
+
+    .work-row-notes{
+      margin-top:.7rem;
+      display:grid;
+      gap:.45rem;
+    }
+    .work-row-notes span{
+      display:block;
+      color:#a8b0c8;
+      font-size:.86rem;
+      line-height:1.35;
+      padding:.5rem .65rem;
+      border-radius:14px;
+      background:rgba(10,16,33,.55);
+      border:1px solid rgba(140,165,230,.28);
+    }
+
+    @media (min-width: 900px){
+      .work-row{
+        grid-template-columns:1.05fr .95fr;
+        grid-template-areas:"media content";
+        gap:18px;
+        align-items:center;
+      }
+      .work-row:nth-child(even){
+        grid-template-columns:.95fr 1.05fr;
+        grid-template-areas:"content media";
+      }
+      .work-row-media{height:300px}
+    }
+  </style>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Reveal (safe default: content is visible even if JS fails)
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('is-loaded');
+      setTimeout(() => document.body.classList.add('is-loaded'), 120);
+
+      // Reveal on scroll
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const frames = document.querySelectorAll('.reveal-frame');
 
@@ -594,35 +806,45 @@
       }
 
       // Accordion
-      document.querySelectorAll('.step').forEach(step => {
+      const steps = document.querySelectorAll('.step');
+      steps.forEach(step => {
         const toggle = step.querySelector('.step-toggle');
         if (!toggle) return;
-        toggle.addEventListener('click', () => step.classList.toggle('step--open'));
+
+        toggle.addEventListener('click', () => {
+          step.classList.toggle('step--open');
+        });
       });
 
       // Mobile nav
       const navToggle = document.querySelector('.nav-toggle');
       const navLinks = document.querySelector('.nav-links');
 
-      const closeNav = () => {
-        navLinks.classList.remove('is-open');
-        navToggle.classList.remove('is-active');
-        navToggle.setAttribute('aria-expanded', 'false');
-      };
-
       if (navToggle && navLinks) {
+        const closeNav = () => {
+          navLinks.classList.remove('is-open');
+          navToggle.classList.remove('is-active');
+        };
+
         navToggle.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('is-open');
-          navToggle.classList.toggle('is-active', isOpen);
-          navToggle.setAttribute('aria-expanded', String(isOpen));
+          navLinks.classList.toggle('is-open');
+          navToggle.classList.toggle('is-active');
         });
 
-        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            closeNav();
+          });
+        });
 
         document.addEventListener('pointerdown', (e) => {
           if (!navLinks.classList.contains('is-open')) return;
           const t = e.target;
-          if (!navLinks.contains(t) && !navToggle.contains(t)) closeNav();
+          const clickedInsideMenu = navLinks.contains(t);
+          const clickedToggle = navToggle.contains(t);
+          if (!clickedInsideMenu && !clickedToggle) {
+            closeNav();
+          }
         }, { capture: true });
       }
 
@@ -640,8 +862,12 @@
           } else if (secondSection) {
             const rect = secondSection.getBoundingClientRect();
             const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
-            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) scrollBtn.classList.add('is-visible');
-            else scrollBtn.classList.remove('is-visible');
+
+            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) {
+              scrollBtn.classList.add('is-visible');
+            } else {
+              scrollBtn.classList.remove('is-visible');
+            }
           }
         };
 
@@ -649,45 +875,71 @@
         window.addEventListener('resize', updateScrollBtn);
         updateScrollBtn();
 
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       }
 
-      // Modals (success + work)
+      // AJAX submit + success modal
       const successModal = document.getElementById('successModal');
+
+      const openModal = () => {
+        if (!successModal) return;
+        successModal.hidden = false;
+        document.body.classList.add('evida-modal-open');
+        requestAnimationFrame(() => successModal.classList.add('is-open'));
+      };
+
+      const closeModal = () => {
+        if (!successModal) return;
+        successModal.classList.remove('is-open');
+        document.body.classList.remove('evida-modal-open');
+        setTimeout(() => { successModal.hidden = true; }, 260);
+      };
+
+      if (successModal) {
+        successModal.addEventListener('click', (e) => {
+          const t = e.target;
+          if (t && t.dataset && t.dataset.close === 'true') closeModal();
+        });
+      }
+
+      // Work modal
       const workModal = document.getElementById('workModal');
       const openWorkBtn = document.getElementById('openWorkModal');
 
-      const openModal = (el) => {
-        if (!el) return;
-        el.hidden = false;
-        document.body.classList.add('modal-open');
-        requestAnimationFrame(() => el.classList.add('is-open'));
+      const openWorkModal = () => {
+        if (!workModal) return;
+        workModal.hidden = false;
+        document.body.classList.add('evida-modal-open');
+        requestAnimationFrame(() => workModal.classList.add('is-open'));
       };
 
-      const closeModal = (el) => {
-        if (!el) return;
-        el.classList.remove('is-open');
-        document.body.classList.remove('modal-open');
-        setTimeout(() => { el.hidden = true; }, 260);
+      const closeWorkModal = () => {
+        if (!workModal) return;
+        workModal.classList.remove('is-open');
+        document.body.classList.remove('evida-modal-open');
+        setTimeout(() => { workModal.hidden = true; }, 260);
       };
 
-      [successModal, workModal].forEach(modal => {
-        if (!modal) return;
-        modal.addEventListener('click', (e) => {
+      if (openWorkBtn) {
+        openWorkBtn.addEventListener('click', openWorkModal);
+      }
+
+      if (workModal) {
+        workModal.addEventListener('click', (e) => {
           const t = e.target;
-          if (t && t.dataset && t.dataset.close === 'true') closeModal(modal);
+          if (t && t.dataset && t.dataset.close === 'true') closeWorkModal();
         });
-      });
-
-      if (openWorkBtn) openWorkBtn.addEventListener('click', () => openModal(workModal));
+      }
 
       document.addEventListener('keydown', (e) => {
-        if (e.key !== 'Escape') return;
-        if (successModal && !successModal.hidden) closeModal(successModal);
-        if (workModal && !workModal.hidden) closeModal(workModal);
+        if (e.key === 'Escape') {
+          if (successModal && !successModal.hidden) closeModal();
+          if (workModal && !workModal.hidden) closeWorkModal();
+        }
       });
 
-      // Contact AJAX
       const form = document.getElementById('contactForm');
       if (form) {
         form.addEventListener('submit', async (e) => {
@@ -708,8 +960,9 @@
             });
 
             if (!res.ok) throw new Error('Request failed');
+
             form.reset();
-            openModal(successModal);
+            openModal();
           } catch (err) {
             alert('Something went wrong. Please try again.');
           } finally {
