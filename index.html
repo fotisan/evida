@@ -5,382 +5,451 @@
   <title>Website Design for Doctors & Service Professionals | Evida Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" type="image/webp" href="logo.webp">
-
-  <link rel="stylesheet" href="styles.css" />
-
-  <meta name="description" content="Premium, conversion-first websites for service professionals. Mobile-first, fast, and designed to turn visits into inquiries." />
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="styles.css?v=26">
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">
-        <img class="brand-mark" src="logo.webp" alt="Evida Studio logo" width="34" height="34" />
-        <span class="brand-name">Evida Studio</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="#work">Work</a>
-        <a class="nav-link" href="#process">Process</a>
-        <a class="nav-link" href="#pricing">Pricing</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-        <button class="btn btn-small" type="button" id="openContactModal">Contact</button>
-      </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="mobile-nav" id="mobileNav" hidden>
-      <div class="container mobile-nav-inner">
-        <a class="mobile-link" href="#work">Work</a>
-        <a class="mobile-link" href="#process">Process</a>
-        <a class="mobile-link" href="#pricing">Pricing</a>
-        <a class="mobile-link" href="#faq">FAQ</a>
-        <button class="btn" type="button" id="openContactModal2">Contact</button>
+    <div class="site-header-inner">
+      <div class="site-logo">
+        <a href="#top">Evida <span>Studio</span></a>
       </div>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#portfolio">Work that books calls</a>
+        <a href="#about">About Evida</a>
+        <a href="#services">What you get</a>
+        <a href="#process">How it works</a>
+
+        <a
+          class="nav-social"
+          href="https://www.instagram.com/evidastudio/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Evida Studio on Instagram"
+          title="Instagram"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M7 3h10c2.21 0 4 1.79 4 4v10c0 2.21-1.79 4-4 4H7c-2.21 0-4-1.79-4-4V7c0-2.21 1.79-4 4-4Zm10 2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6a2.8 2.8 0 0 0 0-5.6ZM17.2 6.6a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z"/>
+          </svg>
+        </a>
+
+        <a
+          class="nav-social"
+          href="https://www.linkedin.com/in/fotis-antonas-643511181/?originalSubdomain=gr"
+          target="_blank"
+          rel="noopener"
+          aria-label="Fotis Antonas on LinkedIn"
+          title="LinkedIn"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.94v5.666H9.985V9h3.112v1.561h.044c.434-.82 1.494-1.686 3.074-1.686c3.288 0 3.892 2.164 3.892 4.977v6.6ZM5.337 7.433a1.81 1.81 0 1 1 0-3.62a1.81 1.81 0 0 1 0 3.62ZM3.722 20.452h3.23V9h-3.23v11.452Z"/>
+          </svg>
+        </a>
+
+        <a href="#contact" class="btn-nav">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal-frame">
-          <p class="hero-eyebrow reveal-content">Premium websites for service professionals</p>
-          <h1 class="hero-title reveal-content">A website that feels premium and turns visits into inquiries.</h1>
-          <p class="hero-sub reveal-content">
-            Mobile-first design, clear messaging, and fast load times. Built to help doctors and service professionals earn trust in seconds.
-          </p>
+  <main class="shell">
 
-          <div class="hero-ctas reveal-content">
-            <button class="btn" type="button" id="openContactModal3">Get a quote</button>
-            <a class="btn-outline" href="#work">See work</a>
-          </div>
-
-          <div class="hero-notes reveal-content" aria-label="Key benefits">
-            <div class="note">
-              <span class="note-dot"></span>
-              <span>Conversion-first structure</span>
-            </div>
-            <div class="note">
-              <span class="note-dot"></span>
-              <span>Mobile-first, fast, clean</span>
-            </div>
-            <div class="note">
-              <span class="note-dot"></span>
-              <span>Simple process, clear deliverables</span>
-            </div>
-          </div>
+    <section class="hero" id="top">
+      <div class="hero-copy reveal-frame">
+        <div class="hero-eyebrow reveal-content">
+          Website Design &amp; Strategy for service professionals
+          <span class="eyebrow-break">who want more booked calls</span>
         </div>
 
-        <div class="hero-media reveal-frame">
-          <div class="hero-card reveal-content">
-            <img class="hero-photo" src="fotis-hero.webp" alt="Fotis Antonas portrait" width="520" height="640" />
-            <div class="hero-card-meta">
-              <p class="hero-card-title">Fotis Antonas</p>
-              <p class="hero-card-sub">Designer & developer</p>
+        <h1 class="hero-title reveal-content">
+          Turn <span class="hero-accent">visitors</span> into <br>
+          <span class="booked-calls"><span class="hero-accent">committed</span> clients</span>
+        </h1>
+
+        <p class="hero-sub reveal-content">
+          Strategy, design, and copy that help the right people understand you in seconds, feel confident, and reach out.
+        </p>
+
+        <div class="hero-meta reveal-content">
+          <span>A clear message that guides the eye.</span>
+          <span>Trust signals where decisions happen.</span>
+          <span>A clear proposal within 24 hours.</span>
+          <span>Ready to launch in 14 days.</span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary reveal-content">Let’s talk</a>
+          <a href="#portfolio" class="btn-outline reveal-content">See examples</a>
+        </div>
+      </div>
+
+      <div class="hero-tags-row hero-tags-row--mobile reveal-frame">
+        <div class="hero-tags reveal-content">
+          <span class="hero-tag">Therapists</span>
+          <span class="hero-tag">Dermatologists</span>
+          <span class="hero-tag">Dentists</span>
+          <span class="hero-tag">Physiotherapists</span>
+          <span class="hero-tag">Architects</span>
+        </div>
+      </div>
+
+      <aside class="hero-visual reveal-frame">
+        <div class="hero-phone hero-panel">
+          <div class="hero-phone-screen">
+            <header class="hero-phone-header reveal-content">
+              <p class="hero-phone-eyebrow">How ideal clients</p>
+              <h2 class="hero-phone-title">find you, trust you, and book a call</h2>
+            </header>
+
+            <div class="hero-phone-list">
+              <article class="hero-phone-card reveal-content">
+                <h3>SEO & search: they discover you</h3>
+                <p>Search or a post brings them to your site.</p>
+              </article>
+
+              <article class="hero-phone-card reveal-content">
+                <h3>Clarity: they get it fast</h3>
+                <p>They instantly know if you’re the right fit.</p>
+              </article>
+
+              <article class="hero-phone-card reveal-content">
+                <h3>Trust: they feel safe choosing you</h3>
+                <p>Clear info and strong trust signals reduce doubt.</p>
+              </article>
+
+              <article class="hero-phone-card reveal-content">
+                <h3>Booking & contact: they take the next step</h3>
+                <p>One clear action: call, message, or booking.</p>
+              </article>
             </div>
           </div>
 
-          <div class="hero-mini reveal-content">
-            <div class="mini-pill">Fast. Mobile-first. Premium.</div>
-            <div class="mini-pill mini-pill--accent">PageSpeed-focused</div>
-          </div>
+          <div class="hero-phone-orb hero-phone-orb--search reveal-content"><span>🔍</span></div>
+          <div class="hero-phone-orb hero-phone-orb--check reveal-content"><span>✓</span></div>
+        </div>
+      </aside>
+
+      <div class="hero-tags-row hero-tags-row--desktop reveal-frame">
+        <div class="hero-tags reveal-content">
+          <span class="hero-tag">Therapists</span>
+          <span class="hero-tag">Dermatologists</span>
+          <span class="hero-tag">Dentists</span>
+          <span class="hero-tag">Physiotherapists</span>
+          <span class="hero-tag">Architects</span>
         </div>
       </div>
     </section>
 
-    <section class="section section-work" id="work">
-      <div class="container">
-        <div class="section-head reveal-frame">
-          <h2 class="reveal-content">Work</h2>
-          <p class="section-lead reveal-content">
-            A few demo builds that show the vibe: clean hierarchy, calm confidence, and one obvious next step.
-          </p>
-        </div>
+    <section class="section reveal-frame" id="portfolio">
+      <h2 class="reveal-content">Web Design Portfolio: selected work that drives inquiries</h2>
+      <p class="section-lead reveal-content">
+        Real demos that show the flow: clarity first, trust next, action at the end.
+      </p>
 
-        <div class="pf-grid reveal-frame">
-          <article class="pf-card reveal-frame">
-            <div class="pf-media reveal-content">
-              <img src="mockup-_psychologist.webp" alt="Therapist website demo mockup" loading="lazy" />
+      <div class="pf-grid">
+        <article class="pf-item reveal-frame">
+          <a class="pf-link" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
+            <div class="pf-preview reveal-content">
+              <picture>
+                <source srcset="mockup-_psychologist.webp" type="image/webp">
+                <img src="mockup-_psychologist.png" alt="Therapist website design: premium demo mockup" loading="lazy" decoding="async">
+              </picture>
+              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
             </div>
-            <div class="pf-body reveal-content">
+            <div class="pf-info reveal-content">
               <h3>Therapist website</h3>
-              <p>Trust-first layout designed to reduce doubt and make first contact feel easy.</p>
-              <a class="pf-link" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">Open demo →</a>
+              <p>Built so visitors feel confident enough to book.</p>
             </div>
-          </article>
+          </a>
+        </article>
 
-          <article class="pf-card reveal-frame">
-            <div class="pf-media reveal-content">
-              <img src="Architecture.webp" alt="Architecture studio website demo mockup" loading="lazy" />
+        <article class="pf-item reveal-frame">
+          <a class="pf-link" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
+            <div class="pf-preview reveal-content">
+              <picture>
+                <source srcset="Architecture.webp" type="image/webp">
+                <img src="Architecture.png" alt="Architect website design: high-end demo mockup" loading="lazy" decoding="async">
+              </picture>
+              <span class="pf-overlay"><span class="pf-overlay-pill">Open demo →</span></span>
             </div>
-            <div class="pf-body reveal-content">
-              <h3>Architecture studio</h3>
-              <p>A portfolio-first flow that feels like a premium studio brand.</p>
-              <a class="pf-link" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">Open demo →</a>
+            <div class="pf-info reveal-content">
+              <h3>Architecture website</h3>
+              <p>A high-end presence that feels like a brand, not a template.</p>
             </div>
-          </article>
-        </div>
+          </a>
+        </article>
+      </div>
 
-        <div class="pf-actions reveal-content" style="margin-top:18px">
-          <button type="button" class="btn-outline" id="openWorkModal">See more work</button>
-        </div>
+      <div class="pf-actions reveal-content" style="margin-top:18px">
+        <button type="button" class="btn-outline" id="openWorkModal">See more work</button>
       </div>
     </section>
 
     <section class="section section-compare reveal-frame" id="hero-compare">
-      <div class="container">
-        <h2 class="reveal-content">Website hero section: wrong hero vs right hero</h2>
-        <p class="section-lead reveal-content">
-          The fastest way to see why some sites feel premium and get inquiries, while others confuse people.
-          One message, one next step, and a layout that guides the eye.
-        </p>
+      <h2 class="reveal-content">Website hero section: wrong hero vs right hero</h2>
+      <p class="section-lead reveal-content">
+        The fastest way to see why some sites feel premium and get inquiries, while others confuse people.
+        One message, one next step, and a layout that guides the eye.
+      </p>
 
-        <div class="compare-grid">
-          <article class="compare-card compare-card--wrong reveal-frame">
-            <div class="compare-header reveal-content">
-              <span class="compare-label compare-label--wrong">Wrong</span>
-              <p class="compare-note">Too many messages, weak hierarchy, unclear next step.</p>
-            </div>
-
-            <div class="compare-image-wrap reveal-content">
-              <img src="wrong-mock.webp" alt="Wrong website hero section: cluttered layout and mixed messages" loading="lazy">
-            </div>
-
-            <p class="compare-note reveal-content">
-              The visitor doesn’t know what to read first, doesn’t feel confident, and the CTA doesn’t feel like the obvious move.
-            </p>
-          </article>
-
-          <article class="compare-card compare-card--right reveal-frame">
-            <div class="compare-header reveal-content">
-              <span class="compare-label compare-label--right">Right</span>
-              <p class="compare-note">One promise, one clear next step, strong visual rhythm.</p>
-            </div>
-
-            <div class="compare-image-wrap reveal-content">
-              <img src="wright-mock.webp" alt="Right website hero section: clean layout with clear message and CTA" loading="lazy">
-            </div>
-
-            <p class="compare-note reveal-content">
-              The page feels calm and confident. The user understands what you do, who it’s for, and what to do next.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-process" id="process">
-      <div class="container">
-        <div class="section-head reveal-frame">
-          <h2 class="reveal-content">Process</h2>
-          <p class="section-lead reveal-content">
-            Simple, async, and focused. You’ll always know what’s next.
-          </p>
-        </div>
-
-        <div class="steps reveal-frame">
-          <article class="step reveal-frame">
-            <h3 class="reveal-content">1. Quick brief</h3>
-            <p class="reveal-content">You share your niche, location, and 2–3 sites you like. I map the structure and story.</p>
-          </article>
-          <article class="step reveal-frame">
-            <h3 class="reveal-content">2. Design direction</h3>
-            <p class="reveal-content">Typography, palette, layout. Mobile-first, with clarity and trust cues baked in.</p>
-          </article>
-          <article class="step reveal-frame">
-            <h3 class="reveal-content">3. Build & polish</h3>
-            <p class="reveal-content">Fast, clean HTML/CSS. Details that make it feel premium, without heavy frameworks.</p>
-          </article>
-          <article class="step reveal-frame">
-            <h3 class="reveal-content">4. Launch</h3>
-            <p class="reveal-content">Deploy, test, and ship. You get a site that loads fast and converts better.</p>
-          </article>
-        </div>
-
-        <div class="cta-panel reveal-frame">
-          <div class="cta-panel-inner reveal-content">
-            <h3>Want a hero section that actually converts?</h3>
-            <p>Send me your niche + location and 2 competitor sites. I’ll reply with a clear plan.</p>
+      <div class="compare-grid">
+        <article class="compare-card compare-card--wrong reveal-frame">
+          <div class="compare-header reveal-content">
+            <span class="compare-label compare-label--wrong">Wrong</span>
+            <p class="compare-note">Too many messages, weak hierarchy, unclear next step.</p>
           </div>
-          <button class="btn" type="button" id="openContactModal4">Message me</button>
+
+          <div class="compare-image-wrap reveal-content">
+            <picture>
+              <source srcset="wrong-mock.webp" type="image/webp">
+              <img src="wrong-mock.jpg" alt="Wrong website hero section: cluttered layout and mixed messages" loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <p class="compare-note reveal-content">
+            The visitor doesn’t know what to read first, doesn’t feel confident, and the CTA doesn’t feel like the obvious move.
+          </p>
+        </article>
+
+        <article class="compare-card compare-card--right reveal-frame">
+          <div class="compare-header reveal-content">
+            <span class="compare-label compare-label--right">Right</span>
+            <p class="compare-note">One promise, clear flow, one primary action, calm confidence.</p>
+          </div>
+
+          <div class="compare-image-wrap reveal-content">
+            <picture>
+              <source srcset="wright-mock.webp" type="image/webp">
+              <img src="wright-mock.jpg" alt="Right website hero section: clear message and strong primary CTA" loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <p class="compare-note reveal-content">
+            They understand quickly, trust builds naturally, and the next step feels easy.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal-frame" id="about">
+      <h2 class="reveal-content">Web designer specialized in marketing</h2>
+      <p class="section-lead reveal-content">
+        Hey, I’m Fotis. I build websites that earn trust and turn it into inquiries.
+      </p>
+
+      <div class="about-grid">
+        <figure class="about-photo reveal-frame">
+          <div class="about-photo-ring"></div>
+          <img src="fotis-hero.png" alt="Fotis Antonas, web designer and website developer" class="reveal-content" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="about-card reveal-frame">
+          <p class="reveal-content">
+            I come from business and marketing. Your website isn’t just design, it’s your best salesperson.
+          </p>
+          <p class="reveal-content">
+            The goal is simple: the right person understands you fast, feels confident, and takes the next step.
+          </p>
+          <ul class="reveal-content">
+            <li>Built for service businesses, where trust matters most</li>
+            <li>Every section guides the next click</li>
+            <li>Simple, fast, easy to maintain</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section-pricing" id="pricing">
-      <div class="container">
-        <div class="section-head reveal-frame">
-          <h2 class="reveal-content">Pricing</h2>
-          <p class="section-lead reveal-content">Simple tiers. Clear outcomes. No fluff.</p>
+    <section class="section reveal-frame" id="services">
+      <h2 class="reveal-content">Professional Website Design &amp; SEO Clarity</h2>
+      <p class="section-lead reveal-content">
+        You get a website that does its job: explains, builds trust, and brings messages.
+      </p>
+
+      <div class="cards">
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Marketing strategy for service websites</h3>
+          <p class="reveal-content">Say the right thing, to the right people, fast.</p>
         </div>
-
-        <div class="pricing-grid reveal-frame">
-          <article class="price-card reveal-frame">
-            <h3 class="reveal-content">Starter</h3>
-            <p class="price reveal-content">$499</p>
-            <p class="muted reveal-content">A clean, high-converting one-page site.</p>
-            <ul class="list reveal-content">
-              <li>Hero + sections + CTA</li>
-              <li>Mobile-first layout</li>
-              <li>Fast, clean build</li>
-            </ul>
-          </article>
-
-          <article class="price-card price-card--featured reveal-frame">
-            <div class="badge reveal-content">Most popular</div>
-            <h3 class="reveal-content">Pro</h3>
-            <p class="price reveal-content">$999</p>
-            <p class="muted reveal-content">Full site + better structure for SEO clarity.</p>
-            <ul class="list reveal-content">
-              <li>Home + 3 service pages</li>
-              <li>FAQ + trust sections</li>
-              <li>Speed & conversion polish</li>
-            </ul>
-          </article>
-
-          <article class="price-card reveal-frame">
-            <h3 class="reveal-content">Custom</h3>
-            <p class="price reveal-content">Let’s talk</p>
-            <p class="muted reveal-content">For clinics, teams, and bigger builds.</p>
-            <ul class="list reveal-content">
-              <li>Custom design system</li>
-              <li>Multiple locations</li>
-              <li>Advanced content & UX</li>
-            </ul>
-          </article>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">UX, copywriting & SEO clarity</h3>
+          <p class="reveal-content">A flow that reduces doubt and makes action feel natural.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Website build (front-end)</h3>
+          <p class="reveal-content">Fast, clean, reliable, so people stay and read.</p>
+        </div>
+        <div class="card reveal-frame">
+          <h3 class="reveal-content">Launch, SEO setup & optimization</h3>
+          <p class="reveal-content">Set up to be found, then improved with real data over time.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section-faq" id="faq">
-      <div class="container">
-        <div class="section-head reveal-frame">
-          <h2 class="reveal-content">FAQ</h2>
-          <p class="section-lead reveal-content">Answers people usually need before they reach out.</p>
+    <section class="section reveal-frame" id="process">
+      <h2 class="reveal-content">Web design & marketing process: simple. strong results.</h2>
+      <p class="section-lead reveal-content">
+        For busy professionals: fewer meetings, maximum clarity.
+      </p>
+
+      <div class="process-steps">
+        <div class="step step--open reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">01 • Your goal</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            A short email brief so we lock the message before we design anything.
+          </div>
         </div>
 
-        <div class="faq reveal-frame">
-          <details class="faq-item reveal-frame">
-            <summary class="reveal-content">How fast can you deliver?</summary>
-            <p class="reveal-content">Most one-page sites ship in 7–14 days, depending on content and feedback speed.</p>
-          </details>
-
-          <details class="faq-item reveal-frame">
-            <summary class="reveal-content">Do you write the copy?</summary>
-            <p class="reveal-content">Yes. I can write conversion-first copy that stays premium and clear.</p>
-          </details>
-
-          <details class="faq-item reveal-frame">
-            <summary class="reveal-content">Can you match my brand?</summary>
-            <p class="reveal-content">Absolutely. I’ll build a palette and type system that fits your niche and audience.</p>
-          </details>
-
-          <details class="faq-item reveal-frame">
-            <summary class="reveal-content">Do you optimize for speed?</summary>
-            <p class="reveal-content">Yes. Mobile-first layout, clean assets, and PageSpeed-focused decisions.</p>
-          </details>
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">02 • A flow that makes sense</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            We remove confusion: what you do, who it’s for, why you, then one clear next step.
+          </div>
         </div>
 
-        <div class="final-cta reveal-frame">
-          <h3 class="reveal-content">Ready for a site that feels premium?</h3>
-          <p class="reveal-content">Send your niche + location. I’ll reply with a plan you can actually use.</p>
-          <button class="btn" type="button" id="openContactModal5">Contact</button>
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">03 • Design that earns trust</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            Calm, premium design with details that make people feel confident choosing you.
+          </div>
+        </div>
+
+        <div class="step reveal-frame">
+          <button class="step-toggle" type="button">
+            <span class="step-title-text reveal-content">04 • Launch & measure</span>
+            <span class="step-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="step-body reveal-content">
+            You don’t just get a website. You get a foundation that improves with real data.
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="section reveal-frame" id="contact">
+      <h2 class="reveal-content">Contact for web design that books calls</h2>
+      <p class="section-lead reveal-content">
+        If your website looks good but doesn’t bring inquiries, that’s fixable.
+        <br><br>
+        Send me 2 to 3 websites you like and your #1 goal: booked calls, leads, or inquiries.
+        <br>
+        I’ll tell you what I’d improve and send a clear proposal within 24 hours.
+      </p>
+
+      <form id="contactForm" class="contact-form reveal-frame" action="https://formsubmit.co/ajax/hello@evidastudio.com" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from Evida Studio">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input class="contact-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-grid">
+          <div class="form-field reveal-content">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+
+          <div class="form-field reveal-content">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required>
+          </div>
+
+          <div class="form-field form-field--full reveal-content">
+            <label for="links">2 to 3 websites you like (optional)</label>
+            <input id="links" name="websites" type="text" placeholder="If you have links, drop them here">
+          </div>
+
+          <div class="form-field form-field--full reveal-content">
+            <label for="goal">Your #1 goal</label>
+            <input id="goal" name="goal" type="text" placeholder="Booked calls, leads, inquiries">
+          </div>
+
+          <div class="form-field form-field--full reveal-content">
+            <label for="message">Anything else I should know</label>
+            <textarea id="message" name="message" rows="5" placeholder="A few lines is enough" required></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions reveal-frame">
+          <button type="submit" class="btn-primary reveal-content">Send message</button>
+          <p class="form-note reveal-content">You’ll hear back within 24 hours.</p>
+        </div>
+      </form>
+    </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <img src="logo.webp" alt="Evida Studio logo" width="30" height="30" />
-          <span>Evida Studio</span>
-        </div>
-        <p class="muted">Premium, conversion-first websites for service professionals.</p>
-      </div>
-
-      <div class="footer-right">
-        <a class="footer-link" href="#work">Work</a>
-        <a class="footer-link" href="#process">Process</a>
-        <a class="footer-link" href="#pricing">Pricing</a>
-        <a class="footer-link" href="#faq">FAQ</a>
-      </div>
+  <footer>
+    © Evida Studio. Built for clarity.
+    <div class="footer-links" aria-label="Social links">
+      <a href="https://www.instagram.com/evidastudio/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M7 3h10c2.21 0 4 1.79 4 4v10c0 2.21-1.79 4-4 4H7c-2.21 0-4-1.79-4-4V7c0-2.21 1.79-4 4-4Zm10 2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6a2.8 2.8 0 0 0 0-5.6ZM17.2 6.6a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z"/>
+        </svg>
+      </a>
+      <span class="footer-dot">•</span>
+      <a href="https://www.linkedin.com/in/fotis-antonas-643511181/?originalSubdomain=gr" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.94v5.666H9.985V9h3.112v1.561h.044c.434-.82 1.494-1.686 3.074-1.686c3.288 0 3.892 2.164 3.892 4.977v6.6ZM5.337 7.433a1.81 1.81 0 1 1 0-3.62a1.81 1.81 0 0 1 0 3.62ZM3.722 20.452h3.23V9h-3.23v11.452Z"/>
+        </svg>
+      </a>
     </div>
   </footer>
 
-  <!-- CONTACT MODAL -->
-  <div class="evida-modal" id="contactModal" hidden role="dialog" aria-modal="true" aria-labelledby="contactTitle">
-    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
-    <div class="evida-modal-dialog" role="document">
-      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
+  <!-- Success modal -->
+  <div class="modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal-backdrop" data-close="true" aria-hidden="true"></div>
 
-      <h3 class="evida-modal-title" id="contactTitle">Contact</h3>
-      <p class="evida-modal-text">Send a short message. I’ll reply with a clear plan and next steps.</p>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
 
-      <form class="contact-form" id="contactForm">
-        <label class="field">
-          <span>Name</span>
-          <input type="text" name="name" autocomplete="name" required>
-        </label>
-
-        <label class="field">
-          <span>Email</span>
-          <input type="email" name="email" autocomplete="email" required>
-        </label>
-
-        <label class="field">
-          <span>Message</span>
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-
-        <button class="btn btn-wide" type="submit">Send message</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- SUCCESS MODAL -->
-  <div class="evida-modal" id="successModal" hidden role="dialog" aria-modal="true" aria-labelledby="ssTitle">
-    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
-
-    <div class="evida-modal-dialog" role="document">
-      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
-
-      <div class="evida-modal-icon" aria-hidden="true">
-        <svg class="evida-modal-svg" viewBox="0 0 24 24" aria-hidden="true">
-          <circle class="evida-modal-ring" cx="12" cy="12" r="9"></circle>
-          <path class="evida-modal-check" d="M8 12.5l2.5 2.5L16.5 9"></path>
+      <div class="modal-icon" aria-hidden="true">
+        <svg class="modal-svg" viewBox="0 0 52 52" focusable="false" aria-hidden="true">
+          <circle class="modal-ring" cx="26" cy="26" r="24"></circle>
+          <path class="modal-check" d="M14 27 L22 35 L38 19"></path>
         </svg>
       </div>
 
-      <h3 class="evida-modal-title" id="ssTitle">Message sent</h3>
-      <p class="evida-modal-text">Thanks for reaching out. I’ll get back to you as soon as possible.</p>
+      <h3 class="modal-title" id="successTitle">Message sent</h3>
+      <p class="modal-text">Thanks for reaching out. I’ll get back to you as soon as possible.</p>
     </div>
   </div>
 
-  <!-- WORK MODAL -->
-  <div class="evida-modal" id="workModal" hidden role="dialog" aria-modal="true" aria-labelledby="workTitle">
-    <div class="evida-modal-backdrop" data-close="true" aria-hidden="true"></div>
+  <!-- Work modal -->
+  <div class="modal" id="workModal" hidden role="dialog" aria-modal="true" aria-labelledby="workTitle">
+    <div class="modal-backdrop" data-close="true" aria-hidden="true"></div>
 
-    <div class="evida-modal-dialog evida-modal-dialog--work" role="document">
-      <button class="evida-modal-close" type="button" aria-label="Close" data-close="true">×</button>
+    <div class="modal-dialog modal-dialog--work" role="document">
+      <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
 
       <div class="work-modal-head">
-        <h3 class="evida-modal-title" id="workTitle">More work</h3>
+        <h3 class="modal-title" id="workTitle">More work</h3>
       </div>
 
       <div class="work-modal-body">
         <div class="work-list" aria-label="More website demos">
+          <!-- 1 -->
           <a class="work-row" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <img src="mockup-_psychologist.webp" alt="Therapist website design: premium demo mockup">
+              <picture>
+                <source srcset="mockup-_psychologist.webp" type="image/webp">
+                <img src="mockup-_psychologist.png" alt="Therapist website design: premium demo mockup" loading="lazy" decoding="async">
+              </picture>
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -393,9 +462,13 @@
             </div>
           </a>
 
+          <!-- 2 -->
           <a class="work-row" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <img src="Architecture.webp" alt="Architect website design: high-end demo mockup">
+              <picture>
+                <source srcset="Architecture.webp" type="image/webp">
+                <img src="Architecture.png" alt="Architect website design: high-end demo mockup" loading="lazy" decoding="async">
+              </picture>
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -408,9 +481,13 @@
             </div>
           </a>
 
+          <!-- 3 -->
           <a class="work-row" href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <img src="mock-psych-2.webp" alt="Therapist website design: second demo mockup (v2)">
+              <picture>
+                <source srcset="mock-psych-2.webp" type="image/webp">
+                <img src="mock-psych-2.png" alt="Therapist website design: second demo mockup (v2)" loading="lazy" decoding="async">
+              </picture>
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -423,24 +500,32 @@
             </div>
           </a>
 
+          <!-- 4 (NEW) -->
           <a class="work-row" href="https://fotisan.github.io/preview-psychologist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <img src="mock-psych-3.webp" alt="Therapist website design: preview demo mockup (v3)">
+              <picture>
+                <source srcset="mock-psych-3.webp" type="image/webp">
+                <img src="mock-psych-3.webp" alt="Therapist website design: preview demo (v3)" loading="lazy" decoding="async">
+              </picture>
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
               <h3>Therapist website (v3)</h3>
-              <p>A premium, conversion-first therapy demo with a clear next step and calm, modern visuals.</p>
+              <p>A premium, conversion-first preview built around calm trust, strong hierarchy, and a clear next step.</p>
               <div class="work-row-notes">
-                <span>Focus: mobile-first hierarchy, trust, clear CTA</span>
-                <span>Outcome: more qualified inquiries</span>
+                <span>Focus: hero clarity, premium rhythm, CTA placement</span>
+                <span>Outcome: stronger perceived value before contact</span>
               </div>
             </div>
           </a>
 
+          <!-- 5 -->
           <a class="work-row" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <img src="mock-derma-1.webp" alt="Dermatologist website design: demo mockup">
+              <picture>
+                <source srcset="mock-derma-1.webp" type="image/webp">
+                <img src="mock-derma-1.png" alt="Dermatologist website design: demo mockup" loading="lazy" decoding="async">
+              </picture>
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -453,9 +538,13 @@
             </div>
           </a>
 
+          <!-- 6 -->
           <a class="work-row" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
             <div class="work-row-media">
-              <img src="mock-dentist-1.webp" alt="Dentist website design: demo mockup">
+              <picture>
+                <source srcset="mock-dentist-1.webp" type="image/webp">
+                <img src="mock-dentist-1.png" alt="Dentist website design: demo mockup" loading="lazy" decoding="async">
+              </picture>
               <span class="work-row-pill">Open demo →</span>
             </div>
             <div class="work-row-content">
@@ -472,354 +561,166 @@
     </div>
   </div>
 
-  <!-- Inline modal + work modal styles (as in original) -->
-  <style>
-    /* ===== MODALS (shared) ===== */
-    .evida-modal[hidden]{display:none}
-    .evida-modal{
-      position:fixed;
-      inset:0;
-      z-index:9999;
-      display:grid;
-      place-items:center;
-      padding:1.25rem;
-    }
-    .evida-modal-backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.65);
-      backdrop-filter:blur(10px);
-    }
-    .evida-modal-dialog{
-      position:relative;
-      width:min(420px, 92vw);
-      border-radius:22px;
-      border:1px solid rgba(140,165,230,.45);
-      background: radial-gradient(circle at top, #111a33 0, #050814 70%);
-      box-shadow:0 30px 90px rgba(0,0,0,.9);
-      padding:1.35rem 1.2rem 1.2rem;
-      transform:translateY(10px) scale(.985);
-      transition:transform .26s ease;
-      text-align:center;
-    }
-    .evida-modal.is-open .evida-modal-dialog{transform:none}
-
-    .evida-modal-close{
-      position:absolute;
-      top:10px;
-      right:12px;
-      width:34px;
-      height:34px;
-      border-radius:999px;
-      border:1px solid rgba(140,165,230,.55);
-      background:rgba(10,16,33,.55);
-      color:#f7f7ff;
-      font-size:1.25rem;
-      line-height:1;
-      cursor:pointer;
-    }
-    .evida-modal-close:hover{
-      border-color:rgba(160,190,255,.75);
-      background:rgba(10,16,33,.8);
-    }
-
-    .evida-modal-icon{
-      width:66px;
-      height:66px;
-      border-radius:999px;
-      margin:0 auto .8rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(61,226,197,.12);
-      border:1px solid rgba(61,226,197,.4);
-      color:#3de2c5;
-      box-shadow:0 18px 45px rgba(0,0,0,.7);
-    }
-    .evida-modal-svg{width:40px;height:40px}
-    .evida-modal-ring,
-    .evida-modal-check{
-      fill:none;
-      stroke:currentColor;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-    .evida-modal-ring{
-      stroke-width:3;
-      stroke-dasharray:160;
-      stroke-dashoffset:160;
-    }
-    .evida-modal-check{
-      stroke-width:3.5;
-      stroke-dasharray:60;
-      stroke-dashoffset:60;
-      opacity:0;
-    }
-
-    .evida-modal.is-open .evida-modal-ring{animation:evidaRingDraw .9s ease forwards}
-    .evida-modal.is-open .evida-modal-check{animation:evidaCheckDraw .45s ease forwards .82s}
-
-    @keyframes evidaRingDraw{to{stroke-dashoffset:0}}
-    @keyframes evidaCheckDraw{
-      0%{stroke-dashoffset:60;opacity:0}
-      40%{opacity:1}
-      100%{stroke-dashoffset:0;opacity:1}
-    }
-
-    .evida-modal-title{
-      font-size:1.05rem;
-      margin-bottom:.35rem;
-      background:linear-gradient(135deg,#3de2c5,#7b5cff);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .evida-modal-text{
-      color:#a8b0c8;
-      font-size:.92rem;
-      line-height:1.45;
-      margin-bottom:1rem;
-    }
-
-    .contact-form{
-      display:flex;
-      flex-direction:column;
-      gap:.8rem;
-      margin-top:.6rem;
-      text-align:left;
-    }
-    .field span{
-      display:block;
-      font-size:.85rem;
-      color:#a8b0c8;
-      margin:0 0 .35rem;
-    }
-    .field input,
-    .field textarea{
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(130,150,220,.45);
-      background:rgba(6,10,22,.55);
-      color:#f7f7ff;
-      padding:.75rem .85rem;
-      outline:none;
-    }
-    .field input:focus,
-    .field textarea:focus{
-      border-color:rgba(61,226,197,.65);
-      box-shadow:0 0 0 4px rgba(61,226,197,.08);
-    }
-    .btn-wide{width:100%}
-
-    /* ===== WORK MODAL ONLY ===== */
-    .evida-modal-dialog--work{
-      width:min(980px, 94vw);
-      text-align:left;
-      padding:1.1rem 1.1rem 1rem;
-    }
-    .work-modal-head{margin:0 0 .9rem 0}
-    .work-modal-body{
-      max-height:min(70vh, 640px);
-      overflow:auto;
-      padding-right:.25rem;
-    }
-
-    /* WORK LIST (1 per row + alternating layout) */
-    .work-list{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
-    .work-row{
-      display:grid;
-      grid-template-columns:1fr;
-      grid-template-areas:
-        "media"
-        "content";
-      gap:14px;
-      padding:14px;
-      border-radius:22px;
-      border:1px solid rgba(130,150,220,.45);
-      background:radial-gradient(circle at top, #121a32 0%, #050814 70%);
-      box-shadow:0 18px 40px rgba(0,0,0,.65);
-      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-    }
-    .work-row:hover{
-      transform:translateY(-4px);
-      box-shadow:0 22px 55px rgba(0,0,0,.85);
-      border-color:rgba(160,190,255,.65);
-    }
-
-    .work-row-media{
-      grid-area:media;
-      position:relative;
-      width:100%;
-      height:260px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(150,170,240,.25);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(95,140,255,.14), transparent 48%),
-        linear-gradient(to bottom, rgba(0,0,0,.16), rgba(0,0,0,0) 55%),
-        #020309;
-    }
-    .work-row-media img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:contain;
-      padding:14px;
-      filter:saturate(1.02) contrast(1.02);
-      transform:scale(1);
-      transition:transform .22s ease;
-    }
-    .work-row:hover .work-row-media img{transform:scale(1.02)}
-
-    .work-row-pill{
-      position:absolute;
-      left:14px;
-      bottom:14px;
-      padding:.62rem .9rem;
-      border-radius:999px;
-      background:rgba(5,8,20,.72);
-      border:1px solid rgba(120,145,220,.6);
-      color:#f7f7ff;
-      font-size:.9rem;
-      font-weight:650;
-      letter-spacing:.2px;
-    }
-
-    .work-row-content{
-      grid-area:content;
-      padding:4px 4px 2px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .work-row-content h3{
-      font-size:1.05rem;
-      margin:0;
-      letter-spacing:.2px;
-    }
-    .work-row-content p{
-      color:#a8b0c8;
-      margin:0;
-      line-height:1.45;
-      font-size:.96rem;
-    }
-    .work-row-notes{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 10px;
-      margin-top:6px;
-      color:#cbd4ee;
-      font-size:.86rem;
-    }
-    .work-row-notes span{
-      border:1px solid rgba(140,165,230,.35);
-      background:rgba(10,16,33,.35);
-      padding:.45rem .6rem;
-      border-radius:999px;
-    }
-
-    @media (min-width: 900px){
-      .work-row{
-        grid-template-columns:1.05fr .95fr;
-        grid-template-areas:"media content";
-        gap:18px;
-        align-items:center;
-      }
-      .work-row:nth-child(even){
-        grid-template-columns:.95fr 1.05fr;
-        grid-template-areas:"content media";
-      }
-      .work-row-media{height:300px}
-    }
-  </style>
-
   <script>
-    // Mobile nav
-    const navToggle = document.getElementById('navToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    if(navToggle && mobileNav){
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!expanded));
-        mobileNav.hidden = expanded;
+    document.addEventListener('DOMContentLoaded', () => {
+      // Reveal (safe default: content is visible even if JS fails)
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const frames = document.querySelectorAll('.reveal-frame');
+
+      frames.forEach(frame => {
+        const kids = frame.querySelectorAll('.reveal-content');
+        kids.forEach((kid, idx) => {
+          kid.style.transitionDelay = (idx * 70) + 'ms';
+        });
       });
-      mobileNav.addEventListener('click', (e) => {
-        const a = e.target.closest('a,button');
-        if(!a) return;
-        mobileNav.hidden = true;
-        navToggle.setAttribute('aria-expanded','false');
+
+      if (reduceMotion) {
+        frames.forEach(frame => {
+          frame.classList.add('is-in');
+          frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
+        });
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const frame = entry.target;
+            frame.classList.add('is-in');
+            frame.querySelectorAll('.reveal-content').forEach(kid => kid.classList.add('is-in'));
+            io.unobserve(frame);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+        frames.forEach(frame => io.observe(frame));
+      }
+
+      // Accordion
+      document.querySelectorAll('.step').forEach(step => {
+        const toggle = step.querySelector('.step-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', () => step.classList.toggle('step--open'));
       });
-    }
 
-    // Modal helpers
-    function openModal(modal){
-      if(!modal) return;
-      modal.hidden = false;
-      requestAnimationFrame(() => modal.classList.add('is-open'));
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal(modal){
-      if(!modal) return;
-      modal.classList.remove('is-open');
-      setTimeout(() => {
-        modal.hidden = true;
-        document.body.style.overflow = '';
-      }, 180);
-    }
+      // Mobile nav
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
 
-    const contactModal = document.getElementById('contactModal');
-    const successModal = document.getElementById('successModal');
-    const workModal = document.getElementById('workModal');
+      const closeNav = () => {
+        navLinks.classList.remove('is-open');
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      };
 
-    const openContactBtns = [
-      'openContactModal','openContactModal2','openContactModal3','openContactModal4','openContactModal5'
-    ].map(id => document.getElementById(id)).filter(Boolean);
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('is-open');
+          navToggle.classList.toggle('is-active', isOpen);
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
 
-    openContactBtns.forEach(btn => btn.addEventListener('click', () => openModal(contactModal)));
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
 
-    const openWork = document.getElementById('openWorkModal');
-    if(openWork) openWork.addEventListener('click', () => openModal(workModal));
+        document.addEventListener('pointerdown', (e) => {
+          if (!navLinks.classList.contains('is-open')) return;
+          const t = e.target;
+          if (!navLinks.contains(t) && !navToggle.contains(t)) closeNav();
+        }, { capture: true });
+      }
 
-    document.addEventListener('click', (e) => {
-      const closeBtn = e.target.closest('[data-close="true"]');
-      if(!closeBtn) return;
-      const modal = e.target.closest('.evida-modal');
-      closeModal(modal);
+      // Scroll to top
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      const secondSection = document.querySelector('#portfolio');
+
+      if (scrollBtn) {
+        const updateScrollBtn = () => {
+          const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+          if (isMobile) {
+            if (window.scrollY > 80) scrollBtn.classList.add('is-visible');
+            else scrollBtn.classList.remove('is-visible');
+          } else if (secondSection) {
+            const rect = secondSection.getBoundingClientRect();
+            const sectionMidFromDocTop = rect.top + window.scrollY + rect.height / 2;
+            if (window.scrollY >= sectionMidFromDocTop - window.innerHeight / 2) scrollBtn.classList.add('is-visible');
+            else scrollBtn.classList.remove('is-visible');
+          }
+        };
+
+        window.addEventListener('scroll', updateScrollBtn);
+        window.addEventListener('resize', updateScrollBtn);
+        updateScrollBtn();
+
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+
+      // Modals (success + work)
+      const successModal = document.getElementById('successModal');
+      const workModal = document.getElementById('workModal');
+      const openWorkBtn = document.getElementById('openWorkModal');
+
+      const openModal = (el) => {
+        if (!el) return;
+        el.hidden = false;
+        document.body.classList.add('modal-open');
+        requestAnimationFrame(() => el.classList.add('is-open'));
+      };
+
+      const closeModal = (el) => {
+        if (!el) return;
+        el.classList.remove('is-open');
+        document.body.classList.remove('modal-open');
+        setTimeout(() => { el.hidden = true; }, 260);
+      };
+
+      [successModal, workModal].forEach(modal => {
+        if (!modal) return;
+        modal.addEventListener('click', (e) => {
+          const t = e.target;
+          if (t && t.dataset && t.dataset.close === 'true') closeModal(modal);
+        });
+      });
+
+      if (openWorkBtn) openWorkBtn.addEventListener('click', () => openModal(workModal));
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        if (successModal && !successModal.hidden) closeModal(successModal);
+        if (workModal && !workModal.hidden) closeModal(workModal);
+      });
+
+      // Contact AJAX
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalText = submitBtn ? submitBtn.textContent : '';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: new FormData(form)
+            });
+
+            if (!res.ok) throw new Error('Request failed');
+            form.reset();
+            openModal(successModal);
+          } catch (err) {
+            alert('Something went wrong. Please try again.');
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            }
+          }
+        });
+      }
     });
-
-    document.addEventListener('keydown', (e) => {
-      if(e.key !== 'Escape') return;
-      [contactModal, successModal, workModal].forEach(m => {
-        if(m && !m.hidden) closeModal(m);
-      });
-    });
-
-    // Fake submit -> success (keep your existing behavior)
-    const form = document.getElementById('contactForm');
-    if(form){
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        closeModal(contactModal);
-        setTimeout(() => openModal(successModal), 220);
-        form.reset();
-      });
-    }
-
-    // Reveal animations (if you already use these classes)
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(en => {
-        if(en.isIntersecting){
-          en.target.classList.add('is-visible');
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal-frame, .reveal-content').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
