@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="icon" type="image/webp" href="logo.webp">
-  <link rel="stylesheet" href="styles.css?v=27">
+  <link rel="stylesheet" href="styles.css?v=28">
 </head>
 
 <body>
@@ -768,11 +768,86 @@
       .work-row-media{height:300px}
     }
   </style>
+  
+  <div id="cookieBanner" class="cookie-banner" aria-hidden="true">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <h3>Cookies & Privacy</h3>
+        <p>
+          We use cookies to analyze traffic and improve your experience.
+          <a href="#">Privacy Policy</a>.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookieReject" class="btn-outline btn-sm">Decline</button>
+        <button id="cookieAccept" class="btn-primary btn-sm">Accept</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('is-loaded');
       setTimeout(() => document.body.classList.add('is-loaded'), 120);
+
+      // === COOKIE CONSENT LOGIC (INTEGRATED) ===
+      const cookieBanner = document.getElementById('cookieBanner');
+      const acceptBtn = document.getElementById('cookieAccept');
+      const rejectBtn = document.getElementById('cookieReject');
+      const STORAGE_KEY = 'evida_cookie_consent';
+
+      const loadTrackingScripts = () => {
+        const trackingID = 'G-L802JYJHBS'; // YOUR SPECIFIC ID
+        console.log('Loading Google Analytics:', trackingID);
+        
+        const script = document.createElement('script');
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingID}`;
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', trackingID);
+      };
+
+      // Check existing consent
+      const consent = localStorage.getItem(STORAGE_KEY);
+
+      if (!consent) {
+        setTimeout(() => {
+          if(cookieBanner) {
+             cookieBanner.classList.add('is-visible');
+             cookieBanner.setAttribute('aria-hidden', 'false');
+          }
+        }, 2000);
+      } else if (consent === 'accepted') {
+        loadTrackingScripts();
+      }
+
+      // Buttons
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+          localStorage.setItem(STORAGE_KEY, 'accepted');
+          if(cookieBanner) {
+            cookieBanner.classList.remove('is-visible');
+            cookieBanner.setAttribute('aria-hidden', 'true');
+          }
+          loadTrackingScripts();
+        });
+      }
+
+      if (rejectBtn) {
+        rejectBtn.addEventListener('click', () => {
+          localStorage.setItem(STORAGE_KEY, 'rejected');
+          if(cookieBanner) {
+            cookieBanner.classList.remove('is-visible');
+            cookieBanner.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }
+      
+      // === END COOKIE LOGIC ===
 
       // Reveal on scroll
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
