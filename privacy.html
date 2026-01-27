@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privacy Policy | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/webp" href="logo.webp">
+  
+  <link rel="stylesheet" href="styles.css?v=28">
+  
+  <style>
+    /* Μικρές προσαρμογές ειδικά για κείμενο */
+    .policy-content h2 { margin-top: 2rem; color: var(--brand-2); font-size: 1.4rem; }
+    .policy-content p { margin-bottom: 1rem; line-height: 1.6; color: var(--muted); }
+    .policy-content ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: var(--muted); }
+    .policy-header { margin-bottom: 3rem; text-align: center; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-logo">
+        <a href="index.html">Evida <span>Studio</span></a>
+      </div>
+      <a href="index.html" class="btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem;">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="policy-header reveal-frame">
+      <h1 class="hero-title reveal-content" style="font-size: 2.5rem;">Privacy Policy</h1>
+      <p class="hero-sub reveal-content" style="margin: 1rem auto;">Last updated: January 2024</p>
+    </div>
+
+    <section class="section reveal-frame">
+      <div class="policy-content reveal-content">
+        <p>At Evida Studio, we respect your privacy. This policy explains how we handle your information when you visit our website.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect minimal data to ensure the website functions correctly and to communicate with you.</p>
+        <ul>
+          <li><strong>Contact Form Data:</strong> When you send an inquiry, we collect your name, email, and message solely to reply to your request.</li>
+          <li><strong>Usage Data:</strong> We use Google Analytics to understand how visitors find and use our site (e.g., which pages are popular). This data is anonymized.</li>
+        </ul>
+
+        <h2>2. How We Use Cookies</h2>
+        <p>Cookies are small text files stored on your device. We use them for:</p>
+        <ul>
+          <li><strong>Analytics:</strong> To track website traffic and performance (via Google Analytics). These activate only if you click "Accept" on our cookie banner.</li>
+          <li><strong>Functionality:</strong> To remember your preference regarding the cookie banner itself.</li>
+        </ul>
+
+        <h2>3. Data Sharing</h2>
+        <p>We do not sell, trade, or rent your personal identification information to others. Your contact form details are sent directly to our email inbox.</p>
+
+        <h2>4. Your Rights (GDPR)</h2>
+        <p>If you are in the European Economic Area (EEA), you have the right to request access to your personal data, correction of errors, or deletion of your data. To exercise these rights, please contact us.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at:<br>
+        <strong style="color: var(--page-fg);">hello@evidastudio.com</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © Evida Studio. Built for clarity.
+  </footer>
+
+  <script>
+    // Script για να εμφανίζεται ομαλά η σελίδα (Fade in)
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('is-loaded');
+      
+      // Reveal animation
+      const frames = document.querySelectorAll('.reveal-frame');
+      frames.forEach(frame => {
+        frame.classList.add('is-in');
+        frame.querySelectorAll('.reveal-content').forEach((kid, idx) => {
+          kid.style.transitionDelay = (idx * 100) + 'ms';
+          kid.classList.add('is-in');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
