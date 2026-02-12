@@ -1,4 +1,4 @@
-/* styles.css - Hybrid Theme: Warm Professionalism (Final Polish) */
+/* styles.css - Hybrid Theme: Warm Professionalism (Perfected Archive) */
 
 :root {
   /* --- ΧΡΩΜΑΤΙΚΗ ΠΑΛΕΤΑ --- */
@@ -61,11 +61,11 @@ button { font-family: inherit; }
   transform: none;
 }
 
-/* HERO ANIMATION (3D Gentle Float) */
+/* HERO ANIMATION (3D Gentle Float Loop) */
 @keyframes heroMotion {
-  0% { transform: perspective(1000px) rotateY(-8deg) translateY(0); }
-  50% { transform: perspective(1000px) rotateY(6deg) translateY(-12px); }
-  100% { transform: perspective(1000px) rotateY(-8deg) translateY(0); }
+  0% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
+  50% { transform: perspective(1000px) rotateY(5deg) translateY(-12px); }
+  100% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
 }
 
 @keyframes pulseDot {
@@ -172,13 +172,14 @@ button { font-family: inherit; }
   background: #fff; border: 1px solid var(--border-color); color: var(--muted);
 }
 
-/* --- HERO VISUAL (ANIMATED) --- */
-.hero-visual { display: flex; justify-content: center; margin-top: 1rem; perspective: 1000px; }
+/* --- HERO VISUAL (ANIMATED 3D) --- */
+.hero-visual { display: flex; justify-content: center; margin-top: 1rem; perspective: 1200px; } /* Perspective added for 3D */
 .hero-phone.hero-panel {
   position: relative; width: 100%; max-width: 320px; padding: 12px; border-radius: 28px;
-  background: var(--page-fg); box-shadow: 15px 15px 0 rgba(67, 56, 202, 0.1); 
-  /* Η νέα κίνηση που ζήτησες */
-  animation: heroMotion 7s ease-in-out infinite;
+  background: var(--page-fg); box-shadow: 15px 25px 0 rgba(67, 56, 202, 0.08); 
+  /* The Loop Animation */
+  animation: heroMotion 8s ease-in-out infinite;
+  transform-style: preserve-3d;
 }
 
 .hero-phone-screen {
@@ -197,11 +198,13 @@ button { font-family: inherit; }
   position: absolute; width: 50px; height: 50px; border-radius: 12px;
   display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
   background: #fff; border: 2px solid var(--page-fg); box-shadow: 4px 4px 0 var(--accent); z-index: 10;
+  /* Keep orbs sticking out slightly in 3D space if supported */
+  transform: translateZ(20px);
 }
-.hero-phone-orb--search { left: -20px; bottom: 50px; transform: rotate(-10deg); }
+.hero-phone-orb--search { left: -20px; bottom: 50px; transform: rotate(-10deg) translateZ(20px); }
 .hero-phone-orb--check {
   right: -20px; top: 70px; background: var(--accent); color: #fff;
-  border-color: var(--accent); box-shadow: 4px 4px 0 var(--page-fg); transform: rotate(10deg);
+  border-color: var(--accent); box-shadow: 4px 4px 0 var(--page-fg); transform: rotate(10deg) translateZ(20px);
 }
 
 /* --- SECTIONS COMMON --- */
@@ -321,11 +324,11 @@ button { font-family: inherit; }
 }
 .form-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; margin-top: 1.5rem; }
 
-/* Creative Reply Note */
+/* Creative Reply Badge */
 .form-note-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: #f0fdf4; color: #15803d; /* Success Green */
-  padding: 6px 14px; border-radius: 99px; font-size: 0.8rem; font-weight: 600;
+  padding: 8px 16px; border-radius: 99px; font-size: 0.85rem; font-weight: 600;
   border: 1px solid #bbf7d0; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 .form-note-dot {
@@ -333,7 +336,7 @@ button { font-family: inherit; }
   animation: pulseDot 2s infinite;
 }
 
-/* --- MODALS --- */
+/* --- MODALS (General) --- */
 .modal {
   position: fixed; inset: 0; z-index: 200;
   display: flex; align-items: center; justify-content: center;
@@ -364,14 +367,13 @@ button { font-family: inherit; }
   font-size: 2rem; transform: rotate(-5deg);
 }
 
-/* --- IMPROVED ARCHIVE MODAL (Grid & List View) --- */
-.modal-dialog--wide { width: min(800px, 92vw); padding: 2rem; text-align: left; }
-
+/* --- IMPROVED ARCHIVE MODAL (Big Images) --- */
+/* Mobile First: Stacked but big */
+.modal-dialog--wide { width: min(1000px, 92vw); padding: 1.5rem; text-align: left; }
 .work-list {
-  display: grid; gap: 1.5rem; max-height: 70vh; overflow-y: auto; padding-right: 0.5rem; margin-top: 1rem;
+  display: grid; gap: 2rem; max-height: 75vh; overflow-y: auto; padding-right: 0.5rem; margin-top: 1rem;
 }
 
-/* Base Work Row (Mobile First - Stacked) */
 .work-row {
   display: flex; flex-direction: column; gap: 1rem;
   background: #fff; border: 1px solid var(--border-color); border-radius: 12px;
@@ -380,30 +382,32 @@ button { font-family: inherit; }
 .work-row:hover { border-color: var(--brand); box-shadow: var(--card-shadow); transform: translateY(-2px); }
 
 .work-row-media {
-  width: 100%; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden;
-  background: #f1f5f9; position: relative; border: 1px solid #f1f5f9;
+  width: 100%; aspect-ratio: 16/10; /* Widescreen ratio */
+  border-radius: 8px; overflow: hidden; background: #f1f5f9; border: 1px solid #f1f5f9;
 }
 .work-row-media img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top center; /* Focus on top of website */
-  transition: transform 0.3s;
+  width: 100%; height: 100%; 
+  object-fit: cover; 
+  /* CRITICAL: Focus on top center so we see the header/hero of the design */
+  object-position: top center; 
+  transition: transform 0.4s;
 }
-.work-row:hover .work-row-media img { transform: scale(1.03); }
+.work-row:hover .work-row-media img { transform: scale(1.02); }
 
 .work-row-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.work-row-content h3 { font-size: 1.1rem; font-weight: 700; color: var(--page-fg); margin-bottom: 0.4rem; }
-.work-row-content p { font-size: 0.9rem; color: var(--muted); line-height: 1.4; }
-.work-row-pill {
-  display: none; /* Hide arrow on mobile for cleaner look */
-}
+.work-row-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--page-fg); margin-bottom: 0.4rem; }
+.work-row-content p { font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+.work-row-pill { display: none; }
 
-/* Desktop Archive View (Side by Side) */
-@media (min-width: 600px) {
-  .work-row { flex-direction: row; align-items: stretch; padding: 1.2rem; }
-  .work-row-media { width: 220px; aspect-ratio: 4/3; flex-shrink: 0; }
+/* Desktop: Large Side-by-Side */
+@media (min-width: 768px) {
+  .work-row { flex-direction: row; align-items: flex-start; padding: 1.5rem; gap: 2rem; }
+  .work-row-media { width: 340px; flex-shrink: 0; }
+  .work-row-content { padding-top: 0.5rem; }
   .work-row-pill {
     display: flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 50%; background: var(--brand-light);
-    color: var(--brand); font-weight: bold; margin-left: auto; align-self: center;
+    width: 44px; height: 44px; border-radius: 50%; background: var(--brand-light);
+    color: var(--brand); font-weight: bold; margin-left: auto; align-self: center; font-size: 1.2rem;
   }
 }
 
