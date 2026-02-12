@@ -7,11 +7,12 @@
   <meta name="description" content="Evida Studio architects calm, high-conversion digital experiences for psychologists and service professionals.">
 
   <link rel="icon" type="image/webp" href="logo.webp">
-  
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css?v=35">
 </head>
 
 <body>
+  <div class="nav-backdrop"></div>
+
   <header class="site-header">
     <div class="site-header-inner">
       <div class="site-logo">
@@ -310,31 +311,75 @@
 
   <div class="modal" id="workModal" aria-hidden="true">
     <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-dialog" style="width: min(600px, 92vw); text-align:left;">
+    <div class="modal-dialog" style="width: min(700px, 92vw);">
       <button class="modal-close" data-close="true">×</button>
-      <h3 style="margin-bottom:1.5rem; text-align:center; font-weight:700;">Case Study Archive</h3>
+      <h3 style="margin-bottom:1.5rem; font-weight:700;">Complete Case Studies</h3>
       
-      <div style="display:grid; gap:1rem;">
-        <a href="https://fotisan.github.io/psychologist_/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid #e2e8f0;">
-           <div style="flex:1">
-             <h4 style="font-weight:700; color:var(--brand);">Therapist Platform v2</h4>
-             <p style="font-size:0.85rem; color:var(--muted);">Soft rhythm, high readability.</p>
-           </div>
-           <span style="font-weight:bold; color:var(--brand);">→</span>
+      <div class="work-list">
+        <a class="work-row" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
+            <div class="work-row-media">
+              <img src="mockup-_psychologist.webp" alt="Therapist website design">
+            </div>
+            <div class="work-row-content">
+              <h3>Therapist Platform</h3>
+              <p>Private practice layout built to reduce doubt and build trust fast.</p>
+            </div>
+            <span class="work-row-pill">→</span>
         </a>
-        <a href="https://fotisan.github.io/dermatologist/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid #e2e8f0;">
-           <div style="flex:1">
-             <h4 style="font-weight:700; color:var(--brand);">Dermatology Clinic</h4>
-             <p style="font-size:0.85rem; color:var(--muted);">Medical clarity, clean aesthetic.</p>
-           </div>
-           <span style="font-weight:bold; color:var(--brand);">→</span>
+
+        <a class="work-row" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
+            <div class="work-row-media">
+              <img src="Architecture.webp" alt="Architect website design">
+            </div>
+            <div class="work-row-content">
+              <h3>Architecture Portfolio</h3>
+              <p>High-end presence with strong hierarchy and portfolio-first flow.</p>
+            </div>
+            <span class="work-row-pill">→</span>
         </a>
-        <a href="https://fotisan.github.io/dentist/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid #e2e8f0;">
-           <div style="flex:1">
-             <h4 style="font-weight:700; color:var(--brand);">Dental Practice</h4>
-             <p style="font-size:0.85rem; color:var(--muted);">Conversion-focused structure.</p>
-           </div>
-           <span style="font-weight:bold; color:var(--brand);">→</span>
+
+        <a class="work-row" href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener">
+            <div class="work-row-media">
+              <img src="mock-psych-2.webp" alt="Therapist website design v2">
+            </div>
+            <div class="work-row-content">
+              <h3>Therapist Platform (v2)</h3>
+              <p>A calmer, softer rhythm with more breathing room.</p>
+            </div>
+            <span class="work-row-pill">→</span>
+        </a>
+
+        <a class="work-row" href="https://fotisan.github.io/preview-psychologist/" target="_blank" rel="noopener">
+            <div class="work-row-media">
+              <img src="mock-psych-3.webp" alt="Therapist website design preview">
+            </div>
+            <div class="work-row-content">
+              <h3>Therapist Preview</h3>
+              <p>A fresh take focusing on immediate connection.</p>
+            </div>
+            <span class="work-row-pill">→</span>
+        </a>
+
+        <a class="work-row" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
+            <div class="work-row-media">
+              <img src="mock-derma-1.webp" alt="Dermatologist website design">
+            </div>
+            <div class="work-row-content">
+              <h3>Dermatologist Clinic</h3>
+              <p>Medical clarity without feeling clinical.</p>
+            </div>
+            <span class="work-row-pill">→</span>
+        </a>
+
+        <a class="work-row" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
+            <div class="work-row-media">
+              <img src="mock-dentist-1.webp" alt="Dentist website design">
+            </div>
+            <div class="work-row-content">
+              <h3>Dental Practice</h3>
+              <p>Conversion-first structure for booking appointments.</p>
+            </div>
+            <span class="work-row-pill">→</span>
         </a>
       </div>
     </div>
@@ -373,25 +418,36 @@
         const toggle = step.querySelector('.step-toggle');
         if(toggle) {
           toggle.addEventListener('click', () => {
-             // Κλείσε τα άλλα αν θες "ένα ανοιχτό κάθε φορά"
              steps.forEach(s => { if(s!==step) s.classList.remove('step--open'); });
              step.classList.toggle('step--open');
           });
         }
       });
 
-      // === 3. MOBILE MENU TOGGLE ===
+      // === 3. MOBILE MENU (Updated with Backdrop) ===
       const navToggle = document.querySelector('.nav-toggle');
       const navLinks = document.querySelector('.nav-links');
-      if (navToggle && navLinks) {
+      const navBackdrop = document.querySelector('.nav-backdrop');
+
+      const closeNav = () => {
+        navLinks.classList.remove('is-open');
+        navToggle.classList.remove('is-active');
+        navBackdrop.classList.remove('is-active');
+      };
+
+      if (navToggle && navLinks && navBackdrop) {
+        // Toggle click
         navToggle.addEventListener('click', () => {
           navLinks.classList.toggle('is-open');
           navToggle.classList.toggle('is-active');
+          navBackdrop.classList.toggle('is-active');
         });
-        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-            navLinks.classList.remove('is-open');
-            navToggle.classList.remove('is-active');
-        }));
+
+        // Close when clicking a link
+        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
+
+        // Close when clicking the backdrop (outside menu)
+        navBackdrop.addEventListener('click', closeNav);
       }
 
       // === 4. MODALS (Popups) LOGIC ===
@@ -420,7 +476,7 @@
       };
 
       setupModal('openWorkModal', 'workModal');
-      // Setup Success Modal close buttons separately as it triggers programmatically
+      
       const successModal = document.getElementById('successModal');
       if(successModal) {
          successModal.addEventListener('click', (e) => {
@@ -432,19 +488,18 @@
          });
       }
 
-      // === 5. FORM SUBMISSION (AJAX - STAY ON PAGE) ===
+      // === 5. FORM SUBMISSION (AJAX) ===
       const form = document.getElementById('contactForm');
       
       if(form) {
         form.addEventListener('submit', function(e) {
-          e.preventDefault(); // Σταματάει την αλλαγή σελίδας
+          e.preventDefault();
           
           const btn = form.querySelector('button[type="submit"]');
           const originalText = btn.innerText;
           btn.innerText = 'Sending...';
           btn.disabled = true;
 
-          // Στέλνουμε τα δεδομένα στο FormSubmit AJAX endpoint
           fetch(form.action, {
             method: 'POST',
             body: new FormData(form),
@@ -452,7 +507,6 @@
           })
           .then(response => {
             if (response.ok) {
-              // ΕΠΙΤΥΧΙΑ: Καθαρισμός και εμφάνιση Modal
               form.reset();
               if(successModal) {
                  successModal.setAttribute('aria-hidden', 'false');
