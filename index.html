@@ -281,9 +281,12 @@
 
         <div class="form-actions" style="margin-top:1.5rem">
           <button type="submit" class="btn-primary">Request Consultation</button>
-          <div class="form-status">
-            <span class="status-dot"></span>
-            Typical response time: &lt; 24h
+          
+          <div class="form-trust-badge">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Response within 24h</span>
           </div>
         </div>
       </form>
@@ -314,74 +317,74 @@
 
   <div class="modal" id="workModal" aria-hidden="true">
     <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-dialog" style="width: min(800px, 92vw);">
+    <div class="modal-dialog" style="width: min(850px, 94vw);">
       <button class="modal-close" data-close="true">×</button>
       <h3 style="margin-bottom:1.5rem; font-weight:700;">Complete Case Studies</h3>
       
-      <div class="work-list">
-        <a class="work-row" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
+      <div class="work-grid">
+        <a class="work-card" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
+            <div class="work-card-media">
               <img src="mockup-_psychologist.webp" alt="Therapist website design">
             </div>
-            <div class="work-row-content">
+            <div class="work-card-content">
               <h3>Therapist Platform</h3>
-              <p>Private practice layout built to reduce doubt and build trust fast.</p>
-              <span class="work-row-pill">View Study →</span>
+              <p>Private practice layout built to reduce doubt and build trust.</p>
+              <div class="work-card-link">View Live Demo →</div>
             </div>
         </a>
 
-        <a class="work-row" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
-            <div class="work-row-media">
+        <a class="work-card" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
+            <div class="work-card-media">
               <img src="Architecture.webp" alt="Architect website design">
             </div>
-            <div class="work-row-content">
+            <div class="work-card-content">
               <h3>Architecture Portfolio</h3>
               <p>High-end presence with strong hierarchy and portfolio-first flow.</p>
-              <span class="work-row-pill">View Study →</span>
+              <div class="work-card-link">View Live Demo →</div>
             </div>
         </a>
 
-        <a class="work-row" href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener">
-            <div class="work-row-media">
+        <a class="work-card" href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener">
+            <div class="work-card-media">
               <img src="mock-psych-2.webp" alt="Therapist website design v2">
             </div>
-            <div class="work-row-content">
+            <div class="work-card-content">
               <h3>Therapist Platform (v2)</h3>
               <p>A calmer, softer rhythm with more breathing room.</p>
-              <span class="work-row-pill">View Study →</span>
+              <div class="work-card-link">View Live Demo →</div>
             </div>
         </a>
 
-        <a class="work-row" href="https://fotisan.github.io/preview-psychologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
+        <a class="work-card" href="https://fotisan.github.io/preview-psychologist/" target="_blank" rel="noopener">
+            <div class="work-card-media">
               <img src="mock-psych-3.webp" alt="Therapist website design preview">
             </div>
-            <div class="work-row-content">
+            <div class="work-card-content">
               <h3>Therapist Preview</h3>
               <p>A fresh take focusing on immediate connection.</p>
-              <span class="work-row-pill">View Study →</span>
+              <div class="work-card-link">View Live Demo →</div>
             </div>
         </a>
 
-        <a class="work-row" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
+        <a class="work-card" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
+            <div class="work-card-media">
               <img src="mock-derma-1.webp" alt="Dermatologist website design">
             </div>
-            <div class="work-row-content">
+            <div class="work-card-content">
               <h3>Dermatologist Clinic</h3>
               <p>Medical clarity without feeling clinical.</p>
-              <span class="work-row-pill">View Study →</span>
+              <div class="work-card-link">View Live Demo →</div>
             </div>
         </a>
 
-        <a class="work-row" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
+        <a class="work-card" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
+            <div class="work-card-media">
               <img src="mock-dentist-1.webp" alt="Dentist website design">
             </div>
-            <div class="work-row-content">
+            <div class="work-card-content">
               <h3>Dental Practice</h3>
               <p>Conversion-first structure for booking appointments.</p>
-              <span class="work-row-pill">View Study →</span>
+              <div class="work-card-link">View Live Demo →</div>
             </div>
         </a>
       </div>
@@ -439,12 +442,17 @@
       };
 
       if (navToggle && navLinks && navBackdrop) {
+        // Toggle click
         navToggle.addEventListener('click', () => {
           navLinks.classList.toggle('is-open');
           navToggle.classList.toggle('is-active');
           navBackdrop.classList.toggle('is-active');
         });
+
+        // Close when clicking a link
         navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
+
+        // Close when clicking the backdrop (outside menu)
         navBackdrop.addEventListener('click', closeNav);
       }
 
@@ -512,7 +520,7 @@
                  document.body.classList.add('modal-open');
               }
             } else {
-              alert("Oops! Something went wrong.");
+              alert("Oops! Something went wrong. Please check your internet connection.");
             }
           })
           .catch(error => {
