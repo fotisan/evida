@@ -8,7 +8,7 @@
 
   <link rel="icon" type="image/webp" href="logo.webp">
   
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -312,29 +312,29 @@
     <div class="modal-backdrop" data-close="true"></div>
     <div class="modal-dialog" style="width: min(600px, 92vw); text-align:left;">
       <button class="modal-close" data-close="true">×</button>
-      <h3 style="margin-bottom:1.5rem; text-align:center; font-weight:700;">Case Study Archive</h3>
+      <h3 style="margin-bottom:1.5rem; text-align:center; font-weight:700; color:var(--page-fg);">Case Study Archive</h3>
       
       <div style="display:grid; gap:1rem;">
-        <a href="https://fotisan.github.io/psychologist_/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid #e2e8f0;">
+        <a href="https://fotisan.github.io/psychologist_/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid rgba(255,255,255,0.1);">
            <div style="flex:1">
-             <h4 style="font-weight:700; color:var(--brand);">Therapist Platform v2</h4>
+             <h4 style="font-weight:700; color:var(--accent);">Therapist Platform v2</h4>
              <p style="font-size:0.85rem; color:var(--muted);">Soft rhythm, high readability.</p>
            </div>
-           <span style="font-weight:bold; color:var(--brand);">→</span>
+           <span style="font-weight:bold; color:var(--accent);">→</span>
         </a>
-        <a href="https://fotisan.github.io/dermatologist/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid #e2e8f0;">
+        <a href="https://fotisan.github.io/dermatologist/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid rgba(255,255,255,0.1);">
            <div style="flex:1">
-             <h4 style="font-weight:700; color:var(--brand);">Dermatology Clinic</h4>
+             <h4 style="font-weight:700; color:var(--accent);">Dermatology Clinic</h4>
              <p style="font-size:0.85rem; color:var(--muted);">Medical clarity, clean aesthetic.</p>
            </div>
-           <span style="font-weight:bold; color:var(--brand);">→</span>
+           <span style="font-weight:bold; color:var(--accent);">→</span>
         </a>
-        <a href="https://fotisan.github.io/dentist/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid #e2e8f0;">
+        <a href="https://fotisan.github.io/dentist/" target="_blank" class="card" style="display:flex; gap:1rem; align-items:center; text-decoration:none; color:inherit; border:1px solid rgba(255,255,255,0.1);">
            <div style="flex:1">
-             <h4 style="font-weight:700; color:var(--brand);">Dental Practice</h4>
+             <h4 style="font-weight:700; color:var(--accent);">Dental Practice</h4>
              <p style="font-size:0.85rem; color:var(--muted);">Conversion-focused structure.</p>
            </div>
-           <span style="font-weight:bold; color:var(--brand);">→</span>
+           <span style="font-weight:bold; color:var(--accent);">→</span>
         </a>
       </div>
     </div>
@@ -373,7 +373,7 @@
         const toggle = step.querySelector('.step-toggle');
         if(toggle) {
           toggle.addEventListener('click', () => {
-             // Κλείσε τα άλλα αν θες "ένα ανοιχτό κάθε φορά"
+             // Close others
              steps.forEach(s => { if(s!==step) s.classList.remove('step--open'); });
              step.classList.toggle('step--open');
           });
@@ -420,7 +420,7 @@
       };
 
       setupModal('openWorkModal', 'workModal');
-      // Setup Success Modal close buttons separately as it triggers programmatically
+      
       const successModal = document.getElementById('successModal');
       if(successModal) {
          successModal.addEventListener('click', (e) => {
@@ -432,19 +432,18 @@
          });
       }
 
-      // === 5. FORM SUBMISSION (AJAX - STAY ON PAGE) ===
+      // === 5. FORM SUBMISSION (AJAX) ===
       const form = document.getElementById('contactForm');
       
       if(form) {
         form.addEventListener('submit', function(e) {
-          e.preventDefault(); // Σταματάει την αλλαγή σελίδας
+          e.preventDefault(); 
           
           const btn = form.querySelector('button[type="submit"]');
           const originalText = btn.innerText;
           btn.innerText = 'Sending...';
           btn.disabled = true;
 
-          // Στέλνουμε τα δεδομένα στο FormSubmit AJAX endpoint
           fetch(form.action, {
             method: 'POST',
             body: new FormData(form),
@@ -452,7 +451,6 @@
           })
           .then(response => {
             if (response.ok) {
-              // ΕΠΙΤΥΧΙΑ: Καθαρισμός και εμφάνιση Modal
               form.reset();
               if(successModal) {
                  successModal.setAttribute('aria-hidden', 'false');
@@ -460,7 +458,7 @@
                  document.body.classList.add('modal-open');
               }
             } else {
-              alert("Oops! Something went wrong. Please check your internet connection.");
+              alert("Oops! Something went wrong.");
             }
           })
           .catch(error => {
