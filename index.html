@@ -7,7 +7,7 @@
   <meta name="description" content="Evida Studio architects calm, high-conversion digital experiences for service professionals. Strategy, Design, and Trust.">
 
   <link rel="icon" type="image/webp" href="logo.webp">
-  <link rel="stylesheet" href="styles.css?v=38">
+  <link rel="stylesheet" href="styles.css?v=39">
 </head>
 
 <body>
@@ -173,12 +173,16 @@
       
       <div class="about-grid">
         <figure class="about-photo reveal-frame">
-          <img src="fotis-hero.webp" alt="Fotis Antonas, Design Principal">
+          <img src="fotis-hero.webp" alt="Fotis Antonas, Creative Director">
         </figure>
 
         <div class="about-card reveal-frame">
           <p style="margin-bottom:1rem;">
-            We believe that for service professionals, <strong>design is a trust signal</strong>. Led by Fotis Antonas, we combine business strategy with behavioral design to create digital assets that work.
+            We believe that for service professionals, <strong>design is a trust signal</strong>.
+          </p>
+          <p style="margin-bottom:1rem;">
+            <strong>Creative Direction: Fotis Antonas</strong><br>
+            We explore the intersection of behavioral psychology and digital architecture. A design laboratory focused on clarity and trust.
           </p>
           <ul>
             <li>Specialized in service & consultation sectors.</li>
@@ -404,11 +408,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       
-      // === 1. ANIMATIONS (Reveal on Scroll) - CRITICAL FIX ===
-      // Αυτό το κομμάτι είναι που "ανάβει" τα κείμενα
+      // === 1. ANIMATIONS (Reveal on Scroll) ===
       const frames = document.querySelectorAll('.reveal-frame');
       
-      // Fallback: Αν για κάποιο λόγο ο Observer δεν δουλέψει, εμφάνισέ τα όλα
       setTimeout(() => {
         document.querySelectorAll('.reveal-content').forEach(el => {
             if(getComputedStyle(el).opacity === '0') {
@@ -416,7 +418,7 @@
                 el.style.transform = 'none';
             }
         });
-      }, 3000); // Ασφάλεια μετά από 3 δευτερόλεπτα
+      }, 3000); 
 
       const io = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -424,7 +426,7 @@
             entry.target.classList.add('is-in');
             io.unobserve(entry.target);
           });
-        }, { threshold: 0.1 }); // Χαμηλό threshold για να πιάνει εύκολα
+        }, { threshold: 0.1 });
       
       frames.forEach(frame => io.observe(frame));
 
