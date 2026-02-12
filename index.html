@@ -281,12 +281,9 @@
 
         <div class="form-actions" style="margin-top:1.5rem">
           <button type="submit" class="btn-primary">Request Consultation</button>
-          
-          <div class="form-note-wrapper">
-            <div class="form-note-badge">
-              <span class="form-note-dot"></span>
-              Reply time: &lt; 24h
-            </div>
+          <div class="form-status">
+            <span class="status-dot"></span>
+            Typical response time: &lt; 24h
           </div>
         </div>
       </form>
@@ -317,12 +314,11 @@
 
   <div class="modal" id="workModal" aria-hidden="true">
     <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="width: min(800px, 92vw);">
       <button class="modal-close" data-close="true">×</button>
-      <h3 style="margin-bottom:2rem; font-weight:700;">Complete Case Studies</h3>
+      <h3 style="margin-bottom:1.5rem; font-weight:700;">Complete Case Studies</h3>
       
       <div class="work-list">
-        
         <a class="work-row" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
             <div class="work-row-media">
               <img src="mockup-_psychologist.webp" alt="Therapist website design">
@@ -330,7 +326,7 @@
             <div class="work-row-content">
               <h3>Therapist Platform</h3>
               <p>Private practice layout built to reduce doubt and build trust fast.</p>
-              <span class="work-btn">View Study</span>
+              <span class="work-row-pill">View Study →</span>
             </div>
         </a>
 
@@ -341,7 +337,7 @@
             <div class="work-row-content">
               <h3>Architecture Portfolio</h3>
               <p>High-end presence with strong hierarchy and portfolio-first flow.</p>
-              <span class="work-btn">View Study</span>
+              <span class="work-row-pill">View Study →</span>
             </div>
         </a>
 
@@ -352,7 +348,7 @@
             <div class="work-row-content">
               <h3>Therapist Platform (v2)</h3>
               <p>A calmer, softer rhythm with more breathing room.</p>
-              <span class="work-btn">View Study</span>
+              <span class="work-row-pill">View Study →</span>
             </div>
         </a>
 
@@ -363,7 +359,7 @@
             <div class="work-row-content">
               <h3>Therapist Preview</h3>
               <p>A fresh take focusing on immediate connection.</p>
-              <span class="work-btn">View Study</span>
+              <span class="work-row-pill">View Study →</span>
             </div>
         </a>
 
@@ -374,7 +370,7 @@
             <div class="work-row-content">
               <h3>Dermatologist Clinic</h3>
               <p>Medical clarity without feeling clinical.</p>
-              <span class="work-btn">View Study</span>
+              <span class="work-row-pill">View Study →</span>
             </div>
         </a>
 
@@ -385,10 +381,9 @@
             <div class="work-row-content">
               <h3>Dental Practice</h3>
               <p>Conversion-first structure for booking appointments.</p>
-              <span class="work-btn">View Study</span>
+              <span class="work-row-pill">View Study →</span>
             </div>
         </a>
-
       </div>
     </div>
   </div>
@@ -432,7 +427,7 @@
         }
       });
 
-      // === 3. MOBILE MENU (Updated with Backdrop) ===
+      // === 3. MOBILE MENU (With Backdrop) ===
       const navToggle = document.querySelector('.nav-toggle');
       const navLinks = document.querySelector('.nav-links');
       const navBackdrop = document.querySelector('.nav-backdrop');
@@ -493,9 +488,11 @@
 
       // === 5. FORM SUBMISSION (AJAX) ===
       const form = document.getElementById('contactForm');
+      
       if(form) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
+          
           const btn = form.querySelector('button[type="submit"]');
           const originalText = btn.innerText;
           btn.innerText = 'Sending...';
@@ -515,7 +512,7 @@
                  document.body.classList.add('modal-open');
               }
             } else {
-              alert("Oops! Something went wrong. Please check your internet connection.");
+              alert("Oops! Something went wrong.");
             }
           })
           .catch(error => {
