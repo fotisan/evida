@@ -1,4 +1,4 @@
-/* styles.css - Hybrid Theme: Warm Professionalism (Updated) */
+/* styles.css - Hybrid Theme: Warm Professionalism (Final Polish) */
 
 :root {
   /* --- ΧΡΩΜΑΤΙΚΗ ΠΑΛΕΤΑ --- */
@@ -10,8 +10,7 @@
   --brand-light: #e0e7ff;  /* Soft Indigo φόντο */
   --accent: #f97316;       /* Warm Orange */
   
-  --border-color: #cbd5e1; /* Γκρι-μπλε περίγραμμα */
-  --border-width: 1px;
+  --border-color: #cbd5e1;
   
   /* --- ΣΚΙΕΣ --- */
   --card-shadow: 4px 4px 0 rgba(67, 56, 202, 0.08); 
@@ -62,8 +61,16 @@ button { font-family: inherit; }
   transform: none;
 }
 
+/* Hero Float Animation (Ζωντάνια στο κινητό) */
+@keyframes heroFloat {
+  0% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-12px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(-3deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-content { opacity: 1; transform: none; transition: none; }
+  .hero-phone.hero-panel { animation: none; }
 }
 
 /* --- HEADER --- */
@@ -96,8 +103,7 @@ button { font-family: inherit; }
 .nav-toggle {
   display: flex; flex-direction: column; gap: 5px;
   width: 32px; background: transparent; border: none; cursor: pointer;
-  padding: 4px 0; z-index: 60; /* Πάνω από το backdrop */
-  position: relative;
+  padding: 4px 0; z-index: 60; position: relative;
 }
 .nav-toggle-line {
   height: 2px; width: 100%; background: var(--brand);
@@ -107,27 +113,19 @@ button { font-family: inherit; }
 .nav-toggle.is-active .nav-toggle-line:nth-child(2) { opacity: 0; }
 .nav-toggle.is-active .nav-toggle-line:last-child { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile Backdrop (Για κλείσιμο με κλικ έξω) */
+/* Backdrop */
 .nav-backdrop {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(2px);
-  z-index: 55; /* Κάτω από το μενού, πάνω από το site */
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.3s;
+  position: fixed; inset: 0; background: rgba(0,0,0,0.2); backdrop-filter: blur(2px);
+  z-index: 55; opacity: 0; pointer-events: none; transition: opacity 0.3s;
 }
 .nav-backdrop.is-active { opacity: 1; pointer-events: auto; }
 
 /* Navigation Links */
 .nav-links {
   position: absolute; top: 100%; left: 0; right: 0;
-  background: #fff;
-  border-bottom: 1px solid var(--border-color);
-  padding: 1.5rem;
-  display: none; flex-direction: column; gap: 1.2rem;
-  font-weight: 600; font-size: 0.95rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  z-index: 60;
+  background: #fff; border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem; display: none; flex-direction: column; gap: 1.2rem;
+  font-weight: 600; font-size: 0.95rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); z-index: 60;
 }
 .nav-links.is-open { display: flex; }
 .nav-links a:hover { color: var(--brand); }
@@ -135,14 +133,9 @@ button { font-family: inherit; }
 /* Buttons */
 .btn-nav, .btn-primary, .btn-outline {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 0.75rem 1.6rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  padding: 0.75rem 1.6rem; border-radius: 8px; font-weight: 600;
+  font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease;
+  border: 1px solid transparent; white-space: nowrap;
 }
 .btn-nav {
   background: #fff; border: 1px solid var(--brand); color: var(--brand);
@@ -174,7 +167,6 @@ button { font-family: inherit; }
 .hero-cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.2rem; }
 .btn-primary { background: var(--brand); color: #fff; box-shadow: 4px 4px 0 rgba(0,0,0,0.15); }
 .btn-primary:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 rgba(0,0,0,0.15); }
-.btn-primary:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
 
 .btn-outline { background: #fff; border: 1px solid var(--border-color); color: var(--page-fg); box-shadow: 3px 3px 0 rgba(0,0,0,0.05); }
 .btn-outline:hover { border-color: var(--brand); color: var(--brand); transform: translate(-1px, -1px); box-shadow: 4px 4px 0 rgba(67, 56, 202, 0.1); }
@@ -185,14 +177,18 @@ button { font-family: inherit; }
   background: #fff; border: 1px solid var(--border-color); color: var(--muted);
 }
 
-/* --- HERO VISUAL --- */
-.hero-visual { display: flex; justify-content: center; margin-top: 1rem; }
+/* --- HERO VISUAL (Animated) --- */
+.hero-visual { display: flex; justify-content: center; margin-top: 1rem; perspective: 1000px; }
 .hero-phone.hero-panel {
   position: relative; width: 100%; max-width: 320px; padding: 12px; border-radius: 28px;
   background: var(--page-fg); box-shadow: 12px 12px 0 rgba(67, 56, 202, 0.1); 
-  transform: rotate(-3deg); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotate(-3deg);
+  /* The Animation */
+  animation: heroFloat 6s ease-in-out infinite; 
 }
-.hero-phone.hero-panel:hover { transform: rotate(0deg) scale(1.02); }
+/* Pause on hover if desired */
+.hero-phone.hero-panel:hover { animation-play-state: paused; }
+
 .hero-phone-screen {
   background: #fff; border-radius: 20px; padding: 1.4rem; overflow: hidden;
   border: 2px solid #fff; display: flex; flex-direction: column; gap: 1rem;
@@ -222,36 +218,77 @@ button { font-family: inherit; }
   font-size: 1.9rem; margin-bottom: 1rem; color: var(--page-fg); font-weight: 800; position: relative; display: inline-block;
 }
 .section h2::after { content: "."; color: var(--accent); }
-.section-lead { color: var(--muted); margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 42rem; }
+.section-lead { color: var(--muted); margin-bottom: 3.5rem; font-size: 1.1rem; max-width: 42rem; }
 
-/* --- PORTFOLIO GRID (Main Page) --- */
-.pf-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
-.pf-item {
-  background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius);
-  overflow: hidden; transition: all 0.3s ease; box-shadow: var(--card-shadow);
+/* --- PORTFOLIO (ZIG-ZAG LAYOUT) --- */
+.pf-list {
+  display: flex; flex-direction: column; gap: 4rem;
 }
-.pf-item:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); border-color: var(--brand); }
-.pf-preview {
-  background: #f1f5f9; padding: 1.5rem; border-bottom: 1px solid var(--border-color);
-  position: relative; height: 260px; display: flex; align-items: center; justify-content: center;
+
+.pf-row {
+  display: grid; gap: 1.5rem; grid-template-columns: 1fr; /* Mobile Default */
+  align-items: center;
 }
-.pf-preview img {
-  max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.4s ease;
+
+/* Image container */
+.pf-visual {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Make it a block for anchor */
 }
-.pf-item:hover .pf-preview img { transform: scale(1.04); }
+.pf-visual:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--brand);
+}
+
+.pf-visual-inner {
+  background: #f1f5f9;
+  padding: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 280px;
+}
+.pf-visual img {
+  width: 100%; height: auto; max-height: 350px; object-fit: contain;
+  border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+.pf-visual:hover img { transform: scale(1.03); }
+
+/* Overlay */
 .pf-overlay {
-  position: absolute; inset: 0; background: rgba(30, 27, 75, 0.4); opacity: 0;
-  transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(2px);
+  position: absolute; inset: 0; background: rgba(30, 27, 75, 0.3);
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: center; justify-content: center; backdrop-filter: blur(2px);
 }
-.pf-item:hover .pf-overlay { opacity: 1; }
+.pf-visual:hover .pf-overlay { opacity: 1; }
 .pf-overlay-pill {
   background: #fff; color: var(--brand); padding: 0.6rem 1.2rem;
-  border-radius: 6px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 99px; font-weight: 700; font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-.pf-info { padding: 1.6rem; }
-.pf-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--page-fg); }
-.pf-info p { color: var(--muted); font-size: 0.95rem; }
+
+/* Text Content */
+.pf-details { padding: 0.5rem 0; }
+.pf-details h3 { font-size: 1.5rem; font-weight: 800; color: var(--page-fg); margin-bottom: 0.8rem; }
+.pf-details p { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
+
+/* Desktop Zig-Zag Logic */
+@media (min-width: 900px) {
+  .pf-row {
+    grid-template-columns: 1.2fr 0.8fr; /* Image wider than text */
+    gap: 5rem;
+  }
+  
+  /* Even rows: Swap order (Text Left, Image Right) */
+  .pf-row:nth-child(even) .pf-visual { order: 2; }
+  .pf-row:nth-child(even) .pf-details { order: 1; }
+}
 
 /* --- COMPARE SECTION --- */
 .compare-grid { display: grid; gap: 2rem; }
@@ -332,7 +369,16 @@ button { font-family: inherit; }
   border-color: var(--brand); box-shadow: 3px 3px 0 var(--brand-light); transform: translate(-1px, -1px);
 }
 
-/* --- MODALS (General) --- */
+/* Creative Form Note Badge */
+.form-note-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #f0f9ff; color: var(--brand); border: 1px solid var(--brand-light);
+  padding: 0.5rem 1rem; border-radius: 99px; font-size: 0.85rem; font-weight: 600;
+  margin-top: 0.5rem;
+}
+.form-note-icon { font-size: 1.1rem; }
+
+/* --- MODALS --- */
 .modal {
   position: fixed; inset: 0; z-index: 200;
   display: flex; align-items: center; justify-content: center;
@@ -363,36 +409,20 @@ button { font-family: inherit; }
   font-size: 2rem; transform: rotate(-5deg);
 }
 
-/* --- WORK MODAL LIST (Restored Style) --- */
-.work-list {
-  display: grid; gap: 1.2rem; text-align: left;
-  max-height: 70vh; overflow-y: auto; padding-right: 0.5rem; /* Scrollable list */
-}
+/* Work List Modal */
+.work-list { display: grid; gap: 1.2rem; text-align: left; max-height: 70vh; overflow-y: auto; padding-right: 0.5rem; }
 .work-row {
   display: flex; align-items: center; gap: 1.2rem;
   background: #fff; border: 1px solid var(--border-color); border-radius: 12px;
   padding: 1rem; transition: 0.2s; cursor: pointer;
 }
-.work-row:hover {
-  border-color: var(--brand); box-shadow: var(--card-shadow); transform: translateY(-2px);
-}
-.work-row-media {
-  flex-shrink: 0; width: 100px; height: 70px; border-radius: 8px; overflow: hidden;
-  background: #f1f5f9; position: relative;
-}
-.work-row-media img {
-  width: 100%; height: 100%; object-fit: cover;
-}
+.work-row:hover { border-color: var(--brand); box-shadow: var(--card-shadow); transform: translateY(-2px); }
+.work-row-media { flex-shrink: 0; width: 100px; height: 70px; border-radius: 8px; overflow: hidden; background: #f1f5f9; }
+.work-row-media img { width: 100%; height: 100%; object-fit: cover; }
 .work-row-content { flex: 1; }
-.work-row-content h3 {
-  font-size: 1rem; font-weight: 700; color: var(--page-fg); margin-bottom: 0.2rem;
-}
-.work-row-content p {
-  font-size: 0.85rem; color: var(--muted); line-height: 1.3;
-}
-.work-row-pill {
-  font-size: 1.2rem; color: var(--brand); font-weight: bold; margin-left: auto;
-}
+.work-row-content h3 { font-size: 1rem; font-weight: 700; color: var(--page-fg); margin-bottom: 0.2rem; }
+.work-row-content p { font-size: 0.85rem; color: var(--muted); line-height: 1.3; }
+.work-row-pill { font-size: 1.2rem; color: var(--brand); font-weight: bold; margin-left: auto; }
 @media (max-width: 500px) {
   .work-row { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
   .work-row-media { width: 100%; height: 160px; }
@@ -442,7 +472,6 @@ footer {
   .hero-copy { flex: 1; padding-right: 3rem; }
   .hero-visual { flex: 0 0 350px; }
   .compare-grid { grid-template-columns: 1fr 1fr; }
-  .pf-grid { grid-template-columns: 1fr 1fr; }
   .about-grid { grid-template-columns: auto 1fr; }
   .form-grid { grid-template-columns: 1fr 1fr; }
   .form-field--full { grid-column: 1 / -1; }
