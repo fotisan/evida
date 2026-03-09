@@ -214,6 +214,19 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <h3>Privacy & Cookies</h3>
+        <p>We use cookies to ensure a smooth experience. Your privacy is respected.</p>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookieReject" class="btn-outline btn-sm">Decline</button>
+        <button id="cookieAccept" class="btn-primary btn-sm">Accept</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       
@@ -258,6 +271,41 @@
         else scrollBtn.classList.remove('is-visible');
       });
       if(scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+      // === GOOGLE ANALYTICS & COOKIE LOGIC ===
+      const banner = document.getElementById('cookieBanner');
+      const gaId = 'G-L802JYJHBS';
+
+      function loadAnalytics() {
+        if (window.gaLoaded) return;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+        window.gaLoaded = true;
+      }
+
+      if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
+        loadAnalytics();
+      } else if (!localStorage.getItem('evida_cookie_consent')) {
+         setTimeout(() => banner?.classList.add('is-visible'), 1500);
+      }
+
+      document.getElementById('cookieAccept')?.addEventListener('click', () => {
+        localStorage.setItem('evida_cookie_consent', 'accepted');
+        if(banner) banner.classList.remove('is-visible');
+        loadAnalytics(); 
+      });
+      
+      document.getElementById('cookieReject')?.addEventListener('click', () => {
+        localStorage.setItem('evida_cookie_consent', 'rejected');
+        if(banner) banner.classList.remove('is-visible');
+      });
 
     });
   </script>
