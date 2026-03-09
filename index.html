@@ -2,9 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Web Design for Consultants & Services | Evida Studio</title>
+  <title>Web Design for Consultants & Service Professionals | Evida Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Custom web design and digital presence solutions for consultants and service professionals. Hand-coded, high-performance websites by Evida Studio.">
+  <meta name="author" content="Fotis Antonas – Evida Studio">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://evidastudio.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evidastudio.com/">
+  <meta property="og:title" content="Web Design for Consultants & Service Professionals | Evida Studio">
+  <meta property="og:description" content="Custom web design and digital presence solutions for consultants and service professionals. Hand-coded, high-performance websites by Evida Studio.">
+  <meta property="og:image" content="https://evidastudio.com/logo.webp">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:site_name" content="Evida Studio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Design for Consultants & Service Professionals | Evida Studio">
+  <meta name="twitter:description" content="Custom web design and digital presence solutions for consultants and service professionals. Hand-coded, high-performance websites by Evida Studio.">
+  <meta name="twitter:image" content="https://evidastudio.com/logo.webp">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Evida Studio",
+    "description": "Custom web design and digital presence solutions for consultants and service professionals.",
+    "url": "https://evidastudio.com",
+    "logo": "https://evidastudio.com/logo.webp",
+    "image": "https://evidastudio.com/logo.webp",
+    "email": "hello@evidastudio.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Fotis Antonas",
+      "sameAs": "https://gr.linkedin.com/in/fotis-antonas-643511181"
+    },
+    "sameAs": [
+      "https://www.instagram.com/evidastudio/",
+      "https://gr.linkedin.com/in/fotis-antonas-643511181"
+    ],
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "serviceType": [
+      "Web Design",
+      "UX Architecture",
+      "Digital Presence Strategy"
+    ],
+    "knowsAbout": [
+      "Web Design",
+      "UX Architecture",
+      "Service Professionals",
+      "Consultants",
+      "Therapists",
+      "Architects",
+      "Clinics"
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/webp" href="logo.webp">
   <link rel="stylesheet" href="styles.css?v=41">
@@ -50,8 +113,7 @@
       <div class="hero-copy reveal-frame">
         
         <h1 class="hero-title reveal-content" style="display: flex; flex-direction: column;">
-          <span class="hero-eyebrow" style="margin-bottom: 0.8rem;">Premium Web Design for Service Professionals</span>
-          <span>Make Your <span class="hero-accent">Digital Presence</span></span>
+          <span>Make Your <span class="hero-accent">Digital Presence</span> Count</span>
         </h1>
 
         <p class="hero-sub reveal-content">
@@ -309,8 +371,8 @@
   <footer>
     <div class="footer-links">
       <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-      <a href="mailto:hello@evidastudio.com">Email Us</a>
+      <a href="https://gr.linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/cdn-cgi/l/email-protection#aec6cbc2c2c1eecbd8c7cacfdddadbcac7c180cdc1c3">Email Us</a>
     </div>
     <p style="margin-top:1.5rem; opacity:0.6; font-size:0.85rem;">© Evida Studio • Designed for Service Professionals</p>
   </footer>
@@ -416,7 +478,7 @@
     </div>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     document.addEventListener('DOMContentLoaded', function () {
       
       // === 1. ANIMATIONS (Reveal on Scroll) ===
@@ -562,9 +624,3 @@
         if(window.scrollY > 400) scrollBtn.classList.add('is-visible');
         else scrollBtn.classList.remove('is-visible');
       });
-      if(scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-
-    });
-  </script>
-</body>
-</html>
