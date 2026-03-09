@@ -576,18 +576,45 @@
         });
       }
       
-      // === 6. COOKIE BANNER ===
+    // === 6. COOKIE BANNER & GOOGLE ANALYTICS (GDPR COMPLIANT) ===
       const banner = document.getElementById('cookieBanner');
-      if(banner && !localStorage.getItem('evida_cookie_consent')) {
-         setTimeout(() => banner.classList.add('is-visible'), 1500);
+      const gaId = 'G-L802JYJHBS';
+
+      // Συνάρτηση που "ρίχνει" το Analytics ΜΟΝΟ όταν υπάρχει συγκατάθεση
+      function loadAnalytics() {
+        if (window.gaLoaded) return; // Για να μην φορτώσει 2 φορές
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+        window.gaLoaded = true;
       }
+
+      // Έλεγχος: Αν ο χρήστης είχε πατήσει Accept σε προηγούμενη επίσκεψη
+      if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
+        loadAnalytics();
+      } else if (!localStorage.getItem('evida_cookie_consent')) {
+         // Αν μπαίνει πρώτη φορά, εμφάνισε το banner μετά από 1.5 δευτερόλεπτο
+         setTimeout(() => banner?.classList.add('is-visible'), 1500);
+      }
+
+      // Τι γίνεται όταν πατάει ACCEPT
       document.getElementById('cookieAccept')?.addEventListener('click', () => {
         localStorage.setItem('evida_cookie_consent', 'accepted');
         banner.classList.remove('is-visible');
+        loadAnalytics(); // Ξεκινάει η παρακολούθηση ΕΚΕΙΝΗ την ακριβώς τη στιγμή
       });
-       document.getElementById('cookieReject')?.addEventListener('click', () => {
+      
+      // Τι γίνεται όταν πατάει DECLINE
+      document.getElementById('cookieReject')?.addEventListener('click', () => {
         localStorage.setItem('evida_cookie_consent', 'rejected');
         banner.classList.remove('is-visible');
+        // Το Analytics δεν φορτώνεται ποτέ. Απόλυτος σεβασμός στην ιδιωτικότητα.
       });
 
       // === 7. SCROLL TO TOP ===
@@ -602,3 +629,4 @@
   </script>
 </body>
 </html>
+
