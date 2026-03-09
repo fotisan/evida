@@ -7,7 +7,7 @@
   <meta name="description" content="Custom web design and digital presence solutions for consultants and service professionals. Hand-coded, high-performance websites by Evida Studio.">
 
   <link rel="icon" type="image/webp" href="logo.webp">
-  <link rel="stylesheet" href="styles.css?v=41">
+  <link rel="stylesheet" href="styles.css?v=42">
 
   <link rel="canonical" href="https://evidastudio.com/" />
   
@@ -63,6 +63,7 @@
         <a href="#portfolio">Case Studies</a>
         <a href="#about">The Studio</a>
         <a href="#services">Methodology</a>
+        <a href="#insights">Insights</a>
         
         <div class="nav-socials">
           <a class="nav-social" href="https://www.instagram.com/fotisantonas/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -295,6 +296,29 @@
       </div>
     </section>
 
+    <section class="section reveal-frame" id="insights">
+      <h2 class="reveal-content">Latest Insights</h2>
+      <p class="section-lead reveal-content">
+        Thoughts on digital architecture, psychology, and premium web design for professionals.
+      </p>
+
+      <div class="insights-grid">
+        <article class="insight-card reveal-frame">
+          <a href="trust-signals-professional-services.html" class="insight-link">
+            <div class="insight-image">
+              <img src="blog-trust-signals.webp" alt="Trust signals for professional service websites" loading="lazy">
+              <span class="insight-tag">Strategy</span>
+            </div>
+            <div class="insight-content">
+              <span class="insight-date">March 2026</span>
+              <h3>5 Trust Signals Every Professional Services Website Needs to Win More Clients</h3>
+              <p>Discover how to build trust instantly through digital architecture and thoughtful design.</p>
+              <span class="insight-read-more">Read Article →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
     <section class="section reveal-frame" id="contact">
       <h2 class="reveal-content">Discuss Your Web Design Project</h2>
       <p class="section-lead reveal-content">
@@ -344,6 +368,7 @@
     <div class="footer-links">
       <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
       <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="#insights">Insights</a>
       <a href="mailto:hello@evidastudio.com">Email Us</a>
     </div>
     <p style="margin-top:1.5rem; opacity:0.6; font-size:0.85rem;">© Evida Studio • Designed for Service Professionals</p>
@@ -576,13 +601,12 @@
         });
       }
       
-    // === 6. COOKIE BANNER & GOOGLE ANALYTICS (GDPR COMPLIANT) ===
+      // === 6. COOKIE BANNER & GOOGLE ANALYTICS (GDPR COMPLIANT) ===
       const banner = document.getElementById('cookieBanner');
       const gaId = 'G-L802JYJHBS';
 
-      // Συνάρτηση που "ρίχνει" το Analytics ΜΟΝΟ όταν υπάρχει συγκατάθεση
       function loadAnalytics() {
-        if (window.gaLoaded) return; // Για να μην φορτώσει 2 φορές
+        if (window.gaLoaded) return;
         const script = document.createElement('script');
         script.async = true;
         script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
@@ -595,26 +619,21 @@
         window.gaLoaded = true;
       }
 
-      // Έλεγχος: Αν ο χρήστης είχε πατήσει Accept σε προηγούμενη επίσκεψη
       if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
         loadAnalytics();
       } else if (!localStorage.getItem('evida_cookie_consent')) {
-         // Αν μπαίνει πρώτη φορά, εμφάνισε το banner μετά από 1.5 δευτερόλεπτο
          setTimeout(() => banner?.classList.add('is-visible'), 1500);
       }
 
-      // Τι γίνεται όταν πατάει ACCEPT
       document.getElementById('cookieAccept')?.addEventListener('click', () => {
         localStorage.setItem('evida_cookie_consent', 'accepted');
         banner.classList.remove('is-visible');
-        loadAnalytics(); // Ξεκινάει η παρακολούθηση ΕΚΕΙΝΗ την ακριβώς τη στιγμή
+        loadAnalytics(); 
       });
       
-      // Τι γίνεται όταν πατάει DECLINE
       document.getElementById('cookieReject')?.addEventListener('click', () => {
         localStorage.setItem('evida_cookie_consent', 'rejected');
         banner.classList.remove('is-visible');
-        // Το Analytics δεν φορτώνεται ποτέ. Απόλυτος σεβασμός στην ιδιωτικότητα.
       });
 
       // === 7. SCROLL TO TOP ===
@@ -629,4 +648,3 @@
   </script>
 </body>
 </html>
-
