@@ -170,9 +170,9 @@ button { font-family: inherit; }
 
 .hero-eyebrow {
   font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--accent); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;
+  color: #c2410c; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;
 }
-.hero-eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.hero-eyebrow::before { content: ""; width: 8px; height: 8px; background: #c2410c; border-radius: 50%; }
 
 .hero-title {
   font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; font-weight: 800; color: var(--page-fg); letter-spacing: -0.02em;
@@ -292,7 +292,7 @@ button { font-family: inherit; }
   display: inline-block; padding: 0.25rem 0.6rem; font-weight: 700; text-transform: uppercase;
   font-size: 0.75rem; border-radius: 4px;
 }
-.compare-label--wrong { color: #ef4444; background: #fef2f2; border: 1px solid #fee2e2; }
+.compare-label--wrong { color: #b91c1c; background: #fef2f2; border: 1px solid #fee2e2; }
 .compare-label--right { color: var(--brand); background: var(--brand-light); border: 1px solid #c7d2fe; }
 .compare-image-wrap { border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
 .compare-image-wrap img { width: 100%; display: block; }
