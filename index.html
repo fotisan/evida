@@ -60,10 +60,10 @@
       </button>
 
       <nav class="nav-links">
-        <a href="#portfolio">Case Studies</a>
+        <a href="portfolio.html">Case Studies</a>
         <a href="#about">The Studio</a>
         <a href="#services">Methodology</a>
-        <a href="#insights">Insights</a>
+        <a href="insights.html">Insights</a>
         
         <div class="nav-socials">
           <a class="nav-social" href="https://www.instagram.com/fotisantonas/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -83,7 +83,6 @@
 
     <section class="hero" id="top">
       <div class="hero-copy reveal-frame">
-        
         <h1 class="hero-title reveal-content" style="display: flex; flex-direction: column;">
           <span class="hero-eyebrow" style="margin-bottom: 0.8rem;">Premium Web Design for Service Professionals</span>
           <span>Make Your <span class="hero-accent">Digital Presence</span></span>
@@ -170,7 +169,7 @@
       </div>
 
       <div style="margin-top:2.5rem; text-align:center;" class="reveal-content">
-        <button type="button" class="btn-outline" id="openWorkModal">View Full Archive</button>
+        <a href="portfolio.html" class="btn-outline">View Full Archive</a>
       </div>
     </section>
 
@@ -322,7 +321,8 @@
       <div style="margin-top:2.5rem; text-align:center;" class="reveal-content">
         <a href="insights.html" class="btn-outline">View All Articles</a>
       </div>
-      </section>
+    </section>
+
     <section class="section reveal-frame" id="contact">
       <h2 class="reveal-content">Discuss Your Web Design Project</h2>
       <p class="section-lead reveal-content">
@@ -372,6 +372,7 @@
     <div class="footer-links">
       <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
       <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="portfolio.html">Case Studies</a>
       <a href="insights.html">Insights</a>
       <a href="mailto:hello@evidastudio.com">Email Us</a>
     </div>
@@ -387,82 +388,6 @@
       <div class="modal-icon">✓</div>
       <h3 style="font-size:1.4rem; font-weight:700; color:var(--page-fg);">Inquiry Received</h3>
       <p style="color:var(--muted); margin-top:0.5rem;">Thank you for reaching out. We will review your details and get back to you shortly.</p>
-    </div>
-  </div>
-
-  <div class="modal" id="workModal" aria-hidden="true">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-dialog modal-dialog--wide">
-      <button class="modal-close" data-close="true">×</button>
-      <h3 style="margin-bottom:1.5rem; font-weight:700; font-size:1.5rem;">Complete Archive</h3>
-      
-      <div class="work-list">
-        <a class="work-row" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mockup-_psychologist.webp" alt="Therapist website design" loading="lazy">
-            </div>
-            <div class="work-row-content">
-              <h3>Therapist Platform</h3>
-              <p>Professional layout built to reduce doubt and build trust fast.</p>
-            </div>
-            <span class="work-row-pill">→</span>
-        </a>
-
-        <a class="work-row" href="https://fotisan.github.io/architect/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="Architecture.webp" alt="Architect website design" loading="lazy">
-            </div>
-            <div class="work-row-content">
-              <h3>Architecture Portfolio</h3>
-              <p>High-end presence with strong hierarchy and portfolio-first flow.</p>
-            </div>
-            <span class="work-row-pill">→</span>
-        </a>
-
-        <a class="work-row" href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mock-psych-2.webp" alt="Therapist website design v2" loading="lazy">
-            </div>
-            <div class="work-row-content">
-              <h3>Therapist Platform (v2)</h3>
-              <p>A calmer, softer rhythm with more breathing room.</p>
-            </div>
-            <span class="work-row-pill">→</span>
-        </a>
-
-        <a class="work-row" href="https://fotisan.github.io/preview-psychologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mock-psych-3.webp" alt="Therapist website design preview" loading="lazy">
-            </div>
-            <div class="work-row-content">
-              <h3>Therapist Preview</h3>
-              <p>A fresh take focusing on immediate connection.</p>
-            </div>
-            <span class="work-row-pill">→</span>
-        </a>
-
-        <a class="work-row" href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mock-derma-1.webp" alt="Dermatologist website design" loading="lazy">
-            </div>
-            <div class="work-row-content">
-              <h3>Dermatologist Clinic</h3>
-              <p>Professional clarity without feeling cold.</p>
-            </div>
-            <span class="work-row-pill">→</span>
-        </a>
-
-        <a class="work-row" href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener">
-            <div class="work-row-media">
-              <img src="mock-dentist-1.webp" alt="Dentist website design" loading="lazy">
-            </div>
-            <div class="work-row-content">
-              <h3>Dental Practice</h3>
-              <p>Conversion-first structure for booking appointments.</p>
-            </div>
-            <span class="work-row-pill">→</span>
-        </a>
-      </div>
     </div>
   </div>
 
@@ -482,9 +407,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       
-      // === 1. ANIMATIONS (Reveal on Scroll) ===
       const frames = document.querySelectorAll('.reveal-frame');
-      
       setTimeout(() => {
         document.querySelectorAll('.reveal-content').forEach(el => {
             if(getComputedStyle(el).opacity === '0') {
@@ -501,10 +424,8 @@
             io.unobserve(entry.target);
           });
         }, { threshold: 0.1 });
-      
       frames.forEach(frame => io.observe(frame));
 
-      // === 2. ACCORDION ===
       const steps = document.querySelectorAll('.step');
       steps.forEach(step => {
         const toggle = step.querySelector('.step-toggle');
@@ -516,7 +437,6 @@
         }
       });
 
-      // === 3. MOBILE MENU ===
       const navToggle = document.querySelector('.nav-toggle');
       const navLinks = document.querySelector('.nav-links');
       const navBackdrop = document.querySelector('.nav-backdrop');
@@ -536,33 +456,6 @@
         navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
         navBackdrop.addEventListener('click', closeNav);
       }
-
-      // === 4. MODALS ===
-      const setupModal = (triggerId, modalId) => {
-        const trigger = document.getElementById(triggerId);
-        const modal = document.getElementById(modalId);
-        if(!modal) return;
-        
-        const close = () => {
-          modal.classList.remove('is-open');
-          setTimeout(() => modal.setAttribute('aria-hidden', 'true'), 300);
-          document.body.classList.remove('modal-open');
-        };
-        
-        const open = () => {
-          modal.setAttribute('aria-hidden', 'false');
-          requestAnimationFrame(() => modal.classList.add('is-open'));
-          document.body.classList.add('modal-open');
-        };
-
-        if(trigger) trigger.addEventListener('click', (e) => { e.preventDefault(); open(); });
-        
-        modal.addEventListener('click', (e) => {
-          if(e.target.dataset.close) close();
-        });
-      };
-
-      setupModal('openWorkModal', 'workModal');
       
       const successModal = document.getElementById('successModal');
       if(successModal) {
@@ -575,7 +468,6 @@
          });
       }
 
-      // === 5. FORM SUBMISSION ===
       const form = document.getElementById('contactForm');
       if(form) {
         form.addEventListener('submit', function(e) {
@@ -605,7 +497,6 @@
         });
       }
       
-      // === 6. COOKIE BANNER & GOOGLE ANALYTICS (GDPR COMPLIANT) ===
       const banner = document.getElementById('cookieBanner');
       const gaId = 'G-L802JYJHBS';
 
@@ -631,16 +522,15 @@
 
       document.getElementById('cookieAccept')?.addEventListener('click', () => {
         localStorage.setItem('evida_cookie_consent', 'accepted');
-        banner.classList.remove('is-visible');
+        if(banner) banner.classList.remove('is-visible');
         loadAnalytics(); 
       });
       
       document.getElementById('cookieReject')?.addEventListener('click', () => {
         localStorage.setItem('evida_cookie_consent', 'rejected');
-        banner.classList.remove('is-visible');
+        if(banner) banner.classList.remove('is-visible');
       });
 
-      // === 7. SCROLL TO TOP ===
       const scrollBtn = document.getElementById('scrollTopBtn');
       window.addEventListener('scroll', () => {
         if(window.scrollY > 400) scrollBtn.classList.add('is-visible');
