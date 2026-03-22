@@ -89,7 +89,7 @@
         </h1>
 
         <p class="hero-sub reveal-content">
-          You’ve spent years building your expertise. Don’t let a generic website undermine your hard work. We build digital assets that reflect your true professional value.
+          You've spent years building your expertise. Don't let a generic website undermine your hard work. We build digital assets that reflect your true professional value.
         </p>
 
         <div class="hero-cta-row">
@@ -301,21 +301,8 @@
         Thoughts on digital architecture, psychology, and premium web design for professionals.
       </p>
 
-      <div class="insights-grid">
-        <article class="insight-card reveal-frame">
-          <a href="trust-signals-professional-services.html" class="insight-link">
-            <div class="insight-image">
-              <img src="blog-trust-signals.webp" alt="Trust signals for professional service websites" loading="lazy">
-              <span class="insight-tag">Strategy</span>
-            </div>
-            <div class="insight-content">
-              <span class="insight-date">March 2026</span>
-              <h3>5 Trust Signals Every Service Business Website Needs to Win More Inquiries</h3>
-              <p>Discover how to build trust instantly through digital architecture and thoughtful design.</p>
-              <span class="insight-read-more">Read Article →</span>
-            </div>
-          </a>
-        </article>
+      <div class="insights-grid" id="latestInsightGrid">
+        <!-- Dynamically injected from posts.json -->
       </div>
 
       <div style="margin-top:2.5rem; text-align:center;" class="reveal-content">
@@ -406,109 +393,163 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      
-      const frames = document.querySelectorAll('.reveal-frame');
-      setTimeout(() => {
-        document.querySelectorAll('.reveal-content').forEach(el => {
-            if(getComputedStyle(el).opacity === '0') {
-                el.style.opacity = '1';
-                el.style.transform = 'none';
+
+      // =============================================
+      // LATEST INSIGHT — loads most recent published post
+      // =============================================
+      (function () {
+        function renderInsightCard(post) {
+          return '<article class="insight-card reveal-frame is-in">' +
+            '<a href="' + post.url + '" class="insight-link">' +
+              '<div class="insight-image">' +
+                '<img src="' + post.image + '" alt="' + post.imageAlt + '" loading="lazy">' +
+                '<span class="insight-tag">' + post.tag + '</span>' +
+              '</div>' +
+              '<div class="insight-content">' +
+                '<span class="insight-date">' + post.dateLabel + '</span>' +
+                '<h3>' + post.title + '</h3>' +
+                '<p>' + post.excerpt + '</p>' +
+                '<span class="insight-read-more">Read Article →</span>' +
+              '</div>' +
+            '</a>' +
+          '</article>';
+        }
+
+        fetch('posts.json?v=' + Date.now())
+          .then(function (res) { return res.json(); })
+          .then(function (posts) {
+            var now = new Date();
+            var grid = document.getElementById('latestInsightGrid');
+            if (!grid) return;
+            var latest = posts
+              .filter(function (p) { return new Date(p.publishAt) <= now; })
+              .sort(function (a, b) { return new Date(b.publishAt) - new Date(a.publishAt); })[0];
+            if (latest) {
+              grid.innerHTML = renderInsightCard(latest);
             }
+          })
+          .catch(function () { /* silent fail */ });
+      })();
+
+      // =============================================
+      // SCROLL REVEAL
+      // =============================================
+      var frames = document.querySelectorAll('.reveal-frame');
+      setTimeout(function () {
+        document.querySelectorAll('.reveal-content').forEach(function (el) {
+          if (getComputedStyle(el).opacity === '0') {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          }
         });
-      }, 3000); 
+      }, 3000);
 
-      const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-in');
-            io.unobserve(entry.target);
-          });
-        }, { threshold: 0.1 });
-      frames.forEach(frame => io.observe(frame));
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.1 });
+      frames.forEach(function (frame) { io.observe(frame); });
 
-      const steps = document.querySelectorAll('.step');
-      steps.forEach(step => {
-        const toggle = step.querySelector('.step-toggle');
-        if(toggle) {
-          toggle.addEventListener('click', () => {
-             steps.forEach(s => { if(s!==step) s.classList.remove('step--open'); });
-             step.classList.toggle('step--open');
+      // =============================================
+      // ACCORDION STEPS
+      // =============================================
+      var steps = document.querySelectorAll('.step');
+      steps.forEach(function (step) {
+        var toggle = step.querySelector('.step-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', function () {
+            steps.forEach(function (s) { if (s !== step) s.classList.remove('step--open'); });
+            step.classList.toggle('step--open');
           });
         }
       });
 
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const navBackdrop = document.querySelector('.nav-backdrop');
+      // =============================================
+      // NAV
+      // =============================================
+      var navToggle = document.querySelector('.nav-toggle');
+      var navLinks = document.querySelector('.nav-links');
+      var navBackdrop = document.querySelector('.nav-backdrop');
 
-      const closeNav = () => {
-        if(navLinks) navLinks.classList.remove('is-open');
-        if(navToggle) navToggle.classList.remove('is-active');
-        if(navBackdrop) navBackdrop.classList.remove('is-active');
-      };
+      function closeNav() {
+        if (navLinks) navLinks.classList.remove('is-open');
+        if (navToggle) navToggle.classList.remove('is-active');
+        if (navBackdrop) navBackdrop.classList.remove('is-active');
+      }
 
       if (navToggle && navLinks && navBackdrop) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', function () {
           navLinks.classList.toggle('is-open');
           navToggle.classList.toggle('is-active');
           navBackdrop.classList.toggle('is-active');
         });
-        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
+        navLinks.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeNav); });
         navBackdrop.addEventListener('click', closeNav);
       }
-      
-      const successModal = document.getElementById('successModal');
-      if(successModal) {
-         successModal.addEventListener('click', (e) => {
-          if(e.target.dataset.close) {
-             successModal.classList.remove('is-open');
-             document.body.classList.remove('modal-open');
-             setTimeout(() => successModal.setAttribute('aria-hidden', 'true'), 300);
+
+      // =============================================
+      // SUCCESS MODAL
+      // =============================================
+      var successModal = document.getElementById('successModal');
+      if (successModal) {
+        successModal.addEventListener('click', function (e) {
+          if (e.target.dataset.close) {
+            successModal.classList.remove('is-open');
+            document.body.classList.remove('modal-open');
+            setTimeout(function () { successModal.setAttribute('aria-hidden', 'true'); }, 300);
           }
-         });
+        });
       }
 
-      const form = document.getElementById('contactForm');
-      if(form) {
-        form.addEventListener('submit', function(e) {
+      // =============================================
+      // CONTACT FORM
+      // =============================================
+      var form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
           e.preventDefault();
-          const btn = form.querySelector('button[type="submit"]');
-          const originalText = btn.innerText;
+          var btn = form.querySelector('button[type="submit"]');
+          var originalText = btn.innerText;
           btn.innerText = 'Sending...';
           btn.disabled = true;
 
           fetch(form.action, {
             method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
           })
-          .then(response => {
+          .then(function (response) {
             if (response.ok) {
               form.reset();
-              if(successModal) {
-                 successModal.setAttribute('aria-hidden', 'false');
-                 successModal.classList.add('is-open');
-                 document.body.classList.add('modal-open');
+              if (successModal) {
+                successModal.setAttribute('aria-hidden', 'false');
+                successModal.classList.add('is-open');
+                document.body.classList.add('modal-open');
               }
             } else {
-              alert("Oops! Something went wrong.");
+              alert('Oops! Something went wrong.');
             }
           })
-          .catch(error => { alert("Oops! There was a problem sending your form."); })
-          .finally(() => { btn.innerText = originalText; btn.disabled = false; });
+          .catch(function () { alert('Oops! There was a problem sending your form.'); })
+          .finally(function () { btn.innerText = originalText; btn.disabled = false; });
         });
       }
-      
-      const banner = document.getElementById('cookieBanner');
-      const gaId = 'G-L802JYJHBS';
+
+      // =============================================
+      // COOKIES & ANALYTICS
+      // =============================================
+      var banner = document.getElementById('cookieBanner');
+      var gaId = 'G-L802JYJHBS';
 
       function loadAnalytics() {
         if (window.gaLoaded) return;
-        const script = document.createElement('script');
+        var script = document.createElement('script');
         script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
         document.head.appendChild(script);
-
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', gaId);
         window.gaLoaded = true;
@@ -517,26 +558,28 @@
       if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
         loadAnalytics();
       } else if (!localStorage.getItem('evida_cookie_consent')) {
-         setTimeout(() => banner?.classList.add('is-visible'), 1500);
+        setTimeout(function () { if (banner) banner.classList.add('is-visible'); }, 1500);
       }
 
-      document.getElementById('cookieAccept')?.addEventListener('click', () => {
+      document.getElementById('cookieAccept').addEventListener('click', function () {
         localStorage.setItem('evida_cookie_consent', 'accepted');
-        if(banner) banner.classList.remove('is-visible');
-        loadAnalytics(); 
+        if (banner) banner.classList.remove('is-visible');
+        loadAnalytics();
       });
-      
-      document.getElementById('cookieReject')?.addEventListener('click', () => {
+      document.getElementById('cookieReject').addEventListener('click', function () {
         localStorage.setItem('evida_cookie_consent', 'rejected');
-        if(banner) banner.classList.remove('is-visible');
+        if (banner) banner.classList.remove('is-visible');
       });
 
-      const scrollBtn = document.getElementById('scrollTopBtn');
-      window.addEventListener('scroll', () => {
-        if(window.scrollY > 400) scrollBtn.classList.add('is-visible');
+      // =============================================
+      // SCROLL TO TOP
+      // =============================================
+      var scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 400) scrollBtn.classList.add('is-visible');
         else scrollBtn.classList.remove('is-visible');
       });
-      if(scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+      if (scrollBtn) scrollBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
     });
   </script>
