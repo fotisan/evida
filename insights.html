@@ -61,21 +61,8 @@
         Thoughts on digital architecture, behavioral psychology, and premium web design for service professionals.
       </p>
 
-      <div class="insights-grid">
-        <article class="insight-card reveal-frame">
-          <a href="trust-signals-professional-services.html" class="insight-link">
-            <div class="insight-image">
-              <img src="blog-trust-signals.webp" alt="Trust signals for professional service websites" loading="lazy">
-              <span class="insight-tag">Strategy</span>
-            </div>
-            <div class="insight-content">
-              <span class="insight-date">March 2026</span>
-              <h3>5 Trust Signals Every Service Business Website Needs to Win More Inquiries</h3>
-              <p>Discover how to build trust instantly through digital architecture and thoughtful design.</p>
-              <span class="insight-read-more">Read Article →</span>
-            </div>
-          </a>
-        </article>
+      <div class="insights-grid" id="insightsGrid">
+        <p id="insightsLoading" style="color: var(--muted); font-size: 0.95rem;">Loading articles...</p>
       </div>
     </section>
   </main>
@@ -108,56 +95,112 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      
-      const frames = document.querySelectorAll('.reveal-frame');
-      const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-in');
-            io.unobserve(entry.target);
-          });
-        }, { threshold: 0.05 });
-      frames.forEach(frame => io.observe(frame));
 
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const navBackdrop = document.querySelector('.nav-backdrop');
+      // =============================================
+      // LOAD & RENDER POSTS FROM posts.json
+      // =============================================
+      function renderInsightCard(post) {
+        return '<article class="insight-card reveal-frame is-in">' +
+          '<a href="' + post.url + '" class="insight-link">' +
+            '<div class="insight-image">' +
+              '<img src="' + post.image + '" alt="' + post.imageAlt + '" loading="lazy">' +
+              '<span class="insight-tag">' + post.tag + '</span>' +
+            '</div>' +
+            '<div class="insight-content">' +
+              '<span class="insight-date">' + post.dateLabel + '</span>' +
+              '<h3>' + post.title + '</h3>' +
+              '<p>' + post.excerpt + '</p>' +
+              '<span class="insight-read-more">Read Article →</span>' +
+            '</div>' +
+          '</a>' +
+        '</article>';
+      }
 
-      const closeNav = () => {
-        if(navLinks) navLinks.classList.remove('is-open');
-        if(navToggle) navToggle.classList.remove('is-active');
-        if(navBackdrop) navBackdrop.classList.remove('is-active');
-      };
+      fetch('posts.json?v=' + Date.now())
+        .then(function (res) { return res.json(); })
+        .then(function (posts) {
+          var now = new Date();
+          var grid = document.getElementById('insightsGrid');
+          var loading = document.getElementById('insightsLoading');
+
+          var published = posts
+            .filter(function (p) { return new Date(p.publishAt) <= now; })
+            .sort(function (a, b) { return new Date(b.publishAt) - new Date(a.publishAt); });
+
+          if (loading) loading.remove();
+
+          if (published.length === 0) {
+            grid.innerHTML = '<p style="color: var(--muted); font-size: 0.95rem;">No articles published yet. Check back soon.</p>';
+            return;
+          }
+
+          grid.innerHTML = published.map(renderInsightCard).join('');
+        })
+        .catch(function () {
+          var loading = document.getElementById('insightsLoading');
+          if (loading) loading.textContent = 'Could not load articles.';
+        });
+
+      // =============================================
+      // SCROLL REVEAL
+      // =============================================
+      var frames = document.querySelectorAll('.reveal-frame');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.05 });
+      frames.forEach(function (frame) { io.observe(frame); });
+
+      // =============================================
+      // NAV
+      // =============================================
+      var navToggle = document.querySelector('.nav-toggle');
+      var navLinks = document.querySelector('.nav-links');
+      var navBackdrop = document.querySelector('.nav-backdrop');
+
+      function closeNav() {
+        if (navLinks) navLinks.classList.remove('is-open');
+        if (navToggle) navToggle.classList.remove('is-active');
+        if (navBackdrop) navBackdrop.classList.remove('is-active');
+      }
 
       if (navToggle && navLinks && navBackdrop) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', function () {
           navLinks.classList.toggle('is-open');
           navToggle.classList.toggle('is-active');
           navBackdrop.classList.toggle('is-active');
         });
-        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
+        navLinks.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeNav); });
         navBackdrop.addEventListener('click', closeNav);
       }
 
-      const scrollBtn = document.getElementById('scrollTopBtn');
-      window.addEventListener('scroll', () => {
-        if(window.scrollY > 400) scrollBtn.classList.add('is-visible');
+      // =============================================
+      // SCROLL TO TOP
+      // =============================================
+      var scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 400) scrollBtn.classList.add('is-visible');
         else scrollBtn.classList.remove('is-visible');
       });
-      if(scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+      if (scrollBtn) scrollBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-      const banner = document.getElementById('cookieBanner');
-      const gaId = 'G-L802JYJHBS';
+      // =============================================
+      // COOKIES & ANALYTICS
+      // =============================================
+      var banner = document.getElementById('cookieBanner');
+      var gaId = 'G-L802JYJHBS';
 
       function loadAnalytics() {
         if (window.gaLoaded) return;
-        const script = document.createElement('script');
+        var script = document.createElement('script');
         script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
         document.head.appendChild(script);
-
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', gaId);
         window.gaLoaded = true;
@@ -166,18 +209,17 @@
       if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
         loadAnalytics();
       } else if (!localStorage.getItem('evida_cookie_consent')) {
-         setTimeout(() => banner?.classList.add('is-visible'), 1500);
+        setTimeout(function () { if (banner) banner.classList.add('is-visible'); }, 1500);
       }
 
-      document.getElementById('cookieAccept')?.addEventListener('click', () => {
+      document.getElementById('cookieAccept').addEventListener('click', function () {
         localStorage.setItem('evida_cookie_consent', 'accepted');
-        if(banner) banner.classList.remove('is-visible');
-        loadAnalytics(); 
+        if (banner) banner.classList.remove('is-visible');
+        loadAnalytics();
       });
-      
-      document.getElementById('cookieReject')?.addEventListener('click', () => {
+      document.getElementById('cookieReject').addEventListener('click', function () {
         localStorage.setItem('evida_cookie_consent', 'rejected');
-        if(banner) banner.classList.remove('is-visible');
+        if (banner) banner.classList.remove('is-visible');
       });
 
     });
