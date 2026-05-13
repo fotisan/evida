@@ -14,7 +14,7 @@
 
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="icon" type="image/webp" href="logo.webp">
-  <link rel="stylesheet" href="styles.css?v=46">
+  <link rel="stylesheet" href="styles.css?v=47">
 
   <link rel="canonical" href="https://evidastudio.com/" />
   
@@ -88,7 +88,7 @@
 
   <main class="shell">
 
-    <section class="hero hero--b" id="top">
+    <section class="hero" id="top">
       <div class="hero-copy">
         <p class="hero-eyebrow hero-animate">Web Design & Digital Growth for Service Professionals</p>
         <h1 class="hero-title hero-animate" style="animation-delay: 0.1s;">
@@ -112,83 +112,14 @@
 
         <div class="hero-trust hero-animate" style="animation-delay: 0.4s;">
           <span class="hero-trust-dot"></span>
-          Currently working with professionals across New York
+          Built for professionals who want more than a pretty website.
         </div>
 
         <div class="hero-tags hero-animate" style="animation-delay: 0.5s;">
-          <span class="hero-tag">Therapists</span>
-          <span class="hero-tag">Consultants</span>
+          <span class="hero-tag">Independent Practice</span>
+          <span class="hero-tag">Service Business</span>
         </div>
       </div>
-
-      <aside class="hero-abstract" aria-hidden="true">
-        <svg class="hero-abstract-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="18"/>
-            </filter>
-            <filter id="softer" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="28"/>
-            </filter>
-          </defs>
-
-          <!-- Warm base blob — indigo, large, organic -->
-          <path d="M 100 60 C 200 -20 400 30 440 160 C 480 290 420 430 280 460 C 140 490 20 400 30 260 C 40 150 60 110 100 60 Z"
-            fill="#4338ca" opacity="0.07" filter="url(#softer)"/>
-
-          <!-- Orange accent blob — top right -->
-          <path d="M 320 20 C 410 -10 490 70 470 180 C 450 270 370 310 300 260 C 230 210 240 80 320 20 Z"
-            fill="#f97316" opacity="0.10" filter="url(#soft)"/>
-
-          <!-- Secondary indigo blob — bottom left -->
-          <path d="M 30 280 C 10 360 60 460 160 470 C 240 478 310 420 300 340 C 290 260 200 230 130 250 C 70 268 42 230 30 280 Z"
-            fill="#4338ca" opacity="0.09" filter="url(#soft)"/>
-
-          <!-- Dashed geometric ring — structured element -->
-          <circle cx="240" cy="240" r="190"
-            fill="none" stroke="#4338ca" stroke-width="1"
-            stroke-dasharray="6 8" opacity="0.15"/>
-
-          <!-- Thin accent ring — orange -->
-          <circle cx="310" cy="150" r="80"
-            fill="none" stroke="#f97316" stroke-width="1"
-            stroke-dasharray="4 6" opacity="0.20"/>
-
-          <!-- Small decorative dots -->
-          <circle cx="80"  cy="100" r="5" fill="#f97316" opacity="0.35"/>
-          <circle cx="400" cy="80"  r="3" fill="#4338ca" opacity="0.30"/>
-          <circle cx="440" cy="320" r="4" fill="#f97316" opacity="0.25"/>
-          <circle cx="60"  cy="380" r="3" fill="#4338ca" opacity="0.25"/>
-          <circle cx="260" cy="460" r="5" fill="#4338ca" opacity="0.20"/>
-          <circle cx="150" cy="40"  r="3" fill="#f97316" opacity="0.30"/>
-
-          <!-- Floating card — white, premium feel -->
-          <rect x="140" y="170" width="200" height="130" rx="14"
-            fill="white" opacity="0.75"/>
-          <rect x="140" y="170" width="200" height="130" rx="14"
-            fill="none" stroke="#e2e8f0" stroke-width="1"/>
-
-          <!-- Card inner content — abstract lines -->
-          <rect x="162" y="196" width="60" height="8" rx="4" fill="#4338ca" opacity="0.25"/>
-          <rect x="162" y="212" width="100" height="6" rx="3" fill="#94a3b8" opacity="0.35"/>
-          <rect x="162" y="225" width="80"  height="6" rx="3" fill="#94a3b8" opacity="0.25"/>
-          <rect x="162" y="245" width="110" height="6" rx="3" fill="#94a3b8" opacity="0.20"/>
-          <rect x="162" y="258" width="70"  height="6" rx="3" fill="#94a3b8" opacity="0.20"/>
-
-          <!-- Card CTA button — accent -->
-          <rect x="162" y="278" width="72" height="10" rx="5" fill="#4338ca" opacity="0.55"/>
-
-          <!-- Small orb — accent orange -->
-          <circle cx="138" cy="168" r="18"
-            fill="#f97316" opacity="0.90"/>
-          <text x="138" y="173" text-anchor="middle"
-            font-size="14" fill="white" font-family="sans-serif">↗</text>
-
-          <!-- Thin horizontal lines — structure/clarity -->
-          <line x1="30" y1="420" x2="130" y2="420" stroke="#4338ca" stroke-width="1" opacity="0.15"/>
-          <line x1="350" y1="440" x2="450" y2="440" stroke="#f97316" stroke-width="1.5" opacity="0.20"/>
-        </svg>
-      </aside>
     </section>
 
     <section class="section reveal-frame" id="portfolio">
@@ -388,7 +319,10 @@
       <div class="podcast-card reveal-frame">
         <div class="podcast-meta">
           <span class="podcast-label">Podcast by Evida Studio</span>
-          <h2 class="podcast-title">Your Practice Online</h2>
+          <div class="podcast-identity">
+            <img src="podcast-cover.webp" alt="Your Practice Online podcast cover" class="podcast-cover" width="80" height="80">
+            <h2 class="podcast-title">Your Practice Online</h2>
+          </div>
           <p class="podcast-desc">For independent professionals who want to understand how their digital presence works and what actually brings them clients. New episodes on Spotify.</p>
           <a href="https://open.spotify.com/show/033fQS8f6ktks3i9PXMtmW" target="_blank" rel="noopener noreferrer" class="btn-spotify">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
