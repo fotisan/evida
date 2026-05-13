@@ -497,7 +497,17 @@ button { font-family: inherit; }
   background: var(--page-bg); border-radius: 10px;
   padding: 1.5rem; border: 1px solid var(--border-color);
   display: flex; flex-direction: column; gap: 0.6rem;
-  align-self: center;
+  align-self: center; transition: all 0.2s ease;
+  cursor: pointer; text-decoration: none;
+}
+.podcast-episode:hover {
+  border-color: #1DB954;
+  box-shadow: 4px 4px 0 rgba(29,185,84,0.12);
+  transform: translate(-1px, -1px);
+}
+.podcast-ep-cta {
+  font-size: 0.85rem; font-weight: 700;
+  color: #1DB954; margin-top: 0.4rem;
 }
 .podcast-ep-label {
   font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
