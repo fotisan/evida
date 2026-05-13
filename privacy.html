@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privacy Policy | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="stylesheet" href="styles.css?v=28">
+  
+  <style>
+    .policy-content h2 { margin-top: 2rem; color: var(--brand); font-size: 1.4rem; }
+    .policy-content p { margin-bottom: 1rem; line-height: 1.6; color: var(--muted); }
+    .policy-content ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: var(--muted); }
+    .policy-header { margin-bottom: 3rem; text-align: center; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-logo">
+        <a href="index.html">Evida <span>Studio</span></a>
+      </div>
+      <a href="index.html" class="btn-outline" style="padding: 0.6rem 1rem; font-size: 0.9rem;">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="policy-header reveal-frame">
+      <h1 class="hero-title reveal-content" style="font-size: 2.5rem;">Privacy Policy</h1>
+      <p class="hero-sub reveal-content" style="margin: 1rem auto;">Last updated: March 2026</p>
+    </div>
+
+    <section class="section reveal-frame">
+      <div class="policy-content reveal-content">
+        <p>At Evida Studio, we respect your privacy. This policy explains how we handle your information when you visit our website.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect minimal data to ensure the website functions correctly and to communicate with you.</p>
+        <ul>
+          <li><strong>Contact Form Data:</strong> When you send an inquiry, we collect your name, email, and message solely to reply to your request.</li>
+          <li><strong>Usage Data:</strong> We use Google Analytics to understand how visitors find and use our site (e.g., which pages are popular). This data is anonymized.</li>
+        </ul>
+
+        <h2>2. How We Use Cookies</h2>
+        <p>Cookies are small text files stored on your device. We use them for:</p>
+        <ul>
+          <li><strong>Analytics:</strong> To track website traffic and performance (via Google Analytics). These activate only if you click "Accept" on our cookie banner.</li>
+          <li><strong>Functionality:</strong> To remember your preference regarding the cookie banner itself.</li>
+        </ul>
+
+        <h2>3. Data Sharing</h2>
+        <p>We do not sell, trade, or rent your personal identification information to others. Your contact form details are sent directly to our email inbox.</p>
+
+        <h2>4. Your Rights (GDPR)</h2>
+        <p>If you are in the European Economic Area (EEA), you have the right to request access to your personal data, correction of errors, or deletion of your data. To exercise these rights, please contact us.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at:<br>
+        <strong style="color: var(--page-fg);">hello@evidastudio.com</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="margin-top: 6rem; padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color); background: #fff; color: var(--muted);">
+    © Evida Studio. Built for clarity.
+  </footer>
+
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <h3>Privacy & Cookies</h3>
+        <p>We use cookies to ensure a smooth experience. Your privacy is respected.</p>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookieReject" class="btn-outline btn-sm">Decline</button>
+        <button id="cookieAccept" class="btn-primary btn-sm">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      const frames = document.querySelectorAll('.reveal-frame');
+      frames.forEach(frame => {
+        frame.classList.add('is-in');
+        frame.querySelectorAll('.reveal-content').forEach((kid, idx) => {
+          kid.style.transitionDelay = (idx * 100) + 'ms';
+          kid.classList.add('is-in');
+        });
+      });
+
+      // === GOOGLE ANALYTICS & COOKIE LOGIC ===
+      const banner = document.getElementById('cookieBanner');
+      const gaId = 'G-L802JYJHBS';
+
+      function loadAnalytics() {
+        if (window.gaLoaded) return;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+        window.gaLoaded = true;
+      }
+
+      if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
+        loadAnalytics();
+      } else if (!localStorage.getItem('evida_cookie_consent')) {
+         setTimeout(() => banner?.classList.add('is-visible'), 1500);
+      }
+
+      document.getElementById('cookieAccept')?.addEventListener('click', () => {
+        localStorage.setItem('evida_cookie_consent', 'accepted');
+        if(banner) banner.classList.remove('is-visible');
+        loadAnalytics(); 
+      });
+      
+      document.getElementById('cookieReject')?.addEventListener('click', () => {
+        localStorage.setItem('evida_cookie_consent', 'rejected');
+        if(banner) banner.classList.remove('is-visible');
+      });
+
+    });
+  </script>
+</body>
+</html>
