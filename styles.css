@@ -560,12 +560,12 @@ footer {
   gap: 1.2rem;
 }
 
-/* MOBILE FIRST: Χρήση order για να κατέβουν τα socials κάτω από το nav */
+/* MOBILE FIRST: Τα socials έρχονται από κάτω (order:2), κεντραρισμένα και πολύ κοντά το ένα στο άλλο */
 .footer-socials {
   order: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
   width: 100%;
 }
 .footer-nav {
