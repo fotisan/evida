@@ -548,24 +548,30 @@ button { font-family: inherit; }
 
 /* --- FOOTER & MISC --- */
 footer {
-  margin-top: 6rem; padding: 3rem 1.4rem; text-align: center;
+  margin-top: 6rem; padding: 4rem 1.4rem; text-align: center;
   border-top: 1px solid var(--border-color); background: #fff; color: var(--muted);
 }
+
+/* MOBILE FIRST: 2-Column strict Grid */
 .footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 0.5rem;
+  max-width: 380px;
+  margin: 0 auto 2.5rem;
 }
 .footer-links a { 
   font-weight: 600; 
-  font-size: 0.9rem; 
-  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem; 
+  padding: 0.4rem;
   border-radius: 6px;
   transition: all 0.2s ease;
   white-space: nowrap;
+}
+/* Το 7ο στοιχείο (Email Us) απλώνεται και στις 2 στήλες ως τελικό CTA */
+.footer-links a:last-child {
+  grid-column: 1 / -1;
+  color: var(--brand);
 }
 .footer-links a:hover { 
   color: var(--brand); 
@@ -621,6 +627,21 @@ footer {
   .form-field--full { grid-column: 1 / -1; }
   .form-actions { flex-direction: row; align-items: center; justify-content: space-between; }
   .insights-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  
+  /* DESKTOP: Επιστροφή σε οριζόντια flex στοίχιση */
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    gap: 0.6rem 1.5rem;
+  }
+  .footer-links a:last-child {
+    grid-column: auto;
+    color: inherit;
+  }
 }
 
 /* --- HERO OPTION B — Abstract Visual --- */
