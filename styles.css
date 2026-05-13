@@ -559,18 +559,23 @@ footer {
   margin: 0 auto;
   gap: 1.2rem;
 }
+
+/* MOBILE FIRST: Χρήση order για να κατέβουν τα socials κάτω από το nav */
 .footer-socials {
+  order: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
   width: 100%;
 }
 .footer-nav {
+  order: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem 0.5rem;
   width: 100%;
 }
+
 .footer-inner-wrap a { 
   font-weight: 600; 
   font-size: 0.95rem; 
@@ -641,18 +646,20 @@ footer {
   .form-actions { flex-direction: row; align-items: center; justify-content: space-between; }
   .insights-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
   
-  /* DESKTOP FOOTER */
+  /* DESKTOP FOOTER: Επαναφορά ιεραρχίας με order (socials πάνω) */
   .footer-inner-wrap {
     max-width: 800px;
     gap: 1.5rem;
   }
   .footer-socials {
+    order: 1;
     display: flex;
     justify-content: center;
     gap: 1.2rem;
   }
   .footer-socials a { width: auto; padding: 0.5rem; }
   .footer-nav {
+    order: 2;
     display: flex;
     flex-direction: row;
     justify-content: center;
