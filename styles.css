@@ -76,10 +76,6 @@ button { font-family: inherit; }
 /* Honeypot spam field — hidden from users, visible to bots */
 .contact-hp { display: none !important; }
 
-/* heroMotion removed — phone visual no longer used */
-
-/* ENTRANCE ANIMATION removed — hero is text-only */
-
 @keyframes pulseDot {
   0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
   70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
@@ -88,12 +84,11 @@ button { font-family: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-content { opacity: 1; transform: none; transition: none; }
-  .hero-phone.hero-panel { animation: none !important; }
 }
 
 /* --- HEADER --- */
 .site-header {
-  position: sticky; top: 0; z-index: 100; /* ΔΙΟΡΘΩΣΗ Z-INDEX ΕΔΩ */
+  position: sticky; top: 0; z-index: 100;
   background: rgba(255, 252, 248, 0.95);
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(12px);
@@ -123,7 +118,7 @@ button { font-family: inherit; }
 /* Mobile Backdrop */
 .nav-backdrop {
   position: fixed; inset: 0; background: rgba(0,0,0,0.2); backdrop-filter: blur(2px);
-  z-index: 90; /* ΔΙΟΡΘΩΣΗ Z-INDEX ΕΔΩ ΓΙΑ ΝΑ ΜΗΝ ΚΑΛΥΠΤΕΙ ΤΟ MENU */
+  z-index: 90;
   opacity: 0; pointer-events: none; transition: opacity 0.3s;
 }
 .nav-backdrop.is-active { opacity: 1; pointer-events: auto; }
@@ -162,14 +157,9 @@ button { font-family: inherit; }
   width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
   border-radius: 50%; color: var(--brand); background: var(--brand-light); transition: 0.2s;
 }
-
-/* ΔΙΟΡΘΩΣΗ: Πιο ισχυρός κανόνας CSS για να μην χάνεται το εικονίδιο */
 .nav-links .nav-social:hover { background: var(--brand); color: #fff; }
 
 /* --- HERO SECTION --- */
-.hero { padding-top: 1rem; display: flex; flex-direction: column; gap: 2.5rem; }
-
-/* --- HERO — TEXT ONLY --- */
 .hero {
   padding: 1.8rem 0 2.5rem;
   display: block;
@@ -558,11 +548,29 @@ button { font-family: inherit; }
 
 /* --- FOOTER & MISC --- */
 footer {
-  margin-top: 6rem; padding: 3rem 0; text-align: center;
+  margin-top: 6rem; padding: 3rem 1.4rem; text-align: center;
   border-top: 1px solid var(--border-color); background: #fff; color: var(--muted);
 }
-.footer-links a { margin: 0 0.8rem; font-weight: 600; font-size: 0.9rem; transition: 0.2s; }
-.footer-links a:hover { color: var(--brand); background: var(--brand-light); padding: 0.2rem 0.4rem; border-radius: 4px; }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.footer-links a { 
+  font-weight: 600; 
+  font-size: 0.9rem; 
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.footer-links a:hover { 
+  color: var(--brand); 
+  background: var(--brand-light); 
+}
 
 .scroll-top {
   position: fixed; right: 2rem; bottom: 2rem; width: 48px; height: 48px;
