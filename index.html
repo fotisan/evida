@@ -8,11 +8,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
 
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="icon" type="image/webp" href="logo.webp">
-  <link rel="stylesheet" href="styles.css?v=44">
+  <link rel="stylesheet" href="styles.css?v=45">
 
   <link rel="canonical" href="https://evidastudio.com/" />
   
@@ -87,22 +89,22 @@
   <main class="shell">
 
     <section class="hero" id="top">
-      <div class="hero-copy reveal-frame">
-        <p class="hero-eyebrow reveal-content" style="margin-bottom: 0.8rem;">Web Design & Digital Growth for Service Professionals</p>
-        <h1 class="hero-title reveal-content">
+      <div class="hero-copy">
+        <p class="hero-eyebrow hero-animate" style="margin-bottom: 0.8rem;">Web Design & Digital Growth for Service Professionals</p>
+        <h1 class="hero-title hero-animate" style="animation-delay: 0.1s;">
           Your Expertise Deserves a <span class="hero-accent">Presence That Performs</span>
         </h1>
 
-        <p class="hero-sub reveal-content">
+        <p class="hero-sub hero-animate" style="animation-delay: 0.2s;">
           We build high-performance websites for service professionals. And for those who want to go further, we run the campaigns that bring the right clients to them.
         </p>
 
         <div class="hero-cta-row">
-          <a href="#contact" class="btn-primary reveal-content">Get in Touch</a>
-          <a href="portfolio.html" class="btn-outline reveal-content">View Case Studies</a>
+          <a href="#contact" class="btn-primary hero-animate" style="animation-delay: 0.3s;">Get in Touch</a>
+          <a href="portfolio.html" class="btn-outline hero-animate" style="animation-delay: 0.3s;">View Case Studies</a>
         </div>
         
-        <div class="hero-tags reveal-content">
+        <div class="hero-tags hero-animate" style="animation-delay: 0.4s;">
           <span class="hero-tag">Therapists</span>
           <span class="hero-tag">Architects</span>
           <span class="hero-tag">Consultants</span>
@@ -485,7 +487,7 @@
           '</article>';
         }
 
-        fetch('posts.json?v=' + Date.now())
+        fetch('posts.json?v=44')
           .then(function (res) { return res.json(); })
           .then(function (posts) {
             var now = new Date();
@@ -506,20 +508,10 @@
       // =============================================
       var frames = document.querySelectorAll('.reveal-frame');
 
-      // Immediately reveal anything already in the viewport
-      frames.forEach(function (frame) {
-        var rect = frame.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          frame.classList.add('is-in');
-        }
-      });
+      // Add is-in immediately to all frames — visibility is never JS-dependent
+      frames.forEach(function (frame) { frame.classList.add('is-in'); });
 
-      // Safety net: force all visible after 500ms (covers slow paints, tab switches)
-      setTimeout(function () {
-        frames.forEach(function (frame) { frame.classList.add('is-in'); });
-      }, 500);
-
-      // IO for below-fold progressive animation
+      // IO for below-fold progressive animation (enhancement only)
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
