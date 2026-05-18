@@ -181,25 +181,36 @@ button { font-family: inherit; }
 .nav-links .nav-social:hover { background: var(--brand); color: #fff; }
 
 /* --- HERO SECTION --- */
-.hero { padding-top: 1rem; display: flex; flex-direction: column; gap: 2.5rem; }
+.hero { padding-top: 3.5rem; padding-bottom: 1rem; display: flex; flex-direction: column; gap: 2.5rem; }
 
 .hero-eyebrow {
   font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--accent); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;
+  color: var(--accent); margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.5rem;
 }
-.hero-eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.hero-eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
 
 .hero-title {
-  font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; font-weight: 800; color: var(--page-fg); letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.12; font-weight: 800; color: var(--page-fg);
+  letter-spacing: -0.02em; margin-bottom: 1.6rem;
 }
 .hero-accent { color: var(--brand); background: linear-gradient(180deg, transparent 70%, #e0e7ff 70%); }
-.hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 36rem; }
+.hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 36rem; line-height: 1.75; margin-bottom: 2.2rem; }
 
-.hero-cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.2rem; }
+.hero-cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.6rem; }
 
-.hero-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+/* Hero Trust Signal */
+.hero-trust {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-size: 0.9rem; color: var(--muted); font-weight: 500; margin-bottom: 1.8rem; line-height: 1.5;
+}
+.hero-trust-dot {
+  width: 9px; height: 9px; background: #22c55e; border-radius: 50%;
+  animation: pulseDot 2s infinite; flex-shrink: 0;
+}
+
+.hero-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 .hero-tag {
-  font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 6px;
+  font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.1rem; border-radius: 8px;
   background: #fff; border: 1px solid var(--border-color); color: var(--muted);
 }
 
