@@ -58,18 +58,27 @@
     .article-meta { color: var(--brand); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 1rem; display: block; }
     .article-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--page-fg); line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
 
-    /* FIX 1: Added display:block to eliminate the 4px inline-element gap below hero */
-    .article-hero-img { display: block; width: 100%; border-radius: var(--radius); margin-bottom: 3rem; box-shadow: var(--card-shadow); border: 1px solid var(--border-color); }
+    /* Hero image: full-width, no decorative treatment */
+    .article-hero-img {
+      display: block;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    /* Inline editorial image: breaks out of the 680px text column
+       to match the full 960px container width */
+    .article-editorial-img {
+      display: block;
+      width: 100%;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
 
     .article-body { max-width: 680px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; color: var(--page-fg); }
     .article-body p { margin-bottom: 1.5rem; }
     .article-body h2 { font-size: 1.7rem; font-weight: 800; margin: 3.5rem 0 1.5rem; color: var(--page-fg); display: flex; align-items: center; gap: 0.6rem; }
     .article-body h2::before { content: ""; display: inline-block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
     .article-body h3 { font-size: 1.3rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--page-fg); }
-
-    /* FIX 2: Use CSS variables for consistency with the hero image styling */
-    .article-body img { display: block; width: 100%; border-radius: var(--radius); margin: 2rem 0; box-shadow: var(--card-shadow); border: 1px solid var(--border-color); }
-
     .article-body strong { color: var(--page-fg); font-weight: 700; }
     .article-body em { font-style: italic; }
 
@@ -133,6 +142,7 @@
         <h1 class="article-title">Trust Before the First Session.<br>How Clients Judge You Before You Ever Meet.</h1>
       </div>
 
+      <!-- Hero image: full 960px container width, no decorative styling -->
       <img
         class="article-hero-img"
         src="blog-trust-before-session.webp"
@@ -143,7 +153,8 @@
         fetchpriority="high"
       >
 
-      <article class="article-body">
+      <!-- First text block -->
+      <div class="article-body">
 
         <p>Picture this. You're in a city you don't know well and you're hungry. You open Google Maps and see two restaurants side by side. The first has photos, reviews, opening hours, even a photo of the owner. The second has nothing but a name and a phone number.</p>
 
@@ -203,13 +214,20 @@
           A formal tone can create distance instead of closeness. And distance is the enemy of trust.
         </div>
 
-        <img
-          src="blog-trust-invisible-fear.webp"
-          alt="The invisible hesitation visitors experience before contacting a service professional online"
-          loading="lazy"
-          width="1200"
-          height="634"
-        >
+      </div><!-- end first article-body -->
+
+      <!-- Editorial image: placed at the 960px container level, same as hero -->
+      <img
+        class="article-editorial-img"
+        src="blog-trust-invisible-fear.webp"
+        alt="The invisible hesitation visitors experience before contacting a service professional online"
+        loading="lazy"
+        width="1200"
+        height="634"
+      >
+
+      <!-- Second text block -->
+      <div class="article-body">
 
         <h2>The Invisible Fear That Keeps People Away</h2>
 
@@ -269,9 +287,9 @@
           <a href="index.html#contact" class="btn-primary">Let's discuss your project</a>
         </div>
 
-      </article>
+      </div><!-- end second article-body -->
 
-    </div>
+    </div><!-- end container -->
   </main>
 
   <footer>
