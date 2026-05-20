@@ -57,7 +57,9 @@
     .article-header { text-align: center; max-width: 800px; margin: 4rem auto 2rem; }
     .article-meta { color: var(--brand); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 1rem; display: block; }
     .article-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--page-fg); line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-    .article-hero-img { width: 100%; border-radius: var(--radius); margin-bottom: 3rem; box-shadow: var(--card-shadow); border: 1px solid var(--border-color); }
+
+    /* FIX 1: Added display:block to eliminate the 4px inline-element gap below hero */
+    .article-hero-img { display: block; width: 100%; border-radius: var(--radius); margin-bottom: 3rem; box-shadow: var(--card-shadow); border: 1px solid var(--border-color); }
 
     .article-body { max-width: 680px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; color: var(--page-fg); }
     .article-body p { margin-bottom: 1.5rem; }
@@ -65,9 +67,11 @@
     .article-body h2::before { content: ""; display: inline-block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
     .article-body h3 { font-size: 1.3rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--page-fg); }
 
-    .article-body img { width: 100%; border-radius: 8px; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border-color); display: block; }
+    /* FIX 2: Use CSS variables for consistency with the hero image styling */
+    .article-body img { display: block; width: 100%; border-radius: var(--radius); margin: 2rem 0; box-shadow: var(--card-shadow); border: 1px solid var(--border-color); }
+
     .article-body strong { color: var(--page-fg); font-weight: 700; }
-    .article-body em { font-style: italic; color: var(--muted); }
+    .article-body em { font-style: italic; }
 
     .article-callout {
       background: var(--brand-light);
@@ -136,6 +140,7 @@
         width="1400"
         height="739"
         loading="eager"
+        fetchpriority="high"
       >
 
       <article class="article-body">
@@ -259,12 +264,13 @@
         </div>
 
         <div class="article-cta">
-          <h3>Does your website pass the trust test?</h3>
-          <p>At Evida Studio, we build digital presences for independent professionals that turn visitors into conversations — starting from the first second they land on your page.</p>
-          <a href="index.html#contact" class="btn-primary">Let's Review Your Website</a>
+          <h3>Ready to build a digital presence that earns trust?</h3>
+          <p>At Evida Studio, we craft custom websites for service professionals focused on clarity, structure, and conversion.</p>
+          <a href="index.html#contact" class="btn-primary">Let's discuss your project</a>
         </div>
 
       </article>
+
     </div>
   </main>
 
@@ -279,99 +285,59 @@
     <p style="margin-top:1.5rem; opacity:0.6; font-size:0.85rem;">© Evida Studio &bull; Designed for Service Professionals</p>
   </footer>
 
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">&#8593;</button>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
   <div id="cookieBanner" class="cookie-banner">
     <div class="cookie-content">
       <div class="cookie-text">
         <h3>Privacy &amp; Cookies</h3>
-        <p>We use cookies to ensure a smooth experience. Your privacy is respected.</p>
+        <p>We use cookies to ensure a smooth experience. By continuing, you accept our use of cookies.</p>
       </div>
       <div class="cookie-actions">
-        <button id="cookieReject" class="btn-outline btn-sm">Decline</button>
-        <button id="cookieAccept" class="btn-primary btn-sm">Accept</button>
+        <button class="cookie-accept btn-primary" id="cookieAccept">Accept</button>
+        <button class="cookie-decline" id="cookieDecline">Decline</button>
       </div>
     </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    // Scroll top
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-      var frames = document.querySelectorAll('.reveal-frame');
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        });
-      }, { threshold: 0.05 });
-      frames.forEach(function (frame) { io.observe(frame); });
+    // Mobile nav
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    const navBackdrop = document.querySelector('.nav-backdrop');
+    function closeNav() {
+      navToggle.classList.remove('is-open');
+      navLinks.classList.remove('is-open');
+      navBackdrop.classList.remove('is-visible');
+    }
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.classList.toggle('is-open');
+      navLinks.classList.toggle('is-open', open);
+      navBackdrop.classList.toggle('is-visible', open);
+    });
+    navBackdrop.addEventListener('click', closeNav);
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
 
-      var navToggle  = document.querySelector('.nav-toggle');
-      var navLinks   = document.querySelector('.nav-links');
-      var navBackdrop = document.querySelector('.nav-backdrop');
-
-      function closeNav() {
-        if (navLinks)    navLinks.classList.remove('is-open');
-        if (navToggle)   navToggle.classList.remove('is-active');
-        if (navBackdrop) navBackdrop.classList.remove('is-active');
-      }
-
-      if (navToggle && navLinks && navBackdrop) {
-        navToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('is-open');
-          navToggle.classList.toggle('is-active');
-          navBackdrop.classList.toggle('is-active');
-        });
-        navLinks.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeNav); });
-        navBackdrop.addEventListener('click', closeNav);
-      }
-
-      var scrollBtn = document.getElementById('scrollTopBtn');
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 400) scrollBtn.classList.add('is-visible');
-        else scrollBtn.classList.remove('is-visible');
-      });
-      if (scrollBtn) scrollBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-      var banner = document.getElementById('cookieBanner');
-      var gaId   = 'G-L802JYJHBS';
-
-      function loadAnalytics() {
-        if (window.gaLoaded) return;
-        window.gaLoaded = true;
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', gaId);
-      }
-
-      if (!banner) return;
-
-      var consent = localStorage.getItem('cookie-consent');
-      if (consent === 'accepted') { loadAnalytics(); banner.style.display = 'none'; return; }
-      if (consent === 'rejected') { banner.style.display = 'none'; return; }
-
-      banner.style.display = 'flex';
-
-      document.getElementById('cookieAccept').addEventListener('click', function () {
-        localStorage.setItem('cookie-consent', 'accepted');
-        banner.style.display = 'none';
-        loadAnalytics();
-      });
-
-      document.getElementById('cookieReject').addEventListener('click', function () {
-        localStorage.setItem('cookie-consent', 'rejected');
-        banner.style.display = 'none';
-      });
-
+    // Cookie banner
+    const banner = document.getElementById('cookieBanner');
+    if (!localStorage.getItem('cookieChoice')) {
+      setTimeout(() => banner.classList.add('is-visible'), 1200);
+    }
+    document.getElementById('cookieAccept').addEventListener('click', () => {
+      localStorage.setItem('cookieChoice', 'accepted');
+      banner.classList.remove('is-visible');
+    });
+    document.getElementById('cookieDecline').addEventListener('click', () => {
+      localStorage.setItem('cookieChoice', 'declined');
+      banner.classList.remove('is-visible');
     });
   </script>
-
 </body>
 </html>
