@@ -16,8 +16,10 @@
   <link rel="icon" type="image/webp" href="logo.webp">
   <link rel="stylesheet" href="styles.css?v=50">
 
+  <script src="nav.js" defer></script>
+
   <link rel="canonical" href="https://evidastudio.com/" />
-  
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://evidastudio.com/" />
   <meta property="og:title" content="Web Design & Google Ads for Service Professionals | Evida Studio" />
@@ -73,7 +75,7 @@
         <a href="#growth">Google Ads</a>
         <a href="#podcast">Podcast</a>
         <a href="insights.html">Insights</a>
-        
+
         <div class="nav-socials">
           <a class="nav-social" href="https://www.instagram.com/evidastudio/" target="_blank" rel="noopener" aria-label="Instagram">
              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 3h10c2.21 0 4 1.79 4 4v10c0 2.21-1.79 4-4 4H7c-2.21 0-4-1.79-4-4V7c0-2.21 1.79-4 4-4Zm10 2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6a2.8 2.8 0 0 0 0-5.6ZM17.2 6.6a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z"/></svg>
@@ -99,7 +101,8 @@
         </h1>
 
         <p class="hero-sub hero-animate" style="animation-delay: 0.2s;">
-          We build high-performance websites for service professionals. And for those who want to go further, we run the campaigns that bring the right clients to them.
+          We build high-performance websites for service professionals.
+          And for those who want to go further, we run the campaigns that bring the right clients to them.
         </p>
 
         <div class="hero-cta-row">
@@ -188,7 +191,7 @@
 
     <section class="section reveal-frame" id="about">
       <h2 class="reveal-content">About Our Web Development Studio</h2>
-      
+
       <div class="about-grid">
         <figure class="about-photo reveal-frame">
           <img src="fotis-hero.webp" alt="Fotis Antonas, Web Designer and Creative Director at Evida Studio" loading="lazy">
@@ -223,7 +226,7 @@
           <h3>Client Strategy</h3>
           <p>Aligning your digital presence with the expectations and needs of your ideal clients.</p>
         </div>
-        
+
         <div class="card reveal-frame">
           <div class="card-icon">
              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
@@ -231,7 +234,7 @@
           <h3>UX Architecture</h3>
           <p>Creating a structural flow that eliminates friction and encourages contact.</p>
         </div>
-        
+
         <div class="card reveal-frame">
           <div class="card-icon">
              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -398,7 +401,7 @@
 
         <div class="form-actions">
           <button type="submit" class="btn-primary">Get in Touch</button>
-          
+
           <div class="form-note-badge">
              <span class="form-note-dot"></span>
              Typically replies within 24 hours
@@ -526,29 +529,6 @@
           });
         }
       });
-
-      // =============================================
-      // NAV
-      // =============================================
-      var navToggle = document.querySelector('.nav-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var navBackdrop = document.querySelector('.nav-backdrop');
-
-      function closeNav() {
-        if (navLinks) navLinks.classList.remove('is-open');
-        if (navToggle) navToggle.classList.remove('is-active');
-        if (navBackdrop) navBackdrop.classList.remove('is-active');
-      }
-
-      if (navToggle && navLinks && navBackdrop) {
-        navToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('is-open');
-          navToggle.classList.toggle('is-active');
-          navBackdrop.classList.toggle('is-active');
-        });
-        navLinks.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeNav); });
-        navBackdrop.addEventListener('click', closeNav);
-      }
 
       // =============================================
       // SUCCESS MODAL
