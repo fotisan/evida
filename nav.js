@@ -24,19 +24,15 @@
 
   function init() {
 
-    /* 1 — Inject header ONLY on subpages, never on index.html */
-    var path = window.location.pathname;
-    var isHome = path === '/'
-              || path.endsWith('/index.html')
-              || path === '';
-
+    /* 1 — Inject ONLY on subpages that have the mount AND no header yet */
     var mount = document.getElementById('site-header-mount');
-    if (mount && !isHome) {
+    var headerExists = document.querySelector('.site-header');
+    if (mount && !headerExists) {
       mount.outerHTML = SUBPAGE_NAV;
     }
 
     /* 2 — Active link highlight */
-    var page = path.split('/').pop() || 'index.html';
+    var page = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(function (a) {
       var href = a.getAttribute('href');
       if (
