@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Therapist Platform v2 | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A second take on the therapist website — softer, slower, and built with more breathing room. This case study explores how whitespace and visual restraint communicate a different kind of safety to a different kind of patient.">
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="stylesheet" href="styles.css?v=51">
+  <script src="nav.js" defer></script>
+  <link rel="canonical" href="https://evidastudio.com/case-study-therapist-v2.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://evidastudio.com/case-study-therapist-v2.html" />
+  <meta property="og:title" content="Case Study: Therapist Platform v2 | Evida Studio" />
+  <meta property="og:description" content="More breathing room. A softer rhythm. A second therapist design built for a different emotional frequency." />
+  <meta property="og:image" content="https://evidastudio.com/mock-psych-2.webp" />
+  <meta property="og:site_name" content="Evida Studio" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Case Study: Therapist Platform v2 — Restraint as a Trust Signal","image":"https://evidastudio.com/mock-psych-2.webp","author":{"@type":"Person","name":"Fotis Antonas"},"publisher":{"@type":"Organization","name":"Evida Studio","logo":{"@type":"ImageObject","url":"https://evidastudio.com/logo.webp"}},"datePublished":"2026-05-25"}</script>
+  <style>
+    .cs-header{max-width:780px;margin:3.5rem auto 0;text-align:center}
+    .cs-meta{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--brand);margin-bottom:1.2rem}
+    .cs-meta::before{content:"";width:7px;height:7px;background:var(--brand);border-radius:50%}
+    .cs-title{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;color:var(--page-fg);line-height:1.15;letter-spacing:-.025em;margin-bottom:1.2rem}
+    .cs-lead{font-size:1.1rem;color:var(--muted);line-height:1.75;max-width:620px;margin:0 auto 2rem}
+    .cs-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2.2rem}
+    .cs-tag{font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:99px;background:var(--brand-light);color:var(--brand);border:1px solid rgba(67,56,202,.15)}
+    .cs-cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-bottom:3rem}
+    .cs-hero-img{width:100%;border-radius:var(--radius);margin-bottom:3.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border-color);display:block}
+    .cs-body{max-width:740px;margin:0 auto}
+    .cs-section-label{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:1.5rem}
+    .cs-section-label::before,.cs-section-label::after{content:"";flex:1;height:1px;background:var(--border-color)}
+    .cs-body h2{font-size:1.65rem;font-weight:800;color:var(--page-fg);margin:0 0 1rem;letter-spacing:-.015em;line-height:1.25}
+    .cs-body p{font-size:1.05rem;line-height:1.8;color:var(--muted);margin-bottom:1.4rem}
+    .cs-body strong{color:var(--page-fg);font-weight:700}
+    .cs-callout{background:var(--brand-light);border-left:3px solid var(--brand);padding:1.1rem 1.4rem;border-radius:0 8px 8px 0;margin:2rem 0;font-size:1rem;color:var(--page-fg);line-height:1.7}
+    .decision-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);overflow:hidden;margin-bottom:1.4rem}
+    .decision-header{padding:1rem 1.4rem;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:.75rem;background:#fafafa}
+    .decision-element{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .decision-pill{font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:99px;margin-left:auto}
+    .decision-pill--design{background:#ede9fe;color:#6d28d9}
+    .decision-pill--copy{background:#fef3c7;color:#92400e}
+    .decision-pill--ux{background:#dcfce7;color:#166534}
+    .decision-body{padding:1.4rem}
+    .decision-row{display:grid;gap:.5rem;margin-bottom:1.2rem}
+    .decision-row:last-child{margin-bottom:0}
+    .decision-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand)}
+    .decision-text{font-size:.97rem;line-height:1.65;color:var(--page-fg);margin:0}
+    @media(min-width:680px){.decision-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}.decision-row{margin-bottom:0}}
+    .cs-cta-block{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:2.5rem;text-align:center;margin-top:3.5rem}
+    .cs-cta-block h3{font-size:1.4rem;font-weight:800;margin-bottom:.8rem;color:var(--page-fg)}
+    .cs-cta-block p{font-size:1rem;color:var(--muted);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .cs-back{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:600;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+    .cs-back:hover{color:var(--brand)}
+  </style>
+</head>
+<body>
+  <div id="site-header-mount"></div>
+  <main class="shell" style="padding-top:3rem" id="top">
+    <article class="reveal-frame">
+
+      <div class="cs-header reveal-content">
+        <a href="portfolio.html" class="cs-back">← Back to Case Studies</a>
+        <span class="cs-meta">Case Study · Therapist Platform v2</span>
+        <h1 class="cs-title">The Same Problem.<br>A Different Emotional Frequency.</h1>
+        <p class="cs-lead">Not every therapist's patient arrives in the same state. This version of the therapist platform was designed for a quieter, more introspective visitor — someone who responds not to warmth and immediacy, but to space and stillness. The design thinking shifts accordingly.</p>
+        <div class="cs-tags">
+          <span class="cs-tag">Healthcare</span>
+          <span class="cs-tag">Therapy / Psychology</span>
+          <span class="cs-tag">Whitespace Design</span>
+          <span class="cs-tag">Custom Code</span>
+          <span class="cs-tag">Alternative Direction</span>
+        </div>
+        <div class="cs-cta-row">
+          <a href="https://fotisan.github.io/psychologist_/" target="_blank" rel="noopener" class="btn-primary">View Live Demo →</a>
+          <a href="index.html#contact" class="btn-outline">Build Something Similar</a>
+        </div>
+      </div>
+
+      <div class="reveal-content">
+        <img src="mock-psych-2.webp" alt="Therapist website v2 — softer rhythm and more breathing room" class="cs-hero-img" loading="eager">
+      </div>
+
+      <div class="cs-body">
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Context</div>
+          <h2>Two sites. Same niche.<br>Different design philosophy.</h2>
+          <p>The first therapist platform (v1) was built on warmth: terra cotta, sage green, dual CTAs, immediate trust signals. It works for the patient who arrives ready to act and needs a gentle push.</p>
+          <p>This version was designed with a different patient in mind: the one who opens tabs late at night, reads slowly, and needs the site itself to feel like the therapy they're looking for. Quiet. Unhurried. No pressure to decide.</p>
+          <div class="cs-callout"><strong>The design hypothesis:</strong> For a certain type of patient, less visual density is itself a reassurance. Whitespace communicates: "there is no rush here." That is a message the copy alone cannot deliver.</div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Design Decisions</div>
+          <h2>Restraint as a deliberate choice,<br>not a lack of ideas.</h2>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">01 · Increased Whitespace</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">More generous padding between sections. Larger line-height. Fewer elements per viewport.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Visual density communicates urgency. Whitespace communicates the opposite: patience, space, time. For the patient who hasn't decided yet, a page that feels unhurried removes the pressure of "I have to make a decision right now." They can stay longer. Think longer.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Longer time on page. Deeper scrolling. The visitor who was unsure becomes a visitor who has read enough to feel ready.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">02 · Serif Display Typography</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">A serif typeface for headings instead of the bold sans-serif used in v1.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Sans-serif reads as modern, direct, efficient. Serif reads as considered, literary, trustworthy over time. The patient who is introspective by nature often responds more readily to the visual language of depth and permanence that serif communicates. It signals a different kind of professional: one who thinks before they speak.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The site's aesthetic matches the visitor's self-perception. The therapist's visual language and the patient's inner register become aligned before a word is read.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">03 · Softer Gradient CTAs</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">CTA buttons use a soft sage-to-lavender gradient instead of a solid brand colour. Lower contrast. Higher elegance.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">A high-contrast CTA says: "click me now." A gradient CTA with softer contrast says: "when you're ready." For a patient who resists pressure, the lower visual urgency of the button removes the feeling of being sold to. The CTA becomes an invitation, not a demand.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Clicks come from a more considered state of mind. The patient who clicks is further along in their decision than the average visitor — which means fewer appointments that don't follow through.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">04 · Hero Card as Context, Not Metric</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">The hero card beside the photo communicates process ("First session, clear next steps") rather than logistics (address, duration, first step) as in v1.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">The introspective patient is less worried about "where is the office" and more worried about "what will happen to me in there." The card answers the deeper question: what will you leave the first session feeling and knowing? That is more reassuring than a street address.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The patient who reads the card has already imagined the experience. That imagination reduces the emotional distance between considering and booking.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:2.5rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">05 · Reduced Visual Competition</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Fewer elements per section. No trust dots in the hero. No animated micro-signals. Trust is built through tone and space, not components.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Every element on a page competes for attention. When too many things compete, the visitor's cognitive load increases — which is the last thing a person already managing anxiety needs to feel on a therapy practice website. Removing non-essential elements is itself an act of care.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The visitor's attention naturally lands on the content that matters: the headline, the therapist's words, the CTA. Nothing distracts from the decision.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">v1 vs v2</div>
+          <h2>Two directions. Both correct.<br>For different patients.</h2>
+          <p>The first platform was built for energy. This one was built for stillness. Neither is objectively better — the right version depends entirely on the therapist's positioning and the emotional state of their ideal patient. This is exactly why no two projects at Evida Studio begin with a template.</p>
+        </div>
+
+        <div class="cs-cta-block reveal-frame">
+          <h3>Your website's visual language is already saying something.</h3>
+          <p>The question is whether what it's saying matches what your ideal patient needs to hear.</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem">
+            <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
+            <a href="portfolio.html" class="btn-outline">View More Case Studies</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="portfolio.html">Case Studies</a>
+      <a href="insights.html">Insights</a>
+      <a href="mailto:hello@evidastudio.com">Email Us</a>
+    </div>
+    <p style="margin-top:1.5rem;opacity:.6;font-size:.85rem">© Evida Studio • Designed for Service Professionals</p>
+  </footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const f=document.querySelectorAll(".reveal-frame,.reveal-content");
+      f.forEach(e=>e.classList.add("is-in"));
+      if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-in");o.unobserve(e.target)}})},{threshold:.08});f.forEach(e=>o.observe(e))}
+      const b=document.getElementById("scrollTopBtn");
+      if(b){window.addEventListener("scroll",()=>b.classList.toggle("is-visible",scrollY>400));b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}))}
+    });
+  </script>
+</body>
+</html>

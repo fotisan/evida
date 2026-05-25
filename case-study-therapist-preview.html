@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Therapist Preview — London | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A conversion-layered therapist website for a London psychologist. Multiple trust mechanisms working simultaneously — reviews ribbon, credential pills, testimonials, and a quote card — each earning the visitor's confidence at a different stage of the page.">
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="stylesheet" href="styles.css?v=51">
+  <script src="nav.js" defer></script>
+  <link rel="canonical" href="https://evidastudio.com/case-study-therapist-preview.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://evidastudio.com/case-study-therapist-preview.html" />
+  <meta property="og:title" content="Case Study: Therapist Preview — London | Evida Studio" />
+  <meta property="og:description" content="Layered trust signals for a London psychologist. How multiple credibility mechanisms work together to convert a hesitant visitor." />
+  <meta property="og:image" content="https://evidastudio.com/mock-psych-3.webp" />
+  <meta property="og:site_name" content="Evida Studio" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Case Study: Therapist Preview — Layered Trust for a London Psychologist","image":"https://evidastudio.com/mock-psych-3.webp","author":{"@type":"Person","name":"Fotis Antonas"},"publisher":{"@type":"Organization","name":"Evida Studio","logo":{"@type":"ImageObject","url":"https://evidastudio.com/logo.webp"}},"datePublished":"2026-05-25"}</script>
+  <style>
+    .cs-header{max-width:780px;margin:3.5rem auto 0;text-align:center}
+    .cs-meta{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--brand);margin-bottom:1.2rem}
+    .cs-meta::before{content:"";width:7px;height:7px;background:var(--brand);border-radius:50%}
+    .cs-title{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;color:var(--page-fg);line-height:1.15;letter-spacing:-.025em;margin-bottom:1.2rem}
+    .cs-lead{font-size:1.1rem;color:var(--muted);line-height:1.75;max-width:620px;margin:0 auto 2rem}
+    .cs-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2.2rem}
+    .cs-tag{font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:99px;background:var(--brand-light);color:var(--brand);border:1px solid rgba(67,56,202,.15)}
+    .cs-cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-bottom:3rem}
+    .cs-hero-img{width:100%;border-radius:var(--radius);margin-bottom:3.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border-color);display:block}
+    .cs-body{max-width:740px;margin:0 auto}
+    .cs-section-label{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:1.5rem}
+    .cs-section-label::before,.cs-section-label::after{content:"";flex:1;height:1px;background:var(--border-color)}
+    .cs-body h2{font-size:1.65rem;font-weight:800;color:var(--page-fg);margin:0 0 1rem;letter-spacing:-.015em;line-height:1.25}
+    .cs-body p{font-size:1.05rem;line-height:1.8;color:var(--muted);margin-bottom:1.4rem}
+    .cs-body strong{color:var(--page-fg);font-weight:700}
+    .cs-callout{background:var(--brand-light);border-left:3px solid var(--brand);padding:1.1rem 1.4rem;border-radius:0 8px 8px 0;margin:2rem 0;font-size:1rem;color:var(--page-fg);line-height:1.7}
+    .decision-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);overflow:hidden;margin-bottom:1.4rem}
+    .decision-header{padding:1rem 1.4rem;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:.75rem;background:#fafafa}
+    .decision-element{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .decision-pill{font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:99px;margin-left:auto}
+    .decision-pill--design{background:#ede9fe;color:#6d28d9}
+    .decision-pill--copy{background:#fef3c7;color:#92400e}
+    .decision-pill--ux{background:#dcfce7;color:#166534}
+    .decision-body{padding:1.4rem}
+    .decision-row{display:grid;gap:.5rem;margin-bottom:1.2rem}
+    .decision-row:last-child{margin-bottom:0}
+    .decision-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand)}
+    .decision-text{font-size:.97rem;line-height:1.65;color:var(--page-fg);margin:0}
+    @media(min-width:680px){.decision-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}.decision-row{margin-bottom:0}}
+    .cs-cta-block{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:2.5rem;text-align:center;margin-top:3.5rem}
+    .cs-cta-block h3{font-size:1.4rem;font-weight:800;margin-bottom:.8rem;color:var(--page-fg)}
+    .cs-cta-block p{font-size:1rem;color:var(--muted);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .cs-back{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:600;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+    .cs-back:hover{color:var(--brand)}
+  </style>
+</head>
+<body>
+  <div id="site-header-mount"></div>
+  <main class="shell" style="padding-top:3rem" id="top">
+    <article class="reveal-frame">
+
+      <div class="cs-header reveal-content">
+        <a href="portfolio.html" class="cs-back">← Back to Case Studies</a>
+        <span class="cs-meta">Case Study · Therapist Preview</span>
+        <h1 class="cs-title">Six Ways to Earn Trust<br>Before the First Appointment.</h1>
+        <p class="cs-lead">This site doesn't rely on a single trust mechanism. It layers six of them — each operating at a different moment in the visitor's scrolling experience. By the time a hesitant patient reaches the contact section, they've been reassured six separate times without once feeling sold to.</p>
+        <div class="cs-tags">
+          <span class="cs-tag">Healthcare</span>
+          <span class="cs-tag">Psychology / Therapy</span>
+          <span class="cs-tag">London, UK</span>
+          <span class="cs-tag">Conversion Design</span>
+          <span class="cs-tag">Custom Code</span>
+        </div>
+        <div class="cs-cta-row">
+          <a href="https://fotisan.github.io/preview-psychologist/" target="_blank" rel="noopener" class="btn-primary">View Live Demo →</a>
+          <a href="index.html#contact" class="btn-outline">Build Something Similar</a>
+        </div>
+      </div>
+
+      <div class="reveal-content">
+        <img src="mock-psych-3.webp" alt="Therapist preview website — London psychologist with layered trust design" class="cs-hero-img" loading="eager">
+      </div>
+
+      <div class="cs-body">
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Brief</div>
+          <h2>Dr. Amelia Grant. Private psychologist.<br>London. In person and online.</h2>
+          <p>The scenario: a private practice serving adults and young adults in London, with both in-person and remote session options. The target patient is someone who looks functional on the outside but feels stretched, anxious, or emotionally exhausted. They've considered therapy before. They haven't booked yet.</p>
+          <p>The challenge is specific: this visitor has hesitated before. They're not uninformed — they know therapy might help. The obstacle is not awareness. It is the small, accumulated doubts that have prevented them from acting. The site needed to dissolve those doubts one by one.</p>
+          <div class="cs-callout"><strong>The core design question:</strong> A visitor who has thought about therapy but hasn't booked it yet is not lacking information. What are they lacking, and how do you design for that?</div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Design Decisions</div>
+          <h2>Trust layered through the page,<br>not stacked at the top.</h2>
+          <p>Each mechanism below addresses a specific doubt. They're spaced through the page so the visitor encounters reassurance progressively — matching the natural rhythm of scrolling and reading, rather than overwhelming them at entry.</p>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">01 · Credential Trust Pills in the Hero</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Three pill-shaped labels below the CTAs: "Evidence based therapy", "Adults and young adults", "In person and online."</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Each pill answers a different silent question. "Evidence based" says: this isn't just intuition. "Adults and young adults" says: I'm the right age for this. "In person and online" says: geography isn't an obstacle. Three doubts resolved before the visitor scrolls.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The visitor qualifies themselves and the practice simultaneously in the first viewport. Those who continue scrolling have already made a preliminary decision to stay.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">02 · Reviews Ribbon Immediately Below the Hero</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">A full-width ribbon directly below the hero: "4.9 out of 5, based on one hundred plus client reviews." Alongside a direct phone number and email.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">The moment the visitor scrolls past the hero, they hit social proof. The number (100+) signals established practice. The 4.9 signals quality. Placing contact details here — phone and email — captures the visitor who is ready to act before they've even reached the services section.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Some visitors convert at the ribbon — the most motivated, who only needed to see the number before acting. The rest continue with increased confidence.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">03 · Bio as Relationship, Not CV</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">The about section leads with "I am Dr Amelia Grant, a psychologist working with people who look fine on the outside, yet feel stretched, anxious, stuck." The patient is described before the therapist.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Most therapist bios begin with credentials. This bio begins by describing the patient's experience. The visitor reads their own situation in the first sentence. The effect is immediate: "she understands what I'm dealing with." That is more persuasive than any credential.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Emotional recognition at the bio level. The visitor stops scrolling past the about section and reads it fully — which increases time on page and intent to contact.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">04 · Three-Step Process Section</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">A numbered 3-step section: Understand what is happening → Build emotional stability → Create lasting change. Plain language, no clinical jargon.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">The patient who has hesitated to book often fears the unknown more than the process itself. Three named, sequential steps transform "I don't know what therapy involves" into "I know exactly what will happen and in what order." The unknown — which is the source of hesitation — disappears.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Visitors who reach this section leave with a mental model of the experience. The booking decision shifts from uncertain to predictable.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">05 · Quote Card with Embedded Trust Signals</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">A standalone quote card with a statement from the therapist: "You do not need to be in crisis to start therapy. You just need to be ready for things to be better than they are now." Below the quote: three micro-trust signals (warm approach, clear goals, confidential).</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Many potential patients believe therapy is only for people in acute crisis. This is the single most common reason people wait too long before booking. The quote directly addresses and removes that belief. The micro-signals beneath address the secondary fears: will it be cold, vague, or shared with others?</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Eliminates the "I'm not in crisis so I shouldn't be here" self-disqualification. The visitor who felt they didn't deserve therapy now feels they're exactly who this practice is for.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:2.5rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">06 · Real Client Testimonials</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">A testimonials section with short, direct client quotes — placed after the process section, before the contact form.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Testimonials work differently in therapy than in other services. The patient isn't evaluating a product — they're imagining themselves in the chair. Client quotes that describe an experience ("I felt understood quickly") allow the potential patient to project themselves into that outcome. The testimonial becomes a preview of how they will feel.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The visitor arrives at the contact form already having "experienced" the positive outcome through proxy. The emotional distance between hesitation and action is at its shortest at this point in the page.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Takeaway</div>
+          <h2>Six mechanisms. One patient.<br>One decision made easier six times.</h2>
+          <p>Trust is not a single moment. It accumulates. This site was designed to earn it progressively — so that by the time the visitor reaches the contact form, they've been reassured at the hero level, the social proof level, the biographical level, the process level, the philosophical level, and the peer testimony level. At that point, booking is not a leap. It's a natural next step.</p>
+        </div>
+
+        <div class="cs-cta-block reveal-frame">
+          <h3>The gap between "I've thought about it" and "I booked it" is a design problem.</h3>
+          <p>The right structure, copy, and trust architecture closes that gap.</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem">
+            <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
+            <a href="portfolio.html" class="btn-outline">View More Case Studies</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="portfolio.html">Case Studies</a>
+      <a href="insights.html">Insights</a>
+      <a href="mailto:hello@evidastudio.com">Email Us</a>
+    </div>
+    <p style="margin-top:1.5rem;opacity:.6;font-size:.85rem">© Evida Studio • Designed for Service Professionals</p>
+  </footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const f=document.querySelectorAll(".reveal-frame,.reveal-content");
+      f.forEach(e=>e.classList.add("is-in"));
+      if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-in");o.unobserve(e.target)}})},{threshold:.08});f.forEach(e=>o.observe(e))}
+      const b=document.getElementById("scrollTopBtn");
+      if(b){window.addEventListener("scroll",()=>b.classList.toggle("is-visible",scrollY>400));b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}))}
+    });
+  </script>
+</body>
+</html>
