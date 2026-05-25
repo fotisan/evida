@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Therapist Platform | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How we designed a psychiatrist website for New York that reduces visitor hesitation and converts first-time visitors into booked appointments. A breakdown of every design and copy decision.">
+
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="stylesheet" href="styles.css?v=51">
+  <script src="nav.js" defer></script>
+
+  <link rel="canonical" href="https://evidastudio.com/case-study-therapist-platform.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://evidastudio.com/case-study-therapist-platform.html" />
+  <meta property="og:title" content="Case Study: Therapist Platform | Evida Studio" />
+  <meta property="og:description" content="A breakdown of every design and copy decision behind a psychiatrist website built to convert first-time visitors into booked appointments." />
+  <meta property="og:image" content="https://evidastudio.com/mockup-_psychologist.webp" />
+  <meta property="og:site_name" content="Evida Studio" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Case Study: Therapist Platform — Design Decisions That Build Trust and Drive Bookings",
+    "image": "https://evidastudio.com/mockup-_psychologist.webp",
+    "author": { "@type": "Person", "name": "Fotis Antonas" },
+    "publisher": { "@type": "Organization", "name": "Evida Studio", "logo": { "@type": "ImageObject", "url": "https://evidastudio.com/logo.webp" } },
+    "datePublished": "2026-05-25"
+  }
+  </script>
+
+  <style>
+    /* ── Article Header ── */
+    .cs-header {
+      max-width: 780px;
+      margin: 3.5rem auto 0;
+      text-align: center;
+    }
+    .cs-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--brand);
+      margin-bottom: 1.2rem;
+    }
+    .cs-meta::before {
+      content: "";
+      width: 7px; height: 7px;
+      background: var(--brand);
+      border-radius: 50%;
+    }
+    .cs-title {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--page-fg);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.2rem;
+    }
+    .cs-lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+    }
+    .cs-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.2rem;
+    }
+    .cs-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 99px;
+      background: var(--brand-light);
+      color: var(--brand);
+      border: 1px solid rgba(67,56,202,0.15);
+    }
+    .cs-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Hero image ── */
+    .cs-hero-img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 3.5rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      display: block;
+    }
+
+    /* ── Body container ── */
+    .cs-body {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* ── Section dividers ── */
+    .cs-section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .cs-section-label::before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+    .cs-section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .cs-body h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--page-fg);
+      margin: 0 0 1rem;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+    }
+    .cs-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .cs-body strong {
+      color: var(--page-fg);
+      font-weight: 700;
+    }
+
+    /* ── Callout block ── */
+    .cs-callout {
+      background: var(--brand-light);
+      border-left: 3px solid var(--brand);
+      padding: 1.1rem 1.4rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+      font-size: 1rem;
+      color: var(--page-fg);
+      line-height: 1.7;
+    }
+
+    /* ── Decision Cards ── */
+    .decision-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      margin-bottom: 1.4rem;
+    }
+    .decision-header {
+      padding: 1rem 1.4rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fafafa;
+    }
+    .decision-element {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .decision-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      border-radius: 99px;
+      margin-left: auto;
+    }
+    .decision-pill--design {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+    .decision-pill--copy {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .decision-pill--ux {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .decision-pill--tech {
+      background: #f0f9ff;
+      color: #0369a1;
+    }
+    .decision-body {
+      padding: 1.4rem;
+    }
+    .decision-row {
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .decision-row:last-child { margin-bottom: 0; }
+    .decision-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand);
+    }
+    .decision-text {
+      font-size: 0.97rem;
+      line-height: 1.65;
+      color: var(--page-fg);
+      margin: 0;
+    }
+
+    /* Three-column decision grid on desktop */
+    @media (min-width: 680px) {
+      .decision-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .decision-row { margin-bottom: 0; }
+    }
+
+    /* ── Code / sample element display ── */
+    .cs-sample {
+      background: var(--page-fg);
+      color: #f8f8f2;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 1.5rem 0 2rem;
+      overflow-x: auto;
+    }
+    .cs-sample em {
+      color: #c8a07a;
+      font-style: normal;
+    }
+
+    /* ── Comparison block ── */
+    .cs-compare {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1.5rem 0 2rem;
+    }
+    @media (min-width: 560px) {
+      .cs-compare { grid-template-columns: 1fr 1fr; }
+    }
+    .cs-compare-item {
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .cs-compare-item--wrong {
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      color: #881337;
+    }
+    .cs-compare-item--right {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #14532d;
+    }
+    .cs-compare-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+      opacity: 0.65;
+    }
+
+    /* ── Tech specs grid ── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 560px) {
+      .tech-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .tech-item {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .tech-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--brand);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .tech-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ── Article CTA ── */
+    .cs-cta-block {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+    .cs-cta-block h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--page-fg);
+    }
+    .cs-cta-block p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Back link ── */
+    .cs-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--brand); }
+  </style>
+</head>
+
+<body>
+  <div id="site-header-mount"></div>
+
+  <main class="shell" style="padding-top: 3rem;" id="top">
+
+    <article class="reveal-frame">
+
+      <!-- ── Header ── -->
+      <div class="cs-header reveal-content">
+        <a href="portfolio.html" class="cs-back">← Back to Case Studies</a>
+        <span class="cs-meta">Case Study · Therapist Platform</span>
+        <h1 class="cs-title">Designing for the Patient<br>Before the Professional</h1>
+        <p class="cs-lead">
+          A psychiatrist's website rarely fails because it looks bad. It fails because it answers the wrong question. This breakdown covers every design and copy decision made to ensure the right question gets answered in the first three seconds.
+        </p>
+        <div class="cs-tags">
+          <span class="cs-tag">Healthcare</span>
+          <span class="cs-tag">Therapist / Psychiatry</span>
+          <span class="cs-tag">New York, NY</span>
+          <span class="cs-tag">Custom Code</span>
+          <span class="cs-tag">Conversion Design</span>
+        </div>
+        <div class="cs-cta-row">
+          <a href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener" class="btn-primary">View Live Demo →</a>
+          <a href="index.html#contact" class="btn-outline">Build Something Similar</a>
+        </div>
+      </div>
+
+      <!-- ── Hero image ── -->
+      <div class="reveal-content">
+        <img src="mockup-_psychologist.webp" alt="Therapist and psychiatrist website design for New York practice" class="cs-hero-img" loading="eager">
+      </div>
+
+      <!-- ── Body ── -->
+      <div class="cs-body">
+
+        <!-- The Brief -->
+        <div class="reveal-content" style="margin-bottom: 3rem;">
+          <div class="cs-section-label">The Brief</div>
+          <h2>A private psychiatrist in New York.<br>No existing website. Zero online presence.</h2>
+          <p>
+            The fictional scenario: Dr. Ava Hart, MD. Board-certified psychiatrist, private practice in Manhattan. The target patient is an adult dealing with anxiety, mood shifts, or persistent overload who has decided to take the first step but hasn't contacted anyone yet.
+          </p>
+          <p>
+            That last point is everything. This is not a returning patient. This is someone who has spent weeks working up the courage to type a search query. The site has one job: make them feel safe enough to send a message.
+          </p>
+          <div class="cs-callout">
+            <strong>The core design question:</strong> What does a person feel in the 90 seconds before they decide to close the tab or press contact? Every decision on this site was made with that moment in mind.
+          </div>
+        </div>
+
+        <!-- Design Decisions -->
+        <div class="reveal-content" style="margin-bottom: 3rem;">
+          <div class="cs-section-label">Design Decisions</div>
+          <h2>Every choice has a reason.<br>Every reason has a behavioral foundation.</h2>
+          <p>
+            Below is a full breakdown of the decisions that shaped this project. Each one starts with what was done, explains why it works on a psychological level, and describes the conversion outcome it targets.
+          </p>
+        </div>
+
+        <!-- Decision 1: Color Palette -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">01 · Color Palette</span>
+              <span class="decision-pill decision-pill--design">Design</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Warm neutrals: terra cotta amber and sage green on an off-white base. No clinical blues.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">Cool blues signal hospital. Warm neutrals signal "human, here, present." A first-time therapy seeker needs to feel safe before they feel impressed.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">Lower perceived emotional barrier to reaching out. The page feels approachable before a single word is read.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 2: Benefit-Led H1 -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">02 · Hero Headline (H1)</span>
+              <span class="decision-pill decision-pill--copy">Copy</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">"Feel steady again. A plan you can trust." — outcome-led, not credential-led.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">Visitors don't arrive thinking "I need a board-certified MD." They arrive thinking "I need to feel better." The headline mirrors their internal state, not the professional's resume.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">Immediate emotional resonance in under 3 seconds. The visitor feels seen before they've read the subhead.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before / After headline comparison -->
+        <div class="reveal-content" style="margin-bottom: 2rem;">
+          <div class="cs-compare">
+            <div class="cs-compare-item cs-compare-item--wrong">
+              <span class="cs-compare-label">Avoided</span>
+              "Welcome to the practice of Dr. Ava Hart, MD, Psychiatrist in New York"
+            </div>
+            <div class="cs-compare-item cs-compare-item--right">
+              <span class="cs-compare-label">Used</span>
+              "Feel steady again. A plan you can trust."
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 3: Hero Visual Card -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">03 · Hero Visual Card</span>
+              <span class="decision-pill decision-pill--ux">UX</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">A floating card beside the photo surfaces: office address, visit length (50 mins), and first step ("Short message").</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">The first-time visitor has three silent questions before they'll scroll: Where is this? How long does it take? What do I have to do first? The card answers all three without requiring a single click.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">Eliminates the top pre-contact friction points at the first visible moment. Fewer reasons to leave the page without acting.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 4: Trust Signals -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">04 · Trust Signals</span>
+              <span class="decision-pill decision-pill--copy">Copy</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Three specific micro-labels below the CTAs: "Confidential", "No pressure", "Clear steps".</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">The #1 barrier to first contact in mental health is fear of exposure. These three words name the three most common hesitations — privacy, pressure, and process — and cancel them before the visitor has to voice them.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">Reduced pre-contact anxiety. The visitor feels they already know what the first step will feel like before they take it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 5: Dual CTAs -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">05 · Dual CTAs</span>
+              <span class="decision-pill decision-pill--ux">UX</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Two CTAs in the hero: "Contact me" (primary) and "How I help" (outline, secondary).</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">Not every visitor arrives ready to act. The researcher who needs more information before committing has a path forward. Offering only one CTA abandons that visitor; the outline button captures them and moves them deeper into the funnel.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">No visitor leaves the hero without a logical next step matched to their readiness level. Reduces overall bounce rate.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 6: CTA Microcopy -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">06 · CTA Microcopy</span>
+              <span class="decision-pill decision-pill--copy">Copy</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">"Contact me" — not "Book Now", "Schedule Appointment", or "Get Started".</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">"Book Now" implies commitment. "Contact me" implies conversation. For someone who has never worked with a therapist before, a conversation feels safe. A booking feels like a decision they may not be ready for.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">Lower perceived commitment in the click. More first contacts from people who are still in the "considering" stage — the largest segment of the available audience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 7: Services Language -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">07 · Services Copy</span>
+              <span class="decision-pill decision-pill--copy">Copy</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">First-person "we" throughout service descriptions. Outcome phrases, not clinical definitions.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">"Psychiatric Evaluation: A comprehensive assessment of your mental health history" describes a process. "We take time to understand the whole picture. You leave with a clearer explanation" describes an experience. Patients buy experiences, not processes.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">Builds the sense of relationship before the first session exists. The visitor begins to imagine what working with Dr. Hart will actually feel like.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 8: FAQ Layout -->
+        <div class="reveal-frame" style="margin-bottom: 2.5rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">08 · FAQ Layout</span>
+              <span class="decision-pill decision-pill--design">Design</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">FAQ placed beside a warm editorial photo in a two-column layout, not in a standalone full-width block.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Behavioral Reason</span>
+                <p class="decision-text">A full-width FAQ block reads as a legal or administrative section. Placing it alongside an image maintains the visual warmth of the page and signals that even the practical answers come from a human, not a form.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Conversion Outcome</span>
+                <p class="decision-text">Visitors spend more time on the FAQ section. Each answered question removes one more reason not to contact.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Section -->
+        <div class="reveal-content" style="margin-bottom: 3rem;">
+          <div class="cs-section-label">Technical</div>
+          <h2>Built for performance.<br>Zero layout shifts. Mobile-first by default.</h2>
+          <p>
+            The design intent only converts if the site loads fast and displays correctly on every screen. These are the non-negotiables behind every project at Evida Studio.
+          </p>
+
+          <div class="tech-grid">
+            <div class="tech-item">
+              <span class="tech-value">100</span>
+              <span class="tech-label">PageSpeed Target</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-value">0</span>
+              <span class="tech-label">External Dependencies</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-value">HTML/CSS</span>
+              <span class="tech-label">Vanilla Stack</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-value">Mobile</span>
+              <span class="tech-label">First Approach</span>
+            </div>
+          </div>
+
+          <div class="cs-callout">
+            <strong>On scroll animations:</strong> All reveal elements are visible immediately on load. The IntersectionObserver is progressive enhancement only. If JavaScript is slow, blocked, or unavailable, nothing is hidden. Content always comes first.
+          </div>
+
+          <p>
+            The semantic HTML structure follows a logical heading hierarchy, with ARIA labels on every interactive region. Every image has a descriptive alt attribute. The FAQ uses native <code style="background: #f1f5f9; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em;">&lt;details&gt;</code> and <code style="background: #f1f5f9; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em;">&lt;summary&gt;</code> elements for keyboard accessibility without a single line of JavaScript.
+          </p>
+        </div>
+
+        <!-- Key Takeaway -->
+        <div class="reveal-content" style="margin-bottom: 3rem;">
+          <div class="cs-section-label">The Takeaway</div>
+          <h2>The patient's experience starts before the first session.</h2>
+          <p>
+            Every design decision on this site was evaluated through one filter: does this make it easier or harder for someone to take the first step? Color, copy, layout, CTA wording — all of it answers to that question.
+          </p>
+          <p>
+            That is the difference between a website that looks professional and a website that performs. The goal was never to impress the psychiatrist. It was to reassure her patient.
+          </p>
+        </div>
+
+        <!-- CTA Block -->
+        <div class="cs-cta-block reveal-frame">
+          <h3>Your next client is already searching.</h3>
+          <p>If your website isn't giving them a reason to stay, every search is an opportunity left on the table.</p>
+          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem;">
+            <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
+            <a href="portfolio.html" class="btn-outline">View More Case Studies</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="portfolio.html">Case Studies</a>
+      <a href="insights.html">Insights</a>
+      <a href="mailto:hello@evidastudio.com">Email Us</a>
+    </div>
+    <p style="margin-top:1.5rem; opacity:0.6; font-size:0.85rem;">© Evida Studio • Designed for Service Professionals</p>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+
+  <script>
+    // Reveal on scroll — progressive enhancement only
+    document.addEventListener("DOMContentLoaded", () => {
+      const frames = document.querySelectorAll(".reveal-frame, .reveal-content");
+      // Make everything visible immediately
+      frames.forEach(el => el.classList.add("is-in"));
+
+      // Then progressively animate newly visible elements on scroll
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); observer.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        frames.forEach(el => observer.observe(el));
+      }
+
+      // Scroll-to-top button
+      const btn = document.getElementById("scrollTopBtn");
+      if (btn) {
+        window.addEventListener("scroll", () => { btn.classList.toggle("visible", window.scrollY > 400); });
+        btn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+      }
+    });
+  </script>
+
+</body>
+</html>
