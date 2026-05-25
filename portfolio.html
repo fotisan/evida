@@ -32,11 +32,13 @@
       </p>
 
       <div class="work-list" style="max-height: none; overflow: visible;">
-        <a class="work-row reveal-frame" href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener">
-            <div class="work-row-media"><img src="mockup-_psychologist.webp" alt="Therapist website" loading="lazy"></div>
+
+        <!-- ✦ CASE STUDY — links to dedicated page, not live demo directly -->
+        <a class="work-row reveal-frame" href="case-study-therapist-platform.html">
+            <div class="work-row-media"><img src="mockup-_psychologist.webp" alt="Therapist website design case study" loading="lazy"></div>
             <div class="work-row-content">
-              <h3>Therapist Platform</h3>
-              <p>Professional layout built to reduce doubt and build trust fast.</p>
+              <h3>Therapist Platform — Case Study</h3>
+              <p>Every design and copy decision explained. Built to reduce doubt and drive first contact.</p>
             </div>
             <span class="work-row-pill">→</span>
         </a>
@@ -85,6 +87,7 @@
             </div>
             <span class="work-row-pill">→</span>
         </a>
+
       </div>
     </section>
   </main>
@@ -102,70 +105,23 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
-  <div id="cookieBanner" class="cookie-banner">
-    <div class="cookie-content">
-      <div class="cookie-text">
-        <h3>Privacy & Cookies</h3>
-        <p>We use cookies to ensure a smooth experience. Your privacy is respected.</p>
-      </div>
-      <div class="cookie-actions">
-        <button id="cookieReject" class="btn-outline btn-sm">Decline</button>
-        <button id="cookieAccept" class="btn-primary btn-sm">Accept</button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var frames = document.querySelectorAll('.reveal-frame');
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        });
-      }, { threshold: 0.05 });
-      frames.forEach(function (frame) { io.observe(frame); });
-
-      var scrollBtn = document.getElementById('scrollTopBtn');
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 400) scrollBtn.classList.add('is-visible');
-        else scrollBtn.classList.remove('is-visible');
-      });
-      if (scrollBtn) scrollBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-      var banner = document.getElementById('cookieBanner');
-      var gaId = 'G-L802JYJHBS';
-
-      function loadAnalytics() {
-        if (window.gaLoaded) return;
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-        document.head.appendChild(script);
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', gaId);
-        window.gaLoaded = true;
+    document.addEventListener("DOMContentLoaded", () => {
+      const frames = document.querySelectorAll(".reveal-frame, .reveal-content");
+      frames.forEach(el => el.classList.add("is-in"));
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); observer.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        frames.forEach(el => observer.observe(el));
       }
-
-      if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
-        loadAnalytics();
-      } else if (!localStorage.getItem('evida_cookie_consent')) {
-        setTimeout(function () { if (banner) banner.classList.add('is-visible'); }, 1500);
+      const btn = document.getElementById("scrollTopBtn");
+      if (btn) {
+        window.addEventListener("scroll", () => { btn.classList.toggle("is-visible", window.scrollY > 400); });
+        btn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
       }
-
-      document.getElementById('cookieAccept').addEventListener('click', function () {
-        localStorage.setItem('evida_cookie_consent', 'accepted');
-        if (banner) banner.classList.remove('is-visible');
-        loadAnalytics();
-      });
-      document.getElementById('cookieReject').addEventListener('click', function () {
-        localStorage.setItem('evida_cookie_consent', 'rejected');
-        if (banner) banner.classList.remove('is-visible');
-      });
     });
   </script>
+
 </body>
 </html>
