@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Dermatologist Clinic | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How we designed DermCare Clinic's website to feel medical without feeling cold — and how every copy and design decision was made to turn busy NYC professionals into booked patients.">
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="stylesheet" href="styles.css?v=51">
+  <script src="nav.js" defer></script>
+  <link rel="canonical" href="https://evidastudio.com/case-study-dermatologist.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://evidastudio.com/case-study-dermatologist.html" />
+  <meta property="og:title" content="Case Study: Dermatologist Clinic | Evida Studio" />
+  <meta property="og:description" content="Medical credibility, without clinical coldness. A dermatology website built for busy NYC professionals." />
+  <meta property="og:image" content="https://evidastudio.com/mock-derma-1.webp" />
+  <meta property="og:site_name" content="Evida Studio" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Case Study: Dermatologist Clinic — Medical Credibility Without Clinical Coldness","image":"https://evidastudio.com/mock-derma-1.webp","author":{"@type":"Person","name":"Fotis Antonas"},"publisher":{"@type":"Organization","name":"Evida Studio","logo":{"@type":"ImageObject","url":"https://evidastudio.com/logo.webp"}},"datePublished":"2026-05-25"}</script>
+  <style>
+    .cs-header{max-width:780px;margin:3.5rem auto 0;text-align:center}
+    .cs-meta{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--brand);margin-bottom:1.2rem}
+    .cs-meta::before{content:"";width:7px;height:7px;background:var(--brand);border-radius:50%}
+    .cs-title{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;color:var(--page-fg);line-height:1.15;letter-spacing:-.025em;margin-bottom:1.2rem}
+    .cs-lead{font-size:1.1rem;color:var(--muted);line-height:1.75;max-width:620px;margin:0 auto 2rem}
+    .cs-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2.2rem}
+    .cs-tag{font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:99px;background:var(--brand-light);color:var(--brand);border:1px solid rgba(67,56,202,.15)}
+    .cs-cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-bottom:3rem}
+    .cs-hero-img{width:100%;border-radius:var(--radius);margin-bottom:3.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border-color);display:block}
+    .cs-body{max-width:740px;margin:0 auto}
+    .cs-section-label{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:1.5rem}
+    .cs-section-label::before,.cs-section-label::after{content:"";flex:1;height:1px;background:var(--border-color)}
+    .cs-body h2{font-size:1.65rem;font-weight:800;color:var(--page-fg);margin:0 0 1rem;letter-spacing:-.015em;line-height:1.25}
+    .cs-body p{font-size:1.05rem;line-height:1.8;color:var(--muted);margin-bottom:1.4rem}
+    .cs-body strong{color:var(--page-fg);font-weight:700}
+    .cs-callout{background:var(--brand-light);border-left:3px solid var(--brand);padding:1.1rem 1.4rem;border-radius:0 8px 8px 0;margin:2rem 0;font-size:1rem;color:var(--page-fg);line-height:1.7}
+    .decision-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);overflow:hidden;margin-bottom:1.4rem}
+    .decision-header{padding:1rem 1.4rem;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:.75rem;background:#fafafa}
+    .decision-element{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .decision-pill{font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:99px;margin-left:auto}
+    .decision-pill--design{background:#ede9fe;color:#6d28d9}
+    .decision-pill--copy{background:#fef3c7;color:#92400e}
+    .decision-pill--ux{background:#dcfce7;color:#166534}
+    .decision-body{padding:1.4rem}
+    .decision-row{display:grid;gap:.5rem;margin-bottom:1.2rem}
+    .decision-row:last-child{margin-bottom:0}
+    .decision-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand)}
+    .decision-text{font-size:.97rem;line-height:1.65;color:var(--page-fg);margin:0}
+    @media(min-width:680px){.decision-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}.decision-row{margin-bottom:0}}
+    .cs-compare{display:grid;gap:.75rem;margin:1.5rem 0 2rem}
+    @media(min-width:560px){.cs-compare{grid-template-columns:1fr 1fr}}
+    .cs-compare-item{border-radius:10px;padding:1rem 1.2rem;font-size:.95rem;line-height:1.6}
+    .cs-compare-item--wrong{background:#fff1f2;border:1px solid #fecdd3;color:#881337}
+    .cs-compare-item--right{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
+    .cs-compare-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;display:block;opacity:.65}
+    .tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:1.5rem 0}
+    @media(min-width:560px){.tech-grid{grid-template-columns:repeat(4,1fr)}}
+    .tech-item{background:#fff;border:1px solid var(--border-color);border-radius:10px;padding:1rem;text-align:center}
+    .tech-value{font-size:1.4rem;font-weight:800;color:var(--brand);display:block;margin-bottom:.2rem}
+    .tech-label{font-size:.75rem;color:var(--muted);font-weight:600}
+    .cs-cta-block{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:2.5rem;text-align:center;margin-top:3.5rem}
+    .cs-cta-block h3{font-size:1.4rem;font-weight:800;margin-bottom:.8rem;color:var(--page-fg)}
+    .cs-cta-block p{font-size:1rem;color:var(--muted);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .cs-back{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:600;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+    .cs-back:hover{color:var(--brand)}
+  </style>
+</head>
+<body>
+  <div id="site-header-mount"></div>
+  <main class="shell" style="padding-top:3rem" id="top">
+    <article class="reveal-frame">
+
+      <div class="cs-header reveal-content">
+        <a href="portfolio.html" class="cs-back">← Back to Case Studies</a>
+        <span class="cs-meta">Case Study · Dermatologist Clinic</span>
+        <h1 class="cs-title">Medical Credibility.<br>Without the Clinical Coldness.</h1>
+        <p class="cs-lead">A dermatology website carries a dual burden: it must feel clinically credible and personally inviting at the same time. Too clinical and patients feel processed. Too soft and the doctor's expertise isn't communicated. This case study covers how that balance was struck, one decision at a time.</p>
+        <div class="cs-tags">
+          <span class="cs-tag">Healthcare</span>
+          <span class="cs-tag">Dermatology</span>
+          <span class="cs-tag">New York City</span>
+          <span class="cs-tag">Custom Code</span>
+          <span class="cs-tag">Trust Design</span>
+        </div>
+        <div class="cs-cta-row">
+          <a href="https://fotisan.github.io/dermatologist/" target="_blank" rel="noopener" class="btn-primary">View Live Demo →</a>
+          <a href="index.html#contact" class="btn-outline">Build Something Similar</a>
+        </div>
+      </div>
+
+      <div class="reveal-content">
+        <img src="mock-derma-1.webp" alt="Dermatologist clinic website design for New York City" class="cs-hero-img" loading="eager">
+      </div>
+
+      <div class="cs-body">
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Brief</div>
+          <h2>Dr. Elena Rivera. Board-certified.<br>Private clinic. New York City.</h2>
+          <p>The fictional scenario: DermCare Clinic, a private dermatology practice serving busy professionals in Manhattan. Both medical and cosmetic services on offer. The target patient is a professional in their 30s or 40s who researches before booking and evaluates the practice as much on digital presence as on credentials.</p>
+          <p>The immediate challenge: a pure medical aesthetic (whites, blues, sterile layouts) would repel the cosmetic patient. A pure cosmetic aesthetic (editorial, fashion-adjacent) would undermine the medical patient's trust. The site needed to live in the space between.</p>
+          <div class="cs-callout"><strong>The core design question:</strong> Can the same page feel clinically trustworthy to someone booking a mole check and personally inviting to someone exploring subtle aesthetic treatments? The answer required precise decisions at every level.</div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Design Decisions</div>
+          <h2>The tonal balance between authority and warmth.</h2>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">01 · Dual-Outcome H1</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">"Clearer skin, calmer confidence." — two outcomes in four words.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">The medical patient wants a result (clearer skin). The cosmetic patient wants a feeling (confidence). This headline serves both simultaneously without mentioning either service category. It sidesteps the either/or problem entirely.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Both patient types feel addressed from the first line. Neither feels like a secondary audience. No visitor is lost in the first three seconds.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:2rem">
+          <div class="cs-compare">
+            <div class="cs-compare-item cs-compare-item--wrong"><span class="cs-compare-label">Avoided</span>"Medical & Cosmetic Dermatology Services in New York City"</div>
+            <div class="cs-compare-item cs-compare-item--right"><span class="cs-compare-label">Used</span>"Clearer skin, calmer confidence."</div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">02 · Audience-Specific Subhead</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">"Medical & cosmetic dermatology designed for busy professionals in New York City." The subhead names the audience, not just the service.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">When a person sees themselves described on a website, they stop scanning and start reading. "Busy professionals" is specific enough to create recognition without being exclusionary. The NYC qualifier is both geographic SEO and social proof: this is a practice that operates at that level.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The target patient self-identifies immediately. The sense of "this is for someone like me" reduces the psychological distance between visitor and patient.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">03 · Soft Background Palette</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Off-white "section-soft" background instead of clinical white. Warm, not cool-toned.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Pure white reads as hospital. Off-white reads as premium clinic. The difference is less than 10% on the color scale and 100% on perceived warmth. Patients visiting for cosmetic reasons respond to warmth. Patients visiting for medical reasons respond to cleanliness. Off-white delivers both.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The site feels professional without triggering the anxiety that clinical environments can create. First appointments for sensitive services are more likely to be booked.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">04 · Treatment Journey Section</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">A dedicated 3-step "Treatment Journey" section: Consultation → Plan → Follow-up. Numbered, named, and described in plain language.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">The #1 barrier to booking a first medical appointment is not knowing what happens next. "What if I don't know what to say?" "How long will it take?" "What are they going to do?" The Journey section answers all of these before they're asked. It removes the unknown.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Visitors who reach this section are significantly more likely to book. The decision has been pre-made for them: they know what they're signing up for.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">05 · Separated Service Sections</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Medical dermatology ("Skin concerns") and aesthetic treatments ("Aesthetic") have separate navigation anchors and distinct sections on the page.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">A patient coming for acne treatment and a patient coming for subtle fillers are in different emotional states. Mixing their services on a single page creates cognitive noise. Clear separation says: "we understand the difference between your needs. You're not in the wrong place."</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Each visitor type navigates to their relevant section without having to parse irrelevant services. Shorter path to "this is for me."</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:2.5rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">06 · CTA: "Book a visit"</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">"Book a visit" throughout. Not "Schedule an appointment" or "Request consultation."</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">"Appointment" carries clinical weight. "Visit" is what you do with someone you trust. The language difference is subtle but it consistently lowers the perceived formality of the first step, which is the highest-friction moment in the conversion path.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">More first-time visitors cross the threshold from consideration to action. Especially effective for cosmetic patients who haven't booked this type of visit before.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Technical</div>
+          <h2>Clean, semantic, and fast on every device.</h2>
+          <div class="tech-grid">
+            <div class="tech-item"><span class="tech-value">100</span><span class="tech-label">PageSpeed Target</span></div>
+            <div class="tech-item"><span class="tech-value">0</span><span class="tech-label">JS Frameworks</span></div>
+            <div class="tech-item"><span class="tech-value">HTML/CSS</span><span class="tech-label">Vanilla Stack</span></div>
+            <div class="tech-item"><span class="tech-value">Mobile</span><span class="tech-label">First Approach</span></div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Takeaway</div>
+          <h2>The patient experience starts<br>before the first appointment.</h2>
+          <p>Every design decision on this site was tested against one question: does this make a first-time patient more or less likely to book? Tone, structure, copy, and palette all serve that single conversion moment. The medical credibility is there. So is the human warmth. Neither was left to chance.</p>
+        </div>
+
+        <div class="cs-cta-block reveal-frame">
+          <h3>Your next patient is already comparing practices online.</h3>
+          <p>The site that feels right wins the inquiry — regardless of credentials.</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem">
+            <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
+            <a href="portfolio.html" class="btn-outline">View More Case Studies</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="portfolio.html">Case Studies</a>
+      <a href="insights.html">Insights</a>
+      <a href="mailto:hello@evidastudio.com">Email Us</a>
+    </div>
+    <p style="margin-top:1.5rem;opacity:.6;font-size:.85rem">© Evida Studio • Designed for Service Professionals</p>
+  </footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const f=document.querySelectorAll(".reveal-frame,.reveal-content");
+      f.forEach(e=>e.classList.add("is-in"));
+      if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-in");o.unobserve(e.target)}})},{threshold:.08});f.forEach(e=>o.observe(e))}
+      const b=document.getElementById("scrollTopBtn");
+      if(b){window.addEventListener("scroll",()=>b.classList.toggle("is-visible",scrollY>400));b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}))}
+    });
+  </script>
+</body>
+</html>

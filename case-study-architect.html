@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Architecture Portfolio | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How we designed a high-end architecture portfolio website using dark premium aesthetics, visual hierarchy, and authority-first copy to attract clients who value restraint and precision.">
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="stylesheet" href="styles.css?v=51">
+  <script src="nav.js" defer></script>
+  <link rel="canonical" href="https://evidastudio.com/case-study-architect.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://evidastudio.com/case-study-architect.html" />
+  <meta property="og:title" content="Case Study: Architecture Portfolio | Evida Studio" />
+  <meta property="og:description" content="A dark, premium portfolio built for a high-end architect. Every design decision explained." />
+  <meta property="og:image" content="https://evidastudio.com/Architecture.webp" />
+  <meta property="og:site_name" content="Evida Studio" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Case Study: Architecture Portfolio — Authority Design for High-End Clients","image":"https://evidastudio.com/Architecture.webp","author":{"@type":"Person","name":"Fotis Antonas"},"publisher":{"@type":"Organization","name":"Evida Studio","logo":{"@type":"ImageObject","url":"https://evidastudio.com/logo.webp"}},"datePublished":"2026-05-25"}</script>
+  <style>
+    .cs-header{max-width:780px;margin:3.5rem auto 0;text-align:center}
+    .cs-meta{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--brand);margin-bottom:1.2rem}
+    .cs-meta::before{content:"";width:7px;height:7px;background:var(--brand);border-radius:50%}
+    .cs-title{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;color:var(--page-fg);line-height:1.15;letter-spacing:-.025em;margin-bottom:1.2rem}
+    .cs-lead{font-size:1.1rem;color:var(--muted);line-height:1.75;max-width:620px;margin:0 auto 2rem}
+    .cs-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2.2rem}
+    .cs-tag{font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:99px;background:var(--brand-light);color:var(--brand);border:1px solid rgba(67,56,202,.15)}
+    .cs-cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-bottom:3rem}
+    .cs-hero-img{width:100%;border-radius:var(--radius);margin-bottom:3.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border-color);display:block}
+    .cs-body{max-width:740px;margin:0 auto}
+    .cs-section-label{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:1.5rem}
+    .cs-section-label::before,.cs-section-label::after{content:"";flex:1;height:1px;background:var(--border-color)}
+    .cs-body h2{font-size:1.65rem;font-weight:800;color:var(--page-fg);margin:0 0 1rem;letter-spacing:-.015em;line-height:1.25}
+    .cs-body p{font-size:1.05rem;line-height:1.8;color:var(--muted);margin-bottom:1.4rem}
+    .cs-body strong{color:var(--page-fg);font-weight:700}
+    .cs-callout{background:var(--brand-light);border-left:3px solid var(--brand);padding:1.1rem 1.4rem;border-radius:0 8px 8px 0;margin:2rem 0;font-size:1rem;color:var(--page-fg);line-height:1.7}
+    .decision-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);overflow:hidden;margin-bottom:1.4rem}
+    .decision-header{padding:1rem 1.4rem;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:.75rem;background:#fafafa}
+    .decision-element{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .decision-pill{font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:99px;margin-left:auto}
+    .decision-pill--design{background:#ede9fe;color:#6d28d9}
+    .decision-pill--copy{background:#fef3c7;color:#92400e}
+    .decision-pill--ux{background:#dcfce7;color:#166534}
+    .decision-body{padding:1.4rem}
+    .decision-row{display:grid;gap:.5rem;margin-bottom:1.2rem}
+    .decision-row:last-child{margin-bottom:0}
+    .decision-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand)}
+    .decision-text{font-size:.97rem;line-height:1.65;color:var(--page-fg);margin:0}
+    @media(min-width:680px){.decision-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}.decision-row{margin-bottom:0}}
+    .cs-compare{display:grid;gap:.75rem;margin:1.5rem 0 2rem}
+    @media(min-width:560px){.cs-compare{grid-template-columns:1fr 1fr}}
+    .cs-compare-item{border-radius:10px;padding:1rem 1.2rem;font-size:.95rem;line-height:1.6}
+    .cs-compare-item--wrong{background:#fff1f2;border:1px solid #fecdd3;color:#881337}
+    .cs-compare-item--right{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
+    .cs-compare-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;display:block;opacity:.65}
+    .tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:1.5rem 0}
+    @media(min-width:560px){.tech-grid{grid-template-columns:repeat(4,1fr)}}
+    .tech-item{background:#fff;border:1px solid var(--border-color);border-radius:10px;padding:1rem;text-align:center}
+    .tech-value{font-size:1.4rem;font-weight:800;color:var(--brand);display:block;margin-bottom:.2rem}
+    .tech-label{font-size:.75rem;color:var(--muted);font-weight:600}
+    .cs-cta-block{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:2.5rem;text-align:center;margin-top:3.5rem}
+    .cs-cta-block h3{font-size:1.4rem;font-weight:800;margin-bottom:.8rem;color:var(--page-fg)}
+    .cs-cta-block p{font-size:1rem;color:var(--muted);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .cs-back{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:600;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+    .cs-back:hover{color:var(--brand)}
+  </style>
+</head>
+<body>
+  <div id="site-header-mount"></div>
+  <main class="shell" style="padding-top:3rem" id="top">
+    <article class="reveal-frame">
+
+      <div class="cs-header reveal-content">
+        <a href="portfolio.html" class="cs-back">← Back to Case Studies</a>
+        <span class="cs-meta">Case Study · Architecture Portfolio</span>
+        <h1 class="cs-title">When the Website Must Match<br>the Calibre of the Work</h1>
+        <p class="cs-lead">An architect who works with high-end clients cannot afford a website that reads as anything less than exceptional. This breakdown covers how a dark, premium aesthetic and authority-first structure communicate value before a single project is seen.</p>
+        <div class="cs-tags">
+          <span class="cs-tag">Architecture</span>
+          <span class="cs-tag">High-End Portfolio</span>
+          <span class="cs-tag">Premium Positioning</span>
+          <span class="cs-tag">Custom Code</span>
+          <span class="cs-tag">Dark Aesthetic</span>
+        </div>
+        <div class="cs-cta-row">
+          <a href="https://fotisan.github.io/architect/" target="_blank" rel="noopener" class="btn-primary">View Live Demo →</a>
+          <a href="index.html#contact" class="btn-outline">Build Something Similar</a>
+        </div>
+      </div>
+
+      <div class="reveal-content">
+        <img src="Architecture.webp" alt="High-end architecture portfolio website design" class="cs-hero-img" loading="eager">
+      </div>
+
+      <div class="cs-body">
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Brief</div>
+          <h2>A portfolio that competes at<br>the level of the projects inside it.</h2>
+          <p>The scenario: a high-end architecture studio working on residential and commercial projects for clients who evaluate vendors on image as much as capability. The site needed to communicate premium positioning immediately, before a single project image loaded.</p>
+          <p>The challenge is specific to this niche: architecture portfolios often look like photography galleries with a contact form attached. They show work without selling the thinking behind it. This site needed to do both.</p>
+          <div class="cs-callout"><strong>The core design question:</strong> How does a portfolio communicate authority and exclusivity before the client has seen a single project? The answer begins with the palette.</div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Design Decisions</div>
+          <h2>Dark, deliberate, and impossible to misread.</h2>
+          <p>Each decision below is the result of one filter: what does a high-end client need to feel in the first 10 seconds to stay on the page?</p>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">01 · Dark Color Palette</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Near-black background with subtle dot-grid texture and layered glass-morphism panels. No white. No pastels.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Dark palettes signal exclusivity and authority in high-end sectors: luxury agencies, private wealth managers, executive studios. The client who can afford premium architecture has a visual vocabulary that reads dark as premium, not heavy.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Instant positioning. Before reading a word, the visitor's brain categorizes this as a high-end studio. The right client feels at home. The wrong client self-selects out — which is also valuable.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">02 · Serif Display Type</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Serif typeface for headings, paired with monospace for data/specs. Geometric and precise throughout.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Architecture is a discipline of form and proportion. The serif mirrors the profession: rooted in tradition, refined by intention. Sans-serif would read as generic. Mono on stats signals technical precision — a quality high-end clients want to see.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Typography becomes part of the portfolio itself. The site's visual language echoes the studio's design language, creating coherence that sophisticated clients notice instinctively.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">03 · Benefit-Led H1</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">"Pure geometry, built as a work of art." Aspiration-led, not service-description.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Clients commissioning high-end architecture aren't buying square meters. They're buying a vision. The headline sells the vision first, then the process. "Architecture and Interior Design Services" describes a commodity. "Pure geometry, built as a work of art" describes a result worth wanting.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The right prospective client reads the headline and thinks: "This is someone who thinks the way I think." Emotional resonance before logic.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:2rem">
+          <div class="cs-compare">
+            <div class="cs-compare-item cs-compare-item--wrong"><span class="cs-compare-label">Avoided</span>"Architecture & Interior Design Services in New York"</div>
+            <div class="cs-compare-item cs-compare-item--right"><span class="cs-compare-label">Used</span>"Pure geometry, built as a work of art."</div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">04 · Glass-Morphism Hero Card</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">The hero copy lives inside a frosted-glass card layered over a render of the studio's work. Semi-transparent, with a subtle border.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Layering is a design principle the architect uses in physical spaces: surfaces that reveal depth. The glass card echoes that thinking. The portfolio work is already visible before the visitor scrolls. It signals: the work is confident enough to be seen immediately.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The visitor sees portfolio quality in the first viewport, not after clicking. Reduces the effort required to evaluate the studio's level of work.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">05 · Gradient Accent on Key Word</span><span class="decision-pill decision-pill--design">Design</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">A single word in the H1 ("geometry") receives a blue-to-violet gradient treatment. Everything else remains white.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Restraint amplifies impact. One gradient word on a dark background creates far more visual tension than a headline fully colored. The eye is drawn to it immediately. It also signals: this studio knows when to add and when to subtract.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The brand promise — geometry as art — is the single most memorable element of the first viewport. It anchors the entire page's visual identity.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">06 · Meta Chips for Credentials</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Small pill-shaped chips below the hero copy display project specifics in monospace type: years of experience, project scope, completed commissions.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">High-end clients evaluate quickly. Credentials need to be visible without dominating. The chip format communicates authority in a compact, scannable way that doesn't interrupt the visual flow of the hero.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Authority is established in the hero without requiring the visitor to scroll to an About section. Saves time; retains attention.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:2.5rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">07 · Single Primary CTA</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">One CTA button in the hero: "Book a Consultation." No secondary outline button.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Premium positioning requires confident choices. Offering a "Learn More" secondary option signals uncertainty — as if the studio isn't sure you're ready to commit. High-end clients respond to confidence. One clear next step communicates: the right client knows what to do next.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">No dilution of attention. Visitors who aren't ready scroll to the portfolio; visitors who are ready know exactly where to click.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Technical</div>
+          <h2>Performance that matches the premium aesthetic.</h2>
+          <p>A dark, image-heavy site carries performance risk. Every visual choice was balanced against load time and stability.</p>
+          <div class="tech-grid">
+            <div class="tech-item"><span class="tech-value">100</span><span class="tech-label">PageSpeed Target</span></div>
+            <div class="tech-item"><span class="tech-value">0</span><span class="tech-label">Layout Shifts</span></div>
+            <div class="tech-item"><span class="tech-value">CSS</span><span class="tech-label">Glass via backdrop-filter</span></div>
+            <div class="tech-item"><span class="tech-value">Mobile</span><span class="tech-label">First Approach</span></div>
+          </div>
+          <div class="cs-callout"><strong>On dark backgrounds and images:</strong> Render images are loaded with explicit width/height to prevent layout shift. The dot-grid background pattern is pure CSS — zero image requests. Glass effects use <code style="background:rgba(255,255,255,.1);padding:.1em .3em;border-radius:4px;font-size:.88em">backdrop-filter</code> with a fallback for browsers that don't support it.</div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Takeaway</div>
+          <h2>The portfolio doesn't sell the work.<br>The context around it does.</h2>
+          <p>Any architect can show beautiful project images. What this site does is establish the frame around those images before they're seen. By the time the visitor reaches the portfolio section, they've already decided this is a studio worth considering. The images confirm it. They don't have to do all the work alone.</p>
+        </div>
+
+        <div class="cs-cta-block reveal-frame">
+          <h3>Your next high-value client is forming an impression right now.</h3>
+          <p>Whether or not that impression leads to a conversation depends on what your site communicates in the first 10 seconds.</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem">
+            <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
+            <a href="portfolio.html" class="btn-outline">View More Case Studies</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="portfolio.html">Case Studies</a>
+      <a href="insights.html">Insights</a>
+      <a href="mailto:hello@evidastudio.com">Email Us</a>
+    </div>
+    <p style="margin-top:1.5rem;opacity:.6;font-size:.85rem">© Evida Studio • Designed for Service Professionals</p>
+  </footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const f=document.querySelectorAll(".reveal-frame,.reveal-content");
+      f.forEach(e=>e.classList.add("is-in"));
+      if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-in");o.unobserve(e.target)}})},{threshold:.08});f.forEach(e=>o.observe(e))}
+      const b=document.getElementById("scrollTopBtn");
+      if(b){window.addEventListener("scroll",()=>b.classList.toggle("is-visible",scrollY>400));b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}))}
+    });
+  </script>
+</body>
+</html>

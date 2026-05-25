@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Dental Practice | Evida Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How we designed Azure Dental Studio's website to address dental anxiety, communicate luxury positioning, and turn first-time visitors into booked appointments through trust-first design.">
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="stylesheet" href="styles.css?v=51">
+  <script src="nav.js" defer></script>
+  <link rel="canonical" href="https://evidastudio.com/case-study-dental.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://evidastudio.com/case-study-dental.html" />
+  <meta property="og:title" content="Case Study: Dental Practice | Evida Studio" />
+  <meta property="og:description" content="Luxury dental care in California. How spa-level positioning and trust design convert anxious visitors into booked patients." />
+  <meta property="og:image" content="https://evidastudio.com/mock-dentist-1.webp" />
+  <meta property="og:site_name" content="Evida Studio" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Case Study: Dental Practice — Designing Trust for the Most Anxiety-Inducing Appointment","image":"https://evidastudio.com/mock-dentist-1.webp","author":{"@type":"Person","name":"Fotis Antonas"},"publisher":{"@type":"Organization","name":"Evida Studio","logo":{"@type":"ImageObject","url":"https://evidastudio.com/logo.webp"}},"datePublished":"2026-05-25"}</script>
+  <style>
+    .cs-header{max-width:780px;margin:3.5rem auto 0;text-align:center}
+    .cs-meta{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--brand);margin-bottom:1.2rem}
+    .cs-meta::before{content:"";width:7px;height:7px;background:var(--brand);border-radius:50%}
+    .cs-title{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;color:var(--page-fg);line-height:1.15;letter-spacing:-.025em;margin-bottom:1.2rem}
+    .cs-lead{font-size:1.1rem;color:var(--muted);line-height:1.75;max-width:620px;margin:0 auto 2rem}
+    .cs-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2.2rem}
+    .cs-tag{font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:99px;background:var(--brand-light);color:var(--brand);border:1px solid rgba(67,56,202,.15)}
+    .cs-cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-bottom:3rem}
+    .cs-hero-img{width:100%;border-radius:var(--radius);margin-bottom:3.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border-color);display:block}
+    .cs-body{max-width:740px;margin:0 auto}
+    .cs-section-label{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:1.5rem}
+    .cs-section-label::before,.cs-section-label::after{content:"";flex:1;height:1px;background:var(--border-color)}
+    .cs-body h2{font-size:1.65rem;font-weight:800;color:var(--page-fg);margin:0 0 1rem;letter-spacing:-.015em;line-height:1.25}
+    .cs-body p{font-size:1.05rem;line-height:1.8;color:var(--muted);margin-bottom:1.4rem}
+    .cs-body strong{color:var(--page-fg);font-weight:700}
+    .cs-callout{background:var(--brand-light);border-left:3px solid var(--brand);padding:1.1rem 1.4rem;border-radius:0 8px 8px 0;margin:2rem 0;font-size:1rem;color:var(--page-fg);line-height:1.7}
+    .decision-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);overflow:hidden;margin-bottom:1.4rem}
+    .decision-header{padding:1rem 1.4rem;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:.75rem;background:#fafafa}
+    .decision-element{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .decision-pill{font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:99px;margin-left:auto}
+    .decision-pill--design{background:#ede9fe;color:#6d28d9}
+    .decision-pill--copy{background:#fef3c7;color:#92400e}
+    .decision-pill--ux{background:#dcfce7;color:#166534}
+    .decision-body{padding:1.4rem}
+    .decision-row{display:grid;gap:.5rem;margin-bottom:1.2rem}
+    .decision-row:last-child{margin-bottom:0}
+    .decision-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand)}
+    .decision-text{font-size:.97rem;line-height:1.65;color:var(--page-fg);margin:0}
+    @media(min-width:680px){.decision-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}.decision-row{margin-bottom:0}}
+    .cs-compare{display:grid;gap:.75rem;margin:1.5rem 0 2rem}
+    @media(min-width:560px){.cs-compare{grid-template-columns:1fr 1fr}}
+    .cs-compare-item{border-radius:10px;padding:1rem 1.2rem;font-size:.95rem;line-height:1.6}
+    .cs-compare-item--wrong{background:#fff1f2;border:1px solid #fecdd3;color:#881337}
+    .cs-compare-item--right{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
+    .cs-compare-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;display:block;opacity:.65}
+    .tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:1.5rem 0}
+    @media(min-width:560px){.tech-grid{grid-template-columns:repeat(4,1fr)}}
+    .tech-item{background:#fff;border:1px solid var(--border-color);border-radius:10px;padding:1rem;text-align:center}
+    .tech-value{font-size:1.4rem;font-weight:800;color:var(--brand);display:block;margin-bottom:.2rem}
+    .tech-label{font-size:.75rem;color:var(--muted);font-weight:600}
+    .cs-cta-block{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:2.5rem;text-align:center;margin-top:3.5rem}
+    .cs-cta-block h3{font-size:1.4rem;font-weight:800;margin-bottom:.8rem;color:var(--page-fg)}
+    .cs-cta-block p{font-size:1rem;color:var(--muted);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .cs-back{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:600;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+    .cs-back:hover{color:var(--brand)}
+  </style>
+</head>
+<body>
+  <div id="site-header-mount"></div>
+  <main class="shell" style="padding-top:3rem" id="top">
+    <article class="reveal-frame">
+
+      <div class="cs-header reveal-content">
+        <a href="portfolio.html" class="cs-back">← Back to Case Studies</a>
+        <span class="cs-meta">Case Study · Dental Practice</span>
+        <h1 class="cs-title">Designing for the Appointment<br>People Keep Postponing.</h1>
+        <p class="cs-lead">Dental anxiety is real and measurable: surveys consistently show that 36% of people avoid the dentist due to fear. The website is the first point of contact where that fear is either amplified or dissolved. This case study covers every decision made to dissolve it.</p>
+        <div class="cs-tags">
+          <span class="cs-tag">Healthcare</span>
+          <span class="cs-tag">Dental Practice</span>
+          <span class="cs-tag">Luxury Positioning</span>
+          <span class="cs-tag">California</span>
+          <span class="cs-tag">Custom Code</span>
+        </div>
+        <div class="cs-cta-row">
+          <a href="https://fotisan.github.io/dentist/" target="_blank" rel="noopener" class="btn-primary">View Live Demo →</a>
+          <a href="index.html#contact" class="btn-outline">Build Something Similar</a>
+        </div>
+      </div>
+
+      <div class="reveal-content">
+        <img src="mock-dentist-1.webp" alt="Luxury dental practice website design" class="cs-hero-img" loading="eager">
+      </div>
+
+      <div class="cs-body">
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Brief</div>
+          <h2>Azure Dental Studio. Luxury positioning.<br>California. Clients who value discretion.</h2>
+          <p>The scenario: a high-end cosmetic and general dentistry practice targeting clients who value premium experiences and expect a spa-level environment. The core challenge is one shared by almost every dental practice: the category carries built-in anxiety, regardless of how good the actual service is.</p>
+          <p>The site needed to do something most dental websites don't: actively dismantle the anxiety before the visitor has even considered booking. Not with reassuring words ("we're gentle!") but with structural and visual signals that communicate safety without stating it.</p>
+          <div class="cs-callout"><strong>The core design question:</strong> What is the feeling that prevents someone from booking a dental appointment, and how do you design a website that removes it?</div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Design Decisions</div>
+          <h2>Trust before credentials.<br>Calm before information.</h2>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">01 · Spa Language in the H1</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">"A calm, artfully designed space for your healthiest smile." The word "space" positions the practice as an environment, not a procedure.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Anxious patients don't fear the dentist — they fear the feeling of being in the chair. Describing the experience as a "space" (not a "clinic" or "office") activates a different mental model: a place you go to feel good, not a place something happens to you. "Artfully designed" signals aesthetic care. "Healthiest smile" is the outcome, not the procedure.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The first sentence reframes the entire category. The visitor arrives with dental anxiety and reads a description of a spa. The cognitive dissonance reduces resistance.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:2rem">
+          <div class="cs-compare">
+            <div class="cs-compare-item cs-compare-item--wrong"><span class="cs-compare-label">Avoided</span>"Expert Dental Care & Cosmetic Dentistry in California"</div>
+            <div class="cs-compare-item cs-compare-item--right"><span class="cs-compare-label">Used</span>"A calm, artfully designed space for your healthiest smile."</div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">02 · Three Trust Metrics in the Hero</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Three data points visible in the first viewport: 5.0 Google Rating, 15+ Years Experience, Invisalign Platinum Provider.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Social proof reduces anxiety. But social proof buried in an About section doesn't reach the visitor who bounces after 8 seconds. These three metrics — each addressing a different type of doubt (quality, longevity, specialization) — appear before the fold, where they can work on the visitor who hasn't committed to scrolling yet.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Authority established in the first viewport, alongside the emotional promise of the headline. The visitor gets both: "this place feels right" and "this place is credible."</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">03 · Subhead Answers Three Objections</span><span class="decision-pill decision-pill--copy">Copy</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">The hero subhead: "…tailored to clients who value precision, comfort, and discretion." Three specific words, each cancelling a specific objection.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Precision addresses: "Will they get it right?" Comfort addresses: "Will it hurt?" Discretion addresses: "Is this a place where I'll feel judged about my teeth?" All three are common pre-booking anxieties. The subhead answers them in six words without ever using the words "pain-free" or "non-judgmental" — which flag exactly what they deny.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Objections cancelled before the visitor consciously forms them. The path to booking is cleared at the subhead level.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:1.4rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">04 · Ghost Button for Phone</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">Two CTAs: "Book an Appointment" (primary, solid) and "Call (555) 123-4567" (ghost button, secondary).</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">Anxious patients frequently prefer to speak to someone before booking online. Hiding the phone number in a footer or contact page creates friction at exactly the moment the visitor is most motivated but also most hesitant. The ghost button keeps the phone option visible without visually competing with the primary CTA.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">Captures conversions from two types of visitors: the decisive online booker and the reassurance-seeker who needs to hear a voice before committing.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-frame" style="margin-bottom:2.5rem">
+          <div class="decision-card">
+            <div class="decision-header"><span class="decision-element">05 · No Form in the Hero</span><span class="decision-pill decision-pill--ux">UX</span></div>
+            <div class="decision-body">
+              <div class="decision-row"><span class="decision-label">Decision</span><p class="decision-text">The booking form lives lower on the page, not in the hero. The hero is purely visual and copy.</p></div>
+              <div class="decision-row"><span class="decision-label">Behavioral Reason</span><p class="decision-text">A form in the hero signals: "we want something from you immediately." For an anxious patient, a form is a commitment signal too early in the relationship. The spa-positioning requires that the visitor first feels invited into the experience — then asked to take action. Form-in-hero breaks that sequence.</p></div>
+              <div class="decision-row"><span class="decision-label">Conversion Outcome</span><p class="decision-text">The hero is experienced as an invitation, not a transaction. Visitors who scroll to the form are warmer and more committed than visitors who encounter it cold.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">Technical</div>
+          <h2>Fast, stable, and built to perform on every screen.</h2>
+          <div class="tech-grid">
+            <div class="tech-item"><span class="tech-value">100</span><span class="tech-label">PageSpeed Target</span></div>
+            <div class="tech-item"><span class="tech-value">0</span><span class="tech-label">Layout Shifts</span></div>
+            <div class="tech-item"><span class="tech-value">HTML/CSS</span><span class="tech-label">Vanilla Stack</span></div>
+            <div class="tech-item"><span class="tech-value">Mobile</span><span class="tech-label">First Approach</span></div>
+          </div>
+        </div>
+
+        <div class="reveal-content" style="margin-bottom:3rem">
+          <div class="cs-section-label">The Takeaway</div>
+          <h2>The appointment is won or lost<br>before the patient picks up the phone.</h2>
+          <p>Every structural and copy decision on this site was made with one insight in mind: dental anxiety is not resolved by dental reassurance. It's resolved by environmental signals — the feeling of a place — before any clinical information is processed. The site creates that environment. Then the practice delivers on it.</p>
+        </div>
+
+        <div class="cs-cta-block reveal-frame">
+          <h3>The most common reason patients don't book is the website.</h3>
+          <p>Not the price. Not the location. The feeling the site creates in the first 10 seconds.</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem">
+            <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
+            <a href="portfolio.html" class="btn-outline">View More Case Studies</a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="portfolio.html">Case Studies</a>
+      <a href="insights.html">Insights</a>
+      <a href="mailto:hello@evidastudio.com">Email Us</a>
+    </div>
+    <p style="margin-top:1.5rem;opacity:.6;font-size:.85rem">© Evida Studio • Designed for Service Professionals</p>
+  </footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const f=document.querySelectorAll(".reveal-frame,.reveal-content");
+      f.forEach(e=>e.classList.add("is-in"));
+      if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-in");o.unobserve(e.target)}})},{threshold:.08});f.forEach(e=>o.observe(e))}
+      const b=document.getElementById("scrollTopBtn");
+      if(b){window.addEventListener("scroll",()=>b.classList.toggle("is-visible",scrollY>400));b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}))}
+    });
+  </script>
+</body>
+</html>
