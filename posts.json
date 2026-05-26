@@ -1,5 +1,16 @@
 [
   {
+    "id": "therapist-needs-website-2026",
+    "title": "Does a Therapist Need a Website in 2026? (Yes. Here's Why)",
+    "excerpt": "Many therapists wonder if they need their own site when they have Psychology Today or referrals. The answer is yes. Here is why it matters in 2026.",
+    "tag": "Strategy",
+    "publishAt": "2026-05-27T09:00:00+03:00",
+    "dateLabel": "May 2026",
+    "image": "blog-therapist-needs-website.webp",
+    "imageAlt": "Does a therapist need a website in 2026",
+    "url": "therapist-needs-website-2026.html"
+  },
+  {
     "id": "trust-before-first-session",
     "title": "Trust Before the First Session: How Clients Judge You Before You Ever Meet",
     "excerpt": "Your potential clients decide whether to trust you before reading a single word. Here's what they're actually looking at — and how to make sure your website passes the test.",
@@ -64,5 +75,16 @@
     "image": "blog-trust-signals.webp",
     "imageAlt": "Trust signals for professional service websites",
     "url": "trust-signals-professional-services.html"
+  },
+  {
+    "id": "psychology-today-vs-website-therapist",
+    "title": "Psychology Today vs. Your Own Website: What Actually Brings More Clients",
+    "excerpt": "Psychology Today or your own website? We compare the two honestly and show you which one actually brings more clients for therapists.",
+    "tag": "Strategy",
+    "publishAt": "2026-06-03T09:00:00+03:00",
+    "dateLabel": "June 2026",
+    "image": "blog-psychology-today-vs-website.webp",
+    "imageAlt": "Comparison of Psychology Today and a therapist personal website",
+    "url": "psychology-today-vs-website-therapist.html"
   }
 ]
