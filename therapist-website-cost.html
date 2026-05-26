@@ -48,8 +48,8 @@
         "url": "https://evidastudio.com/logo.webp"
       }
     },
-    "datePublished": "2026-07-01T09:00:00+03:00",
-    "dateModified": "2026-07-01T09:00:00+03:00"
+    "datePublished": "2026-06-24T09:00:00+03:00",
+    "dateModified": "2026-06-24T09:00:00+03:00"
   }
   </script>
 
@@ -243,43 +243,33 @@
 
         <div class="article-cta">
           <h3>Want to See What a High-Performing Site Looks Like?</h3>
-          <p>At Evida Studio, we design therapist websites that ruthlessly justify every single dollar invested. Start with a conversation.</p>
-          <a href="index.html#contact" class="btn-primary">Let's Talk</a>
+          <p>At Evida Studio, we design therapist websites that ruthlessly justify every single dollar invested. No templates. No compromises. Just results.</p>
+          <a href="portfolio.html" class="btn-primary">View Our Work</a>
         </div>
 
       </div>
     </article>
   </main>
 
-  <footer>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/evidastudio/" target="_blank">Instagram</a>
-      <a href="https://gr.linkedin.com/in/fotis-antonas-643511181" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="portfolio.html">Case Studies</a>
-      <a href="insights.html">Insights</a>
-      <a href="mailto:hello@evidastudio.com">Email Us</a>
-    </div>
-    <p style="margin-top:1.5rem; opacity:0.6; font-size:0.85rem;">© Evida Studio • Designed for Service Professionals</p>
-  </footer>
-
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
+  <div id="site-footer-mount"></div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const frames = document.querySelectorAll(".reveal-frame, .reveal-content");
-      frames.forEach(el => el.classList.add("is-in"));
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); observer.unobserve(e.target); } });
-        }, { threshold: 0.08 });
-        frames.forEach(el => observer.observe(el));
-      }
-      const btn = document.getElementById("scrollTopBtn");
-      if (btn) {
-        window.addEventListener("scroll", () => { btn.classList.toggle("visible", window.scrollY > 400); });
-        btn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
-      }
-    });
+    // Make all reveal elements visible immediately on load
+    var frames = document.querySelectorAll('.reveal-frame, .reveal-content');
+    frames.forEach(function (el) { el.classList.add('is-in'); });
+
+    // IntersectionObserver as progressive enhancement only
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.08 });
+      frames.forEach(function (el) { io.observe(el); });
+    }
   </script>
+
 </body>
 </html>
