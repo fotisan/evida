@@ -468,7 +468,7 @@
           '</article>';
         }
 
-        fetch('posts.json?v=45')
+        fetch('posts.json?v=' + Date.now())
           .then(function (res) { return res.json(); })
           .then(function (posts) {
             var now = new Date();
