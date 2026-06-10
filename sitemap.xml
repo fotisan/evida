@@ -62,6 +62,12 @@
     <priority>0.5</priority>
   </url>
 
+  <url>
+    <loc>https://evidastudio.com/therapist-website-new-york.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Articles — published only, newest first (auto) -->
   <url>
     <loc>https://evidastudio.com/psychology-today-vs-website-therapist.html</loc>
