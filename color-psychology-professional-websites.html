@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Color Psychology for Professional Services Websites | Evida Studio</title>
+  <title>Why Your Website's Color Is Quietly Costing You Clients | Evida Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="How your color choices communicate credibility before a visitor reads a single word. A guide for consultants, therapists, and service professionals.">
 
@@ -15,14 +15,14 @@
 
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://evidastudio.com/color-psychology-professional-websites.html" />
-  <meta property="og:title" content="Color Psychology for Professional Services Websites | Evida Studio" />
+  <meta property="og:title" content="Why Your Website's Color Is Quietly Costing You Clients" />
   <meta property="og:description" content="How your color choices communicate credibility before a visitor reads a single word." />
   <meta property="og:image" content="https://evidastudio.com/og-color-psychology.png" />
   <meta property="og:site_name" content="Evida Studio" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://evidastudio.com/color-psychology-professional-websites.html" />
-  <meta name="twitter:title" content="Color Psychology for Professional Services Websites | Evida Studio" />
+  <meta name="twitter:title" content="Why Your Website's Color Is Quietly Costing You Clients" />
   <meta name="twitter:description" content="How your color choices communicate credibility before a visitor reads a single word." />
   <meta name="twitter:image" content="https://evidastudio.com/og-color-psychology.png" />
 
@@ -34,7 +34,7 @@
       "@type": "WebPage",
       "@id": "https://evidastudio.com/color-psychology-professional-websites.html"
     },
-    "headline": "Color Psychology for Professional Services Websites",
+    "headline": "Why Your Website's Color Is Quietly Costing You Clients",
     "image": "https://evidastudio.com/blog-color-psychology.webp",
     "author": {
       "@type": "Person",
@@ -50,7 +50,7 @@
       }
     },
     "datePublished": "2026-04-06",
-    "dateModified": "2026-04-06"
+    "dateModified": "2026-07-09"
   }
   </script>
 
@@ -209,71 +209,21 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
-  <div id="cookieBanner" class="cookie-banner">
-    <div class="cookie-content">
-      <div class="cookie-text">
-        <h3>Privacy & Cookies</h3>
-        <p>We use cookies to ensure a smooth experience. Your privacy is respected.</p>
-      </div>
-      <div class="cookie-actions">
-        <button id="cookieReject" class="btn-outline btn-sm">Decline</button>
-        <button id="cookieAccept" class="btn-primary btn-sm">Accept</button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-
-      var frames = document.querySelectorAll('.reveal-frame');
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        });
-      }, { threshold: 0.05 });
-      frames.forEach(function (frame) { io.observe(frame); });
-
-      var scrollBtn = document.getElementById('scrollTopBtn');
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 400) scrollBtn.classList.add('is-visible');
-        else scrollBtn.classList.remove('is-visible');
-      });
-      if (scrollBtn) scrollBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-      var banner = document.getElementById('cookieBanner');
-      var gaId = 'G-L802JYJHBS';
-
-      function loadAnalytics() {
-        if (window.gaLoaded) return;
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-        document.head.appendChild(script);
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', gaId);
-        window.gaLoaded = true;
+    document.addEventListener("DOMContentLoaded", () => {
+      const frames = document.querySelectorAll(".reveal-frame, .reveal-content");
+      frames.forEach(el => el.classList.add("is-in"));
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); observer.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        frames.forEach(el => observer.observe(el));
       }
-
-      if (localStorage.getItem('evida_cookie_consent') === 'accepted') {
-        loadAnalytics();
-      } else if (!localStorage.getItem('evida_cookie_consent')) {
-        setTimeout(function () { if (banner) banner.classList.add('is-visible'); }, 1500);
+      const btn = document.getElementById("scrollTopBtn");
+      if (btn) {
+        window.addEventListener("scroll", () => { btn.classList.toggle("visible", window.scrollY > 400); });
+        btn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
       }
-
-      document.getElementById('cookieAccept').addEventListener('click', function () {
-        localStorage.setItem('evida_cookie_consent', 'accepted');
-        if (banner) banner.classList.remove('is-visible');
-        loadAnalytics();
-      });
-      document.getElementById('cookieReject').addEventListener('click', function () {
-        localStorage.setItem('evida_cookie_consent', 'rejected');
-        if (banner) banner.classList.remove('is-visible');
-      });
-
     });
   </script>
 </body>
