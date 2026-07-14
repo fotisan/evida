@@ -1,5 +1,104 @@
 [
   {
+    "id": "search-before-calling",
+    "title": "What People Search For Before They Ever Call You",
+    "excerpt": "By the time someone picks up the phone to call you, they've already typed several searches you never saw. Here's what that hidden search journey looks like, and how to show up in it.",
+    "tag": "Strategy",
+    "publishAt": "2026-09-16T09:00:00+03:00",
+    "dateLabel": "September 2026",
+    "image": "blog-search-before-calling.webp",
+    "imageAlt": "Person typing several search queries on their phone before making a phone call to a professional",
+    "url": "what-people-search-before-they-call.html"
+  },
+  {
+    "id": "near-me-local-search",
+    "title": "Why \"Near Me\" Changed Everything for Local Service Businesses",
+    "excerpt": "A quiet shift in how people search rewrote the rules for local service professionals. Here's what changed, and what it actually takes to show up when someone searches near me.",
+    "tag": "Strategy",
+    "publishAt": "2026-09-09T09:00:00+03:00",
+    "dateLabel": "September 2026",
+    "image": "blog-near-me-search.webp",
+    "imageAlt": "Person searching for a local service professional on their phone with a map showing nearby results",
+    "url": "near-me-local-search-service-professionals.html"
+  },
+  {
+    "id": "above-the-fold-pixels",
+    "title": "The 600 Pixels That Decide If Someone Scrolls",
+    "excerpt": "On mobile, you get roughly 600 pixels of screen before anyone decides whether to scroll or leave. Here's exactly what needs to fit inside that space, and what doesn't belong there.",
+    "tag": "Strategy",
+    "publishAt": "2026-09-02T09:00:00+03:00",
+    "dateLabel": "September 2026",
+    "image": "blog-above-the-fold-mobile.webp",
+    "imageAlt": "A smartphone screen showing the visible area of a homepage before scrolling",
+    "url": "mobile-above-the-fold-pixels.html"
+  },
+  {
+    "id": "desktop-approval-mobile",
+    "title": "You Approved Your Website on a Laptop. Almost Nobody Else Will.",
+    "excerpt": "The way you review and sign off on your website is quietly deciding how it performs. Here's why approving it on a laptop screen sets you up to miss the version most clients actually see.",
+    "tag": "Strategy",
+    "publishAt": "2026-08-26T09:00:00+03:00",
+    "dateLabel": "August 2026",
+    "image": "blog-desktop-approval.webp",
+    "imageAlt": "A professional reviewing and approving a website design on a large desktop monitor",
+    "url": "desktop-approval-mobile-website.html"
+  },
+  {
+    "id": "silent-rejection",
+    "title": "The Silent Rejection: How to Actually Find Out Why Visitors Leave Without a Word",
+    "excerpt": "Most of the visitors you lose never tell you why. They just close the tab. Here's how to actually track down where and why people leave, instead of guessing.",
+    "tag": "Strategy",
+    "publishAt": "2026-08-19T09:00:00+03:00",
+    "dateLabel": "August 2026",
+    "image": "blog-silent-rejection.webp",
+    "imageAlt": "Visitor closing a browser tab and leaving a website without making contact",
+    "url": "silent-rejection-website-visitors.html"
+  },
+  {
+    "id": "client-wants-solution",
+    "title": "Your Client Isn't Looking for You. They're Looking for a Solution",
+    "excerpt": "Most professionals write their website about themselves. Here's why that costs clients, and how to shift the message toward what they actually came looking for.",
+    "tag": "Strategy",
+    "publishAt": "2026-08-12T09:00:00+03:00",
+    "dateLabel": "August 2026",
+    "image": "blog-client-solution.webp",
+    "imageAlt": "Person searching online for a solution to a personal problem, representing client intent",
+    "url": "client-wants-solution-not-you.html"
+  },
+  {
+    "id": "beautiful-vs-sells",
+    "title": "Why a \"Beautiful\" Website Doesn't Mean a Website That Sells",
+    "excerpt": "A website can look stunning and still bring in almost no inquiries. Here's the real difference between design that impresses and design that converts.",
+    "tag": "Strategy",
+    "publishAt": "2026-08-05T09:00:00+03:00",
+    "dateLabel": "August 2026",
+    "image": "blog-beautiful-vs-sells.webp",
+    "imageAlt": "Elegant website design that looks impressive but underperforms on conversions",
+    "url": "beautiful-website-vs-website-that-sells.html"
+  },
+  {
+    "id": "visitors-scan-not-read",
+    "title": "Your Visitors Don't Read Your Website. They Scan It.",
+    "excerpt": "Nobody reads a website top to bottom. Here's how the eye actually scans a page, and how to put your message where it will actually get seen.",
+    "tag": "Strategy",
+    "publishAt": "2026-07-29T09:00:00+03:00",
+    "dateLabel": "July 2026",
+    "image": "blog-eye-scan-pattern.webp",
+    "imageAlt": "Visualization of how the eye scans a webpage in a Z pattern",
+    "url": "visitors-scan-not-read-website.html"
+  },
+  {
+    "id": "3-second-first-impression",
+    "title": "Why Your Client Decides About You in 3 Seconds",
+    "excerpt": "Visitors judge your website before they read a single word. Here's what actually gets decided in the first 3 seconds, and how to make sure it works in your favor.",
+    "tag": "Strategy",
+    "publishAt": "2026-07-22T09:00:00+03:00",
+    "dateLabel": "July 2026",
+    "image": "blog-3-second-decision.webp",
+    "imageAlt": "Visitor forming a first impression of a professional website in seconds",
+    "url": "3-second-first-impression-service-professionals.html"
+  },
+  {
     "id": "google-ads-therapists",
     "title": "Google Ads for Therapists: Do They Work and What Do They Cost?",
     "excerpt": "Do Google Ads actually work for therapists? How much do they cost? We break down the exact strategy, the hidden fees, and the math behind a profitable campaign.",
