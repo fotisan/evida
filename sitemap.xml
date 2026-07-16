@@ -64,6 +64,12 @@
 
   <!-- Articles — published only, newest first (auto) -->
   <url>
+    <loc>https://evidastudio.com/therapist-about-page.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://evidastudio.com/therapist-website-cost.html</loc>
     <lastmod>2026-07-01</lastmod>
     <priority>0.8</priority>
