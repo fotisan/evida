@@ -183,13 +183,67 @@
     }
 
     /* ── Hero image ── */
+    .cs-hero-link {
+      display: block;
+      position: relative;
+      margin-bottom: 3.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cs-hero-link:hover,
+    .cs-hero-link:focus-visible {
+      transform: translateY(-3px);
+    }
+    .cs-hero-link:focus-visible {
+      outline: 3px solid var(--brand);
+      outline-offset: 3px;
+    }
     .cs-hero-img {
       width: 100%;
+      height: auto;
       border-radius: var(--radius);
-      margin-bottom: 3.5rem;
       box-shadow: var(--card-shadow);
       border: 1px solid var(--border-color);
       display: block;
+    }
+    .cs-hero-link:hover .cs-hero-img,
+    .cs-hero-link:focus-visible .cs-hero-img {
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+    }
+    .cs-hero-badge {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 99px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+    .cs-hero-link:hover .cs-hero-badge,
+    .cs-hero-link:focus-visible .cs-hero-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Touch devices have no hover, so the badge stays visible */
+    @media (hover: none) {
+      .cs-hero-badge { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cs-hero-link, .cs-hero-badge { transition: none; }
+      .cs-hero-link:hover { transform: none; }
     }
 
     /* ── Body container ── */
@@ -618,7 +672,10 @@
 
       <!-- ── Hero image ── -->
       <div class="reveal-content">
-        <img src="mockup-_psychologist.webp" alt="Therapist website design for a New York private practice shown on desktop and mobile" class="cs-hero-img" width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async">
+        <a href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener" class="cs-hero-link" aria-label="Open the live therapist website demo in a new tab">
+          <img src="mockup-_psychologist.webp" alt="Therapist website design for a New York private practice shown on desktop and mobile" class="cs-hero-img" width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async">
+          <span class="cs-hero-badge">View Live Demo →</span>
+        </a>
       </div>
 
       <!-- ── Body ── -->
