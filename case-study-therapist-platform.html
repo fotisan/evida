@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Therapist Website Design Case Study | Evida Studio</title>
+  <title>Therapist Website Design: A Case Study | Evida Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A website for a New York psychiatry practice, and the reasoning behind every design and copy decision. Built to turn searches into first contacts.">
+  <meta name="description" content="A therapist website design case study for a New York psychiatry practice. Plain English explanations of the design, copywriting and SEO choices that help a first time visitor feel safe enough to get in touch.">
 
   <link rel="icon" type="image/webp" href="logo.webp">
   <link rel="stylesheet" href="styles.css?v=51">
@@ -14,8 +14,8 @@
 
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://evidastudio.com/case-study-therapist-platform.html" />
-  <meta property="og:title" content="Therapist Website Design Case Study | Evida Studio" />
-  <meta property="og:description" content="A website for a New York psychiatry practice, and the reasoning behind every design and copy decision." />
+  <meta property="og:title" content="Therapist Website Design: A Case Study | Evida Studio" />
+  <meta property="og:description" content="How design, copywriting and SEO work together on a therapist website, explained one decision at a time." />
   <meta property="og:image" content="https://evidastudio.com/mockup-_psychologist.webp" />
   <meta property="og:site_name" content="Evida Studio" />
 
@@ -23,12 +23,17 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Therapist Website Design Case Study: A New York Psychiatry Practice",
-    "description": "A website for a New York psychiatry practice, and the reasoning behind every design and copy decision.",
+    "headline": "Therapist Website Design: A Case Study in Trust, Clarity and Search Visibility",
+    "description": "A plain English breakdown of the design, copywriting and SEO decisions behind a therapist website built for a New York psychiatry practice.",
     "image": "https://evidastudio.com/mockup-_psychologist.webp",
     "author": { "@type": "Person", "name": "Fotis Antonas" },
     "publisher": { "@type": "Organization", "name": "Evida Studio", "logo": { "@type": "ImageObject", "url": "https://evidastudio.com/logo.webp" } },
-    "datePublished": "2026-05-25"
+    "datePublished": "2026-05-25",
+    "about": [
+      { "@type": "Thing", "name": "Therapist website design" },
+      { "@type": "Thing", "name": "Psychologist website design" },
+      { "@type": "Thing", "name": "Local SEO for private practice" }
+    ]
   }
   </script>
 
@@ -37,18 +42,30 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How much does a therapist website cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Projects start at $1,500. The price covers strategy, copy, design and code for a site built to bring in new patients, not a template with your name on it." } },
-      { "@type": "Question", "name": "How long does it take to build?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Two to three weeks for a practice site of this size, once the photos and practice details are ready." } },
-      { "@type": "Question", "name": "Do I need a blog to rank on Google?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. For a local practice, separate service pages and a clear FAQ do more than a blog nobody keeps updated." } },
-      { "@type": "Question", "name": "What about HIPAA and the contact form?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The form asks only for a name, an email and a short message, and never for clinical detail. For anything beyond a first hello, the site points patients to your secure intake system." } },
-      { "@type": "Question", "name": "Can you write the copy as well?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Copy and design are the same job. Writing is included in every project." } },
-      { "@type": "Question", "name": "Do you work with practices outside New York?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The work is remote and the approach is the same in any city." } }
+      {
+        "@type": "Question",
+        "name": "What should a therapist website include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A clear headline that says what you help with, your city and specialty in plain language, a simple explanation of how a first session works, fees or a fee range, a short and private way to get in touch, and answers to the questions people ask before they book."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does a therapist website help with SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Search engines need plain words to match a page to a search. A therapist website that names the specialty and the city in the title, headings and FAQ has a much better chance of appearing when someone searches for therapy in that area. Separate pages for each service work better than one page that lists everything."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do people leave a therapist website without contacting anyone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually because their basic questions go unanswered. Where is the office, how long is a session, what does it cost, and what happens after I send a message. When those answers are hard to find, people keep searching instead of reaching out."
+        }
+      }
     ]
   }
   </script>
@@ -212,63 +229,60 @@
       letter-spacing: 0.08em;
       color: var(--muted);
     }
+    .decision-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      border-radius: 99px;
+      margin-left: auto;
+    }
+    .decision-pill--design {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+    .decision-pill--copy {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .decision-pill--ux {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .decision-pill--tech {
+      background: #f0f9ff;
+      color: #0369a1;
+    }
     .decision-body {
       padding: 1.4rem;
     }
-    .decision-body p {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--muted);
-      margin: 0 0 1rem;
+    .decision-row {
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
     }
-    .decision-body p:last-child { margin-bottom: 0; }
-    .decision-body p.decision-lead {
-      color: var(--page-fg);
-      font-weight: 600;
+    .decision-row:last-child { margin-bottom: 0; }
+    .decision-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand);
     }
-    .decision-body p.decision-gain {
+    .decision-text {
+      font-size: 0.97rem;
+      line-height: 1.65;
       color: var(--page-fg);
-      border-top: 1px solid var(--border-color);
-      padding-top: 1rem;
+      margin: 0;
     }
 
-    /* ── FAQ ── */
-    .cs-faq {
-      margin: 1.5rem 0 0;
-    }
-    .cs-faq details {
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      background: #fff;
-      margin-bottom: 0.7rem;
-      overflow: hidden;
-    }
-    .cs-faq summary {
-      cursor: pointer;
-      list-style: none;
-      padding: 1rem 1.2rem;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--page-fg);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .cs-faq summary::-webkit-details-marker { display: none; }
-    .cs-faq summary::after {
-      content: "+";
-      font-weight: 700;
-      color: var(--brand);
-      flex: 0 0 auto;
-    }
-    .cs-faq details[open] summary::after { content: "\2013"; }
-    .cs-faq details p {
-      margin: 0;
-      padding: 0 1.2rem 1.2rem;
-      font-size: 0.98rem;
-      line-height: 1.75;
-      color: var(--muted);
+    /* Three-column decision grid on desktop */
+    @media (min-width: 680px) {
+      .decision-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .decision-row { margin-bottom: 0; }
     }
 
     /* ── Code / sample element display ── */
@@ -404,16 +418,17 @@
       <!-- ── Header ── -->
       <div class="cs-header reveal-content">
         <a href="portfolio.html" class="cs-back">← Back to Case Studies</a>
-        <span class="cs-meta">Website design for therapists and psychiatrists · New York</span>
-        <h1 class="cs-title">The website a patient trusts<br>before the first session</h1>
+        <span class="cs-meta">Case Study · Therapist Website Design</span>
+        <h1 class="cs-title">Designing for the Patient<br>Before the Professional</h1>
         <p class="cs-lead">
-          Most therapist websites do not lose patients because they look bad. They lose patients because the person reading them is nervous, and the page never says the one thing that person came to hear. Here is how this one was built, decision by decision.
+          A therapist website rarely fails because it looks bad. It fails because it answers the wrong question. This is a plain English walkthrough of the design, the words and the search choices behind a psychiatry practice website in New York, and the reason behind each one.
         </p>
         <div class="cs-tags">
-          <span class="cs-tag">Therapist website design</span>
-          <span class="cs-tag">Psychiatry practice</span>
+          <span class="cs-tag">Healthcare</span>
+          <span class="cs-tag">Therapist / Psychiatry</span>
           <span class="cs-tag">New York, NY</span>
-          <span class="cs-tag">Custom code</span>
+          <span class="cs-tag">Custom Code</span>
+          <span class="cs-tag">Local SEO</span>
         </div>
         <div class="cs-cta-row">
           <a href="https://fotisan.github.io/_psychologist/" target="_blank" rel="noopener" class="btn-primary">View Live Demo →</a>
@@ -423,75 +438,83 @@
 
       <!-- ── Hero image ── -->
       <div class="reveal-content">
-        <img src="mockup-_psychologist.webp" alt="Therapist website design for a New York psychiatry practice, shown on desktop and mobile" class="cs-hero-img" loading="eager">
+        <img src="mockup-_psychologist.webp" alt="Therapist website design for a private psychiatry practice in New York" class="cs-hero-img" loading="eager">
       </div>
 
       <!-- ── Body ── -->
       <div class="cs-body">
 
-        <!-- Why most therapist websites lose patients -->
-        <div class="reveal-content" style="margin-bottom: 3rem;">
-          <div class="cs-section-label">The Problem</div>
-          <h2>Why most therapist websites lose patients</h2>
-          <p>
-            Open ten psychiatry websites in New York and eight of them start the same way. A photo of an office. A headline with a name, a degree and a city. A paragraph about years of experience and a list of approaches.
-          </p>
-          <p>
-            None of that is wrong. It is simply an answer to a question nobody asked. The person reading has spent weeks getting up the courage to search. They are not comparing credentials yet. They want to know if reaching out will feel safe, what happens next, and whether this person will understand them.
-          </p>
-          <p>
-            When the page does not answer that, they close the tab and open the next one. The practice never finds out. That is the cost, and it is invisible.
-          </p>
-        </div>
-
         <!-- The Brief -->
         <div class="reveal-content" style="margin-bottom: 3rem;">
           <div class="cs-section-label">The Brief</div>
-          <h2>A private psychiatry practice in New York, with no website at all</h2>
+          <h2>A private psychiatry practice in New York.<br>One visitor, one decision.</h2>
           <p>
-            The patient in mind is an adult dealing with anxiety, mood shifts or long stretches of feeling overloaded. Someone who has decided to do something about it but has not contacted anyone yet.
+            This is a concept build. We designed it as an open example so the full reasoning could be published without putting a real client's private material online. The practice is invented. The problem it solves is not.
           </p>
           <p>
-            That single detail shaped everything. This is not a returning patient looking up an address. This is a first step. The site has one job: make sending that first message feel easy.
+            Say her name is Dr. Ava Hart. Board certified psychiatrist, private practice in Manhattan. The person visiting her site is an adult dealing with anxiety, mood shifts or long running overload. They have decided to do something about it. They have not contacted anyone yet.
+          </p>
+          <p>
+            That last detail changes everything. This is not a returning patient checking an appointment time. This is someone who spent weeks working up the courage to type a search. The website has one job. Make them feel safe enough to send a short message.
           </p>
           <div class="cs-callout">
-            <strong>The question behind every decision:</strong> what does this person feel in the ninety seconds before they either close the tab or press contact?
+            <strong>The question behind every choice:</strong> what does a person feel in the ninety seconds before they either close the tab or press contact?
           </div>
         </div>
 
         <!-- Design Decisions -->
-        <div class="reveal-content" style="margin-bottom: 2rem;">
-          <div class="cs-section-label">The Work</div>
-          <h2>Design decisions, explained</h2>
+        <div class="reveal-content" style="margin-bottom: 3rem;">
+          <div class="cs-section-label">Design and Copy Decisions</div>
+          <h2>Every choice has a reason.<br>Here is each one, in plain words.</h2>
           <p>
-            Five choices that changed how the page performs. Each one starts with what was done, then why, then what the practice gains from it.
+            Each card below has three parts. What we did, why it works on a human level, and what it is meant to change for the visitor. These are design intentions rather than measured results, because this is a concept build with no live traffic behind it. The reasoning is what matters here, and the reasoning is what carries over to a real practice.
           </p>
         </div>
 
-        <!-- Decision 1 -->
+        <!-- Decision 1: Color Palette -->
         <div class="reveal-frame" style="margin-bottom: 1.4rem;">
           <div class="decision-card">
             <div class="decision-header">
-              <span class="decision-element">01 · The colours</span>
+              <span class="decision-element">01 · Colour Palette</span>
+              <span class="decision-pill decision-pill--design">Design</span>
             </div>
             <div class="decision-body">
-              <p class="decision-lead">Warm neutrals, terra cotta and sage on an off white base. No clinical blues.</p>
-              <p>Cool blue and white is the colour of a waiting room. It is what the person is trying to work up the courage to walk into. Warm tones read as someone's room rather than a facility, and that reads before a single word does.</p>
-              <p class="decision-gain">The page feels approachable in the first half second, which is exactly when a nervous visitor decides whether to keep reading.</p>
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Warm neutrals. Terra cotta, amber and sage green on an off white base. No clinical blues.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">Cool blue and white reads as hospital. Warm neutrals read as a room with a person in it. Someone reaching out for the first time needs to feel calm before they feel impressed.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">The page feels approachable before a single word is read. The emotional cost of reaching out drops slightly, and slightly is often enough.</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Decision 2 -->
+        <!-- Decision 2: Benefit-Led H1 -->
         <div class="reveal-frame" style="margin-bottom: 1.4rem;">
           <div class="decision-card">
             <div class="decision-header">
-              <span class="decision-element">02 · The headline</span>
+              <span class="decision-element">02 · The Main Headline</span>
+              <span class="decision-pill decision-pill--copy">Copy</span>
             </div>
             <div class="decision-body">
-              <p class="decision-lead">"Feel steady again. A plan you can trust." Written about the patient, not the practice.</p>
-              <p>Nobody searches thinking "I need a board certified MD". They search thinking "I want to feel better". The headline says back to them what they already feel, so they recognise themselves on the page instead of reading a resume.</p>
-              <p class="decision-gain">The visitor understands what this practice is for in under three seconds, and feels understood at the same time.</p>
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">"Feel steady again. A plan you can trust." The headline names what the visitor wants, not what the doctor has.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">Nobody arrives thinking "I need a board certified MD." They arrive thinking "I need to feel better." The headline answers the thought they came in with.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">Recognition in about three seconds. The visitor feels understood before they reach the second line.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -501,7 +524,7 @@
           <div class="cs-compare">
             <div class="cs-compare-item cs-compare-item--wrong">
               <span class="cs-compare-label">Avoided</span>
-              "Welcome to the practice of Dr. Hart, MD, Psychiatrist in New York"
+              "Welcome to the practice of Dr. Ava Hart, MD, Psychiatrist in New York"
             </div>
             <div class="cs-compare-item cs-compare-item--right">
               <span class="cs-compare-label">Used</span>
@@ -510,135 +533,220 @@
           </div>
         </div>
 
-        <!-- Decision 3 -->
+        <!-- Decision 3: Micro line above the headline -->
         <div class="reveal-frame" style="margin-bottom: 1.4rem;">
           <div class="decision-card">
             <div class="decision-header">
-              <span class="decision-element">03 · Three words under the buttons</span>
+              <span class="decision-element">03 · The Line Above The Headline</span>
+              <span class="decision-pill decision-pill--tech">SEO</span>
             </div>
             <div class="decision-body">
-              <p class="decision-lead">Confidential. No pressure. Clear steps.</p>
-              <p>The three things that stop someone from reaching out are almost always the same: who will find out, will I be pushed into something, and what happens after I press send. Naming all three answers them before the visitor has to ask, and asking is the part they were dreading.</p>
-              <p class="decision-gain">The most common reasons for hesitating are removed at the exact moment of hesitation.</p>
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">A small line sits above the main headline: private psychiatry in New York. Plain, factual, unglamorous.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">The creative headline speaks to a feeling. Search engines and skimmers need the literal facts, service and city, somewhere near the top. This small line carries them so the headline never has to.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">The page can rank for local searches without the headline turning into a list of keywords.</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Decision 4 -->
+        <!-- Decision 4: Hero Visual Card -->
         <div class="reveal-frame" style="margin-bottom: 1.4rem;">
           <div class="decision-card">
             <div class="decision-header">
-              <span class="decision-element">04 · What the button says</span>
+              <span class="decision-element">04 · The Card Beside The Photo</span>
+              <span class="decision-pill decision-pill--ux">UX</span>
             </div>
             <div class="decision-body">
-              <p class="decision-lead">"Contact me", not "Book Now" or "Schedule Appointment".</p>
-              <p>Booking sounds like a decision. A message sounds like a question. Most people who land on the page are still deciding, and asking them to commit at that moment loses them. The second button, "How I help", gives the ones who want to read more somewhere to go instead of leaving.</p>
-              <p class="decision-gain">More first contacts from the largest group on the page, the people who are still thinking about it.</p>
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">A small floating card shows three things: the office location, the session length of fifty minutes, and the first step, which is a short message.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">Every first time visitor has the same three silent questions. Where is this. How long does it take. What do I have to do first. The card answers all three without a click.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">The most common reasons to leave are removed at the first visible moment, not buried three scrolls down.</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Decision 5 -->
+        <!-- Decision 5: Trust Signals -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">05 · Three Words Under The Buttons</span>
+              <span class="decision-pill decision-pill--copy">Copy</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Three short labels sit under the buttons: confidential, no pressure, clear steps.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">The biggest barrier to a first message is the fear of being exposed or pushed. Those three words name the three hesitations people rarely say out loud, and answer them in advance.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">The visitor knows what the first step will feel like before they take it. Unknowns are what stop people, so we remove them early.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 6: Dual CTAs + microcopy -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">06 · Two Buttons, And Their Wording</span>
+              <span class="decision-pill decision-pill--ux">UX</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Two buttons at the top. "Contact me" as the main one and "How I help" as the quieter second. The wording avoids "Book Now" and "Get Started".</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">Not everyone arrives ready. The second button gives the person who is still reading somewhere to go instead of leaving. And "book" sounds like a commitment, while "contact" sounds like a conversation. A conversation is much easier to say yes to.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">Nobody reaches the bottom of the first screen without a next step that matches how ready they actually are.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 7: Services Language -->
+        <div class="reveal-frame" style="margin-bottom: 1.4rem;">
+          <div class="decision-card">
+            <div class="decision-header">
+              <span class="decision-element">07 · How The Services Are Described</span>
+              <span class="decision-pill decision-pill--copy">Copy</span>
+            </div>
+            <div class="decision-body">
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Services are written as an experience rather than a clinical definition, and each one gets its own page instead of a single crowded list.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">"Psychiatric evaluation: a comprehensive assessment of your mental health history" describes a procedure. "We take time to understand the whole picture, and you leave with a clearer explanation" describes what the hour feels like. Separate pages also give each service a real chance in search, because one page cannot rank well for four different things.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">The visitor can picture the session before it exists, and each service has its own entry point from search.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision 8: FAQ -->
         <div class="reveal-frame" style="margin-bottom: 2.5rem;">
           <div class="decision-card">
             <div class="decision-header">
-              <span class="decision-element">05 · How the services are written</span>
+              <span class="decision-element">08 · The FAQ Section</span>
+              <span class="decision-pill decision-pill--design">Design + SEO</span>
             </div>
             <div class="decision-body">
-              <p class="decision-lead">Each service describes the visit, not the procedure.</p>
-              <p>"A comprehensive assessment of your mental health history" describes a process. "We take the time to understand the whole picture, and you leave with a clearer explanation" describes an hour of someone's life. The second one lets the reader picture being there.</p>
-              <p class="decision-gain">The relationship starts before the first session is booked, which is what turns a visitor into a patient.</p>
+              <div class="decision-row">
+                <span class="decision-label">Decision</span>
+                <p class="decision-text">Six to eight real questions, written in the words people actually use, placed beside a warm photo rather than in a plain full width block.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Why It Works</span>
+                <p class="decision-text">A full width FAQ reads like paperwork. Next to a photo it still reads like a person talking. It is also the one place on the site where everyday search language belongs, so questions about cost, insurance, first sessions and online appointments can be answered directly.</p>
+              </div>
+              <div class="decision-row">
+                <span class="decision-label">Intended Outcome</span>
+                <p class="decision-text">Each answered question removes one more reason not to write, and the section quietly matches the long questions people type into search.</p>
+              </div>
             </div>
           </div>
+        </div>
+
+        <!-- SEO Section -->
+        <div class="reveal-content" style="margin-bottom: 3rem;">
+          <div class="cs-section-label">Being Found</div>
+          <h2>Search visibility, without sounding like a search result.</h2>
+          <p>
+            Most therapist websites go one of two ways. Either they read beautifully and never appear in search, or they are stuffed with phrases like best therapist NYC anxiety depression and read like a pamphlet. Both lose the same person.
+          </p>
+          <p>
+            The way through is simple. Decide which parts of the page are for feeling and which parts are for facts, then keep them separate. Headlines and the small phrases between sections stay human. The title tag, the line above the headline, the section headings and the FAQ carry the plain words: the specialty, the city, the practical questions.
+          </p>
+          <div class="cs-callout">
+            <strong>The short version:</strong> write the poetry where a person is looking, and write the plain facts where a search engine is reading. The visitor never notices the second one, which is exactly the point.
+          </div>
+          <p>
+            On this build that meant a title naming the service and the city, one clear sentence as the page description, a service line above the creative headline, separate pages for each service, and an FAQ written in ordinary language. Nothing exotic. It is the absence of these basics, far more than any clever trick, that keeps most practice websites invisible.
+          </p>
         </div>
 
         <!-- Technical Section -->
         <div class="reveal-content" style="margin-bottom: 3rem;">
-          <div class="cs-section-label">Under the hood</div>
-          <h2>Speed, and why it decides everything else</h2>
+          <div class="cs-section-label">Under The Hood</div>
+          <h2>Fast on a phone.<br>Nothing jumping around while it loads.</h2>
           <p>
-            None of the choices above matter if the page is still loading. On a phone, on mobile data, three seconds is the difference between a new patient and a back button. Every site is built mobile first, in plain HTML and CSS, with nothing loaded from anywhere else.
+            None of the thinking above matters if the page is slow or if it shifts under someone's thumb while they read. Most people find a therapist on a phone, often late in the evening, often on a patchy connection. So the site is built for that first and widened for desktop afterwards.
           </p>
 
           <div class="tech-grid">
             <div class="tech-item">
-              <span class="tech-value">100</span>
-              <span class="tech-label">PageSpeed target</span>
+              <span class="tech-value">0</span>
+              <span class="tech-label">Layout Shifts</span>
             </div>
             <div class="tech-item">
               <span class="tech-value">0</span>
-              <span class="tech-label">External dependencies</span>
+              <span class="tech-label">External Dependencies</span>
             </div>
             <div class="tech-item">
               <span class="tech-value">HTML/CSS</span>
-              <span class="tech-label">Vanilla stack</span>
+              <span class="tech-label">Vanilla Stack</span>
             </div>
             <div class="tech-item">
               <span class="tech-value">Mobile</span>
-              <span class="tech-label">First, always</span>
+              <span class="tech-label">First Approach</span>
             </div>
           </div>
 
-          <p>
-            Nothing on the page jumps or shifts while it loads. The text is readable at every screen width, headings follow a logical order for screen readers, and every image has a description. The FAQ opens and closes with no JavaScript at all, so it works even if a script fails.
-          </p>
           <div class="cs-callout">
-            <strong>On the scroll animations:</strong> everything is visible the moment the page loads. The fade in is a bonus, never a condition. If JavaScript is slow or blocked, nothing is hidden.
+            <strong>About the fade in animations:</strong> everything on the page is visible the moment it loads. The scroll effect is decoration layered on top. If the JavaScript is slow, blocked or switched off, nothing disappears. Content is never hidden behind an animation.
           </div>
-        </div>
 
-        <!-- FAQ -->
-        <div class="reveal-content" style="margin-bottom: 3rem;">
-          <div class="cs-section-label">Common questions</div>
-          <h2>What practices usually ask before starting</h2>
-
-          <div class="cs-faq">
-            <details>
-              <summary>How much does a therapist website cost?</summary>
-              <p>Projects start at $1,500. That covers strategy, copy, design and code. You are paying for a site built to bring in new patients, not a template with your name on it.</p>
-            </details>
-            <details>
-              <summary>How long does it take to build?</summary>
-              <p>Two to three weeks for a practice site of this size, once the photos and practice details are ready. Most of the time goes into the writing and the structure, not the code.</p>
-            </details>
-            <details>
-              <summary>Do I need a blog to show up on Google?</summary>
-              <p>No. For a local practice, separate pages for each service plus a clear FAQ do far more than a blog nobody has time to update. Google reads those pages as the answer to what people in your city are searching for.</p>
-            </details>
-            <details>
-              <summary>What about HIPAA and the contact form?</summary>
-              <p>The form asks for a name, an email and a short message, and never for clinical detail. Anything beyond a first hello is pointed to your secure intake system, so the website itself never holds sensitive information.</p>
-            </details>
-            <details>
-              <summary>Can you write the copy as well?</summary>
-              <p>Yes, and it is not an add on. The words and the layout are the same decision. Writing is included in every project.</p>
-            </details>
-            <details>
-              <summary>Do you work with practices outside New York?</summary>
-              <p>Yes. The work is done remotely and the approach is the same in any city. Only the local search wording changes.</p>
-            </details>
-          </div>
+          <p>
+            The structure uses proper headings in order, labels on every interactive area, and a written description on every image. The FAQ uses the browser's own <code style="background: #f1f5f9; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em;">&lt;details&gt;</code> and <code style="background: #f1f5f9; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em;">&lt;summary&gt;</code> elements, so it opens with a keyboard and works for screen readers without any JavaScript at all.
+          </p>
         </div>
 
         <!-- Key Takeaway -->
         <div class="reveal-content" style="margin-bottom: 3rem;">
-          <div class="cs-section-label">The takeaway</div>
-          <h2>The patient's experience starts long before the first session</h2>
+          <div class="cs-section-label">The Takeaway</div>
+          <h2>The patient's experience starts long before the first session.</h2>
           <p>
-            Every choice on this site was checked against one question: does this make it easier or harder for a nervous person to take the first step? Colour, wording, layout, the text on a button. All of it answers to that.
+            Every decision here was checked against one question. Does this make it easier or harder for a nervous person to take the first step? Colour, wording, layout, button text, page speed. All of it answers to that.
           </p>
           <p>
-            That is the difference between a website that looks professional and one that brings in patients. The goal was never to impress the psychiatrist. It was to reassure the person reading at eleven at night, deciding whether to send a message.
-          </p>
-          <p style="font-size: 0.92rem; opacity: 0.7;">
-            This is a demonstration project. The practice and the practitioner are illustrative, the design and code are real and live.
+            That is the difference between a website that looks professional and one that actually brings people through the door. The aim was never to impress the psychiatrist. It was to reassure the person searching for her at eleven at night.
           </p>
         </div>
 
         <!-- CTA Block -->
         <div class="cs-cta-block reveal-frame">
-          <h3>Someone is searching for a therapist in your city right now</h3>
-          <p>If your website does not give them a reason to stay, that search goes to the next practice on the list. Send me your current site and I will tell you what is costing you contacts.</p>
+          <h3>Your next client is already searching.</h3>
+          <p>If your website is not giving them a reason to stay, every search is an opportunity left on the table.</p>
           <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem;">
             <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
             <a href="portfolio.html" class="btn-outline">View More Case Studies</a>
@@ -649,6 +757,7 @@
     </article>
 
   </main>
+
 
   <footer>
     <div class="footer-links">
@@ -664,7 +773,7 @@
   <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">↑</button>
 
   <script>
-    // Reveal on scroll, progressive enhancement only
+    // Reveal on scroll — progressive enhancement only
     document.addEventListener("DOMContentLoaded", () => {
       const frames = document.querySelectorAll(".reveal-frame, .reveal-content");
       // Make everything visible immediately
