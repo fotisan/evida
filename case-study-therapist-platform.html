@@ -541,32 +541,6 @@
     }
     .cs-toc a:hover { color: var(--brand); border-bottom-color: var(--brand); }
 
-    /* ── Bug / findings list ── */
-    .cs-findings {
-      display: grid;
-      gap: 0.75rem;
-      margin: 1.5rem 0 2rem;
-    }
-    .cs-finding {
-      background: #fff;
-      border: 1px solid var(--border-color);
-      border-left: 3px solid #f59e0b;
-      border-radius: 0 10px 10px 0;
-      padding: 1rem 1.2rem;
-    }
-    .cs-finding-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--page-fg);
-      margin: 0 0 0.35rem;
-    }
-    .cs-finding-text {
-      font-size: 0.93rem;
-      line-height: 1.65;
-      color: var(--muted);
-      margin: 0;
-    }
-
     /* ── Article FAQ ── */
     .cs-faq {
       display: grid;
@@ -607,7 +581,7 @@
       line-height: 1.75;
       color: var(--muted);
     }
-    .cs-faq-body p { margin: 0; font-size: 0.97rem; }
+    .cs-body .cs-faq-body p { margin: 0; font-size: 0.97rem; line-height: 1.75; }
 
     /* ── Result strip ── */
     .cs-result {
@@ -691,7 +665,6 @@
             <li><a href="#first-step">Making the first step feel small</a></li>
             <li><a href="#pricing">Publishing your fees, and why it wins</a></li>
             <li><a href="#technical">The technical work nobody sees</a></li>
-            <li><a href="#findings">The problems you only find by opening the code</a></li>
             <li><a href="#faq">Common questions about therapist websites</a></li>
           </ol>
         </nav>
@@ -875,42 +848,9 @@
           <p>
             The FAQ uses native details and summary elements, which are keyboard accessible and searchable without a single line of JavaScript. Headings follow a real hierarchy. Every image has a descriptive alt attribute that says what is in the picture rather than the filename.
           </p>
-        </div>
-
-        <!-- Findings -->
-        <div class="reveal-content" id="findings" style="margin-bottom: 2rem; scroll-margin-top: 100px;">
-          <div class="cs-section-label">Quality Control</div>
-          <h2>The problems you only find<br>by opening the code.</h2>
-          <p>
-            A design review looks at the page. A code review looks at what the page actually does. These were all found in the second pass, and every one of them was invisible from the browser.
-          </p>
-
-          <div class="cs-findings">
-            <div class="cs-finding">
-              <p class="cs-finding-title">The phone number called a different number than it displayed</p>
-              <p class="cs-finding-text">The page showed a 212 number. Every tap to call link pointed at a 415 number left over from an earlier draft. On a live practice site this is not a typo, it is every mobile caller quietly failing to reach you, with no error message and no way to know it is happening.</p>
-            </div>
-            <div class="cs-finding">
-              <p class="cs-finding-title">The entire site was invisible without JavaScript</p>
-              <p class="cs-finding-text">Every section started at zero opacity and waited for a script to reveal it. If that script was blocked, delayed, or failed on a slow connection, the visitor got a blank page. Fixed by making content visible by default and treating the animation as an enhancement.</p>
-            </div>
-            <div class="cs-finding">
-              <p class="cs-finding-title">Eight links went nowhere</p>
-              <p class="cs-finding-text">Social icons and the messaging button all pointed at a placeholder. They looked correct and did nothing when clicked. A visitor who taps a dead link does not report it, they just conclude the practice is not being looked after.</p>
-            </div>
-            <div class="cs-finding">
-              <p class="cs-finding-title">The LinkedIn icon was the Facebook logo</p>
-              <p class="cs-finding-text">The link was correct, the icon was not. Small, but it is the kind of detail that makes a careful person wonder what else was not checked.</p>
-            </div>
-            <div class="cs-finding">
-              <p class="cs-finding-title">The About portrait was being cropped in half</p>
-              <p class="cs-finding-text">A portrait photo had inherited a landscape aspect ratio from a shared CSS rule, so the browser cut the bottom off. Visible on the page, but only if you knew what the full image was supposed to look like.</p>
-            </div>
+          <div class="cs-callout">
+            <strong>Why this matters more than it sounds:</strong> the failures that cost a practice the most are the silent ones. A tap to call link pointing at an old number, a section that never appears because a script stalled, a social icon linking nowhere. Nobody emails to report them. They just leave. Every build here is reviewed line by line before it ships, because these are the errors a browser will never warn you about.
           </div>
-
-          <p>
-            None of these are exotic. They are what accumulates when a site is assembled from a template and nobody reads the output. Checking for them is not a premium service, it is the job.
-          </p>
         </div>
 
         <!-- FAQ -->
