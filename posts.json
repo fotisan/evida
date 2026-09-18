@@ -1,5 +1,38 @@
 [
   {
+    "id": "real-or-not-5-seconds",
+    "title": "How a Client Decides If You're Real in 5 Seconds",
+    "excerpt": "Before anyone reads your bio, they decide if you're real. Here's what actually signals authenticity in the first five seconds, and how to build it into your site.",
+    "tag": "Strategy",
+    "publishAt": "2026-10-07T09:00:00+03:00",
+    "dateLabel": "October 2026",
+    "image": "blog-real-in-5-seconds.webp",
+    "imageAlt": "Visitor deciding whether a professional website belongs to a real person",
+    "url": "real-or-not-5-seconds-service-professionals.html"
+  },
+  {
+    "id": "contact-button-not-enough",
+    "title": "The Contact Button Isn't Enough. Tell Them What Happens Next",
+    "excerpt": "A contact button only asks for a click. It never tells your visitor what happens after. Here's why that silence costs service professionals their best leads.",
+    "tag": "Strategy",
+    "publishAt": "2026-09-30T09:00:00+03:00",
+    "dateLabel": "September 2026",
+    "image": "blog-contact-button.webp",
+    "imageAlt": "Visitor's hand hovering over a website contact button before clicking",
+    "url": "contact-button-not-enough.html"
+  },
+  {
+    "id": "load-time-costing-clients",
+    "title": "Every Second of Load Time Is Costing You Clients",
+    "excerpt": "A slow website doesn't just annoy visitors. It quietly sends your future clients to someone else before you ever get the chance to talk to them.",
+    "tag": "Strategy",
+    "publishAt": "2026-09-23T09:00:00+03:00",
+    "dateLabel": "September 2026",
+    "image": "blog-load-time-cost.webp",
+    "imageAlt": "Slow website load time costing service professionals clients",
+    "url": "seconds-load-time-costing-clients.html"
+  },
+  {
     "id": "search-before-calling",
     "title": "What People Search For Before They Ever Call You",
     "excerpt": "By the time someone picks up the phone to call you, they've already typed several searches you never saw. Here's what that hidden search journey looks like, and how to show up in it.",
@@ -99,17 +132,6 @@
     "url": "3-second-first-impression-service-professionals.html"
   },
   {
-    "id": "google-ads-therapists",
-    "title": "Google Ads for Therapists: Do They Work and What Do They Cost?",
-    "excerpt": "Do Google Ads actually work for therapists? How much do they cost? We break down the exact strategy, the hidden fees, and the math behind a profitable campaign.",
-    "tag": "Strategy",
-    "publishAt": "2026-07-08T09:00:00+03:00",
-    "dateLabel": "July 2026",
-    "image": "blog-google-ads-therapists.webp",
-    "imageAlt": "Google Ads strategy and cost guide for therapists",
-    "url": "google-ads-therapists.html"
-  },
-  {
     "id": "therapist-about-page",
     "title": "Therapists Are Trained to Connect. Most Write Their About Page Like a Resume.",
     "excerpt": "The About page is the most critical page on a therapist's website. Learn how to write it to build deep trust and actually book patients.",
@@ -119,6 +141,17 @@
     "image": "blog-therapist-about-page.webp",
     "imageAlt": "Therapist writing their website About page",
     "url": "therapist-about-page.html"
+  },
+  {
+    "id": "google-ads-therapists",
+    "title": "Google Ads for Therapists: Do They Work and What Do They Cost?",
+    "excerpt": "Do Google Ads actually work for therapists? How much do they cost? We break down the exact strategy, the hidden fees, and the math behind a profitable campaign.",
+    "tag": "Strategy",
+    "publishAt": "2026-07-08T09:00:00+03:00",
+    "dateLabel": "July 2026",
+    "image": "blog-google-ads-therapists.webp",
+    "imageAlt": "Google Ads strategy and cost guide for therapists",
+    "url": "google-ads-therapists.html"
   },
   {
     "id": "therapist-website-cost",
