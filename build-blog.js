@@ -118,7 +118,7 @@ xml += '  <!-- Core Pages (auto-generated, μην το πειράζεις χει
 for (const pg of CORE_PAGES) {
   xml += '  <url>\n';
   xml += `    <loc>${SITE}${pg.loc}</loc>\n`;
-  xml += `    <lastmod>${today}</lastmod>\n`;
+  
   xml += `    <priority>${pg.priority}</priority>\n`;
   xml += '  </url>\n\n';
 }
