@@ -54,6 +54,12 @@
 
   <!-- Articles — published only, newest first (auto) -->
   <url>
+    <loc>https://evidastudio.com/real-or-not-5-seconds-service-professionals.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://evidastudio.com/contact-button-not-enough.html</loc>
     <lastmod>2026-09-30</lastmod>
     <priority>0.8</priority>
