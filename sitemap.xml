@@ -52,7 +52,55 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Articles — published only, newest first (auto) -->
+  <!-- Articles, all (published + scheduled), newest first -->
+  <url>
+    <loc>https://evidastudio.com/template-website-looks-like-everyone-else.html</loc>
+    <lastmod>2026-12-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://evidastudio.com/bad-website-cancels-good-referral.html</loc>
+    <lastmod>2026-12-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://evidastudio.com/click-to-call-underrated-button.html</loc>
+    <lastmod>2026-12-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://evidastudio.com/site-jumps-while-loading-loses-trust.html</loc>
+    <lastmod>2026-12-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://evidastudio.com/5-website-mistakes-service-professionals.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://evidastudio.com/website-first-impression-not-your-office.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://evidastudio.com/why-nobody-fills-your-form.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://evidastudio.com/website-still-feels-broken.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://evidastudio.com/real-or-not-5-seconds-service-professionals.html</loc>
     <lastmod>2026-10-07</lastmod>
