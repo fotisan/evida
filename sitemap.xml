@@ -54,6 +54,12 @@
 
   <!-- Articles — published only, newest first (auto) -->
   <url>
+    <loc>https://evidastudio.com/why-nobody-fills-your-form.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://evidastudio.com/website-still-feels-broken.html</loc>
     <lastmod>2026-10-14</lastmod>
     <priority>0.8</priority>
